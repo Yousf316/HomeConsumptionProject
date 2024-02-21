@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3395DB33-C7C3-4B13-910B-E3AD829F534C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HomeConsuption</RootNamespace>
+    <AssemblyName>HomeConsuption</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8-home-64.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global\clsEventLogs.cs" />
+    <Compile Include="Global\clsFormat.cs" />
+    <Compile Include="Global\clsGlobal.cs" />
+    <Compile Include="Global\clsValidatoin.cs" />
+    <Compile Include="Global\util.cs" />
+    <Compile Include="Product\frmAddEditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\frmAddEditCategory.Designer.cs">
+      <DependentUpon>frmAddEditCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\frmAddEditeProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\frmAddEditeProduct.Designer.cs">
+      <DependentUpon>frmAddEditeProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\frmCategoryLIst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\frmCategoryLIst.Designer.cs">
+      <DependentUpon>frmCategoryLIst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\frmProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\frmProductList.Designer.cs">
+      <DependentUpon>frmProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\frmAddEditPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\frmAddEditPurchase.Designer.cs">
+      <DependentUpon>frmAddEditPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\frmPurchaseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\frmPurchaseList.Designer.cs">
+      <DependentUpon>frmPurchaseList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stores\frmAddEditStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stores\frmAddEditStore.Designer.cs">
+      <DependentUpon>frmAddEditStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stores\frmListStores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stores\frmListStores.Designer.cs">
+      <DependentUpon>frmListStores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\frmTest.Designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\clsGlobal.cs" />
+    <Compile Include="Tools\frmTotalAmountwithTax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\frmTotalAmountwithTax.Designer.cs">
+      <DependentUpon>frmTotalAmountwithTax.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Product\frmAddEditCategory.resx">
+      <DependentUpon>frmAddEditCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\frmAddEditeProduct.resx">
+      <DependentUpon>frmAddEditeProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\frmCategoryLIst.resx">
+      <DependentUpon>frmCategoryLIst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\frmProductList.resx">
+      <DependentUpon>frmProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\frmAddEditPurchase.resx">
+      <DependentUpon>frmAddEditPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\frmPurchaseList.resx">
+      <DependentUpon>frmPurchaseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stores\frmAddEditStore.resx">
+      <DependentUpon>frmAddEditStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stores\frmListStores.resx">
+      <DependentUpon>frmListStores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Tests\frmTest.resx">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\frmTotalAmountwithTax.resx">
+      <DependentUpon>frmTotalAmountwithTax.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-purchase-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-online-store-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\store.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-check-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-arrow-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-arrow-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-product-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-paid-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-paid-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-buy-for-coins-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-buy-for-coins-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-buy-for-coins-641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-product-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HomeC_Business\HomeC_Business.csproj">
+      <Project>{e08d6ebe-7441-4287-8e81-51951b5ff6ad}</Project>
+      <Name>HomeC_Business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-report-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8-home-64.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
