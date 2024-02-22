@@ -244,5 +244,8 @@
   <ItemGroup>
     <Content Include="icons8-home-64.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Product\Sizes\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
