@@ -106,6 +106,7 @@ namespace HomeConsuption.Product
         {
             _GetAllCategories();
 
+            if(cmbCategories.Items.Count > 0)
             cmbCategories.SelectedIndex = 0;
 
             if (_mode ==enMode.AddNew)

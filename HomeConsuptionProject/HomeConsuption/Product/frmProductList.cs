@@ -29,6 +29,10 @@ namespace HomeConsuption.Product
         private void _RefreshTable(int PageNumber, int RowCountPerPage)
         {
             DataTable dtOrginal = clsItem.GetAllItems(PageNumber, RowCountPerPage, ref _RowCount);
+
+            if (_RowCount == 0)
+                return;
+
             DataTable dtDistnaiton = dtOrginal.AsDataView().ToTable(false,"ItemID", "ItemName_AR", "ItemName_EN", "CategoryID","Price");
 
 

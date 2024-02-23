@@ -46,3 +46,28 @@ D:\Projects\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Produc
 D:\Projects\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Tests.frmTest.resources
 D:\Projects\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Product.frmProductList.resources
 D:\Projects\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Product.frmCategoryLIst.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\bin\Debug\HomeConsuption.exe.config
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\bin\Debug\HomeConsuption.exe
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\bin\Debug\HomeConsuption.pdb
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\bin\Debug\HomeC_Business.dll
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\bin\Debug\HomeC_DataAccess.dll
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\bin\Debug\HomeC_Business.pdb
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\bin\Debug\HomeC_DataAccess.pdb
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.csproj.AssemblyReference.cache
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Product.frmAddEditCategory.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Product.frmAddEditeProduct.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Product.frmCategoryList.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Product.frmProductList.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.frmAddEditPurchase.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Purchase.frmPurchaseList.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.frmAddEditStore.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.frmListStores.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Main.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Properties.Resources.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Tests.frmTest.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.Tools.frmTotalAmountwithTax.resources
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.csproj.GenerateResource.cache
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.csproj.CoreCompileInputs.cache
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeCons.D8F46D9B.Up2Date
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.exe
+D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeConsuption\obj\Debug\HomeConsuption.pdb
