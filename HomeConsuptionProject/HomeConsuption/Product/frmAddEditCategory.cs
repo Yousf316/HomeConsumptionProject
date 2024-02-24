@@ -50,7 +50,7 @@ namespace HomeConsuption.Product
         {
             _objCategory = new clsCategory();
             lbCateID.Text = "[????]";
-           txtCateName.Text = "[????]";
+           txtCateName.Text = "";
         }
          private void _SetCategoryInfo()
         {
