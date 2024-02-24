@@ -67,7 +67,7 @@ namespace HomeConsuption.Product
             {
                 lbCateID.Text = _objCategory.CategoryID.ToString();
 
-                MessageBox.Show("", "تمت العملية بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("تمت العملية بنجاح", "تمت العملية بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CategoryInfoArgs categoryA = new CategoryInfoArgs(_objCategory.CategoryID, _objCategory.CategoryName);
                 DataBackCategoryID?.Invoke(this, categoryA);
 
