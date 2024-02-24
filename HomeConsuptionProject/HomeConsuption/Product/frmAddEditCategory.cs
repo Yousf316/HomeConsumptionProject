@@ -60,13 +60,13 @@ namespace HomeConsuption.Product
             {
                 lbCateID.Text = _objCategory.CategoryID.ToString();
 
-                MessageBox.Show("تمت العملية بنجاح", "تمت العملية بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("تمت العملية بنجاح", "تمت العملية بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 CategoryInfoArgs categoryA = new CategoryInfoArgs(_objCategory.CategoryID, _objCategory.CategoryName);
                 DataBackCategoryID?.Invoke(this, categoryA);
 
             }else
             {
-                MessageBox.Show("فشلت العملية", "فشلت العملية ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("فشلت العملية", "فشلت العملية ", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
