@@ -16,7 +16,7 @@ namespace HomeConsuption.Product
         enMode _mode = enMode.AddNew;
        public class CategoryInfoArgs : EventArgs
         {
-            public int CategoryID { get;  }
+            public int CategoryID { get;   }
             public string CategoryName { get;  }
 
            public CategoryInfoArgs(int CategoryID,string CategoryName)
