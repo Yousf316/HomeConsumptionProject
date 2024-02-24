@@ -1,12 +1,5 @@
 ﻿using HomeC_Business;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HomeConsuption.Product
@@ -23,8 +16,8 @@ namespace HomeConsuption.Product
         enMode _mode = enMode.AddNew;
        public class CategoryInfoArgs : EventArgs
         {
-            public int CategoryID { get; }
-            public string CategoryName { get; }
+            public int CategoryID { get;  }
+            public string CategoryName { get;  }
 
            public CategoryInfoArgs(int CategoryID,string CategoryName)
             {
@@ -73,7 +66,7 @@ namespace HomeConsuption.Product
 
             }else
             {
-                MessageBox.Show("", "فشلت العملية ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("فشلت العملية", "فشلت العملية ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
