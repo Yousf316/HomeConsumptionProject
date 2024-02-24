@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\HomeConsuptionProject",
-    "\\HomeConsuptionProject\\HomeConsuption",
-    "\\HomeConsuptionProject\\HomeC_DataAccess"
+    ""
   ],
-  "SelectedNode": "\\HomeConsuptionProject\\HomeConsuption\\HomeConsuption.csproj",
+  "SelectedNode": "\\HomeConsuption.sln",
   "PreviewInSolutionExplorer": false
 }

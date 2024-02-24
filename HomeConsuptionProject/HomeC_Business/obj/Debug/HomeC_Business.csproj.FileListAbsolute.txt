@@ -34,3 +34,12 @@ D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeC_Busine
 D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeC_Business\obj\Debug\HomeC_Bu.8880052C.Up2Date
 D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeC_Business\obj\Debug\HomeC_Business.dll
 D:\Program Files\Github Projects\HomeCProject\HomeConsuptionProject\HomeC_Business\obj\Debug\HomeC_Business.pdb
+D:\GitHubProjects\HomeCProject\HomeCProject\HomeConsuptionProject\HomeC_Business\bin\Debug\HomeC_Business.dll
+D:\GitHubProjects\HomeCProject\HomeCProject\HomeConsuptionProject\HomeC_Business\bin\Debug\HomeC_Business.pdb
+D:\GitHubProjects\HomeCProject\HomeCProject\HomeConsuptionProject\HomeC_Business\bin\Debug\HomeC_DataAccess.dll
+D:\GitHubProjects\HomeCProject\HomeCProject\HomeConsuptionProject\HomeC_Business\bin\Debug\HomeC_DataAccess.pdb
+D:\GitHubProjects\HomeCProject\HomeCProject\HomeConsuptionProject\HomeC_Business\obj\Debug\HomeC_Business.csproj.AssemblyReference.cache
+D:\GitHubProjects\HomeCProject\HomeCProject\HomeConsuptionProject\HomeC_Business\obj\Debug\HomeC_Business.csproj.CoreCompileInputs.cache
+D:\GitHubProjects\HomeCProject\HomeCProject\HomeConsuptionProject\HomeC_Business\obj\Debug\HomeC_Business.csproj.CopyComplete
+D:\GitHubProjects\HomeCProject\HomeCProject\HomeConsuptionProject\HomeC_Business\obj\Debug\HomeC_Business.dll
+D:\GitHubProjects\HomeCProject\HomeCProject\HomeConsuptionProject\HomeC_Business\obj\Debug\HomeC_Business.pdb
