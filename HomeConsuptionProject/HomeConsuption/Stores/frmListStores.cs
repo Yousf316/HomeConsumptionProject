@@ -37,6 +37,10 @@ namespace HomeConsuption
         private void _RefreshStoresList()
         {
             _dAllStores = clsStore.GetAllStores();
+
+            if (_dAllStores.Rows.Count == 0)
+                return;
+
             _dStores = _dAllStores.DefaultView.ToTable(false, "StoreID", "StoreName", "StoreLocation");
 
             RefreshdgvStoresHeaders();

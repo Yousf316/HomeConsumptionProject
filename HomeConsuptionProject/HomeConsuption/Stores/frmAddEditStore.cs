@@ -100,7 +100,7 @@ namespace HomeConsuption
             TextBox txtbox = (TextBox)sender ;
             if (txtbox.Text =="")
             {
-                e.Cancel = true;
+                //e.Cancel = true;
                 errorProvider1.SetError(txtbox, "يجب ملئ هذا الحقل");
             }else
             {
