@@ -169,12 +169,14 @@
             this.ادراجمقاسجديدToolStripMenuItem.Name = "ادراجمقاسجديدToolStripMenuItem";
             this.ادراجمقاسجديدToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
             this.ادراجمقاسجديدToolStripMenuItem.Text = "ادراج مقاس جديد";
+            this.ادراجمقاسجديدToolStripMenuItem.Click += new System.EventHandler(this.ادراجمقاسجديدToolStripMenuItem_Click);
             // 
             // قائمةالمقاساتToolStripMenuItem
             // 
             this.قائمةالمقاساتToolStripMenuItem.Name = "قائمةالمقاساتToolStripMenuItem";
             this.قائمةالمقاساتToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
             this.قائمةالمقاساتToolStripMenuItem.Text = "قائمة المقاسات";
+            this.قائمةالمقاساتToolStripMenuItem.Click += new System.EventHandler(this.قائمةالمقاساتToolStripMenuItem_Click);
             // 
             // التقاريرToolStripMenuItem
             // 

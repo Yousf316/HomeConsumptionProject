@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,8 @@ namespace HomeC_Business
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode _mode = enMode.AddNew;
 
-        int SizeID { get; set; }
-        string SizeName { get; set; }
+       public int SizeID { get; set; }
+       public string SizeName { get; set; }
         public clsSize()
         {
             this.SizeID = -1;
@@ -26,6 +27,12 @@ namespace HomeC_Business
             this.SizeName = SizeName;
             _mode = enMode.Update;
         }
+
+        public void SetParameters(string SizeName)
+        {
+            this.SizeName = SizeName;
+        }
+
         private bool _AddNewSizes()
         {
             int ID = -1;
@@ -60,6 +67,31 @@ namespace HomeC_Business
             }
             return false;
         }
+
+
+
+        public static clsSize FindSize(int SizeID)
+        {
+            string SizeName = "";
+
+            if (clsSizesData.FindSize(SizeID, ref SizeName))
+            {
+
+                return new clsSize(SizeID, SizeName);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static DataTable GetAllSizes()
+        {
+            return clsSizesData.GetAllSizes();
+        }
+
+
+
     }
 
 }

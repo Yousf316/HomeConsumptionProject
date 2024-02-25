@@ -1,4 +1,5 @@
 ﻿using HomeConsuption.Product;
+using HomeConsuption.Product.Sizes;
 using HomeConsuption.Purchase;
 using System;
 using System.Collections.Generic;
@@ -71,6 +72,18 @@ namespace HomeConsuption
         {
             frmCategoryList categoryList =new frmCategoryList();
             categoryList.ShowDialog();
+        }
+
+        private void قائمةالمقاساتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSizeList sizeList = new frmSizeList();
+            sizeList.ShowDialog();
+        }
+
+        private void ادراجمقاسجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditeSize addEditeSize = new frmAddEditeSize();
+            addEditeSize.ShowDialog();
         }
     }
 }

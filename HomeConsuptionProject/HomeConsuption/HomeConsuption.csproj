@@ -80,6 +80,18 @@
     <Compile Include="Product\frmProductList.Designer.cs">
       <DependentUpon>frmProductList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product\Sizes\frmAddEditeSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\Sizes\frmAddEditeSize.Designer.cs">
+      <DependentUpon>frmAddEditeSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\Sizes\frmSizeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\Sizes\frmSizeList.Designer.cs">
+      <DependentUpon>frmSizeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Purchase\frmAddEditPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +148,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Product\frmProductList.resx">
       <DependentUpon>frmProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\Sizes\frmAddEditeSize.resx">
+      <DependentUpon>frmAddEditeSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\Sizes\frmSizeList.resx">
+      <DependentUpon>frmSizeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Purchase\frmAddEditPurchase.resx">
       <DependentUpon>frmAddEditPurchase.cs</DependentUpon>
@@ -244,8 +262,6 @@
   <ItemGroup>
     <Content Include="icons8-home-64.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Product\Sizes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

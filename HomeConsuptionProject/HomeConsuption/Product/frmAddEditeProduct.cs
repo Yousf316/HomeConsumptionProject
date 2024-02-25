@@ -64,7 +64,7 @@ namespace HomeConsuption.Product
             txtProductEngName.Text = _Item.ItemName_EN.ToString();
             picProductImage.ImageLocation = _Item.ImagePath !=""? _Item.ImagePath:null;
             cmbCategories.SelectedItem = clsCategory.FindCategory(_Item.CategoryID).CategoryName;
-            
+            lnkRemoveImage.Visible = true;
 
 
         }
