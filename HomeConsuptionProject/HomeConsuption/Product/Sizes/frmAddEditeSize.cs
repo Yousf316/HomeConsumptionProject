@@ -43,7 +43,7 @@ namespace HomeConsuption.Product.Sizes
         {
             InitializeComponent();
             _SizeID = sizeID;
-            enMode _mode = enMode.Update;
+             _mode = enMode.Update;
         }
 
         private void _GetDefaultValues()
@@ -52,7 +52,7 @@ namespace HomeConsuption.Product.Sizes
             lbID.Text = "[????]";
             txtCateName.Text = "";
         }
-        private void _SetCategoryInfo()
+        private void _SetSizeInfo()
         {
             _objSize = clsSize.FindSize(_SizeID);
             lbID.Text = _objSize.SizeID.ToString();
@@ -88,7 +88,7 @@ namespace HomeConsuption.Product.Sizes
             }
             else
             {
-                _SetCategoryInfo();
+                _SetSizeInfo();
             }
         }
 
@@ -96,5 +96,9 @@ namespace HomeConsuption.Product.Sizes
         {
             this.Close();
         }
+
+
+        
+
     }
 }

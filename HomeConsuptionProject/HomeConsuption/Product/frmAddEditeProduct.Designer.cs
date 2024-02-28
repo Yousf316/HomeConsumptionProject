@@ -40,14 +40,11 @@
             this.lnkRemoveImage = new System.Windows.Forms.LinkLabel();
             this.label5 = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnAddNewCat = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.picProductImage = new System.Windows.Forms.PictureBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmbSizes = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picProductImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,7 +103,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(451, 310);
+            this.txtPrice.Location = new System.Drawing.Point(424, 261);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(112, 20);
             this.txtPrice.TabIndex = 8;
@@ -115,7 +112,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 13F);
-            this.label4.Location = new System.Drawing.Point(627, 310);
+            this.label4.Location = new System.Drawing.Point(600, 261);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(110, 22);
@@ -169,6 +166,10 @@
             this.lbID.TabIndex = 15;
             this.lbID.Text = "[?????]";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // btnAddNewCat
             // 
             this.btnAddNewCat.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
@@ -210,47 +211,11 @@
             this.picProductImage.TabIndex = 9;
             this.picProductImage.TabStop = false;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 13F);
-            this.label6.Location = new System.Drawing.Point(627, 261);
-            this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(77, 22);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "الأحجام :";
-            // 
-            // cmbSizes
-            // 
-            this.cmbSizes.FormattingEnabled = true;
-            this.cmbSizes.Location = new System.Drawing.Point(412, 264);
-            this.cmbSizes.Name = "cmbSizes";
-            this.cmbSizes.Size = new System.Drawing.Size(151, 21);
-            this.cmbSizes.TabIndex = 23;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(366, 255);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 36);
-            this.button1.TabIndex = 24;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // frmAddEditeProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 452);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.cmbSizes);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnAddNewCat);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.label5);
@@ -296,8 +261,5 @@
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Button btnAddNewCat;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cmbSizes;
-        private System.Windows.Forms.Button button1;
     }
 }

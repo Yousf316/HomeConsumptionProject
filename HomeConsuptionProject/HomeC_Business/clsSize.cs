@@ -90,7 +90,10 @@ namespace HomeC_Business
             return clsSizesData.GetAllSizes();
         }
 
-
+        public static DataTable GetAllSizesInfoWithPages(int PageNumber, int RowCountPerPage, ref int RowCount)
+        {
+            return clsSizesData.GetAllSizesInfoWithPages(PageNumber, RowCountPerPage, ref RowCount);
+        }
 
     }
 

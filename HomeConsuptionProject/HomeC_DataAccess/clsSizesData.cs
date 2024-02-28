@@ -139,6 +139,62 @@ WHERE SizeID =@SizeID ;";
         }
 
 
+
+        static public DataTable GetAllSizesInfoWithPages(int PageNumber, int RowCountPerPage, ref int RowCount)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                SqlCommand command = new SqlCommand("SP_GetAllSizesInfoWithPaging", connection);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                command.Parameters.AddWithValue("@RowCountPerPage", RowCountPerPage);
+                try
+                {
+
+                    // Create a SqlParameter object for the output parameter
+                    SqlParameter outputParameter = new SqlParameter();
+                    outputParameter.ParameterName = "@RowCount";
+                    outputParameter.SqlDbType = SqlDbType.Int;
+                    outputParameter.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(outputParameter);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+
+                    RowCount = (int)outputParameter.Value;
+
+
+
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return dt;
+        }
+
+
+
         static public DataTable GetAllSizes()
         {
             DataTable dt = new DataTable();

@@ -23,36 +23,33 @@ namespace HomeConsuption.Product.Sizes
         int _RowCount;
         int _PageSize { get => (int)Math.Ceiling((double)_RowCount / _RowsCountPerPage); }
 
-        private static DataTable _dAllStores;
-        private DataTable _dStores;
+
+        enum enMode { None, OnlyNumber }
+
+        private enMode _mode = enMode.None;
+
+        string _ColumnName;
 
         private void _RefreshTable(int PageNumber, int RowCountPerPage)
         {
-            // DataTable dtOrginal = clsItem.GetAllItems(PageNumber, RowCountPerPage, ref _RowCount);
-            DataTable dtOrginal = clsSize.GetAllSizes();
-            //if (_RowCount == 0)
-            //    return;
+             DataTable dtOrginal =clsSize.GetAllSizesInfoWithPages(PageNumber, RowCountPerPage, ref _RowCount);
+            
+            if (_RowCount == 0)
+                return;
 
-            // DataTable dtDistnaiton = dtOrginal.AsDataView().ToTable(false, "ItemID", "ItemName_AR", "ItemName_EN", "CategoryID", "Price");
+             DataTable dtDistnaiton = dtOrginal.AsDataView().ToTable(false, "SizeID", "SizeName");
 
            
 
-            dataGridView1.DataSource = dtOrginal;
+            dataGridView1.DataSource = dtDistnaiton;
 
-            //dataGridView1.Columns["ItemID"].HeaderText = "رقم المنتج";
-            //dataGridView1.Columns["ItemID"].Width = 100;
+            dataGridView1.Columns["SizeID"].HeaderText = "رقم الحجم";
+            dataGridView1.Columns["SizeID"].Width = 100;
 
-            //dataGridView1.Columns["ItemName_AR"].HeaderText = "أسم المنتج بالعربي";
-            //dataGridView1.Columns["ItemName_AR"].Width = 120;
+            dataGridView1.Columns["SizeName"].HeaderText = "أسم الحجم";
+            dataGridView1.Columns["SizeName"].Width = 220;
 
-            //dataGridView1.Columns["ItemName_EN"].HeaderText = "أسم المنتج بالاْنجليزي";
-            //dataGridView1.Columns["ItemName_EN"].Width = 120;
-
-            //dataGridView1.Columns["CategoryID"].HeaderText = "رقم المجموعة";
-            //dataGridView1.Columns["CategoryID"].Width = 100;
-
-            //dataGridView1.Columns["Price"].HeaderText = "السعر";
-            //dataGridView1.Columns["Price"].Width = 120;
+            
 
 
             lbPageSize.Text = _PageSize.ToString();
@@ -81,8 +78,8 @@ namespace HomeConsuption.Product.Sizes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //frmAddEditPurchase frmAddPurchase = new frmAddEditPurchase();
-            //frmAddPurchase.ShowDialog();
+            frmAddEditeSize  frmAdd = new frmAddEditeSize();
+            frmAdd.ShowDialog();
             _PageNumber = 1;
             Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
 
@@ -95,8 +92,8 @@ namespace HomeConsuption.Product.Sizes
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frmAddEditeProduct frmAddProduct = new frmAddEditeProduct();
-            frmAddProduct.ShowDialog();
+            frmAddEditeSize frmAdd = new frmAddEditeSize((int)dataGridView1.CurrentRow.Cells[0].Value);
+            frmAdd.ShowDialog();
             _PageNumber = 1;
             Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
         }
@@ -105,6 +102,32 @@ namespace HomeConsuption.Product.Sizes
         {
 
         }
+
+
+
+        private void _SearchOperator()
+        {
+
+            if (_mode == enMode.OnlyNumber)
+            {
+
+                if (!float.TryParse(txtSearch.Text, out float ID))
+                {
+                    txtSearch.Text = "";
+                    return;
+                }
+
+                dataGridView1.DataSource = clsPurchase.GetPurchaseInfo(this._ColumnName, txtSearch.Text);
+
+            }
+            else
+            {
+                dataGridView1.DataSource = clsPurchase.GetPurchaseInfo(this._ColumnName, txtSearch.Text);
+            }
+
+
+        }
+
 
     }
 }

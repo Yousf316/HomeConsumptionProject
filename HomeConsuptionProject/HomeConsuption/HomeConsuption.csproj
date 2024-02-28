@@ -86,6 +86,12 @@
     <Compile Include="Product\Sizes\frmAddEditeSize.Designer.cs">
       <DependentUpon>frmAddEditeSize.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product\Sizes\frmProductSizeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\Sizes\frmProductSizeList.Designer.cs">
+      <DependentUpon>frmProductSizeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product\Sizes\frmSizeList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Product\Sizes\frmAddEditeSize.resx">
       <DependentUpon>frmAddEditeSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\Sizes\frmProductSizeList.resx">
+      <DependentUpon>frmProductSizeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product\Sizes\frmSizeList.resx">
       <DependentUpon>frmSizeList.cs</DependentUpon>

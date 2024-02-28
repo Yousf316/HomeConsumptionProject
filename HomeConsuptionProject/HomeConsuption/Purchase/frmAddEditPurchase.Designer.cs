@@ -154,7 +154,8 @@
             // 
             this.cbTypeInvoice.FormattingEnabled = true;
             this.cbTypeInvoice.Items.AddRange(new object[] {
-            "سريعة"});
+            "سريعة",
+            "عادية"});
             this.cbTypeInvoice.Location = new System.Drawing.Point(436, 35);
             this.cbTypeInvoice.Name = "cbTypeInvoice";
             this.cbTypeInvoice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

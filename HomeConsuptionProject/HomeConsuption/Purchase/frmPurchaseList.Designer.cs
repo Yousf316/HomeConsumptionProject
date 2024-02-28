@@ -57,7 +57,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 260);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1144, 280);
+            this.dataGridView1.Size = new System.Drawing.Size(1144, 271);
             this.dataGridView1.TabIndex = 0;
             // 
             // cmsSettingsPurchase
@@ -93,7 +93,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 25F);
-            this.label1.Location = new System.Drawing.Point(456, 135);
+            this.label1.Location = new System.Drawing.Point(451, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 41);
             this.label1.TabIndex = 1;
@@ -138,7 +138,7 @@
             // 
             this.btnNext.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96__1_;
             this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNext.Location = new System.Drawing.Point(633, 567);
+            this.btnNext.Location = new System.Drawing.Point(654, 558);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(45, 47);
             this.btnNext.TabIndex = 359;
@@ -149,7 +149,7 @@
             // 
             this.btnprevious.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96;
             this.btnprevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnprevious.Location = new System.Drawing.Point(497, 567);
+            this.btnprevious.Location = new System.Drawing.Point(518, 558);
             this.btnprevious.Name = "btnprevious";
             this.btnprevious.Size = new System.Drawing.Size(45, 47);
             this.btnprevious.TabIndex = 358;
@@ -160,7 +160,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label2.Location = new System.Drawing.Point(130, 579);
+            this.label2.Location = new System.Drawing.Point(151, 570);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 19);
             this.label2.TabIndex = 360;
@@ -170,7 +170,7 @@
             // 
             this.lbPageSize.AutoSize = true;
             this.lbPageSize.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lbPageSize.Location = new System.Drawing.Point(71, 579);
+            this.lbPageSize.Location = new System.Drawing.Point(92, 570);
             this.lbPageSize.Name = "lbPageSize";
             this.lbPageSize.Size = new System.Drawing.Size(53, 19);
             this.lbPageSize.TabIndex = 361;
@@ -191,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 630);
+            this.ClientSize = new System.Drawing.Size(1164, 630);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbPageSize);
             this.Controls.Add(this.label2);
@@ -205,7 +205,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmPurchaseList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPurchaseList";
+            this.Text = "أدارة المشتريات";
             this.Load += new System.EventHandler(this.frmPurchaseList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.cmsSettingsPurchase.ResumeLayout(false);

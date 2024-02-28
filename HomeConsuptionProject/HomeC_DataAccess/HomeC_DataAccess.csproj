@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsCategoriesOfPurchasesData.cs" />
     <Compile Include="clsCategoryData.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsItemData.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="clsPurchaseData.cs" />
     <Compile Include="clsStoreData.cs" />
+    <Compile Include="clsPurchase_CategoriesData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

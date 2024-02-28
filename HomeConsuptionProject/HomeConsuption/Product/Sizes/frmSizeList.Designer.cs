@@ -35,7 +35,7 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnprevious = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -104,17 +104,21 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "الكل",
+            "رقم الحجم",
+            "أسم الحجم"});
             this.comboBox1.Location = new System.Drawing.Point(26, 244);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(131, 21);
             this.comboBox1.TabIndex = 377;
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(163, 244);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 20);
-            this.textBox1.TabIndex = 376;
+            this.txtSearch.Location = new System.Drawing.Point(163, 244);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(177, 20);
+            this.txtSearch.TabIndex = 376;
             // 
             // pictureBox1
             // 
@@ -141,6 +145,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Location = new System.Drawing.Point(12, 270);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -159,7 +164,7 @@
             // بطاقةمعلوماتالمنتجToolStripMenuItem
             // 
             this.بطاقةمعلوماتالمنتجToolStripMenuItem.Name = "بطاقةمعلوماتالمنتجToolStripMenuItem";
-            this.بطاقةمعلوماتالمنتجToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.بطاقةمعلوماتالمنتجToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.بطاقةمعلوماتالمنتجToolStripMenuItem.Text = "بطاقة بيانات المنتج";
             // 
             // تعديلمToolStripMenuItem
@@ -172,7 +177,7 @@
             // حذفالمنتجToolStripMenuItem
             // 
             this.حذفالمنتجToolStripMenuItem.Name = "حذفالمنتجToolStripMenuItem";
-            this.حذفالمنتجToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.حذفالمنتجToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.حذفالمنتجToolStripMenuItem.Text = "حذف المنتج";
             // 
             // frmSizeList
@@ -186,12 +191,12 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnprevious);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmSizeList";
-            this.Text = "frmSizeList";
+            this.Text = "أدارة الاحجام";
             this.Load += new System.EventHandler(this.frmProductList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -209,7 +214,7 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnprevious;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;

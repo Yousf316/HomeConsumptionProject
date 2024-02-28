@@ -19,13 +19,12 @@ namespace HomeC_DataAccess
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@Size", Size != null && Size != -1 ? Size : (object)System.DBNull.Value);
-                cmd.Parameters.AddWithValue("@Size", !string.IsNullOrEmpty(Description) ? Description : (object)System.DBNull.Value);
+                cmd.Parameters.AddWithValue("@Description", !string.IsNullOrEmpty(Description) ? Description : (object)System.DBNull.Value);
 
 
                 if (ItemID != -1 && ItemID != null)
                     cmd.Parameters.AddWithValue("@ItemID", ItemID);
-                else
-                    cmd.Parameters.AddWithValue("@ItemID", System.DBNull.Value);
+                
 
                 cmd.Parameters.AddWithValue("@ItemName", ItemName);
 

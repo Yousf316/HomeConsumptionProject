@@ -37,7 +37,7 @@ namespace HomeConsuption.Product
         {
             InitializeComponent();
             _CategoryID = categoryID;
-            enMode _mode = enMode.Update;
+             _mode = enMode.Update;
 
         }
 
