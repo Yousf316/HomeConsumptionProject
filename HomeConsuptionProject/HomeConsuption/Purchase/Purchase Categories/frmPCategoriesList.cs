@@ -5,22 +5,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HomeConsuption.Product
+namespace HomeConsuption.Purchase.Purchase_Categories
 {
-    public partial class frmCategoryList : Form
+    public partial class frmPCategoriesList : Form
     {
-        public frmCategoryList()
+        public frmPCategoriesList()
         {
             InitializeComponent();
         }
 
-        private static DataTable _dAllStores;
-        private DataTable _dStores;
+
+        private static DataTable _dAllData;
+        private DataTable _dData;
 
 
         private void frmCategoryList_Load(object sender, EventArgs e)
@@ -30,36 +30,36 @@ namespace HomeConsuption.Product
 
         private void _RefreshStoresList()
         {
-            _dAllStores = clsCategory.GetAllCatgoriesInfo();
-            _dStores = _dAllStores.DefaultView.ToTable(false, "CategoryID", "CategoryName");
+            _dAllData = clsPurchase_Category.GetAllPurchase_Categories();
+            _dData = _dAllData.DefaultView.ToTable(false, "PCategoryID", "CategoryName");
 
             RefreshdgvStoresHeaders();
         }
 
         private void RefreshdgvStoresHeaders()
         {
-            dgvList.DataSource = _dStores;
+            dgvList.DataSource = _dData;
 
             if (dgvList.RowCount > 0)
             {
-                dgvList.Columns["CategoryID"].HeaderText = "الرقم";
-                
+                dgvList.Columns["PCategoryID"].HeaderText = "الرقم";
+
 
                 dgvList.Columns["CategoryName"].HeaderText = "أسم المجموعة";
-                
 
-             
+
+
 
             }
         }
 
         private void _SearchStores(string CategoryName)
         {
-       
 
-            _dStores.DefaultView.RowFilter = string.Format("[CategoryName] like '%{0}%'", CategoryName);
 
-           
+            _dData.DefaultView.RowFilter = string.Format("[CategoryName] like '%{0}%'", CategoryName);
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -76,20 +76,15 @@ namespace HomeConsuption.Product
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            frmAddEditCategory AddEditCategory = new frmAddEditCategory();
-            AddEditCategory.ShowDialog();
+          frmAddEditePCategories addEditePCategories = new frmAddEditePCategories();
+            addEditePCategories.ShowDialog();
             Parallel.Invoke(() => _RefreshStoresList());
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
         }
 
         private void تعديلToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddEditCategory addEditCategory = new frmAddEditCategory((int)dgvList.CurrentRow.Cells[0].Value);
-            addEditCategory.ShowDialog();
+            frmAddEditePCategories pCategoriesEdite = new frmAddEditePCategories( (int)dgvList.CurrentRow.Cells[0].Value);
+            pCategoriesEdite.ShowDialog();
             Parallel.Invoke(() => _RefreshStoresList());
         }
     }

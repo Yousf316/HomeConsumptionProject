@@ -1,6 +1,7 @@
 ﻿using HomeConsuption.Product;
 using HomeConsuption.Product.Sizes;
 using HomeConsuption.Purchase;
+using HomeConsuption.Purchase.Purchase_Categories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,6 +85,19 @@ namespace HomeConsuption
         {
             frmAddEditeSize addEditeSize = new frmAddEditeSize();
             addEditeSize.ShowDialog();
+        }
+
+        private void أدراجصنفجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditePCategories editePCategories = new frmAddEditePCategories();
+            editePCategories.ShowDialog();
+        }
+
+        private void أدارةالاصنافToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPCategoriesList pcategoriesList = new frmPCategoriesList();
+            pcategoriesList.ShowDialog();
+
         }
     }
 }

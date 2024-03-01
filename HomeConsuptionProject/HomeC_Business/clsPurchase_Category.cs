@@ -1,6 +1,7 @@
 ﻿using HomeC_DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,8 @@ namespace HomeC_Business
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode _mode = enMode.AddNew;
 
-        int PCategoryID { get; set; }
-        string CategoryName { get; set; }
+       public int PCategoryID { get; set; }
+       public string CategoryName { get; set; }
         public clsPurchase_Category()
         {
             this.PCategoryID = -1;
@@ -76,7 +77,26 @@ namespace HomeC_Business
                 return null;
             }
         }
+         public static clsPurchase_Category FindPurchase_Category(string CategoryName)
+        {
+          
+            int PCategoryID = -1;
+            if (clsPurchase_CategoriesData.FindPurchase_Categories(ref PCategoryID,  CategoryName))
+            {
 
+                return new clsPurchase_Category(PCategoryID, CategoryName);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        public static DataTable GetAllPurchase_Categories()
+        {
+            return clsPurchase_CategoriesData.GetAllPurchase_Categories();
+        }
 
     }
 

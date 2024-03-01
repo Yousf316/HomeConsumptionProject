@@ -132,6 +132,40 @@ namespace HomeC_DataAccess
             return isFound;
         }
 
+         static public bool FindPurchase_Categories(ref int PCategoryID,  string CategoryName)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"SELECT * FROM [dbo].[Purchase_Categories] WHERE CategoryName =@CategoryName ;";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            cmd.Parameters.AddWithValue("@CategoryName", CategoryName);
+            
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                { 
+                if (reader.Read())
+                    isFound = true; PCategoryID = Convert.ToInt32( reader["PCategoryID"]);
+                }
+
+                reader.Close();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+
 
 
         static public bool DeletePurchase_Categories(int PCategoryID)

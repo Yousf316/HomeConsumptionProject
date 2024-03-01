@@ -35,6 +35,9 @@
             this.txtStoreName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAddNewCategory = new System.Windows.Forms.Button();
+            this.cmbCategoryList = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbTypeInvoice = new System.Windows.Forms.ComboBox();
             this.txtStoreID = new System.Windows.Forms.TextBox();
@@ -125,6 +128,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnAddNewCategory);
+            this.panel1.Controls.Add(this.cmbCategoryList);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbTypeInvoice);
             this.panel1.Controls.Add(this.txtStoreID);
@@ -139,6 +145,36 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1247, 117);
             this.panel1.TabIndex = 104;
+            // 
+            // btnAddNewCategory
+            // 
+            this.btnAddNewCategory.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
+            this.btnAddNewCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddNewCategory.Location = new System.Drawing.Point(390, 70);
+            this.btnAddNewCategory.Name = "btnAddNewCategory";
+            this.btnAddNewCategory.Size = new System.Drawing.Size(40, 36);
+            this.btnAddNewCategory.TabIndex = 282;
+            this.btnAddNewCategory.UseVisualStyleBackColor = true;
+            this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
+            // 
+            // cmbCategoryList
+            // 
+            this.cmbCategoryList.FormattingEnabled = true;
+            this.cmbCategoryList.Location = new System.Drawing.Point(436, 79);
+            this.cmbCategoryList.Name = "cmbCategoryList";
+            this.cmbCategoryList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbCategoryList.Size = new System.Drawing.Size(128, 21);
+            this.cmbCategoryList.TabIndex = 281;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.label10.Location = new System.Drawing.Point(579, 76);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(134, 24);
+            this.label10.TabIndex = 280;
+            this.label10.Text = ":تصنيف الفاتورة";
             // 
             // label2
             // 
@@ -457,5 +493,8 @@
         private System.Windows.Forms.ComboBox cbTypeInvoice;
         private System.Windows.Forms.Button btnprevious;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbCategoryList;
+        private System.Windows.Forms.Button btnAddNewCategory;
     }
 }

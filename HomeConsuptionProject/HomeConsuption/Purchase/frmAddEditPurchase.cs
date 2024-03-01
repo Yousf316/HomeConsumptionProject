@@ -1,4 +1,5 @@
 ﻿using HomeC_Business;
+using HomeConsuption.Purchase.Purchase_Categories;
 using HomeConsuption.Tools;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,7 @@ namespace HomeConsuption
 
         private void AddEditPurchase_Load(object sender, EventArgs e)
         {
+            _GetAllCategories();
             if (_mode == enMode.Addnew)
             {
 
@@ -69,6 +71,7 @@ namespace HomeConsuption
             cbTypeInvoice.SelectedIndex = 0;
             cbTypeInvoice.Enabled = true;
 
+            cmbCategoryList.SelectedIndex = 0;
         }
 
 
@@ -96,6 +99,7 @@ namespace HomeConsuption
             cbTypeInvoice.SelectedIndex = purchase.Type ==1? 0:1;
             cbTypeInvoice.Enabled = false;
 
+            cmbCategoryList.SelectedItem = clsPurchase_Category.FindPurchase_Category(purchase.PCategoryID).CategoryName;
 
         }
 
@@ -279,10 +283,11 @@ namespace HomeConsuption
 
             Discount = Discount ==0.00? null :Discount;
             int StoreID = Convert.ToInt32(txtStoreID.Text);
-            
+             
+            int pCategoryID = clsPurchase_Category.FindPurchase_Category(cmbCategoryList.SelectedItem.ToString()).PCategoryID;
 
 
-            purchase.SetValues(dtpDate.Value, TotalBeforTax, TaxAmount, TotalAfterTax, StoreID, _TypeID, Discount);
+            purchase.SetValues(dtpDate.Value, TotalBeforTax, TaxAmount, TotalAfterTax, StoreID, _TypeID, pCategoryID, Discount);
 
             if (purchase.SavePurchases())
             {
@@ -297,6 +302,8 @@ namespace HomeConsuption
 
         }
 
+
+       
         private void btnSave_Click(object sender, EventArgs e)
         {
           if(txtStoreID.Text =="")
@@ -345,6 +352,25 @@ namespace HomeConsuption
         private void txtTotalAmount_TextChanged(object sender, EventArgs e)
         {
             _SetTotalAmountBeforeTax();
+        }
+
+
+        private void _GetAllCategories()
+        {
+            DataTable dt = clsPurchase_Category.GetAllPurchase_Categories();
+            cmbCategoryList.Items.Clear();
+            foreach (DataRow dr in dt.Rows)
+            {
+                cmbCategoryList.Items.Add(dr["CategoryName"].ToString());
+            }
+
+        }
+
+        private void btnAddNewCategory_Click(object sender, EventArgs e)
+        {
+           frmAddEditePCategories pCategories = new frmAddEditePCategories();
+            pCategories.ShowDialog();
+            _GetAllCategories();
         }
     }
 }

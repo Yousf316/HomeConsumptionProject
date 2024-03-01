@@ -26,6 +26,10 @@ namespace HomeC_Business
        public int StoreID { get; set; }
        public int Type { get; set; }
        public float? Discount { get; set; }
+
+       public int PCategoryID { get; set; }
+
+      
         public clsPurchase()
         {
             this._PurchaseID = -1;
@@ -35,11 +39,13 @@ namespace HomeC_Business
             this.TotalAfterTax = -1;
             this.StoreID = -1;
             this.Type = -1;
+            this.PCategoryID = -1;
             this.Discount = null;
+           
             _mode = enMode.AddNew;
         }
 
-        private clsPurchase(int PurchaseID, DateTime IssueDate, float TotalBeforTax, float TaxAmount, float TotalAfterTax, int StoreID,int Type,float? Discount)
+        private clsPurchase(int PurchaseID, DateTime IssueDate, float TotalBeforTax, float TaxAmount, float TotalAfterTax, int StoreID,int Type,float? Discount,int PCategoryID)
         {
             this._PurchaseID = PurchaseID;
             this.IssueDate = IssueDate;
@@ -49,10 +55,12 @@ namespace HomeC_Business
             this.StoreID = StoreID;
             this.Discount = Discount;
             this.Type = Type;
+            this.PCategoryID = PCategoryID;
             this.objStoreInfo = clsStore.Findstore(StoreID);
+
             _mode = enMode.Update;
         }
-         public  bool SetValues( DateTime IssueDate, float TotalBeforTax, float TaxAmount, float TotalAfterTax, int StoreID,int Type,float? Discount =null)
+         public  bool SetValues( DateTime IssueDate, float TotalBeforTax, float TaxAmount, float TotalAfterTax, int StoreID,int Type, int PCategoryID, float? Discount =null )
         {
            
             this.IssueDate = IssueDate;
@@ -62,6 +70,7 @@ namespace HomeC_Business
             this.StoreID = StoreID;
             this.Discount = Discount;
             this.Type=Type;
+            this.PCategoryID = PCategoryID;
 
             return true;
         }
@@ -69,7 +78,7 @@ namespace HomeC_Business
         private bool _AddNewPurchases()
         {
             int ID = -1;
-            clsPurchaseData.InsertPurchase(ref ID, this.IssueDate, this.TotalBeforTax, this.TaxAmount,this.TotalAfterTax, this.StoreID,this.Type,this.Discount);
+            clsPurchaseData.InsertPurchase(ref ID, this.IssueDate, this.TotalBeforTax, this.TaxAmount,this.TotalAfterTax, this.StoreID,this.Type,this.Discount,this.PCategoryID);
             this._PurchaseID = ID;
             return this._PurchaseID != -1;
         }
@@ -77,7 +86,7 @@ namespace HomeC_Business
 
         private bool _UpdatePurchases()
         {
-            return clsPurchaseData.UpdatePurchase(this._PurchaseID, this.IssueDate, this.TotalBeforTax, this.TaxAmount, this.TotalAfterTax, this.StoreID,this.Type, this.Discount);
+            return clsPurchaseData.UpdatePurchase(this._PurchaseID, this.IssueDate, this.TotalBeforTax, this.TaxAmount, this.TotalAfterTax, this.StoreID,this.Type, this.Discount, this.PCategoryID);
         }
         public bool SavePurchases()
         {
@@ -113,11 +122,12 @@ namespace HomeC_Business
             float? Discount =null;
             int StoreID = -1;
             int Type = -1;
+            int PCategoryID = -1;
 
-            if (clsPurchaseData.FindPurchase(PurchaseID, ref IssueDate, ref TotalAmountBeforeTax,ref TaxAmount,ref TotalafterTax, ref StoreID ,ref Type, ref Discount))
+            if (clsPurchaseData.FindPurchase(PurchaseID, ref IssueDate, ref TotalAmountBeforeTax,ref TaxAmount,ref TotalafterTax, ref StoreID ,ref Type, ref Discount,ref PCategoryID))
             {
 
-                return new clsPurchase(PurchaseID, IssueDate, TotalAmountBeforeTax, TaxAmount, TotalafterTax, StoreID,Type, Discount);
+                return new clsPurchase(PurchaseID, IssueDate, TotalAmountBeforeTax, TaxAmount, TotalafterTax, StoreID,Type, Discount, PCategoryID);
             }
             else
             {

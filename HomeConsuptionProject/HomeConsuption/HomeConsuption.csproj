@@ -110,6 +110,18 @@
     <Compile Include="Purchase\frmPurchaseList.Designer.cs">
       <DependentUpon>frmPurchaseList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Purchase\Purchase Categories\frmAddEditePCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Purchase Categories\frmAddEditePCategories.Designer.cs">
+      <DependentUpon>frmAddEditePCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\Purchase Categories\frmPCategoriesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Purchase Categories\frmPCategoriesList.Designer.cs">
+      <DependentUpon>frmPCategoriesList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stores\frmAddEditStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Purchase\frmPurchaseList.resx">
       <DependentUpon>frmPurchaseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Purchase Categories\frmAddEditePCategories.resx">
+      <DependentUpon>frmAddEditePCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Purchase Categories\frmPCategoriesList.resx">
+      <DependentUpon>frmPCategoriesList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stores\frmAddEditStore.resx">
       <DependentUpon>frmAddEditStore.cs</DependentUpon>
