@@ -135,9 +135,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtStoreName);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmAddEditStore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddEditStore";
+            this.Text = "أدراج متجر";
             this.Load += new System.EventHandler(this.AddEditStore_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

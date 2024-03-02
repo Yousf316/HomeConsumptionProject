@@ -71,7 +71,10 @@ namespace HomeConsuption
             cbTypeInvoice.SelectedIndex = 0;
             cbTypeInvoice.Enabled = true;
 
-            cmbCategoryList.SelectedIndex = 0;
+            cmbCategoryList.SelectedItem = "عام";
+
+            this.Text = "أصدار فاتورة مشتريات";
+
         }
 
 
@@ -101,6 +104,8 @@ namespace HomeConsuption
 
             cmbCategoryList.SelectedItem = clsPurchase_Category.FindPurchase_Category(purchase.PCategoryID).CategoryName;
 
+
+            this.Text = "تعديل فاتورة مشتريات";
         }
 
         private void btnAddNewStore_Click(object sender, EventArgs e)

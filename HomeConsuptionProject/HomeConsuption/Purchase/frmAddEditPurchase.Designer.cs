@@ -111,6 +111,7 @@
             // 
             this.txtStoreName.Location = new System.Drawing.Point(856, 32);
             this.txtStoreName.Name = "txtStoreName";
+            this.txtStoreName.ReadOnly = true;
             this.txtStoreName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtStoreName.Size = new System.Drawing.Size(250, 20);
             this.txtStoreName.TabIndex = 0;
