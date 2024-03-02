@@ -390,6 +390,190 @@ namespace HomeC_DataAccess
         }
 
 
+        static public float GetTotalAllPurchases()
+        {
+            float Total = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                SqlCommand command = new SqlCommand("SP_GetAlltotalPurchase", connection);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+               
+                try
+                {
+
+                    // Create a SqlParameter object for the output parameter
+                    SqlParameter outputParameter = new SqlParameter();
+                    outputParameter.ParameterName = "@TotalAfterTax";
+                    outputParameter.SqlDbType = SqlDbType.SmallMoney;
+                    outputParameter.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(outputParameter);
+
+                    connection.Open();
+
+                    command.ExecuteNonQuery();
+                    
+
+                    Total = Convert.ToSingle(outputParameter.Value);
+
+
+
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return Total;
+        }
+
+
+        static public float GetTotalPurchasesByCategoryName(string CategoryName, string DateFrom, string DateTo)
+        {
+            float Total = 0;
+
+            string query = @"SELECT sum(TotalAfterTax) as Total
+  FROM [HomeConsumptionDB].[dbo].[View_PurchasesInfo]
+  where CategoryName = @CategoryName and IssueDate between @DateFrom and  @DateTo ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                
+
+                command.Parameters.AddWithValue("@CategoryName", CategoryName);
+                command.Parameters.AddWithValue("@DateFrom", DateFrom);
+                command.Parameters.AddWithValue("@DateTo", DateTo);
+                try
+                {
+
+                    // Create a SqlParameter object for the output parameter
+                    
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+                   
+                    if(result != null && float.TryParse(result.ToString(),out float _Total))
+                    {
+                        Total = _Total;
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return Total;
+        }
+          static public float GetTotalPurchasesByCategoryName(string CategoryName)
+        {
+            float Total = 0;
+
+            string query = @"SELECT sum(TotalAfterTax) as Total
+  FROM [HomeConsumptionDB].[dbo].[View_PurchasesInfo]
+  where CategoryName = @CategoryName ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                
+
+                command.Parameters.AddWithValue("@CategoryName", CategoryName);
+                
+                try
+                {
+
+                    // Create a SqlParameter object for the output parameter
+                    
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+                   
+                    if(result != null && float.TryParse(result.ToString(),out float _Total))
+                    {
+                        Total = _Total;
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return Total;
+        }
+
+        static public float GetTotalPurchasesByDate(string DateFrom, string DateTo)
+        {
+            float Total = 0;
+
+            string query = @"SELECT sum(TotalAfterTax) as Total
+  FROM [HomeConsumptionDB].[dbo].[View_PurchasesInfo]
+  where  IssueDate between @DateFrom and  @DateTo ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                
+
+                
+                command.Parameters.AddWithValue("@DateFrom", DateFrom);
+                command.Parameters.AddWithValue("@DateTo", DateTo);
+                try
+                {
+
+                    // Create a SqlParameter object for the output parameter
+                    
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+                   
+                    if(result != null && float.TryParse(result.ToString(),out float _Total))
+                    {
+                        Total = _Total;
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return Total;
+        }
+
+
 
     }
 }

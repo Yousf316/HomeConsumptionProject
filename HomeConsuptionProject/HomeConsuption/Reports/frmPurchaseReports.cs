@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeC_Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,54 @@ namespace HomeConsuption.Reports
                 dtpFrom.Enabled = true;
                 dtpTo.Enabled = true;
             }
+
+        }
+        private void _GetAllCategories()
+        {
+            DataTable dt = clsPurchase_Category.GetAllPurchase_Categories();
+            cmbCategories.Items.Clear();
+            foreach (DataRow dr in dt.Rows)
+            {
+                cmbCategories.Items.Add(dr["CategoryName"].ToString());
+            }
+
+        }
+        private void frmPurchaseReports_Load(object sender, EventArgs e)
+        {
+            _GetAllCategories();
+            cmbCategories.SelectedItem = "عام";
+
+            cbAllDate.Checked = true;
+            cbAllCategories.Checked = true;
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            if(cbAllCategories.Checked && cbAllDate.Checked)
+            {
+               lbTotall.Text = clsPurchase.GetTotalAllPurchases().ToString("F2");
+                return;
+            }
+
+            if (cbAllCategories.Checked && !cbAllDate.Checked)
+            {
+                lbTotall.Text = clsPurchase.GetTotalAllPurchases(dtpFrom.Value.ToString("d"),dtpTo.Value.ToString("d")).ToString("F2");
+                return;
+            }
+
+
+            if (!cbAllCategories.Checked && !cbAllDate.Checked)
+            {
+                lbTotall.Text = clsPurchase.GetTotalAllPurchases(cmbCategories.SelectedItem.ToString(),dtpFrom.Value.ToString("d"), dtpTo.Value.ToString("d")).ToString("F2");
+                return;
+            }
+
+             if (!cbAllCategories.Checked && cbAllDate.Checked)
+            {
+                lbTotall.Text = clsPurchase.GetTotalAllPurchases(cmbCategories.SelectedItem.ToString()).ToString("F2");
+                return;
+            }
+
 
         }
     }

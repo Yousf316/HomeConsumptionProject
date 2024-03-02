@@ -165,6 +165,29 @@ namespace HomeC_Business
             return clsPurchaseData.GetPurchasesInfo(ColumnName,Value);
         }
 
+        public static float GetTotalAllPurchases()
+        {
+            return clsPurchaseData.GetTotalAllPurchases();
+        }
+
+        public static float GetTotalAllPurchases(string CategoryName,string DateFrom ,string DateTo)
+        {
+            return clsPurchaseData.GetTotalPurchasesByCategoryName(CategoryName,DateFrom,DateTo);
+        }
+          public static float GetTotalAllPurchases(string CategoryName)
+        {
+            return clsPurchaseData.GetTotalPurchasesByCategoryName(CategoryName);
+        }
+
+        public static float GetTotalAllPurchases(string DateFrom ,string DateTo)
+        {
+            return clsPurchaseData.GetTotalPurchasesByDate(DateFrom,DateTo);
+        }
+
+
+
+
+
 
     }
 

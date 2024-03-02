@@ -235,6 +235,7 @@
             this.تقريرالمشترياتToolStripMenuItem.Name = "تقريرالمشترياتToolStripMenuItem";
             this.تقريرالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(219, 32);
             this.تقريرالمشترياتToolStripMenuItem.Text = "تقرير المشتريات";
+            this.تقريرالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.تقريرالمشترياتToolStripMenuItem_Click);
             // 
             // تقريرالمنتجاتToolStripMenuItem
             // 

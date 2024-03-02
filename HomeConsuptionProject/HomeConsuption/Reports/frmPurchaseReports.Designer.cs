@@ -44,11 +44,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbTotall = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lbToDate = new System.Windows.Forms.Label();
-            this.lbFromDate = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lb1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -168,6 +163,7 @@
             this.btnOK.TabIndex = 11;
             this.btnOK.Text = "تنفيذ";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // panel1
             // 
@@ -190,11 +186,6 @@
             // 
             this.groupBox1.Controls.Add(this.lbTotall);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.lbToDate);
-            this.groupBox1.Controls.Add(this.lbFromDate);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.lb1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 14F);
             this.groupBox1.Location = new System.Drawing.Point(34, 312);
             this.groupBox1.Name = "groupBox1";
@@ -207,7 +198,7 @@
             // 
             this.lbTotall.AutoSize = true;
             this.lbTotall.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lbTotall.Location = new System.Drawing.Point(160, 157);
+            this.lbTotall.Location = new System.Drawing.Point(111, 86);
             this.lbTotall.Name = "lbTotall";
             this.lbTotall.Size = new System.Drawing.Size(71, 24);
             this.lbTotall.TabIndex = 18;
@@ -217,74 +208,26 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label8.Location = new System.Drawing.Point(325, 157);
+            this.label8.Location = new System.Drawing.Point(254, 86);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 24);
             this.label8.TabIndex = 17;
             this.label8.Text = ": المجموع";
             // 
-            // lbToDate
-            // 
-            this.lbToDate.AutoSize = true;
-            this.lbToDate.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lbToDate.Location = new System.Drawing.Point(123, 76);
-            this.lbToDate.Name = "lbToDate";
-            this.lbToDate.Size = new System.Drawing.Size(71, 24);
-            this.lbToDate.TabIndex = 16;
-            this.lbToDate.Text = "[?????]";
-            // 
-            // lbFromDate
-            // 
-            this.lbFromDate.AutoSize = true;
-            this.lbFromDate.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lbFromDate.Location = new System.Drawing.Point(123, 31);
-            this.lbFromDate.Name = "lbFromDate";
-            this.lbFromDate.Size = new System.Drawing.Size(71, 24);
-            this.lbFromDate.TabIndex = 15;
-            this.lbFromDate.Text = "[?????]";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label7.Location = new System.Drawing.Point(245, 71);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 24);
-            this.label7.TabIndex = 14;
-            this.label7.Text = ": ألى";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label6.Location = new System.Drawing.Point(245, 31);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 24);
-            this.label6.TabIndex = 13;
-            this.label6.Text = ": من";
-            // 
-            // lb1
-            // 
-            this.lb1.AutoSize = true;
-            this.lb1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lb1.Location = new System.Drawing.Point(350, 31);
-            this.lb1.Name = "lb1";
-            this.lb1.Size = new System.Drawing.Size(68, 24);
-            this.lb1.TabIndex = 12;
-            this.lb1.Text = ": الفترة";
-            // 
             // frmPurchaseReports
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 599);
+            this.ClientSize = new System.Drawing.Size(868, 599);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmPurchaseReports";
             this.Text = "تقرير المشتريات";
+            this.Load += new System.EventHandler(this.frmPurchaseReports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -311,11 +254,6 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lbToDate;
-        private System.Windows.Forms.Label lbFromDate;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.Label lbTotall;
         private System.Windows.Forms.Label label8;
     }

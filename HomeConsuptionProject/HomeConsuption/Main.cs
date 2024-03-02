@@ -2,6 +2,7 @@
 using HomeConsuption.Product.Sizes;
 using HomeConsuption.Purchase;
 using HomeConsuption.Purchase.Purchase_Categories;
+using HomeConsuption.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -98,6 +99,12 @@ namespace HomeConsuption
             frmPCategoriesList pcategoriesList = new frmPCategoriesList();
             pcategoriesList.ShowDialog();
 
+        }
+
+        private void تقريرالمشترياتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPurchaseReports purchaseReports = new frmPurchaseReports();
+            purchaseReports.ShowDialog();
         }
     }
 }
