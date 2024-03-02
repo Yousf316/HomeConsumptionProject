@@ -9,6 +9,7 @@ CREATE PROCEDURE [dbo].[SP_UpdatePurchase]
       @StoreID int ,
 	  @Discount smallmoney null ,
 	  @Type int ,
+	  @PCategoryID int ,
 	  @PurchaseID int 
 AS
 BEGIN
@@ -19,7 +20,8 @@ BEGIN
       [TotalAfterTax] = @TotalAfterTax ,
       [StoreID]       = @StoreID ,
 	  [Discount]       = @Discount,
-	  [Type]			=@Type
+	  [Type]			=@Type,
+	  [PCategoryID]     =@PCategoryID
 
  WHERE [dbo].[Purchases].PurchaseID = @PurchaseID
 	  return select @@ROWCOUNT
