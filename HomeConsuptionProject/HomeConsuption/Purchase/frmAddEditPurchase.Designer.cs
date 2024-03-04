@@ -35,13 +35,11 @@
             this.txtStoreName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAddNewCategory = new System.Windows.Forms.Button();
             this.cmbCategoryList = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbTypeInvoice = new System.Windows.Forms.ComboBox();
             this.txtStoreID = new System.Windows.Forms.TextBox();
-            this.btnAddNewStore = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtTotalAfterTax = new System.Windows.Forms.TextBox();
@@ -57,10 +55,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbRecordCount = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnAddRecord = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnprevious = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnAddNewCategory = new System.Windows.Forms.Button();
+            this.btnAddNewStore = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -147,17 +148,6 @@
             this.panel1.Size = new System.Drawing.Size(1247, 117);
             this.panel1.TabIndex = 104;
             // 
-            // btnAddNewCategory
-            // 
-            this.btnAddNewCategory.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
-            this.btnAddNewCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddNewCategory.Location = new System.Drawing.Point(390, 70);
-            this.btnAddNewCategory.Name = "btnAddNewCategory";
-            this.btnAddNewCategory.Size = new System.Drawing.Size(40, 36);
-            this.btnAddNewCategory.TabIndex = 282;
-            this.btnAddNewCategory.UseVisualStyleBackColor = true;
-            this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
-            // 
             // cmbCategoryList
             // 
             this.cmbCategoryList.FormattingEnabled = true;
@@ -209,22 +199,14 @@
             this.txtStoreID.TabIndex = 100;
             this.txtStoreID.TabStop = false;
             // 
-            // btnAddNewStore
-            // 
-            this.btnAddNewStore.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
-            this.btnAddNewStore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddNewStore.Location = new System.Drawing.Point(729, 23);
-            this.btnAddNewStore.Name = "btnAddNewStore";
-            this.btnAddNewStore.Size = new System.Drawing.Size(40, 36);
-            this.btnAddNewStore.TabIndex = 20;
-            this.btnAddNewStore.UseVisualStyleBackColor = true;
-            this.btnAddNewStore.Click += new System.EventHandler(this.btnAddNewStore_Click);
-            // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 143);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dataGridView1.Size = new System.Drawing.Size(1244, 280);
             this.dataGridView1.TabIndex = 7;
@@ -389,13 +371,14 @@
             this.label14.TabIndex = 27;
             this.label14.Text = ": عدد البنود ";
             // 
-<<<<<<< Updated upstream
-=======
+
             // btnAddRecord
             // 
             this.btnAddRecord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddRecord.Font = new System.Drawing.Font("Tahoma", 10F);
+
             this.btnAddRecord.Location = new System.Drawing.Point(884, 440);
+
             this.btnAddRecord.Name = "btnAddRecord";
             this.btnAddRecord.Size = new System.Drawing.Size(142, 36);
             this.btnAddRecord.TabIndex = 283;
@@ -403,7 +386,7 @@
             this.btnAddRecord.UseVisualStyleBackColor = true;
             this.btnAddRecord.Click += new System.EventHandler(this.button1_Click);
             // 
->>>>>>> Stashed changes
+
             // btnNext
             // 
             this.btnNext.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96__1_;
@@ -446,11 +429,34 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnAddNewCategory
+            // 
+            this.btnAddNewCategory.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
+            this.btnAddNewCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddNewCategory.Location = new System.Drawing.Point(390, 70);
+            this.btnAddNewCategory.Name = "btnAddNewCategory";
+            this.btnAddNewCategory.Size = new System.Drawing.Size(40, 36);
+            this.btnAddNewCategory.TabIndex = 282;
+            this.btnAddNewCategory.UseVisualStyleBackColor = true;
+            this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
+            // 
+            // btnAddNewStore
+            // 
+            this.btnAddNewStore.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
+            this.btnAddNewStore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddNewStore.Location = new System.Drawing.Point(729, 23);
+            this.btnAddNewStore.Name = "btnAddNewStore";
+            this.btnAddNewStore.Size = new System.Drawing.Size(40, 36);
+            this.btnAddNewStore.TabIndex = 20;
+            this.btnAddNewStore.UseVisualStyleBackColor = true;
+            this.btnAddNewStore.Click += new System.EventHandler(this.btnAddNewStore_Click);
+            // 
             // frmAddEditPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 665);
+            this.Controls.Add(this.btnAddRecord);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnprevious);
             this.Controls.Add(this.btnCancel);
@@ -512,5 +518,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbCategoryList;
         private System.Windows.Forms.Button btnAddNewCategory;
+        private System.Windows.Forms.Button btnAddRecord;
     }
 }

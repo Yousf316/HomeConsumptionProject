@@ -1,6 +1,8 @@
+
 ﻿using HomeC_Business;
 using HomeConsuption.Product;
 using System;
+
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +20,7 @@ namespace HomeConsuption.Purchase
         {
             InitializeComponent();
         }
+
 
 
         clsItem item;
@@ -66,10 +69,12 @@ namespace HomeConsuption.Purchase
             }
         }
 
+
         private void frmAddEditeSubPurchase_Load(object sender, EventArgs e)
         {
 
         }
+
 
         private void btnChooseProduct_Click(object sender, EventArgs e)
         {
@@ -96,5 +101,6 @@ namespace HomeConsuption.Purchase
         {
             //_OnProductInfo(new ProductInfoArgs(item.ItemID,item.ItemName_AR,))
         }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using HomeC_Business;
+using HomeConsuption.Purchase;
 using HomeConsuption.Purchase.Purchase_Categories;
 using HomeConsuption.Tools;
 using System;
@@ -251,12 +252,14 @@ namespace HomeConsuption
                 _type = enType.no_Items;
                 dataGridView1.DataSource = null;
                 _TypeID = 1;
+                btnAddRecord.Enabled = false;
             }
             else
             {
                 _type = enType.withItems;
                 _TypeID = 2;
                 _SetDgvPurchaseColumn();
+                btnAddRecord.Enabled = true;
             }
         }
          
@@ -377,12 +380,12 @@ namespace HomeConsuption
             pCategories.ShowDialog();
             _GetAllCategories();
         }
-<<<<<<< Updated upstream
-=======
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             frmAddEditeSubPurchase addEditeSubPurchase = new frmAddEditeSubPurchase();
+
             addEditeSubPurchase.OnProductInfo += AddEditeSubPurchase_OnProductInfo;
             addEditeSubPurchase.ShowDialog();
         }
@@ -392,6 +395,7 @@ namespace HomeConsuption
             
             throw new NotImplementedException();
         }
->>>>>>> Stashed changes
+
+   
     }
 }

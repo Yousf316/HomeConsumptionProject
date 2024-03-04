@@ -7,9 +7,13 @@
     [TaxAmount]     SMALLMONEY NOT NULL,
     [TotalAfterTax] SMALLMONEY NOT NULL,
     [StoreID]       INT        NOT NULL,
+    [PCategoryID]   INT        NOT NULL,
     CONSTRAINT [PK_Purchases] PRIMARY KEY CLUSTERED ([PurchaseID] ASC),
+    CONSTRAINT [FK_Purchases_Purchase_Categories] FOREIGN KEY ([PCategoryID]) REFERENCES [dbo].[Purchase_Categories] ([PCategoryID]),
     CONSTRAINT [FK_Purchases_Stores] FOREIGN KEY ([StoreID]) REFERENCES [dbo].[Stores] ([StoreID])
 );
+
+
 
 
 GO

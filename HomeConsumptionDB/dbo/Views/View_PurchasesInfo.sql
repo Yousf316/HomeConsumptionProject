@@ -1,9 +1,10 @@
 ﻿CREATE VIEW dbo.View_PurchasesInfo
 AS
 SELECT        dbo.Purchases.PurchaseID, dbo.Purchases.IssueDate, CASE WHEN dbo.Purchases.Type = 1 THEN 'سريعة' WHEN dbo.Purchases.Type = 2 THEN 'عادية' ELSE NULL END AS TypeName, dbo.Purchases.TotalAfterTax, 
-                         dbo.Stores.StoreName
+                         dbo.Stores.StoreName, dbo.Purchase_Categories.CategoryName
 FROM            dbo.Stores INNER JOIN
-                         dbo.Purchases ON dbo.Stores.StoreID = dbo.Purchases.StoreID
+                         dbo.Purchases ON dbo.Stores.StoreID = dbo.Purchases.StoreID INNER JOIN
+                         dbo.Purchase_Categories ON dbo.Purchases.PCategoryID = dbo.Purchase_Categories.PCategoryID
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -77,6 +78,16 @@ Begin DesignProperties =
          Left = 0
       End
       Begin Tables = 
+         Begin Table = "Stores"
+            Begin Extent = 
+               Top = 84
+               Left = 558
+               Bottom = 197
+               Right = 728
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
          Begin Table = "Purchases"
             Begin Extent = 
                Top = 49
@@ -87,12 +98,12 @@ Begin DesignProperties =
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "Stores"
+         Begin Table = "Purchase_Categories"
             Begin Extent = 
-               Top = 84
-               Left = 558
-               Bottom = 197
-               Right = 728
+               Top = 6
+               Left = 38
+               Bottom = 102
+               Right = 208
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -124,6 +135,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'View_PurchasesInfo';
+
+
 
 
 GO

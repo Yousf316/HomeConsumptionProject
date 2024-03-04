@@ -237,21 +237,25 @@
             this.تقريرالمشترياتToolStripMenuItem.Name = "تقريرالمشترياتToolStripMenuItem";
             this.تقريرالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(219, 32);
             this.تقريرالمشترياتToolStripMenuItem.Text = "تقرير المشتريات";
+            this.تقريرالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.تقريرالمشترياتToolStripMenuItem_Click);
             // 
             // تقريرالمنتجاتToolStripMenuItem
             // 
+            this.تقريرالمنتجاتToolStripMenuItem.Enabled = false;
             this.تقريرالمنتجاتToolStripMenuItem.Name = "تقريرالمنتجاتToolStripMenuItem";
             this.تقريرالمنتجاتToolStripMenuItem.Size = new System.Drawing.Size(219, 32);
             this.تقريرالمنتجاتToolStripMenuItem.Text = "تقرير المنتجات";
             // 
             // تقريرالمتاجرToolStripMenuItem
             // 
+            this.تقريرالمتاجرToolStripMenuItem.Enabled = false;
             this.تقريرالمتاجرToolStripMenuItem.Name = "تقريرالمتاجرToolStripMenuItem";
             this.تقريرالمتاجرToolStripMenuItem.Size = new System.Drawing.Size(219, 32);
             this.تقريرالمتاجرToolStripMenuItem.Text = "تقرير المتاجر";
             // 
             // تقريرالميزانيةToolStripMenuItem
             // 
+            this.تقريرالميزانيةToolStripMenuItem.Enabled = false;
             this.تقريرالميزانيةToolStripMenuItem.Name = "تقريرالميزانيةToolStripMenuItem";
             this.تقريرالميزانيةToolStripMenuItem.Size = new System.Drawing.Size(219, 32);
             this.تقريرالميزانيةToolStripMenuItem.Text = "تقرير الميزانية";
