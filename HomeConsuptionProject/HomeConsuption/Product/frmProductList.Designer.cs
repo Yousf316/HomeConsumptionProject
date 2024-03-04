@@ -104,6 +104,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(758, 297);
             this.dataGridView1.TabIndex = 363;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // contextMenuStrip1
             // 
@@ -112,25 +113,25 @@
             this.تعديلمToolStripMenuItem,
             this.حذفالمنتجToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(168, 70);
             // 
             // بطاقةمعلوماتالمنتجToolStripMenuItem
             // 
             this.بطاقةمعلوماتالمنتجToolStripMenuItem.Name = "بطاقةمعلوماتالمنتجToolStripMenuItem";
-            this.بطاقةمعلوماتالمنتجToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.بطاقةمعلوماتالمنتجToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.بطاقةمعلوماتالمنتجToolStripMenuItem.Text = "بطاقة بيانات المنتج";
             // 
             // تعديلمToolStripMenuItem
             // 
             this.تعديلمToolStripMenuItem.Name = "تعديلمToolStripMenuItem";
-            this.تعديلمToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.تعديلمToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.تعديلمToolStripMenuItem.Text = "تعديل بيانات المنتج";
             this.تعديلمToolStripMenuItem.Click += new System.EventHandler(this.تعديلمToolStripMenuItem_Click);
             // 
             // حذفالمنتجToolStripMenuItem
             // 
             this.حذفالمنتجToolStripMenuItem.Name = "حذفالمنتجToolStripMenuItem";
-            this.حذفالمنتجToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.حذفالمنتجToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.حذفالمنتجToolStripMenuItem.Text = "حذف المنتج";
             // 
             // button1

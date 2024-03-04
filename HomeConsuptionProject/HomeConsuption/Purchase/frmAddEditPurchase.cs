@@ -377,5 +377,21 @@ namespace HomeConsuption
             pCategories.ShowDialog();
             _GetAllCategories();
         }
+<<<<<<< Updated upstream
+=======
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmAddEditeSubPurchase addEditeSubPurchase = new frmAddEditeSubPurchase();
+            addEditeSubPurchase.OnProductInfo += AddEditeSubPurchase_OnProductInfo;
+            addEditeSubPurchase.ShowDialog();
+        }
+
+        private void AddEditeSubPurchase_OnProductInfo(object sender, frmAddEditeSubPurchase.ProductInfoArgs e)
+        {
+            
+            throw new NotImplementedException();
+        }
+>>>>>>> Stashed changes
     }
 }

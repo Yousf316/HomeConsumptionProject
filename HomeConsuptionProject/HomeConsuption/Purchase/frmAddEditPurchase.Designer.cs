@@ -389,6 +389,21 @@
             this.label14.TabIndex = 27;
             this.label14.Text = ": عدد البنود ";
             // 
+<<<<<<< Updated upstream
+=======
+            // btnAddRecord
+            // 
+            this.btnAddRecord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddRecord.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnAddRecord.Location = new System.Drawing.Point(884, 440);
+            this.btnAddRecord.Name = "btnAddRecord";
+            this.btnAddRecord.Size = new System.Drawing.Size(142, 36);
+            this.btnAddRecord.TabIndex = 283;
+            this.btnAddRecord.Text = "أدراج بند";
+            this.btnAddRecord.UseVisualStyleBackColor = true;
+            this.btnAddRecord.Click += new System.EventHandler(this.button1_Click);
+            // 
+>>>>>>> Stashed changes
             // btnNext
             // 
             this.btnNext.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96__1_;
