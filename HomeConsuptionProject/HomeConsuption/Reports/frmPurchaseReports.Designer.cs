@@ -126,9 +126,10 @@
             // cbAllCategories
             // 
             this.cbAllCategories.AutoSize = true;
-            this.cbAllCategories.Location = new System.Drawing.Point(27, 23);
+            this.cbAllCategories.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cbAllCategories.Location = new System.Drawing.Point(22, 23);
             this.cbAllCategories.Name = "cbAllCategories";
-            this.cbAllCategories.Size = new System.Drawing.Size(46, 17);
+            this.cbAllCategories.Size = new System.Drawing.Size(51, 21);
             this.cbAllCategories.TabIndex = 8;
             this.cbAllCategories.Text = "الكل";
             this.cbAllCategories.UseVisualStyleBackColor = true;
@@ -137,9 +138,10 @@
             // cbAllDate
             // 
             this.cbAllDate.AutoSize = true;
-            this.cbAllDate.Location = new System.Drawing.Point(27, 101);
+            this.cbAllDate.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cbAllDate.Location = new System.Drawing.Point(27, 120);
             this.cbAllDate.Name = "cbAllDate";
-            this.cbAllDate.Size = new System.Drawing.Size(46, 17);
+            this.cbAllDate.Size = new System.Drawing.Size(51, 21);
             this.cbAllDate.TabIndex = 9;
             this.cbAllDate.Text = "الكل";
             this.cbAllDate.UseVisualStyleBackColor = true;
@@ -177,9 +179,9 @@
             this.panel1.Controls.Add(this.dtpFrom);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(507, 322);
+            this.panel1.Location = new System.Drawing.Point(507, 327);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(321, 225);
+            this.panel1.Size = new System.Drawing.Size(323, 220);
             this.panel1.TabIndex = 12;
             // 
             // groupBox1

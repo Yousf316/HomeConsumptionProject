@@ -98,6 +98,12 @@
     <Compile Include="Product\Sizes\frmSizeList.Designer.cs">
       <DependentUpon>frmSizeList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Purchase\frmAddEditeSubPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\frmAddEditeSubPurchase.Designer.cs">
+      <DependentUpon>frmAddEditeSubPurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Purchase\frmAddEditPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Product\Sizes\frmSizeList.resx">
       <DependentUpon>frmSizeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\frmAddEditeSubPurchase.resx">
+      <DependentUpon>frmAddEditeSubPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Purchase\frmAddEditPurchase.resx">
       <DependentUpon>frmAddEditPurchase.cs</DependentUpon>
