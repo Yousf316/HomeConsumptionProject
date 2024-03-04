@@ -53,6 +53,7 @@
             this.تقريرالمنتجاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالمتاجرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالميزانيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الأعداداتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,8 @@
             this.مشترياتToolStripMenuItem,
             this.المتاجرToolStripMenuItem,
             this.المنتجاتToolStripMenuItem,
-            this.التقاريرToolStripMenuItem});
+            this.التقاريرToolStripMenuItem,
+            this.الأعداداتToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1185, 76);
@@ -258,6 +260,15 @@
             this.تقريرالميزانيةToolStripMenuItem.Size = new System.Drawing.Size(219, 32);
             this.تقريرالميزانيةToolStripMenuItem.Text = "تقرير الميزانية";
             // 
+            // الأعداداتToolStripMenuItem
+            // 
+            this.الأعداداتToolStripMenuItem.Enabled = false;
+            this.الأعداداتToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_settings_64;
+            this.الأعداداتToolStripMenuItem.Name = "الأعداداتToolStripMenuItem";
+            this.الأعداداتToolStripMenuItem.Size = new System.Drawing.Size(101, 72);
+            this.الأعداداتToolStripMenuItem.Text = "الأعدادات";
+            this.الأعداداتToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,6 +313,7 @@
         private System.Windows.Forms.ToolStripMenuItem أدارةالاصنافToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem الأعداداتToolStripMenuItem;
     }
 }
 

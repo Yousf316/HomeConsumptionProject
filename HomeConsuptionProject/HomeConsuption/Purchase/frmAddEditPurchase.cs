@@ -381,10 +381,21 @@ namespace HomeConsuption
             _GetAllCategories();
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             frmAddEditeSubPurchase addEditeSubPurchase = new frmAddEditeSubPurchase();
+
+            addEditeSubPurchase.OnProductInfo += AddEditeSubPurchase_OnProductInfo;
             addEditeSubPurchase.ShowDialog();
         }
+
+        private void AddEditeSubPurchase_OnProductInfo(object sender, frmAddEditeSubPurchase.ProductInfoArgs e)
+        {
+            
+            throw new NotImplementedException();
+        }
+
+   
     }
 }
