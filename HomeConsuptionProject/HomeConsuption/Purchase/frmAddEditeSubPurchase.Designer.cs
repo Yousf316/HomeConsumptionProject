@@ -45,10 +45,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnChooseProduct
@@ -60,11 +60,12 @@
             this.btnChooseProduct.TabIndex = 0;
             this.btnChooseProduct.Text = "المنتج";
             this.btnChooseProduct.UseVisualStyleBackColor = true;
+            this.btnChooseProduct.Click += new System.EventHandler(this.btnChooseProduct_Click);
             // 
             // txtProdouctID
             // 
             this.txtProdouctID.Enabled = false;
-            this.txtProdouctID.Location = new System.Drawing.Point(352, 216);
+            this.txtProdouctID.Location = new System.Drawing.Point(352, 229);
             this.txtProdouctID.Name = "txtProdouctID";
             this.txtProdouctID.Size = new System.Drawing.Size(80, 20);
             this.txtProdouctID.TabIndex = 1;
@@ -72,7 +73,7 @@
             // txtProdouctName
             // 
             this.txtProdouctName.Enabled = false;
-            this.txtProdouctName.Location = new System.Drawing.Point(205, 216);
+            this.txtProdouctName.Location = new System.Drawing.Point(205, 229);
             this.txtProdouctName.Name = "txtProdouctName";
             this.txtProdouctName.Size = new System.Drawing.Size(135, 20);
             this.txtProdouctName.TabIndex = 2;
@@ -81,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label1.Location = new System.Drawing.Point(232, 178);
+            this.label1.Location = new System.Drawing.Point(232, 191);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 3;
@@ -91,7 +92,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label2.Location = new System.Drawing.Point(360, 178);
+            this.label2.Location = new System.Drawing.Point(360, 191);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 18);
             this.label2.TabIndex = 4;
@@ -101,7 +102,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label3.Location = new System.Drawing.Point(368, 399);
+            this.label3.Location = new System.Drawing.Point(368, 414);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 18);
             this.label3.TabIndex = 8;
@@ -123,6 +124,7 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(107, 20);
             this.txtQuantity.TabIndex = 6;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantityAndPrice_TextChanged);
             // 
             // txtPricePerUnit
             // 
@@ -130,6 +132,7 @@
             this.txtPricePerUnit.Name = "txtPricePerUnit";
             this.txtPricePerUnit.Size = new System.Drawing.Size(102, 20);
             this.txtPricePerUnit.TabIndex = 5;
+            this.txtPricePerUnit.TextChanged += new System.EventHandler(this.txtQuantityAndPrice_TextChanged);
             // 
             // label5
             // 
@@ -165,7 +168,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 13F);
-            this.label8.Location = new System.Drawing.Point(123, 113);
+            this.label8.Location = new System.Drawing.Point(128, 113);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 22);
             this.label8.TabIndex = 13;
@@ -175,7 +178,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 13F);
-            this.label9.Location = new System.Drawing.Point(56, 113);
+            this.label9.Location = new System.Drawing.Point(61, 113);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 22);
             this.label9.TabIndex = 14;
@@ -194,9 +197,9 @@
             // 
             // rtbDescription
             // 
-            this.rtbDescription.Location = new System.Drawing.Point(186, 380);
+            this.rtbDescription.Location = new System.Drawing.Point(174, 395);
             this.rtbDescription.Name = "rtbDescription";
-            this.rtbDescription.Size = new System.Drawing.Size(154, 67);
+            this.rtbDescription.Size = new System.Drawing.Size(166, 67);
             this.rtbDescription.TabIndex = 16;
             this.rtbDescription.Text = "";
             // 
@@ -209,6 +212,24 @@
             this.label11.Size = new System.Drawing.Size(73, 18);
             this.label11.TabIndex = 17;
             this.label11.Text = "سعر الحبة";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label12.Location = new System.Drawing.Point(110, 191);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(46, 18);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "الحجم";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(82, 229);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(105, 21);
+            this.comboBox1.TabIndex = 22;
             // 
             // btnCancel
             // 
@@ -228,30 +249,13 @@
             this.btnSave.Size = new System.Drawing.Size(45, 47);
             this.btnSave.TabIndex = 18;
             this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label12.Location = new System.Drawing.Point(110, 178);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(46, 18);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "الحجم";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(82, 216);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(105, 21);
-            this.comboBox1.TabIndex = 22;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmAddEditeSubPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 554);
+            this.ClientSize = new System.Drawing.Size(466, 554);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnCancel);

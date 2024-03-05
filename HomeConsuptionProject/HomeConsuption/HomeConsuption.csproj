@@ -306,6 +306,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8-home-64.ico" />
+    <None Include="Resources\icons8-settings-641.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

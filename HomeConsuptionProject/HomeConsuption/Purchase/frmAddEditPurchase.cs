@@ -39,8 +39,8 @@ namespace HomeConsuption
         private int _TypeID;
 
         private clsStore _objStore ;
-       
 
+        DataTable dtSubPurchase;
 
         private void AddEditPurchase_Load(object sender, EventArgs e)
         {
@@ -142,20 +142,45 @@ namespace HomeConsuption
             frmList.ShowDialog();
         }
 
+        private void _SubPurchaseColumns()
+        {
+            dtSubPurchase = new DataTable();
 
+            DataColumn column = new DataColumn("RowCount", typeof(int));
+            column.AutoIncrement = true;
+            column.AutoIncrementSeed = 1;
+            dtSubPurchase.Columns.Add(column);
+            
+            dtSubPurchase.Columns.Add("ProductID", typeof(int));
+            dtSubPurchase.Columns.Add("ProductName", typeof(string));
+            dtSubPurchase.Columns.Add("SizeID", typeof(int));
+            dtSubPurchase.Columns.Add("SizeName", typeof(string));
+            dtSubPurchase.Columns.Add("Description", typeof(string));
+            dtSubPurchase.Columns.Add("Quantity", typeof(float));
+            dtSubPurchase.Columns.Add("ItemPrice", typeof(float));
+            dtSubPurchase.Columns.Add("TotalAmount", typeof(float));
+
+        }
 
        private void _SetDgvPurchaseColumn()
         {
-            DataTable dataTable =clsPurchase_sub.GetPurchases_subColumns();
+           
+            dataGridView1.DataSource = dtSubPurchase;
 
-            DataTable data = dataTable.DefaultView.ToTable(false,"ItemID","ItemName","Description","ItemPrice","Quantity","TotalAmount");
-            dataGridView1.DataSource = data;
+            dataGridView1.Columns["RowCount"].HeaderText = "رقم الصنف";
+            dataGridView1.Columns["RowCount"].Width = 150;
 
-            dataGridView1.Columns["ItemID"].HeaderText = "رقم الصنف";
-            dataGridView1.Columns["ItemID"].Width = 150;
 
-            dataGridView1.Columns["ItemName"].HeaderText = "اسم الصنف";
-            dataGridView1.Columns["ItemName"].Width = 150;
+            dataGridView1.Columns["SizeID"].Visible = false;
+              dataGridView1.Columns["ProductID"].Visible = false;
+
+
+            dataGridView1.Columns["SizeName"].HeaderText = "الحجم";
+            dataGridView1.Columns["SizeName"].Width = 150;
+
+
+            dataGridView1.Columns["ProductName"].HeaderText = "اسم الصنف";
+            dataGridView1.Columns["ProductName"].Width = 150;
 
             dataGridView1.Columns["Description"].HeaderText = "الوصف";
             dataGridView1.Columns["Description"].Width = 150;
@@ -250,6 +275,7 @@ namespace HomeConsuption
             if(cbTypeInvoice.SelectedIndex == 0)
             {
                 _type = enType.no_Items;
+                dtSubPurchase = null;
                 dataGridView1.DataSource = null;
                 _TypeID = 1;
                 btnAddRecord.Enabled = false;
@@ -258,6 +284,7 @@ namespace HomeConsuption
             {
                 _type = enType.withItems;
                 _TypeID = 2;
+                _SubPurchaseColumns();
                 _SetDgvPurchaseColumn();
                 btnAddRecord.Enabled = true;
             }
@@ -384,7 +411,14 @@ namespace HomeConsuption
         private void button1_Click(object sender, EventArgs e)
         {
             frmAddEditeSubPurchase addEditeSubPurchase = new frmAddEditeSubPurchase();
+            addEditeSubPurchase.OnProductInfo += AddEditeSubPurchase_OnProductInfo;
             addEditeSubPurchase.ShowDialog();
+        }
+
+        private void AddEditeSubPurchase_OnProductInfo(object sender, frmAddEditeSubPurchase.ProductInfoArgs e)
+        {
+            
+           dtSubPurchase.Rows.Add(null,e.ProductID, e.ProductName,e.ProductSizeID,null,e.ProductDescription,e.Quantity,e.PricePerUnit, e.Total);
         }
     }
 }

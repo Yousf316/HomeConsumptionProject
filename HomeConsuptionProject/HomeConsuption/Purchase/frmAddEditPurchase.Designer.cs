@@ -35,11 +35,13 @@
             this.txtStoreName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAddNewCategory = new System.Windows.Forms.Button();
             this.cmbCategoryList = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbTypeInvoice = new System.Windows.Forms.ComboBox();
             this.txtStoreID = new System.Windows.Forms.TextBox();
+            this.btnAddNewStore = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtTotalAfterTax = new System.Windows.Forms.TextBox();
@@ -60,8 +62,6 @@
             this.btnprevious = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnAddNewCategory = new System.Windows.Forms.Button();
-            this.btnAddNewStore = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lbID.Location = new System.Drawing.Point(107, 26);
+            this.lbID.Location = new System.Drawing.Point(78, 26);
             this.lbID.Name = "lbID";
             this.lbID.Size = new System.Drawing.Size(62, 24);
             this.lbID.TabIndex = 25;
@@ -148,6 +148,17 @@
             this.panel1.Size = new System.Drawing.Size(1247, 117);
             this.panel1.TabIndex = 104;
             // 
+            // btnAddNewCategory
+            // 
+            this.btnAddNewCategory.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
+            this.btnAddNewCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddNewCategory.Location = new System.Drawing.Point(390, 70);
+            this.btnAddNewCategory.Name = "btnAddNewCategory";
+            this.btnAddNewCategory.Size = new System.Drawing.Size(40, 36);
+            this.btnAddNewCategory.TabIndex = 282;
+            this.btnAddNewCategory.UseVisualStyleBackColor = true;
+            this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
+            // 
             // cmbCategoryList
             // 
             this.cmbCategoryList.FormattingEnabled = true;
@@ -198,6 +209,17 @@
             this.txtStoreID.Size = new System.Drawing.Size(75, 20);
             this.txtStoreID.TabIndex = 100;
             this.txtStoreID.TabStop = false;
+            // 
+            // btnAddNewStore
+            // 
+            this.btnAddNewStore.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
+            this.btnAddNewStore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddNewStore.Location = new System.Drawing.Point(729, 23);
+            this.btnAddNewStore.Name = "btnAddNewStore";
+            this.btnAddNewStore.Size = new System.Drawing.Size(40, 36);
+            this.btnAddNewStore.TabIndex = 20;
+            this.btnAddNewStore.UseVisualStyleBackColor = true;
+            this.btnAddNewStore.Click += new System.EventHandler(this.btnAddNewStore_Click);
             // 
             // dataGridView1
             // 
@@ -375,7 +397,7 @@
             // 
             this.btnAddRecord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddRecord.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnAddRecord.Location = new System.Drawing.Point(887, 429);
+            this.btnAddRecord.Location = new System.Drawing.Point(884, 440);
             this.btnAddRecord.Name = "btnAddRecord";
             this.btnAddRecord.Size = new System.Drawing.Size(142, 36);
             this.btnAddRecord.TabIndex = 283;
@@ -397,7 +419,7 @@
             // 
             this.btnprevious.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96;
             this.btnprevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnprevious.Location = new System.Drawing.Point(595, 606);
+            this.btnprevious.Location = new System.Drawing.Point(570, 606);
             this.btnprevious.Name = "btnprevious";
             this.btnprevious.Size = new System.Drawing.Size(45, 47);
             this.btnprevious.TabIndex = 356;
@@ -424,28 +446,6 @@
             this.btnSave.TabIndex = 5;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnAddNewCategory
-            // 
-            this.btnAddNewCategory.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
-            this.btnAddNewCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddNewCategory.Location = new System.Drawing.Point(390, 70);
-            this.btnAddNewCategory.Name = "btnAddNewCategory";
-            this.btnAddNewCategory.Size = new System.Drawing.Size(40, 36);
-            this.btnAddNewCategory.TabIndex = 282;
-            this.btnAddNewCategory.UseVisualStyleBackColor = true;
-            this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
-            // 
-            // btnAddNewStore
-            // 
-            this.btnAddNewStore.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
-            this.btnAddNewStore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddNewStore.Location = new System.Drawing.Point(729, 23);
-            this.btnAddNewStore.Name = "btnAddNewStore";
-            this.btnAddNewStore.Size = new System.Drawing.Size(40, 36);
-            this.btnAddNewStore.TabIndex = 20;
-            this.btnAddNewStore.UseVisualStyleBackColor = true;
-            this.btnAddNewStore.Click += new System.EventHandler(this.btnAddNewStore_Click);
             // 
             // frmAddEditPurchase
             // 

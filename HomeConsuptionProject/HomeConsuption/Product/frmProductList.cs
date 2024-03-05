@@ -26,6 +26,30 @@ namespace HomeConsuption.Product
         private static DataTable _dAllStores;
         private DataTable _dStores;
 
+
+        public class ProductInfoArgs : EventArgs
+        {
+            public int ProductID { set; get; }
+
+            public ProductInfoArgs(int productID)
+            {
+                ProductID = productID;
+            }
+        }
+
+
+        [Category("Info")]
+        public event EventHandler<ProductInfoArgs> OnProductInfo;
+
+        protected virtual void _OnProductInfo(ProductInfoArgs e)
+        {
+            EventHandler<ProductInfoArgs> handler = OnProductInfo;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+
         private void _RefreshTable(int PageNumber, int RowCountPerPage)
         {
             DataTable dtOrginal = clsItem.GetAllItems(PageNumber, RowCountPerPage, ref _RowCount);
@@ -106,6 +130,13 @@ namespace HomeConsuption.Product
            frmAddEditeProduct objEditeProduct = new frmAddEditeProduct((int)dataGridView1.CurrentRow.Cells[0].Value);
             objEditeProduct.ShowDialog();
             Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ProductID = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
+            _OnProductInfo(new ProductInfoArgs(ProductID));
+            this.Close();
         }
     }
 }
