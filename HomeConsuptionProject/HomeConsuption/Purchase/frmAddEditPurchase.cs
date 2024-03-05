@@ -408,6 +408,7 @@ namespace HomeConsuption
             _GetAllCategories();
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             frmAddEditeSubPurchase addEditeSubPurchase = new frmAddEditeSubPurchase();

@@ -393,6 +393,7 @@
             this.label14.TabIndex = 27;
             this.label14.Text = ": عدد البنود ";
             // 
+
             // btnAddRecord
             // 
             this.btnAddRecord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -405,6 +406,7 @@
             this.btnAddRecord.UseVisualStyleBackColor = true;
             this.btnAddRecord.Click += new System.EventHandler(this.button1_Click);
             // 
+
             // btnNext
             // 
             this.btnNext.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96__1_;
