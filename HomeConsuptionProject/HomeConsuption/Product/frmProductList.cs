@@ -134,7 +134,7 @@ namespace HomeConsuption.Product
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int ProductID = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
+            int ProductID = (int)dataGridView1.CurrentRow.Cells[0].Value;
             _OnProductInfo(new ProductInfoArgs(ProductID));
             this.Close();
         }

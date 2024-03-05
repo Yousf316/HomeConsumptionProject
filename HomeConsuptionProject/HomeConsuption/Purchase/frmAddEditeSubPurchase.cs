@@ -20,8 +20,11 @@ namespace HomeConsuption.Purchase
             InitializeComponent();
             _mode = enMode.AddNew;
         }
-         public frmAddEditeSubPurchase(int productID, string productDescription,
-              int? productSizeID, float quantity, float pricePerUnit, float total)
+
+
+         public frmAddEditeSubPurchase(int? RowCount,int productID, string productDescription,
+              int? productSizeID, float quantity, float pricePerUnit)
+
         {
             InitializeComponent();
 
@@ -30,7 +33,7 @@ namespace HomeConsuption.Purchase
             item = clsItem.FindItem(productID);
             this.Quantity = quantity;
             this.PricePerUnit = pricePerUnit;
-            this.Total = total;
+           this.RowCount = RowCount;
             this.ProductSizeID = productSizeID;
             this.ProductDescription = productDescription;
         }
@@ -42,6 +45,7 @@ namespace HomeConsuption.Purchase
 
         clsItem item;
         public int? ProductSizeID { set; get; }
+        public int? RowCount { set; get; }
          public string ProductDescription { set; get; }
 
         public float Quantity { set; get; }
@@ -50,26 +54,30 @@ namespace HomeConsuption.Purchase
 
         public class ProductInfoArgs : EventArgs
         {
+            public int? RowCount { set; get; }
             public int ProductID { set; get; }
             public string ProductName { set; get; }
             public string ProductDescription { set; get; }
             public int ProductCategoryID { set; get; }
             public int? ProductSizeID { set; get; }
+            public string ProductSizeName { set; get; }
 
             public float Quantity { set; get; }
             public float PricePerUnit { set; get; }
             public float Total { set; get; }
 
-            public ProductInfoArgs(int productID, string productName, string productDescription, int productCategoryID, int? productSize, float quantity, float pricePerUnit, float total)
+            public ProductInfoArgs(int? RowCount, int productID, string productName, string productDescription, int productCategoryID, int? productSize, string productSizeName, float quantity, float pricePerUnit, float total)
             {
                 ProductID = productID;
                 ProductName = productName;
                 ProductDescription = productDescription;
                 ProductCategoryID = productCategoryID;
                 ProductSizeID = productSize;
+                ProductSizeName = productSizeName;
                 Quantity = quantity;
                 PricePerUnit = pricePerUnit;
                 Total = total;
+                this.RowCount = RowCount;
             }
 
         }
@@ -89,57 +97,24 @@ namespace HomeConsuption.Purchase
 
 
 
-        clsItem item;
-        public int? ProductSize { set; get; }
-
-        public float Quantity { set; get; }
-        public float PricePerUnit { set; get; }
-        public float Total { set; get; }
-
-        public class ProductInfoArgs : EventArgs
-        {
-            public int ProductID { set; get; }
-            public string ProductName { set; get; }
-            public string ProductDescription { set; get; }
-            public int ProductCategoryID { set; get; }
-            public int? ProductSize { set; get; }
-
-            public float Quantity { set; get; }
-            public float PricePerUnit { set; get; }
-            public float Total { set; get; }
-
-            public ProductInfoArgs(int productID, string productName, string productDescription, int productCategoryID, int? productSize, float quantity, float pricePerUnit, float total)
-            {
-                ProductID = productID;
-                ProductName = productName;
-                ProductDescription = productDescription;
-                ProductCategoryID = productCategoryID;
-                ProductSize = productSize;
-                Quantity = quantity;
-                PricePerUnit = pricePerUnit;
-                Total = total;
-            }
-
-        }
-
+     
+       
         
-        [Category("Info")]
-        public event EventHandler<ProductInfoArgs> OnProductInfo;
-
-        protected virtual void _OnProductInfo(ProductInfoArgs e)
-        {
-            EventHandler<ProductInfoArgs> handler = OnProductInfo;
-            if (handler != null)
-            {
-                handler(this, e);
-            }
-        }
+       
 
 
         private void frmAddEditeSubPurchase_Load(object sender, EventArgs e)
         {
-            txtQuantity.Text = "0.00";
-            txtPricePerUnit.Text = "0.00";
+            if(_mode ==enMode.Update)
+            {
+                GetProductInfo();
+
+            }else
+            {
+                txtQuantity.Text = "0.00";
+                txtPricePerUnit.Text = "0.00";
+            }
+            
         }
 
         private void btnChooseProduct_Click(object sender, EventArgs e)
@@ -158,6 +133,7 @@ namespace HomeConsuption.Purchase
         private void SetProductInfoDefualt()
         {
             txtPricePerUnit.Text = item.Price.ToString("F2");
+            txtQuantity.Text = "1";
             txtProdouctID.Text = item.ItemID.ToString();
             txtProdouctName.Text = item.ItemName_AR !=""? item.ItemName_AR : item.ItemName_EN;
             
@@ -173,21 +149,25 @@ namespace HomeConsuption.Purchase
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            _OnProductInfo(new ProductInfoArgs(item.ItemID, txtProdouctName.Text, rtbDescription.Text, item.CategoryID, null, this.Quantity, this.PricePerUnit, this.Total));
+            this.Quantity = Convert.ToSingle(txtQuantity.Text);
+            this.PricePerUnit = Convert.ToSingle(txtPricePerUnit.Text);
+
+            _OnProductInfo(new ProductInfoArgs(RowCount,item.ItemID, txtProdouctName.Text, rtbDescription.Text, item.CategoryID, null,"", this.Quantity, this.PricePerUnit, this.Total));
             this.Close();
 
         }
 
         private void txtQuantityAndPrice_TextChanged(object sender, EventArgs e)
         {
+
             float.TryParse(txtQuantity.Text, out float Quantity);
-            this.Quantity = Quantity;
+            
 
             float.TryParse(txtPricePerUnit.Text, out float PricePerUnit);
 
-            this.PricePerUnit = PricePerUnit;
+          
 
-            lbTotal.Text = (this.Quantity * PricePerUnit).ToString();
+            lbTotal.Text = (Quantity * PricePerUnit).ToString();
 
             this.Total = Convert.ToSingle(lbTotal.Text);
         }

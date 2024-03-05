@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.lbID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,7 +43,7 @@
             this.cbTypeInvoice = new System.Windows.Forms.ComboBox();
             this.txtStoreID = new System.Windows.Forms.TextBox();
             this.btnAddNewStore = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSubPurchase = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtTotalAfterTax = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -62,10 +63,14 @@
             this.btnprevious = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.cmsSubPurchase = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubPurchase)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.cmsSubPurchase.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -221,18 +226,19 @@
             this.btnAddNewStore.UseVisualStyleBackColor = true;
             this.btnAddNewStore.Click += new System.EventHandler(this.btnAddNewStore_Click);
             // 
-            // dataGridView1
+            // dgvSubPurchase
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 143);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridView1.Size = new System.Drawing.Size(1244, 280);
-            this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dgvSubPurchase.AllowUserToAddRows = false;
+            this.dgvSubPurchase.AllowUserToDeleteRows = false;
+            this.dgvSubPurchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSubPurchase.ContextMenuStrip = this.cmsSubPurchase;
+            this.dgvSubPurchase.Location = new System.Drawing.Point(12, 143);
+            this.dgvSubPurchase.Name = "dgvSubPurchase";
+            this.dgvSubPurchase.ReadOnly = true;
+            this.dgvSubPurchase.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgvSubPurchase.Size = new System.Drawing.Size(1244, 280);
+            this.dgvSubPurchase.TabIndex = 7;
+            this.dgvSubPurchase.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // panel2
             // 
@@ -393,7 +399,6 @@
             this.label14.TabIndex = 27;
             this.label14.Text = ": عدد البنود ";
             // 
-
             // btnAddRecord
             // 
             this.btnAddRecord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -406,7 +411,6 @@
             this.btnAddRecord.UseVisualStyleBackColor = true;
             this.btnAddRecord.Click += new System.EventHandler(this.button1_Click);
             // 
-
             // btnNext
             // 
             this.btnNext.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96__1_;
@@ -449,6 +453,28 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // cmsSubPurchase
+            // 
+            this.cmsSubPurchase.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dToolStripMenuItem,
+            this.حذفToolStripMenuItem});
+            this.cmsSubPurchase.Name = "cmsSubPurchase";
+            this.cmsSubPurchase.Size = new System.Drawing.Size(181, 70);
+            // 
+            // dToolStripMenuItem
+            // 
+            this.dToolStripMenuItem.Name = "dToolStripMenuItem";
+            this.dToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dToolStripMenuItem.Text = "تعديل";
+            this.dToolStripMenuItem.Click += new System.EventHandler(this.dToolStripMenuItem_Click);
+            // 
+            // حذفToolStripMenuItem
+            // 
+            this.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem";
+            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.حذفToolStripMenuItem.Text = "حذف";
+            this.حذفToolStripMenuItem.Click += new System.EventHandler(this.حذفToolStripMenuItem_Click);
+            // 
             // frmAddEditPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,7 +487,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSubPurchase);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
@@ -472,11 +498,12 @@
             this.Load += new System.EventHandler(this.AddEditPurchase_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubPurchase)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.cmsSubPurchase.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -491,7 +518,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAddNewStore;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSubPurchase;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtTaxAmount;
         private System.Windows.Forms.Label label8;
@@ -517,5 +544,8 @@
         private System.Windows.Forms.ComboBox cmbCategoryList;
         private System.Windows.Forms.Button btnAddNewCategory;
         private System.Windows.Forms.Button btnAddRecord;
+        private System.Windows.Forms.ContextMenuStrip cmsSubPurchase;
+        private System.Windows.Forms.ToolStripMenuItem dToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem;
     }
 }
