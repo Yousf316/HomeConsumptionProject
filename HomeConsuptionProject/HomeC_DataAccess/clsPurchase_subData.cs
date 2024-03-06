@@ -10,7 +10,7 @@ namespace HomeC_DataAccess
 {
     public static class clsPurchase_subData
     {
-        static public bool InsertPurchase_sub( int PurchaseID,  int P_subID, int? ItemID, string ItemName, string Description, float ItemPrice, int Quantity, float TotalAmount,int? Size)
+        static public bool InsertPurchase_sub( int PurchaseID,  int P_subID, int? ItemID, string ItemName, string Description, float ItemPrice, float Quantity, float TotalAmount,int? Size)
         {
             int rowAffected = 0;
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -59,7 +59,7 @@ namespace HomeC_DataAccess
             }
         }
 
-        static public bool UpdatePurchase_sub(int PurchaseID, int P_subID, int ItemID, string ItemName, string Description, float ItemPrice, int Quantity, float TotalAmount,int? Size)
+        static public bool UpdatePurchase_sub(int PurchaseID, int P_subID, int ItemID, string ItemName, string Description, float ItemPrice, float Quantity, float TotalAmount,int? Size)
         {
             int rowsAffected = 0;
 
@@ -112,7 +112,7 @@ WHERE PurchaseID =@PurchaseID and P_subID = @P_subID;";
             return (rowsAffected > 0);
         }
 
-        static public bool FindPurchase_sub(int PurchaseID, int P_subID, ref int ItemID, ref string ItemName, ref string Description, ref float ItemPrice, ref int Quantity, ref float TotalAmount, ref int? Size)
+        static public bool FindPurchase_sub(int PurchaseID, int P_subID, ref int ItemID, ref string ItemName, ref string Description, ref float ItemPrice, ref float Quantity, ref float TotalAmount, ref int? Size)
         {
             bool isFound = false;
 
@@ -144,7 +144,7 @@ WHERE PurchaseID =@PurchaseID and P_subID = @P_subID;";
 
                     Size = reader["Size"] != DBNull.Value ? (int?)reader["Size"] : null;
                     ItemPrice = Convert.ToSingle(reader[" ItemPrice"]);
-                    Quantity = (int)reader["Quantity"];
+                    Quantity = Convert.ToSingle(reader["Quantity"]);
                     TotalAmount = Convert.ToSingle(reader[" TotalAmount"]);
                 }
 
@@ -198,6 +198,45 @@ WHERE PurchaseID =@PurchaseID and P_subID = @P_subID;";
             string query = @"Select * FROM [dbo].[Purchases_sub]";
 
             SqlCommand cmd = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+
+                {
+                    dt.Load(reader);
+                }
+
+                reader.Close();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+        }
+         static public DataTable GetAllPurchases_subByPurchaseID(int PurchaseID)
+        {
+            DataTable dt = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"Select * FROM [dbo].[Purchases_sub] where PurchaseID =@PurchaseID";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            cmd.Parameters.AddWithValue("@PurchaseID", PurchaseID);
 
             try
             {

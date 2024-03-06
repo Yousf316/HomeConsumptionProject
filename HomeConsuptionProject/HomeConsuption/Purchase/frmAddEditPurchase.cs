@@ -1,4 +1,5 @@
-﻿using HomeC_Business;
+﻿//#define Test
+using HomeC_Business;
 using HomeConsuption.Purchase;
 using HomeConsuption.Purchase.Purchase_Categories;
 using HomeConsuption.Tools;
@@ -6,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -57,7 +59,16 @@ namespace HomeConsuption
                 _GetPurchaseValues();
 
             }
-               
+
+
+            _TestPropti();
+
+
+        }
+        [Conditional("Test")]
+        private void _TestPropti()
+        {
+            btnTest.Visible = true;
         }
 
         private void _SetDefaultValues()
@@ -80,7 +91,19 @@ namespace HomeConsuption
 
         }
 
+        private void _GetDataTablePurchase()
+        {
+            dtSubPurchase.Clear();
+            DataTable dTable = clsPurchase_sub.GetPurchases_sub(this._PurchaseID??-1);
 
+            foreach (DataRow dr in dTable.Rows)
+            {
+                int.TryParse(dr["Size"].ToString(), out int Size);
+                int? SizeID = Size;
+                dtSubPurchase.Rows.Add((int)dr["P_subID"], (int)dr["ItemID"], dr["ItemName"].ToString(), SizeID == 0? null: SizeID, "", dr["Description"].ToString()
+                    , Convert.ToSingle( dr["Quantity"].ToString()), Convert.ToSingle(dr["ItemPrice"].ToString()), Convert.ToSingle(dr["TotalAmount"].ToString()));
+            }
+        }
 
         private void _GetPurchaseValues()
         {
@@ -107,6 +130,8 @@ namespace HomeConsuption
 
             cmbCategoryList.SelectedItem = clsPurchase_Category.FindPurchase_Category(purchase.PCategoryID).CategoryName;
 
+            if(purchase.Type ==2)
+            _GetDataTablePurchase();
 
             this.Text = "تعديل فاتورة مشتريات";
         }
@@ -198,6 +223,17 @@ namespace HomeConsuption
         }
        
       
+        private void _SumAllProduct()
+        {
+            float SumTotal = 0;
+
+            foreach (DataRow Row in dtSubPurchase.Rows)
+            {
+                SumTotal += (float)Row["TotalAmount"];
+            }
+
+            txtTotalAmount.Text = SumTotal.ToString();
+        }
 
        private void _SetTotalAmountBeforeTax()
         {
@@ -280,6 +316,7 @@ namespace HomeConsuption
                 dgvSubPurchase.DataSource = null;
                 _TypeID = 1;
                 btnAddRecord.Enabled = false;
+                txtTotalAmount.Enabled = true;
             }
             else
             {
@@ -288,6 +325,8 @@ namespace HomeConsuption
                 _SubPurchaseColumns();
                 _SetDgvPurchaseColumn();
                 btnAddRecord.Enabled = true;
+                txtTotalAmount.Enabled = false;
+
             }
         }
          
@@ -338,7 +377,33 @@ namespace HomeConsuption
 
         }
 
+        private bool _SetPurchaseSub()
+        {
 
+            clsPurchase_sub.DeletePurchase_sub(this._PurchaseID??-1);
+            if (dtSubPurchase.Rows.Count == 0)
+                return false;
+
+                foreach (DataRow drow in dtSubPurchase.Rows)
+            {
+                clsPurchase_sub purchasesub = new clsPurchase_sub();
+
+                int.TryParse(drow["SizeID"].ToString(), out int sSizeID);
+                    int? SizeID = sSizeID;
+                purchasesub.SetValues(this._PurchaseID??-1,(int)drow["RowCount"], (int)drow["ProductID"], drow["ProductName"].ToString()
+                    , drow["Description"].ToString(), (float)drow["ItemPrice"], (float)drow["Quantity"]
+                    , (float)drow["TotalAmount"], SizeID == 0 ? null : SizeID);
+
+
+               if( !purchasesub.SavePurchases_sub())
+                {
+                    return false;
+                }
+            }
+            
+
+            return true;
+        }
        
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -356,7 +421,7 @@ namespace HomeConsuption
 
                 if(_type == enType.withItems)
                 {
-                    //will implemmtion soon
+                    _SetPurchaseSub();
                 }
 
                if( MessageBox.Show("هل تريد الاستمرار؟","",MessageBoxButtons.YesNo)==DialogResult.Yes)
@@ -415,6 +480,7 @@ namespace HomeConsuption
             frmAddEditeSubPurchase addEditeSubPurchase = new frmAddEditeSubPurchase();
             addEditeSubPurchase.OnProductInfo += AddEditeSubPurchase_OnProductInfo;
             addEditeSubPurchase.ShowDialog();
+            _SumAllProduct();
         }
 
         private void AddEditeSubPurchase_OnProductInfo(object sender, frmAddEditeSubPurchase.ProductInfoArgs e)
@@ -486,7 +552,7 @@ namespace HomeConsuption
 
             addEditeSubPurchase.OnProductInfo += AddEditeSubPurchase_OnProductInfo;
             addEditeSubPurchase.ShowDialog();
-
+            _SumAllProduct();
         }
 
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
@@ -507,6 +573,14 @@ namespace HomeConsuption
             }
 
             _NextRowNumber = RowCount;
+
+            _SumAllProduct();
+        }
+
+        
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            _SetPurchaseSub();
         }
     }
 }

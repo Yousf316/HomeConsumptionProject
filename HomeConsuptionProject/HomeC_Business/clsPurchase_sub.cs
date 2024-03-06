@@ -20,7 +20,7 @@ public int ItemID  { get; set; }
 public string ItemName  { get; set; }
 public string Description  { get; set; }
 public float ItemPrice  { get; set; }
-public int Quantity  { get; set; }
+public float Quantity  { get; set; }
 public int? Size  { get; set; }
 public float TotalAmount  { get; set; }
 public clsPurchase_sub()
@@ -36,7 +36,7 @@ this.TotalAmount = -1;
 this.Size = null;
 _mode = enMode.AddNew;
  }
-private clsPurchase_sub(int PurchaseID,int P_subID, int ItemID,string ItemName,string Description,float ItemPrice,int Quantity,float TotalAmount,int? Size)
+private clsPurchase_sub(int PurchaseID,int P_subID, int ItemID,string ItemName,string Description,float ItemPrice,float Quantity,float TotalAmount,int? Size)
 {
 this.PurchaseID = PurchaseID;
 this.ItemID = ItemID;
@@ -48,7 +48,22 @@ this.TotalAmount = TotalAmount;
 this.P_subID = P_subID;
 this.Size = Size;
 _mode = enMode.Update;
- }
+   }
+
+        public void SetValues(int PurchaseID, int P_subID, int ItemID, string ItemName, string Description, float ItemPrice, float Quantity, float TotalAmount, int? Size)
+        {
+            this.PurchaseID = PurchaseID;
+            this.ItemID = ItemID;
+            this.ItemName = ItemName;
+            this.Description = Description;
+            this.ItemPrice = ItemPrice;
+            this.Quantity = Quantity;
+            this.TotalAmount = TotalAmount;
+            this.P_subID = P_subID;
+            this.Size = Size;
+            
+        }
+
 
         public static clsPurchase_sub FindPurchase_sub(int PurchaseID, int P_subID)
         {
@@ -57,7 +72,7 @@ _mode = enMode.Update;
             string ItemName = "";
             string Description = "";
             float ItemPrice = -1;
-            int Quantity = -1;
+            float Quantity = -1;
             int? Size = null;
             float TotalAmount = -1;
 
@@ -71,8 +86,7 @@ _mode = enMode.Update;
                 return null;
             }
         }
-
-
+      
 
         private bool _AddNewPurchases_sub()
 {
@@ -112,6 +126,16 @@ switch (_mode)
   public static DataTable GetPurchases_subColumns()
   {
       return clsPurchase_subData.GetAllPurchases_subCoulmns();
+  }
+
+public static DataTable GetPurchases_sub(int PurchaseID)
+  {
+      return clsPurchase_subData.GetAllPurchases_subByPurchaseID(PurchaseID);
+  }
+
+public static bool DeletePurchase_sub(int PurchaseID)
+  {
+      return clsPurchase_subData.DeletePurchase_sub(PurchaseID);
   }
 
 

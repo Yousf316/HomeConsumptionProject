@@ -66,6 +66,7 @@
             this.cmsSubPurchase = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTest = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubPurchase)).BeginInit();
             this.panel2.SuspendLayout();
@@ -459,27 +460,43 @@
             this.dToolStripMenuItem,
             this.حذفToolStripMenuItem});
             this.cmsSubPurchase.Name = "cmsSubPurchase";
-            this.cmsSubPurchase.Size = new System.Drawing.Size(181, 70);
+            this.cmsSubPurchase.Size = new System.Drawing.Size(104, 48);
             // 
             // dToolStripMenuItem
             // 
             this.dToolStripMenuItem.Name = "dToolStripMenuItem";
-            this.dToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.dToolStripMenuItem.Text = "تعديل";
             this.dToolStripMenuItem.Click += new System.EventHandler(this.dToolStripMenuItem_Click);
             // 
             // حذفToolStripMenuItem
             // 
             this.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem";
-            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.حذفToolStripMenuItem.Text = "حذف";
             this.حذفToolStripMenuItem.Click += new System.EventHandler(this.حذفToolStripMenuItem_Click);
+            // 
+            // btnTest
+            // 
+            this.btnTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTest.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnTest.Location = new System.Drawing.Point(1101, 611);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(142, 36);
+            this.btnTest.TabIndex = 359;
+            this.btnTest.Text = "Test";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Visible = false;
+            this.btnTest.Click += new System.EventHandler(this.button1_Click_1);
+
+
             // 
             // frmAddEditPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 665);
+            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnAddRecord);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnprevious);
@@ -547,5 +564,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsSubPurchase;
         private System.Windows.Forms.ToolStripMenuItem dToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem;
+        private System.Windows.Forms.Button btnTest;
     }
 }
