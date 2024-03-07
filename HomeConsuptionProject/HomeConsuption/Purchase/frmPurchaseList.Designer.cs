@@ -43,6 +43,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbPageSize = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbCurrentPage = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.cmsSettingsPurchase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -187,11 +189,33 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lbCurrentPage
+            // 
+            this.lbCurrentPage.AutoSize = true;
+            this.lbCurrentPage.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lbCurrentPage.Location = new System.Drawing.Point(969, 558);
+            this.lbCurrentPage.Name = "lbCurrentPage";
+            this.lbCurrentPage.Size = new System.Drawing.Size(53, 19);
+            this.lbCurrentPage.TabIndex = 364;
+            this.lbCurrentPage.Text = "[????]";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.label4.Location = new System.Drawing.Point(1028, 558);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 19);
+            this.label4.TabIndex = 363;
+            this.label4.Text = ": الصفحة";
+            // 
             // frmPurchaseList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 630);
+            this.Controls.Add(this.lbCurrentPage);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbPageSize);
             this.Controls.Add(this.label2);
@@ -231,5 +255,7 @@
         private System.Windows.Forms.ToolStripMenuItem المعلموماتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem التعديلToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الحذفToolStripMenuItem;
+        private System.Windows.Forms.Label lbCurrentPage;
+        private System.Windows.Forms.Label label4;
     }
 }

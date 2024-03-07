@@ -103,6 +103,8 @@ namespace HomeConsuption
                 dtSubPurchase.Rows.Add((int)dr["P_subID"], (int)dr["ItemID"], dr["ItemName"].ToString(), SizeID == 0? null: SizeID, "", dr["Description"].ToString()
                     , Convert.ToSingle( dr["Quantity"].ToString()), Convert.ToSingle(dr["ItemPrice"].ToString()), Convert.ToSingle(dr["TotalAmount"].ToString()));
             }
+            _NextRowNumber += dTable.Rows.Count;
+
         }
 
         private void _GetPurchaseValues()
@@ -203,7 +205,7 @@ namespace HomeConsuption
 
             dgvSubPurchase.Columns["SizeName"].HeaderText = "الحجم";
             dgvSubPurchase.Columns["SizeName"].Width = 150;
-
+            dgvSubPurchase.Columns["SizeName"].Visible = false ;
 
             dgvSubPurchase.Columns["ProductName"].HeaderText = "اسم الصنف";
             dgvSubPurchase.Columns["ProductName"].Width = 150;
@@ -390,7 +392,8 @@ namespace HomeConsuption
 
                 int.TryParse(drow["SizeID"].ToString(), out int sSizeID);
                     int? SizeID = sSizeID;
-                purchasesub.SetValues(this._PurchaseID??-1,(int)drow["RowCount"], (int)drow["ProductID"], drow["ProductName"].ToString()
+                int RowCount = (int)drow["RowCount"];
+                purchasesub.SetValues(this._PurchaseID??-1, RowCount, (int)drow["ProductID"], drow["ProductName"].ToString()
                     , drow["Description"].ToString(), (float)drow["ItemPrice"], (float)drow["Quantity"]
                     , (float)drow["TotalAmount"], SizeID == 0 ? null : SizeID);
 
@@ -581,6 +584,22 @@ namespace HomeConsuption
         private void button1_Click_1(object sender, EventArgs e)
         {
             _SetPurchaseSub();
+        }
+
+        private void cbIncludTax_CheckedChanged(object sender, EventArgs e)
+        {
+            float totalAmount = Convert.ToSingle(txtTotalAmount.Text);
+            if (cbIncludTax.Checked)
+            {
+                 totalAmount = Convert.ToSingle(txtTotalAmount.Text);
+                txtTotalAmount.Text = (totalAmount / clsGlobal.Taxprec).ToString();
+
+            }else
+            {
+                totalAmount = Convert.ToSingle(txtTotalAmount.Text);
+                txtTotalAmount.Text = (totalAmount * clsGlobal.Taxprec).ToString();
+
+            }
         }
     }
 }

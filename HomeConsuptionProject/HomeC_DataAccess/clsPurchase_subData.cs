@@ -40,7 +40,7 @@ namespace HomeC_DataAccess
                   
 
                     connection.Open();
-                    cmd.ExecuteNonQuery();
+                    rowAffected = cmd.ExecuteNonQuery();
 
                   
 
@@ -166,7 +166,7 @@ WHERE PurchaseID =@PurchaseID and P_subID = @P_subID;";
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"DELETE * FROM [dbo].[Purchases_sub] WHERE PurchaseID =@PurchaseID ;";
+            string query = @"DELETE  FROM [dbo].[Purchases_sub] WHERE PurchaseID =@PurchaseID ;";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.AddWithValue("@PurchaseID", PurchaseID);

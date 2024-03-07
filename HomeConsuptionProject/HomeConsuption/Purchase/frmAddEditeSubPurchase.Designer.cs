@@ -222,6 +222,7 @@
             this.label12.Size = new System.Drawing.Size(46, 18);
             this.label12.TabIndex = 21;
             this.label12.Text = "الحجم";
+            this.label12.Visible = false;
             // 
             // comboBox1
             // 
@@ -230,6 +231,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(105, 21);
             this.comboBox1.TabIndex = 22;
+            this.comboBox1.Visible = false;
             // 
             // btnCancel
             // 

@@ -51,6 +51,7 @@
     <Compile Include="clsPurchaseData.cs" />
     <Compile Include="clsStoreData.cs" />
     <Compile Include="clsPurchase_CategoriesData.cs" />
+    <Compile Include="clsPurchase_SubCategoriesData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -47,7 +47,9 @@ namespace HomeConsuption.Purchase
 
             dataGridView1.DataSource = dt;
             lbPageSize.Text = _PageSize.ToString();
+            lbCurrentPage.Text = _PageNumber.ToString();
             RefreshdgvStoresHeaders();
+
         }
 
         private void RefreshdgvStoresHeaders()
@@ -83,9 +85,9 @@ namespace HomeConsuption.Purchase
         {
             if(_PageNumber == 1)
             {
-                return;
+                _PageNumber = _PageSize;
             }
-
+            else
             _PageNumber--;
             Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
         }
@@ -94,9 +96,9 @@ namespace HomeConsuption.Purchase
         {
             if (_PageNumber ==_PageSize)
             {
-                return;
+                _PageNumber = 1;
             }
-
+            else
             _PageNumber++;
             Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
         }

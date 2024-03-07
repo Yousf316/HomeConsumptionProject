@@ -15,6 +15,8 @@ namespace HomeConsuption
     {
         //public static clsUser CurrentUser;
 
+        public static float Taxprec =1.15f;
+
         public static bool RememberUsernameAndPassword(string Username, string Password)
         {
 
