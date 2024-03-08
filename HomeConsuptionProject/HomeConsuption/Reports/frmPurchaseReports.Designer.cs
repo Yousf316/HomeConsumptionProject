@@ -44,6 +44,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbTotall = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.tvCategories = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -52,16 +53,17 @@
             // cmbCategories
             // 
             this.cmbCategories.FormattingEnabled = true;
-            this.cmbCategories.Location = new System.Drawing.Point(79, 21);
+            this.cmbCategories.Location = new System.Drawing.Point(690, 245);
             this.cmbCategories.Name = "cmbCategories";
             this.cmbCategories.Size = new System.Drawing.Size(136, 21);
             this.cmbCategories.TabIndex = 0;
+            this.cmbCategories.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.label1.Location = new System.Drawing.Point(221, 13);
+            this.label1.Location = new System.Drawing.Point(229, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 29);
             this.label1.TabIndex = 1;
@@ -90,7 +92,7 @@
             // dtpTo
             // 
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(94, 121);
+            this.dtpTo.Location = new System.Drawing.Point(102, 211);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(100, 20);
             this.dtpTo.TabIndex = 4;
@@ -98,7 +100,7 @@
             // dtpFrom
             // 
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(94, 71);
+            this.dtpFrom.Location = new System.Drawing.Point(102, 161);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(100, 20);
             this.dtpFrom.TabIndex = 5;
@@ -107,7 +109,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label3.Location = new System.Drawing.Point(200, 76);
+            this.label3.Location = new System.Drawing.Point(208, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 14);
             this.label3.TabIndex = 6;
@@ -117,7 +119,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label4.Location = new System.Drawing.Point(130, 101);
+            this.label4.Location = new System.Drawing.Point(138, 191);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 14);
             this.label4.TabIndex = 7;
@@ -127,7 +129,7 @@
             // 
             this.cbAllCategories.AutoSize = true;
             this.cbAllCategories.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.cbAllCategories.Location = new System.Drawing.Point(22, 23);
+            this.cbAllCategories.Location = new System.Drawing.Point(30, 98);
             this.cbAllCategories.Name = "cbAllCategories";
             this.cbAllCategories.Size = new System.Drawing.Size(51, 21);
             this.cbAllCategories.TabIndex = 8;
@@ -139,7 +141,7 @@
             // 
             this.cbAllDate.AutoSize = true;
             this.cbAllDate.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.cbAllDate.Location = new System.Drawing.Point(27, 120);
+            this.cbAllDate.Location = new System.Drawing.Point(30, 210);
             this.cbAllDate.Name = "cbAllDate";
             this.cbAllDate.Size = new System.Drawing.Size(51, 21);
             this.cbAllDate.TabIndex = 9;
@@ -151,7 +153,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.label5.Location = new System.Drawing.Point(221, 71);
+            this.label5.Location = new System.Drawing.Point(229, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 29);
             this.label5.TabIndex = 10;
@@ -159,7 +161,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(94, 179);
+            this.btnOK.Location = new System.Drawing.Point(102, 269);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(100, 29);
             this.btnOK.TabIndex = 11;
@@ -170,7 +172,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnOK);
-            this.panel1.Controls.Add(this.cmbCategories);
+            this.panel1.Controls.Add(this.tvCategories);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cbAllDate);
@@ -179,9 +181,9 @@
             this.panel1.Controls.Add(this.dtpFrom);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(507, 327);
+            this.panel1.Location = new System.Drawing.Point(507, 272);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(323, 220);
+            this.panel1.Size = new System.Drawing.Size(323, 320);
             this.panel1.TabIndex = 12;
             // 
             // groupBox1
@@ -189,9 +191,9 @@
             this.groupBox1.Controls.Add(this.lbTotall);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.groupBox1.Location = new System.Drawing.Point(34, 312);
+            this.groupBox1.Location = new System.Drawing.Point(34, 265);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(447, 235);
+            this.groupBox1.Size = new System.Drawing.Size(447, 327);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "التقرير";
@@ -216,12 +218,21 @@
             this.label8.TabIndex = 17;
             this.label8.Text = ": المجموع";
             // 
+            // tvCategories
+            // 
+            this.tvCategories.Location = new System.Drawing.Point(80, 27);
+            this.tvCategories.Name = "tvCategories";
+            this.tvCategories.Size = new System.Drawing.Size(143, 128);
+            this.tvCategories.TabIndex = 14;
+            this.tvCategories.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvCategories_AfterCheck);
+            // 
             // frmPurchaseReports
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 599);
+            this.ClientSize = new System.Drawing.Size(868, 637);
+            this.Controls.Add(this.cmbCategories);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -258,5 +269,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbTotall;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TreeView tvCategories;
     }
 }

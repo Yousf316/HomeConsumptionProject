@@ -127,7 +127,12 @@ namespace HomeConsuption.Purchase
         private void ProductList_OnProductInfo(object sender, frmProductList.ProductInfoArgs e)
         {
             item = clsItem.FindItem(e.ProductID);
-            SetProductInfoDefualt();
+            if(item != null)
+            {
+                SetProductInfoDefualt();
+                btnSave.Enabled = true;
+            }
+           
         }
 
         private void SetProductInfoDefualt()
@@ -152,6 +157,12 @@ namespace HomeConsuption.Purchase
             this.Quantity = Convert.ToSingle(txtQuantity.Text);
             this.PricePerUnit = Convert.ToSingle(txtPricePerUnit.Text);
 
+            if(this.Total <=0)
+            {
+                
+                return;
+            }
+
             _OnProductInfo(new ProductInfoArgs(RowCount,item.ItemID, txtProdouctName.Text, rtbDescription.Text, item.CategoryID, null,"", this.Quantity, this.PricePerUnit, this.Total));
             this.Close();
 
@@ -159,6 +170,12 @@ namespace HomeConsuption.Purchase
 
         private void txtQuantityAndPrice_TextChanged(object sender, EventArgs e)
         {
+            if (txtQuantity.Text == "")
+                txtQuantity.Text = "0.00";
+
+            if (txtPricePerUnit.Text == "")
+                txtPricePerUnit.Text = "0.00";
+
 
             float.TryParse(txtQuantity.Text, out float Quantity);
             
@@ -171,6 +188,22 @@ namespace HomeConsuption.Purchase
 
             this.Total = Convert.ToSingle(lbTotal.Text);
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow digits, control keys, and decimal point
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true; // Reject invalid character
+            }
+
+            // Only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
 
     }
 }

@@ -104,7 +104,7 @@ namespace HomeConsuption
                     , Convert.ToSingle( dr["Quantity"].ToString()), Convert.ToSingle(dr["ItemPrice"].ToString()), Convert.ToSingle(dr["TotalAmount"].ToString()));
             }
             _NextRowNumber += dTable.Rows.Count;
-
+            _RefreshRecordCount();
         }
 
         private void _GetPurchaseValues()
@@ -190,6 +190,11 @@ namespace HomeConsuption
 
         }
 
+        private void _RefreshRecordCount()
+        {
+            lbRecordCount.Text = dtSubPurchase.Rows.Count.ToString();
+        }
+
        private void _SetDgvPurchaseColumn()
         {
            
@@ -235,6 +240,8 @@ namespace HomeConsuption
             }
 
             txtTotalAmount.Text = SumTotal.ToString();
+            cbIncludTax_CheckedChanged(null, null);
+            _RefreshRecordCount();
         }
 
        private void _SetTotalAmountBeforeTax()
@@ -276,7 +283,7 @@ namespace HomeConsuption
         private void txtTotalBeforeTax_TextChanged(object sender, EventArgs e)
         {
 
-            txtTotalAfterTax.Text = (Convert.ToSingle(txtTotalBeforeTax.Text) * 1.15f).ToString("F2");
+            txtTotalAfterTax.Text = (Convert.ToSingle(txtTotalBeforeTax.Text) * clsGlobal.Taxprec).ToString("F2");
 
             txtTaxAmount.Text = (Convert.ToSingle(txtTotalAfterTax.Text) - Convert.ToSingle(txtTotalBeforeTax.Text)).ToString("F2");
         }
@@ -418,7 +425,19 @@ namespace HomeConsuption
             
             }
 
-          if(_SetPurchase())
+            if (_type == enType.withItems)
+            {
+                if(dtSubPurchase.Rows.Count ==0)
+                {
+
+                    MessageBox.Show("!!أضف بند", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return;
+                
+                }
+            }
+
+            if (_SetPurchase())
             {
                 MessageBox.Show("تم الحفظ بنجاح", "نجحت العملية", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -427,7 +446,7 @@ namespace HomeConsuption
                     _SetPurchaseSub();
                 }
 
-               if( MessageBox.Show("هل تريد الاستمرار؟","",MessageBoxButtons.YesNo)==DialogResult.Yes)
+               if( MessageBox.Show("هل تريد الاستمرار؟","",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                 {
                     _mode = enMode.Update;
                     AddEditPurchase_Load(null, null);

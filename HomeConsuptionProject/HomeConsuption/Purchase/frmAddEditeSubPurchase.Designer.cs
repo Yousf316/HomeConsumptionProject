@@ -125,6 +125,7 @@
             this.txtQuantity.Size = new System.Drawing.Size(107, 20);
             this.txtQuantity.TabIndex = 6;
             this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantityAndPrice_TextChanged);
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // txtPricePerUnit
             // 
@@ -133,6 +134,7 @@
             this.txtPricePerUnit.Size = new System.Drawing.Size(102, 20);
             this.txtPricePerUnit.TabIndex = 5;
             this.txtPricePerUnit.TextChanged += new System.EventHandler(this.txtQuantityAndPrice_TextChanged);
+            this.txtPricePerUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label5
             // 
@@ -245,6 +247,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Image = global::HomeConsuption.Properties.Resources.icons8_save_48;
             this.btnSave.Location = new System.Drawing.Point(231, 495);
             this.btnSave.Name = "btnSave";

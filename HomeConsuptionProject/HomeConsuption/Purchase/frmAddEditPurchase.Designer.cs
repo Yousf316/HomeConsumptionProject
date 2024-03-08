@@ -496,12 +496,13 @@
             // 
             this.cbIncludTax.AutoSize = true;
             this.cbIncludTax.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.cbIncludTax.Location = new System.Drawing.Point(292, 444);
+            this.cbIncludTax.Location = new System.Drawing.Point(296, 446);
             this.cbIncludTax.Name = "cbIncludTax";
             this.cbIncludTax.Size = new System.Drawing.Size(121, 23);
             this.cbIncludTax.TabIndex = 360;
             this.cbIncludTax.Text = "شامل الضريبة";
             this.cbIncludTax.UseVisualStyleBackColor = true;
+            this.cbIncludTax.Visible = false;
             this.cbIncludTax.CheckedChanged += new System.EventHandler(this.cbIncludTax_CheckedChanged);
             // 
             // frmAddEditPurchase

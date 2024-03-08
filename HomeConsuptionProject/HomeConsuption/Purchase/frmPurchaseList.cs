@@ -35,7 +35,7 @@ namespace HomeConsuption.Purchase
         private void frmPurchaseList_Load(object sender, EventArgs e)
         {
             cmbColumns.SelectedIndex = 0;
-
+            cbAll.Checked = true;
            
            
         }
@@ -195,6 +195,13 @@ namespace HomeConsuption.Purchase
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             _SearchOperator();
+        }
+
+        private void cbAll_CheckedChanged(object sender, EventArgs e)
+        {
+                dtpFrom.Enabled = !cbAll.Checked;
+                dtpTo.Enabled = !cbAll.Checked;
+           
         }
     }
 }

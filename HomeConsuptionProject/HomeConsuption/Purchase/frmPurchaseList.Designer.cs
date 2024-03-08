@@ -45,6 +45,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lbCurrentPage = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbAll = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.cmsSettingsPurchase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -209,11 +214,63 @@
             this.label4.TabIndex = 363;
             this.label4.Text = ": الصفحة";
             // 
+            // dtpFrom
+            // 
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFrom.Location = new System.Drawing.Point(839, 231);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(104, 20);
+            this.dtpFrom.TabIndex = 365;
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTo.Location = new System.Drawing.Point(671, 231);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(106, 20);
+            this.dtpTo.TabIndex = 366;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label3.Location = new System.Drawing.Point(949, 231);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 18);
+            this.label3.TabIndex = 367;
+            this.label3.Text = "من";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label5.Location = new System.Drawing.Point(793, 231);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 18);
+            this.label5.TabIndex = 368;
+            this.label5.Text = "ألى";
+            // 
+            // cbAll
+            // 
+            this.cbAll.AutoSize = true;
+            this.cbAll.Location = new System.Drawing.Point(619, 234);
+            this.cbAll.Name = "cbAll";
+            this.cbAll.Size = new System.Drawing.Size(46, 17);
+            this.cbAll.TabIndex = 369;
+            this.cbAll.Text = "الكل";
+            this.cbAll.UseVisualStyleBackColor = true;
+            this.cbAll.CheckedChanged += new System.EventHandler(this.cbAll_CheckedChanged);
+            // 
             // frmPurchaseList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 630);
+            this.Controls.Add(this.cbAll);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dtpTo);
+            this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.lbCurrentPage);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
@@ -257,5 +314,10 @@
         private System.Windows.Forms.ToolStripMenuItem الحذفToolStripMenuItem;
         private System.Windows.Forms.Label lbCurrentPage;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
+        private System.Windows.Forms.DateTimePicker dtpTo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox cbAll;
     }
 }
