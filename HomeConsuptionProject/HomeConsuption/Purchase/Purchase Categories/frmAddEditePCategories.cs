@@ -35,7 +35,7 @@ namespace HomeConsuption.Purchase.Purchase_Categories
 
         public delegate void CallbackCategoryID(object sender, CategoryInfoArgs categoryInfo);
 
-        public event CallbackCategoryID DataBackCategoryID;
+        public event CallbackCategoryID DataBackCategoryInfo;
 
 
         int _CategoryID;
@@ -71,7 +71,7 @@ namespace HomeConsuption.Purchase.Purchase_Categories
 
                 MessageBox.Show("تمت العملية بنجاح", "تمت العملية بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CategoryInfoArgs categoryA = new CategoryInfoArgs(_objCategory.PCategoryID, _objCategory.CategoryName);
-                DataBackCategoryID?.Invoke(this, categoryA);
+                DataBackCategoryInfo?.Invoke(this, categoryA);
 
             }
             else

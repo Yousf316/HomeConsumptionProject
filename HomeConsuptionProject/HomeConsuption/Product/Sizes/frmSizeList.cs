@@ -28,7 +28,7 @@ namespace HomeConsuption.Product.Sizes
 
         private enMode _mode = enMode.None;
 
-        string _ColumnName;
+        string _ColumnName ="";
 
         private void _RefreshTable(int PageNumber, int RowCountPerPage)
         {

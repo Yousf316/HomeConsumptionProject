@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace HomeConsuption.Product
 {
     public partial class frmProductList : Form
@@ -19,14 +18,12 @@ namespace HomeConsuption.Product
         }
 
         int _PageNumber = 1;
-        int _RowsCountPerPage = 12;
+        int _RowsCountPerPage = 11;
         int _RowCount;
         int _PageSize { get => (int)Math.Ceiling((double)_RowCount / _RowsCountPerPage); }
 
-        private static DataTable _dAllStores;
-        private DataTable _dStores;
-
-
+       
+        
         public class ProductInfoArgs : EventArgs
         {
             public int ProductID { set; get; }

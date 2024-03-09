@@ -492,10 +492,15 @@ namespace HomeConsuption
         private void btnAddNewCategory_Click(object sender, EventArgs e)
         {
            frmAddEditePCategories pCategories = new frmAddEditePCategories();
+            pCategories.DataBackCategoryInfo += PCategories_DataBackCategoryInfo;
             pCategories.ShowDialog();
-            _GetAllCategories();
         }
 
+        private void PCategories_DataBackCategoryInfo(object sender, frmAddEditePCategories.CategoryInfoArgs categoryInfo)
+        {
+            _GetAllCategories();
+            cmbCategoryList.SelectedItem = categoryInfo.CategoryName;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -619,6 +624,11 @@ namespace HomeConsuption
                 txtTotalAmount.Text = (totalAmount * clsGlobal.Taxprec).ToString();
 
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -40,7 +40,7 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Categories
         public event CallbackCategoryID DataBackCategoryID;
 
 
-        int _CategoryID;
+        int _CategoryID=-1;
         int _PSCategoryID;
         clsPurchase_SubCategory _objCategory;
         public frmAddEditePSubCategory(int PSCategoryID)
