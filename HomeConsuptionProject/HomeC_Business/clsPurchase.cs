@@ -155,6 +155,30 @@ namespace HomeC_Business
 
             return clsPurchaseData.GetAllPurchasesInfoWithPages(PageNumber, RowCountPerPage, ref RowCount);
         }
+         public static DataTable GetAllPurchasesInfoWithPagesByDate(int PageNumber, int RowCountPerPage,DateTime DateForm,DateTime DateTo, ref int RowCount)
+        {
+
+            return clsPurchaseData.GetAllPurchasesInfoWithPagesByDate(PageNumber, RowCountPerPage,DateForm,DateTo, ref RowCount);
+        }
+
+        public static DataTable GetAllPurchasesInfoWithPagesByDateOfStoreName(int PageNumber, int RowCountPerPage, DateTime DateForm, DateTime DateTo,string StoreName, ref int RowCount)
+        {
+
+            return clsPurchaseData.GetAllPurchasesInfoWithPagesByDateOfStoreName(PageNumber, RowCountPerPage, DateForm, DateTo, StoreName, ref RowCount);
+        }
+
+
+          public static DataTable GetAllPurchaseInfoWithPagingByDateofTotalAfterTax(int PageNumber, int RowCountPerPage, DateTime DateForm, DateTime DateTo,string TotalAfterTax, ref int RowCount)
+        {
+
+            return clsPurchaseData.GetAllPurchaseInfoWithPagingByDateofTotalAfterTax(PageNumber, RowCountPerPage, DateForm, DateTo, TotalAfterTax, ref RowCount);
+        }
+          public static DataTable GetAllPurchaseInfoWithPagingByDateofType(int PageNumber, int RowCountPerPage, DateTime DateForm, DateTime DateTo,string TypeName, ref int RowCount)
+        {
+
+            return clsPurchaseData.GetAllPurchaseInfoWithPagingByDateofType(PageNumber, RowCountPerPage, DateForm, DateTo, TypeName, ref RowCount);
+        }
+
 
         public static DataTable GetPurchaseColumns()
         {

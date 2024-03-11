@@ -7,8 +7,8 @@
       @Size int null,
 	  @Description nvarchar(max) null,
 	  @ItemPrice smallmoney ,
-	  @Quantity int,
-	  @TotalAmount money,
+	  @Quantity smallmoney,
+	  @TotalAmount smallmoney,
 	  @P_subID int 
 AS
 BEGIN

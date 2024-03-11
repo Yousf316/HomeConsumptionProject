@@ -21,8 +21,10 @@ namespace HomeConsuption.Purchase
         }
 
         enum enMode { None,OnlyNumber }
+        enum enModeList { All,All_Date }
 
         private enMode _mode = enMode.None;
+        private enModeList _modelist = enModeList.All;
 
         int _PageNumber =1;
         string _ColumnName ;
@@ -30,7 +32,10 @@ namespace HomeConsuption.Purchase
         int _RowCount;
         int _PageSize { get => (int)Math.Ceiling((double)_RowCount / _RowsCountPerPage); }
 
-        
+
+        DataTable _dtPurchase;
+
+
 
         private void frmPurchaseList_Load(object sender, EventArgs e)
         {
@@ -40,13 +45,21 @@ namespace HomeConsuption.Purchase
            
         }
 
+        private void _GetDateTableofPurchasinfo(int PageNumber, int RowCountPerPage)
+        {
+            _dtPurchase = clsPurchase.GetAllPurchasesInfoWithPages(PageNumber, RowCountPerPage, ref _RowCount);
+
+        }
+
         private  void _RefreshTable(int PageNumber,int RowCountPerPage)
         {
-            DataTable dt =  clsPurchase.GetAllPurchasesInfoWithPages(PageNumber, RowCountPerPage, ref _RowCount);
-
-
-            dataGridView1.DataSource = dt;
-            lbPageSize.Text = _PageSize.ToString();
+           
+                    _GetPurchaseListByDate(PageNumber, RowCountPerPage);
+           
+            
+          
+            dataGridView1.DataSource = _dtPurchase;
+            lbPageSize.Text = _PageSize !=0?_PageSize.ToString():"لا يوجد";
             lbCurrentPage.Text = _PageNumber.ToString();
             RefreshdgvStoresHeaders();
 
@@ -85,7 +98,7 @@ namespace HomeConsuption.Purchase
         {
             if(_PageNumber == 1)
             {
-                _PageNumber = _PageSize;
+                _PageNumber = _PageSize !=0? _PageSize:1;
             }
             else
             _PageNumber--;
@@ -94,7 +107,7 @@ namespace HomeConsuption.Purchase
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (_PageNumber ==_PageSize)
+            if (_PageNumber >=_PageSize)
             {
                 _PageNumber = 1;
             }
@@ -139,13 +152,11 @@ namespace HomeConsuption.Purchase
                     return;
                 }
 
-                dataGridView1.DataSource = clsPurchase.GetPurchaseInfo(this._ColumnName, txtSearch.Text);
+                
 
             }
-            else
-            {
-                dataGridView1.DataSource = clsPurchase.GetPurchaseInfo(this._ColumnName, txtSearch.Text);
-            }
+
+            Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
 
 
         }
@@ -158,9 +169,12 @@ namespace HomeConsuption.Purchase
             switch(Item)
             {
                 case "الكل":
-                    Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
+                    _ColumnName = "All";
                     txtSearch.Visible = false;
-                   
+                    _modelist = enModeList.All;
+                    Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
+                    
+
                     break; 
                 case "رقم الفاتورة":
                     _ColumnName = "PurchaseID";
@@ -168,10 +182,7 @@ namespace HomeConsuption.Purchase
                     _mode = enMode.OnlyNumber;
 
                     break; 
-               case "تاريخ الفاتورة":
-                    _ColumnName = "IssueDate";
-                    txtSearch.Visible = false;
-                    break; 
+              
                case "المجموع":
                     _ColumnName = "TotalAfterTax";
                     txtSearch.Visible = true;
@@ -185,7 +196,7 @@ namespace HomeConsuption.Purchase
                case "نوع الفاتورة":
                     _ColumnName = "TypeName";
                     txtSearch.Visible = false;
-
+              
                     break; 
 
             }
@@ -197,11 +208,59 @@ namespace HomeConsuption.Purchase
             _SearchOperator();
         }
 
+        private void _GetPurchaseListByDate(int PageNumber, int RowCountPerPage)
+        {
+
+            switch(_ColumnName)
+            {
+                case "All":
+             _dtPurchase = clsPurchase.GetAllPurchasesInfoWithPagesByDate(PageNumber, RowCountPerPage, dtpFrom.Value, dtpTo.Value, ref _RowCount);
+
+                    break;
+
+
+                case "StoreName":
+                    _dtPurchase = clsPurchase.GetAllPurchasesInfoWithPagesByDateOfStoreName(PageNumber, RowCountPerPage, dtpFrom.Value, dtpTo.Value,txtSearch.Text.Trim(), ref _RowCount);
+
+                    break;
+
+                case "TypeName":
+                   // _dtPurchase = clsPurchase.GetAllPurchaseInfoWithPagingByDateofType(PageNumber, RowCountPerPage, dtpFrom.Value, dtpTo.Value, txtSearch.Text, ref _RowCount);
+
+                    break;
+
+
+                case "TotalAfterTax":
+                    _dtPurchase = clsPurchase.GetAllPurchaseInfoWithPagingByDateofTotalAfterTax(PageNumber, RowCountPerPage, dtpFrom.Value, dtpTo.Value, txtSearch.Text, ref _RowCount);
+
+                    break;
+            }
+
+
+        }
+
         private void cbAll_CheckedChanged(object sender, EventArgs e)
         {
+             
                 dtpFrom.Enabled = !cbAll.Checked;
                 dtpTo.Enabled = !cbAll.Checked;
            
+            if( cbAll.Checked )
+            {
+                dtpFrom.Value = new DateTime(DateTime.Now.Year, 1, 1);
+                dtpTo.Value = new DateTime(DateTime.Now.Year, 12, 31);
+                
+            }
+
+            Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
+        }
+
+        private void dtp_ValueChanged(object sender, EventArgs e)
+        {
+            _modelist = enModeList.All_Date;
+
+
+            Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
         }
     }
 }

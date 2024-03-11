@@ -121,7 +121,6 @@
             this.cmbColumns.Items.AddRange(new object[] {
             "الكل",
             "رقم الفاتورة",
-            "تاريخ الفاتورة",
             "المجموع",
             "أسم المتجر",
             "نوع الفاتورة"});
@@ -221,6 +220,8 @@
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(104, 20);
             this.dtpFrom.TabIndex = 365;
+            this.dtpFrom.Value = new System.DateTime(2024, 1, 1, 11, 21, 0, 0);
+            this.dtpFrom.ValueChanged += new System.EventHandler(this.dtp_ValueChanged);
             // 
             // dtpTo
             // 
@@ -229,6 +230,8 @@
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(106, 20);
             this.dtpTo.TabIndex = 366;
+            this.dtpTo.Value = new System.DateTime(2024, 12, 31, 11, 21, 0, 0);
+            this.dtpTo.ValueChanged += new System.EventHandler(this.dtp_ValueChanged);
             // 
             // label3
             // 

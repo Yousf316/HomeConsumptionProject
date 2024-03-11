@@ -8,10 +8,14 @@
     [TotalAfterTax] SMALLMONEY NOT NULL,
     [StoreID]       INT        NOT NULL,
     [PCategoryID]   INT        NOT NULL,
+    [PSCategoryID]  INT        NULL,
     CONSTRAINT [PK_Purchases] PRIMARY KEY CLUSTERED ([PurchaseID] ASC),
     CONSTRAINT [FK_Purchases_Purchase_Categories] FOREIGN KEY ([PCategoryID]) REFERENCES [dbo].[Purchase_Categories] ([PCategoryID]),
+    CONSTRAINT [FK_Purchases_Purchase_SubCategories] FOREIGN KEY ([PSCategoryID]) REFERENCES [dbo].[Purchase_SubCategories] ([PSCategoryID]),
     CONSTRAINT [FK_Purchases_Stores] FOREIGN KEY ([StoreID]) REFERENCES [dbo].[Stores] ([StoreID])
 );
+
+
 
 
 

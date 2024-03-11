@@ -1,5 +1,5 @@
 ﻿
-create PROCEDURE [dbo].[SP_GetAllPurchaseInfoWithPaging]
+CREATE PROCEDURE [dbo].[SP_GetAllPurchaseInfoWithPaging]
 		@PageNumber int,
 		@RowCountPerPage  int,
 		@RowCount int output
@@ -7,7 +7,7 @@ create PROCEDURE [dbo].[SP_GetAllPurchaseInfoWithPaging]
 AS
 BEGIN
 
-	SELECT @RowCount=count(*) FROM [dbo].[Purchases]
+	SELECT @RowCount=count(*) FROM  View_PurchasesInfo
 
 	
 	SELECT * FROM [dbo].View_PurchasesInfo
