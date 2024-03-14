@@ -128,17 +128,23 @@
     <Compile Include="Purchase\Purchase Categories\frmPCategoriesList.Designer.cs">
       <DependentUpon>frmPCategoriesList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Purchase\Purchase Sub Base\frmAddPurchaseSubBaseCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\Purchase Sub Base\frmAddPurchaseSubBaseCategories.Designer.cs">
+      <DependentUpon>frmAddPurchaseSubBaseCategories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Purchase\Purchase Sub Categories\frmAddEditePSubCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Purchase\Purchase Sub Categories\frmAddEditePSubCategory.Designer.cs">
       <DependentUpon>frmAddEditePSubCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Purchase\Purchase Sub Categories\frmPurchseSubCategories.cs">
+    <Compile Include="Purchase\Purchase Sub Categories\frmPurchseSubCategoriesList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Purchase\Purchase Sub Categories\frmPurchseSubCategories.Designer.cs">
-      <DependentUpon>frmPurchseSubCategories.cs</DependentUpon>
+    <Compile Include="Purchase\Purchase Sub Categories\frmPurchseSubCategoriesList.Designer.cs">
+      <DependentUpon>frmPurchseSubCategoriesList.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\frmPurchaseReports.cs">
       <SubType>Form</SubType>
@@ -215,11 +221,14 @@
     <EmbeddedResource Include="Purchase\Purchase Categories\frmPCategoriesList.resx">
       <DependentUpon>frmPCategoriesList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\Purchase Sub Base\frmAddPurchaseSubBaseCategories.resx">
+      <DependentUpon>frmAddPurchaseSubBaseCategories.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Purchase\Purchase Sub Categories\frmAddEditePSubCategory.resx">
       <DependentUpon>frmAddEditePSubCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Purchase\Purchase Sub Categories\frmPurchseSubCategories.resx">
-      <DependentUpon>frmPurchseSubCategories.cs</DependentUpon>
+    <EmbeddedResource Include="Purchase\Purchase Sub Categories\frmPurchseSubCategoriesList.resx">
+      <DependentUpon>frmPurchseSubCategoriesList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmPurchaseReports.resx">
       <DependentUpon>frmPurchaseReports.cs</DependentUpon>

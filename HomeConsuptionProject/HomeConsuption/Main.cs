@@ -2,6 +2,7 @@
 using HomeConsuption.Product.Sizes;
 using HomeConsuption.Purchase;
 using HomeConsuption.Purchase.Purchase_Categories;
+using HomeConsuption.Purchase.Purchase_Sub_Categories;
 using HomeConsuption.Reports;
 using System;
 using System.Collections.Generic;
@@ -96,8 +97,7 @@ namespace HomeConsuption
 
         private void أدارةالاصنافToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPCategoriesList pcategoriesList = new frmPCategoriesList();
-            pcategoriesList.ShowDialog();
+            
 
         }
 
@@ -105,6 +105,30 @@ namespace HomeConsuption
         {
             frmPurchaseReports purchaseReports = new frmPurchaseReports();
             purchaseReports.ShowDialog();
+        }
+
+        private void الاصنافالريئسيةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPCategoriesList pcategoriesList = new frmPCategoriesList();
+            pcategoriesList.ShowDialog();
+        }
+
+        private void صنفرئيسيToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditePCategories editePCategories = new frmAddEditePCategories();
+            editePCategories.ShowDialog();
+        }
+
+        private void صنففرعيToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditePSubCategory addEditePSubCategory = new frmAddEditePSubCategory();
+            addEditePSubCategory.ShowDialog();
+        }
+
+        private void الاصنافالToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPurchseSubCategoriesList purchseSubCategoriesList = new frmPurchseSubCategoriesList();
+            purchseSubCategoriesList.ShowDialog();
         }
     }
 }

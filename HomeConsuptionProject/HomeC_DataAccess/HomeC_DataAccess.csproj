@@ -45,6 +45,7 @@
     <Compile Include="clsCategoryData.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsItemData.cs" />
+    <Compile Include="clsPurchaseSubBaseCategoriesData.cs" />
     <Compile Include="clsPurchase_subData.cs" />
     <Compile Include="clsSizesData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

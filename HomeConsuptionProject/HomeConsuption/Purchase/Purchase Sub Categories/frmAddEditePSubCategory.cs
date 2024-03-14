@@ -40,7 +40,6 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Categories
         public event CallbackCategoryID DataBackCategoryID;
 
 
-        int _CategoryID=-1;
         int _PSCategoryID;
         clsPurchase_SubCategory _objCategory;
         public frmAddEditePSubCategory(int PSCategoryID)
@@ -56,26 +55,45 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Categories
             _objCategory = new clsPurchase_SubCategory();
             lbCateID.Text = "[????]";
             txtCateName.Text = "";
+
         }
+
         private void _SetCategoryInfo()
         {
-            _objCategory = clsPurchase_SubCategory.FindPurchase_Category(_CategoryID);
-            lbCateID.Text = _objCategory.PCategoryID.ToString();
+            _objCategory = clsPurchase_SubCategory.FindPurchase_Category(_PSCategoryID);
+            lbCateID.Text = _objCategory.PSCategoryID.ToString();
             txtCateName.Text = _objCategory.SubCategoryName;
+            cmbCategories.Visible = false;
+            lbCategory.Visible = false;
+        }
+         private void _SetSubBaseCategory()
+        {
+
+            clsPurchaseSubBaseCategories subBaseCategories = new clsPurchaseSubBaseCategories();
+
+            subBaseCategories.SetValues(_objCategory.PSCategoryID, clsPurchase_Category.FindPurchase_Category(cmbCategories.SelectedItem.ToString()).PCategoryID);
+
+            if (subBaseCategories.SavePurchaseSubBaseCategories())
+            {
+                SubCategoryInfoArgs categoryA = new SubCategoryInfoArgs(_objCategory.PSCategoryID, _objCategory.SubCategoryName, subBaseCategories.objPCategory.PCategoryID);
+                DataBackCategoryID?.Invoke(this, categoryA);
+
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            _objCategory.SubCategoryName = txtCateName.Text.Trim();
 
+            _objCategory.SetValues(txtCateName.Text.Trim());
 
             if (_objCategory.SavePurchase_SubCategories())
             {
-                lbCateID.Text = _objCategory.PCategoryID.ToString();
+                lbCateID.Text = _objCategory.PSCategoryID.ToString();
+
+                if (_mode == enMode.AddNew)
+                    _SetSubBaseCategory();
 
                 MessageBox.Show("تمت العملية بنجاح", "تمت العملية بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SubCategoryInfoArgs categoryA = new SubCategoryInfoArgs(_objCategory.PSCategoryID, _objCategory.SubCategoryName, _objCategory.PSCategoryID);
-                DataBackCategoryID?.Invoke(this, categoryA);
 
             }
             else
@@ -88,6 +106,7 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Categories
 
         private void frmAddEditCategory_Load(object sender, EventArgs e)
         {
+            _GetAllCategories();
             if (_mode == enMode.AddNew)
             {
                 _GetDefaultValues();
@@ -102,6 +121,19 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Categories
         {
             this.Close();
         }
+
+        private void _GetAllCategories()
+        {
+            DataTable dt = clsPurchase_Category.GetAllPurchase_Categories();
+            cmbCategories.Items.Clear();
+            foreach (DataRow dr in dt.Rows)
+            {
+                cmbCategories.Items.Add(dr["CategoryName"].ToString());
+            }
+            if(cmbCategories.Items.Count >0)
+                cmbCategories.SelectedIndex = 0;
+        }
+
 
 
     }

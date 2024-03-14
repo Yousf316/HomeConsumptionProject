@@ -36,6 +36,9 @@
             this.txtStoreName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPSCategoriesList = new System.Windows.Forms.Button();
+            this.cmbSubCategories = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnAddNewCategory = new System.Windows.Forms.Button();
             this.cmbCategoryList = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -110,14 +113,14 @@
             this.dtpDate.CustomFormat = "dd/mm/yyyy";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpDate.Location = new System.Drawing.Point(28, 80);
+            this.dtpDate.Location = new System.Drawing.Point(52, 80);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(141, 20);
+            this.dtpDate.Size = new System.Drawing.Size(117, 20);
             this.dtpDate.TabIndex = 277;
             // 
             // txtStoreName
             // 
-            this.txtStoreName.Location = new System.Drawing.Point(856, 32);
+            this.txtStoreName.Location = new System.Drawing.Point(856, 60);
             this.txtStoreName.Name = "txtStoreName";
             this.txtStoreName.ReadOnly = true;
             this.txtStoreName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -129,7 +132,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label3.Location = new System.Drawing.Point(1112, 26);
+            this.label3.Location = new System.Drawing.Point(1112, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 24);
             this.label3.TabIndex = 25;
@@ -137,6 +140,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnPSCategoriesList);
+            this.panel1.Controls.Add(this.cmbSubCategories);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.btnAddNewCategory);
             this.panel1.Controls.Add(this.cmbCategoryList);
             this.panel1.Controls.Add(this.label10);
@@ -156,13 +162,43 @@
             this.panel1.TabIndex = 104;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnPSCategoriesList
+            // 
+            this.btnPSCategoriesList.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
+            this.btnPSCategoriesList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPSCategoriesList.Location = new System.Drawing.Point(403, 63);
+            this.btnPSCategoriesList.Name = "btnPSCategoriesList";
+            this.btnPSCategoriesList.Size = new System.Drawing.Size(28, 24);
+            this.btnPSCategoriesList.TabIndex = 285;
+            this.btnPSCategoriesList.UseVisualStyleBackColor = true;
+            this.btnPSCategoriesList.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // cmbSubCategories
+            // 
+            this.cmbSubCategories.FormattingEnabled = true;
+            this.cmbSubCategories.Location = new System.Drawing.Point(437, 66);
+            this.cmbSubCategories.Name = "cmbSubCategories";
+            this.cmbSubCategories.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbSubCategories.Size = new System.Drawing.Size(128, 21);
+            this.cmbSubCategories.TabIndex = 284;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.label11.Location = new System.Drawing.Point(580, 63);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(124, 24);
+            this.label11.TabIndex = 283;
+            this.label11.Text = ":تصنيف فرعي";
+            // 
             // btnAddNewCategory
             // 
             this.btnAddNewCategory.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
             this.btnAddNewCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddNewCategory.Location = new System.Drawing.Point(390, 70);
+            this.btnAddNewCategory.Location = new System.Drawing.Point(403, 18);
             this.btnAddNewCategory.Name = "btnAddNewCategory";
-            this.btnAddNewCategory.Size = new System.Drawing.Size(40, 36);
+            this.btnAddNewCategory.Size = new System.Drawing.Size(28, 24);
             this.btnAddNewCategory.TabIndex = 282;
             this.btnAddNewCategory.UseVisualStyleBackColor = true;
             this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
@@ -170,7 +206,7 @@
             // cmbCategoryList
             // 
             this.cmbCategoryList.FormattingEnabled = true;
-            this.cmbCategoryList.Location = new System.Drawing.Point(436, 79);
+            this.cmbCategoryList.Location = new System.Drawing.Point(437, 21);
             this.cmbCategoryList.Name = "cmbCategoryList";
             this.cmbCategoryList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmbCategoryList.Size = new System.Drawing.Size(128, 21);
@@ -180,7 +216,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label10.Location = new System.Drawing.Point(579, 76);
+            this.label10.Location = new System.Drawing.Point(580, 18);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(134, 24);
             this.label10.TabIndex = 280;
@@ -190,7 +226,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label2.Location = new System.Drawing.Point(579, 29);
+            this.label2.Location = new System.Drawing.Point(1112, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 24);
             this.label2.TabIndex = 279;
@@ -202,7 +238,7 @@
             this.cbTypeInvoice.Items.AddRange(new object[] {
             "سريعة",
             "عادية"});
-            this.cbTypeInvoice.Location = new System.Drawing.Point(436, 35);
+            this.cbTypeInvoice.Location = new System.Drawing.Point(969, 21);
             this.cbTypeInvoice.Name = "cbTypeInvoice";
             this.cbTypeInvoice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cbTypeInvoice.Size = new System.Drawing.Size(128, 21);
@@ -212,7 +248,7 @@
             // txtStoreID
             // 
             this.txtStoreID.Enabled = false;
-            this.txtStoreID.Location = new System.Drawing.Point(775, 32);
+            this.txtStoreID.Location = new System.Drawing.Point(775, 60);
             this.txtStoreID.Name = "txtStoreID";
             this.txtStoreID.Size = new System.Drawing.Size(75, 20);
             this.txtStoreID.TabIndex = 100;
@@ -222,9 +258,9 @@
             // 
             this.btnAddNewStore.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
             this.btnAddNewStore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddNewStore.Location = new System.Drawing.Point(729, 23);
+            this.btnAddNewStore.Location = new System.Drawing.Point(733, 54);
             this.btnAddNewStore.Name = "btnAddNewStore";
-            this.btnAddNewStore.Size = new System.Drawing.Size(40, 36);
+            this.btnAddNewStore.Size = new System.Drawing.Size(36, 33);
             this.btnAddNewStore.TabIndex = 20;
             this.btnAddNewStore.UseVisualStyleBackColor = true;
             this.btnAddNewStore.Click += new System.EventHandler(this.btnAddNewStore_Click);
@@ -583,5 +619,8 @@
         private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.CheckBox cbIncludTax;
+        private System.Windows.Forms.Button btnPSCategoriesList;
+        private System.Windows.Forms.ComboBox cmbSubCategories;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -21,17 +21,17 @@ namespace HomeConsuption.Purchase
         }
 
         enum enMode { None,OnlyNumber }
-        enum enModeList { All,All_Date }
+        enum enModeList { WithDate,All_Date }
 
         private enMode _mode = enMode.None;
-        private enModeList _modelist = enModeList.All;
+        private enModeList _modelist = enModeList.All_Date;
 
         int _PageNumber =1;
         string _ColumnName ;
         int _RowsCountPerPage =10;
         int _RowCount;
         int _PageSize { get => (int)Math.Ceiling((double)_RowCount / _RowsCountPerPage); }
-
+       
 
         DataTable _dtPurchase;
 
@@ -53,11 +53,13 @@ namespace HomeConsuption.Purchase
 
         private  void _RefreshTable(int PageNumber,int RowCountPerPage)
         {
-           
-                    _GetPurchaseListByDate(PageNumber, RowCountPerPage);
-           
-            
-          
+                if(_modelist ==enModeList.WithDate)
+              _GetPurchaseListByDate(PageNumber, RowCountPerPage);
+           else
+              _GetPurchaseList(PageNumber, RowCountPerPage);
+
+
+
             dataGridView1.DataSource = _dtPurchase;
             lbPageSize.Text = _PageSize !=0?_PageSize.ToString():"لا يوجد";
             lbCurrentPage.Text = _PageNumber.ToString();
@@ -171,7 +173,7 @@ namespace HomeConsuption.Purchase
                 case "الكل":
                     _ColumnName = "All";
                     txtSearch.Visible = false;
-                    _modelist = enModeList.All;
+                    
                     Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
                     
 
@@ -231,13 +233,58 @@ namespace HomeConsuption.Purchase
 
 
                 case "TotalAfterTax":
-                    _dtPurchase = clsPurchase.GetAllPurchaseInfoWithPagingByDateofTotalAfterTax(PageNumber, RowCountPerPage, dtpFrom.Value, dtpTo.Value, txtSearch.Text, ref _RowCount);
+                    float.TryParse(txtSearch.Text.Trim(), out float totalAfterTax);
+                    _dtPurchase = clsPurchase.GetAllPurchaseInfoWithPagingByDateofTotalAfterTax(PageNumber, RowCountPerPage, dtpFrom.Value, dtpTo.Value, totalAfterTax, ref _RowCount);
+
+                    break;
+
+                case "PurchaseID":
+                    _dtPurchase = clsPurchase.GetPurchaseInfo(Convert.ToInt32(txtSearch.Text.Trim()));
 
                     break;
             }
 
 
         }
+
+
+        private void _GetPurchaseList(int PageNumber, int RowCountPerPage)
+        {
+
+            switch (_ColumnName)
+            {
+                case "All":
+                    _dtPurchase = clsPurchase.GetAllPurchasesInfoWithPages(PageNumber, RowCountPerPage, ref _RowCount);
+
+                    break;
+
+
+                case "StoreName":
+                    _dtPurchase = clsPurchase.GetAllPurchasesInfoWithPagesByStoreName(PageNumber, RowCountPerPage, txtSearch.Text.Trim(), ref _RowCount);
+
+                    break;
+
+                case "TypeName":
+                    // _dtPurchase = clsPurchase.GetAllPurchaseInfoWithPagingByDateofType(PageNumber, RowCountPerPage, dtpFrom.Value, dtpTo.Value, txtSearch.Text, ref _RowCount);
+
+                    break;
+
+
+                case "TotalAfterTax":
+                    float.TryParse(txtSearch.Text.Trim(), out float totalAfterTax);
+                    _dtPurchase = clsPurchase.GetAllPurchasesInfoWithPagesByTotalAfterTax(PageNumber, RowCountPerPage, totalAfterTax, ref _RowCount);
+
+                    break;
+                case "PurchaseID":
+                    _dtPurchase = clsPurchase.GetPurchaseInfo(Convert.ToInt32( txtSearch.Text.Trim()));
+
+                    break;
+            }
+
+
+        }
+
+
 
         private void cbAll_CheckedChanged(object sender, EventArgs e)
         {
@@ -247,9 +294,13 @@ namespace HomeConsuption.Purchase
            
             if( cbAll.Checked )
             {
+                _modelist = enModeList.All_Date;
                 dtpFrom.Value = new DateTime(DateTime.Now.Year, 1, 1);
                 dtpTo.Value = new DateTime(DateTime.Now.Year, 12, 31);
                 
+            }else
+            {
+                _modelist = enModeList.WithDate;
             }
 
             Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
@@ -257,7 +308,7 @@ namespace HomeConsuption.Purchase
 
         private void dtp_ValueChanged(object sender, EventArgs e)
         {
-            _modelist = enModeList.All_Date;
+           
 
 
             Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));

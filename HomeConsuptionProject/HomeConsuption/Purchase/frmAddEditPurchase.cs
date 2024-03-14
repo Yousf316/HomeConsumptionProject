@@ -2,6 +2,7 @@
 using HomeC_Business;
 using HomeConsuption.Purchase;
 using HomeConsuption.Purchase.Purchase_Categories;
+using HomeConsuption.Purchase.Purchase_Sub_Categories;
 using HomeConsuption.Tools;
 using System;
 using System.Collections.Generic;
@@ -488,6 +489,21 @@ namespace HomeConsuption
             }
 
         }
+         private void _GetAllSubCategories(int PCategory)
+        {
+            DataTable dt = clsPurchase_SubCategory.GetAllPurchase_SubCategoriesByPCategory(PCategory);
+            cmbSubCategories.Items.Clear();
+            foreach (DataRow dr in dt.Rows)
+            {
+                cmbSubCategories.Items.Add(dr["SubCategoryName"].ToString());
+            }
+            if (cmbSubCategories.Items.Count ==0)
+                cmbSubCategories.Enabled = false;
+            else
+                cmbSubCategories.Enabled = true;
+
+
+        }
 
         private void btnAddNewCategory_Click(object sender, EventArgs e)
         {
@@ -628,6 +644,13 @@ namespace HomeConsuption
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            frmPurchseSubCategoriesList purchseSubCategoriesList = new frmPurchseSubCategoriesList();
+            purchseSubCategoriesList.ShowDialog();
 
         }
     }

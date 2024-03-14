@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -15,42 +16,41 @@ namespace HomeC_Business
 
         private int _PSCategoryID;
 
-        public int PSCategoryID { get => _PSCategoryID;  }
-       public string SubCategoryName { get; set; }
-       public int PCategoryID { get; set; }
+        public int PSCategoryID { get => _PSCategoryID; }
+        public string SubCategoryName { get; set; }
+
+
+
         public clsPurchase_SubCategory()
         {
             this._PSCategoryID = -1;
             this.SubCategoryName = "";
-            this.PCategoryID = -1;
             _mode = enMode.AddNew;
         }
-        private clsPurchase_SubCategory(int PSCategoryID, string SubCategoryName, int PCategoryID)
+        private clsPurchase_SubCategory(int PSCategoryID, string SubCategoryName)
         {
             this._PSCategoryID = PSCategoryID;
             this.SubCategoryName = SubCategoryName;
-            this.PCategoryID = PCategoryID;
             _mode = enMode.Update;
         }
-        public void SetValues( string SubCategoryName, int PCategoryID)
+        public void SetValues(string SubCategoryName)
         {
-            
+
             this.SubCategoryName = SubCategoryName;
-            this.PCategoryID = PCategoryID;
-          
+
         }
 
 
         private bool _AddNewPurchase_SubCategories()
         {
             int ID = -1;
-            clsPurchase_SubCategoriesData.Insert_Purchase_SubCategories(ref ID, this.SubCategoryName, this.PCategoryID);
+            clsPurchase_SubCategoriesData.Insert_Purchase_SubCategories(ref ID, this.SubCategoryName);
             this._PSCategoryID = ID;
             return this._PSCategoryID != -1;
         }
         private bool _UpdatePurchase_SubCategories()
         {
-            return clsPurchase_SubCategoriesData.Update_Purchase_SubCategories(this._PSCategoryID, this.SubCategoryName, this.PCategoryID);
+            return clsPurchase_SubCategoriesData.Update_Purchase_SubCategories(this._PSCategoryID, this.SubCategoryName);
         }
         public bool SavePurchase_SubCategories()
         {
@@ -81,27 +81,26 @@ namespace HomeC_Business
         public static clsPurchase_SubCategory FindPurchase_Category(int PSCategoryID)
         {
             string CategoryName = "";
-            int PCategory = -1;
 
-            if (clsPurchase_SubCategoriesData.FindPurchase_SubCategories(PSCategoryID, ref CategoryName,ref PCategory))
+
+            if (clsPurchase_SubCategoriesData.FindPurchase_SubCategories(PSCategoryID, ref CategoryName))
             {
 
-                return new clsPurchase_SubCategory(PSCategoryID, CategoryName, PCategory);
+                return new clsPurchase_SubCategory(PSCategoryID, CategoryName);
             }
             else
             {
                 return null;
             }
         }
-        public static clsPurchase_SubCategory FindPurchase_Category(string CategoryName)
+        public static clsPurchase_SubCategory FindPurchase_SubCategories(string CategoryName)
         {
 
-            int PCategoryID = -1;
             int PSCategoryID = -1;
-            if (clsPurchase_SubCategoriesData.FindPurchase_SubCategories(ref PSCategoryID, CategoryName,ref PCategoryID))
+            if (clsPurchase_SubCategoriesData.FindPurchase_SubCategories(ref PSCategoryID, CategoryName))
             {
 
-                return new clsPurchase_SubCategory(PSCategoryID, CategoryName, PCategoryID);
+                return new clsPurchase_SubCategory(PSCategoryID, CategoryName);
             }
             else
             {
@@ -110,6 +109,22 @@ namespace HomeC_Business
         }
 
 
+        public static DataTable GetAllPurchase_SubCategories()
+        {
+            return clsPurchase_SubCategoriesData.GetAllPurchase_Categories();
+        }
+        public static DataTable GetAllPurchase_SubCategoriesByPCategory(int PCategory)
+        {
+            return clsPurchase_SubCategoriesData.GetAllPurchase_CategoriesByPCategory(PCategory);
+        }
+
+
+        public static bool DeletePurchase_SubCategories(int PSCategoryID)
+        {
+            clsPurchaseSubBaseCategories.DeleteSubBaseCategory(PSCategoryID);
+                return clsPurchase_SubCategoriesData.DeletePurchase_SubCategories(PSCategoryID);
+            
+        }
     }
 
 }

@@ -312,6 +312,168 @@ namespace HomeC_DataAccess
             return dt;
         }
 
+         static public DataTable GetAllPurchasesInfoWithPagesByStoreName(int PageNumber, int RowCountPerPage,string StoreName, ref int RowCount)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                SqlCommand command = new SqlCommand("SP_GetAllPurchaseInfoWithPagingByStoreName", connection);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                command.Parameters.AddWithValue("@RowCountPerPage", RowCountPerPage);
+                command.Parameters.AddWithValue("@StoreName", StoreName);
+                try
+                {
+
+                    // Create a SqlParameter object for the output parameter
+                    SqlParameter outputParameter = new SqlParameter();
+                    outputParameter.ParameterName = "@RowCount";
+                    outputParameter.SqlDbType = SqlDbType.Int;
+                    outputParameter.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(outputParameter);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+
+                    RowCount = (int)outputParameter.Value;
+
+
+
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return dt;
+        }
+
+         static public DataTable GetAllPurchasesInfoWithPagesByTypeName(int PageNumber, int RowCountPerPage,string TypeName, ref int RowCount)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                SqlCommand command = new SqlCommand("SP_GetAllPurchaseInfoWithPagingByTypeName", connection);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                command.Parameters.AddWithValue("@RowCountPerPage", RowCountPerPage);
+                command.Parameters.AddWithValue("@TypeName", TypeName);
+                try
+                {
+
+                    // Create a SqlParameter object for the output parameter
+                    SqlParameter outputParameter = new SqlParameter();
+                    outputParameter.ParameterName = "@RowCount";
+                    outputParameter.SqlDbType = SqlDbType.Int;
+                    outputParameter.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(outputParameter);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+
+                    RowCount = (int)outputParameter.Value;
+
+
+
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return dt;
+        }
+
+         static public DataTable SP_GetAllPurchaseInfoWithPagingByTotalAfterTax(int PageNumber, int RowCountPerPage,float TotalAfterTax, ref int RowCount)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                SqlCommand command = new SqlCommand("SP_GetAllPurchaseInfoWithPagingByTotalAfterTax", connection);
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@PageNumber", PageNumber);
+                command.Parameters.AddWithValue("@RowCountPerPage", RowCountPerPage);
+                command.Parameters.AddWithValue("@TotalAfterTax", TotalAfterTax);
+                try
+                {
+
+                    // Create a SqlParameter object for the output parameter
+                    SqlParameter outputParameter = new SqlParameter();
+                    outputParameter.ParameterName = "@RowCount";
+                    outputParameter.SqlDbType = SqlDbType.Int;
+                    outputParameter.Direction = ParameterDirection.Output;
+                    command.Parameters.Add(outputParameter);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+
+                    RowCount = (int)outputParameter.Value;
+
+
+
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return dt;
+        }
+
         static public DataTable GetAllPurchasesInfoWithPagesByDate(int PageNumber, int RowCountPerPage,DateTime DateFrom , DateTime DateTo, ref int RowCount)
         {
             DataTable dt = new DataTable();
@@ -424,7 +586,7 @@ namespace HomeC_DataAccess
         }
 
 
-        static public DataTable GetAllPurchaseInfoWithPagingByDateofTotalAfterTax(int PageNumber, int RowCountPerPage, DateTime DateFrom, DateTime DateTo, string TotalAfterTax, ref int RowCount)
+        static public DataTable GetAllPurchaseInfoWithPagingByDateofTotalAfterTax(int PageNumber, int RowCountPerPage, DateTime DateFrom, DateTime DateTo, float TotalAfterTax, ref int RowCount)
         {
             DataTable dt = new DataTable();
 
@@ -548,6 +710,45 @@ namespace HomeC_DataAccess
 
             SqlCommand cmd = new SqlCommand(query, connection);
 
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+
+                {
+                    dt.Load(reader);
+                }
+
+                reader.Close();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+        }
+
+        static public DataTable GetPurchasesInfo(int PurchaseID)
+        {
+            DataTable dt = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"Select * FROM View_PurchasesInfo  where PurchaseID =  @PurchaseID";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@PurchaseID", PurchaseID);
 
             try
             {

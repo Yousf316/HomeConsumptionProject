@@ -34,8 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCateName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cmbCategories = new System.Windows.Forms.ComboBox();
+            this.lbCategory = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -47,6 +47,7 @@
             this.btnCancel.Size = new System.Drawing.Size(45, 47);
             this.btnCancel.TabIndex = 27;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -56,6 +57,7 @@
             this.btnSave.Size = new System.Drawing.Size(45, 47);
             this.btnSave.TabIndex = 26;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lbCateID
             // 
@@ -94,31 +96,31 @@
             this.label1.TabIndex = 22;
             this.label1.Text = ": أسم الصنف";
             // 
-            // comboBox1
+            // cmbCategories
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(190, 147);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 28;
+            this.cmbCategories.FormattingEnabled = true;
+            this.cmbCategories.Location = new System.Drawing.Point(190, 147);
+            this.cmbCategories.Name = "cmbCategories";
+            this.cmbCategories.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategories.TabIndex = 28;
             // 
-            // label3
+            // lbCategory
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label3.Location = new System.Drawing.Point(340, 147);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 24);
-            this.label3.TabIndex = 29;
-            this.label3.Text = ": المجموعة";
+            this.lbCategory.AutoSize = true;
+            this.lbCategory.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.lbCategory.Location = new System.Drawing.Point(340, 147);
+            this.lbCategory.Name = "lbCategory";
+            this.lbCategory.Size = new System.Drawing.Size(104, 24);
+            this.lbCategory.TabIndex = 29;
+            this.lbCategory.Text = ": المجموعة";
             // 
             // frmAddEditePSubCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 360);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lbCategory);
+            this.Controls.Add(this.cmbCategories);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lbCateID);
@@ -128,6 +130,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddEditePSubCategory";
             this.Text = "أدراج صنف";
+            this.Load += new System.EventHandler(this.frmAddEditCategory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,7 +144,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCateName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbCategories;
+        private System.Windows.Forms.Label lbCategory;
     }
 }

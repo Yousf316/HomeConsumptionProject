@@ -35,7 +35,11 @@
             this.قائمةالمشترياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.أدراجصنفجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.صنفرئيسيToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.صنففرعيToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.أدارةالاصنافToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الاصنافالريئسيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الاصنافالToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.المتاجرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ادراجمتجرجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.قائمةالمتاجرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -111,17 +115,51 @@
             // 
             // أدراجصنفجديدToolStripMenuItem
             // 
+            this.أدراجصنفجديدToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.صنفرئيسيToolStripMenuItem,
+            this.صنففرعيToolStripMenuItem});
             this.أدراجصنفجديدToolStripMenuItem.Name = "أدراجصنفجديدToolStripMenuItem";
             this.أدراجصنفجديدToolStripMenuItem.Size = new System.Drawing.Size(266, 32);
             this.أدراجصنفجديدToolStripMenuItem.Text = "أدراج صنف جديد";
             this.أدراجصنفجديدToolStripMenuItem.Click += new System.EventHandler(this.أدراجصنفجديدToolStripMenuItem_Click);
             // 
+            // صنفرئيسيToolStripMenuItem
+            // 
+            this.صنفرئيسيToolStripMenuItem.Name = "صنفرئيسيToolStripMenuItem";
+            this.صنفرئيسيToolStripMenuItem.Size = new System.Drawing.Size(184, 32);
+            this.صنفرئيسيToolStripMenuItem.Text = "صنف رئيسي";
+            this.صنفرئيسيToolStripMenuItem.Click += new System.EventHandler(this.صنفرئيسيToolStripMenuItem_Click);
+            // 
+            // صنففرعيToolStripMenuItem
+            // 
+            this.صنففرعيToolStripMenuItem.Name = "صنففرعيToolStripMenuItem";
+            this.صنففرعيToolStripMenuItem.Size = new System.Drawing.Size(184, 32);
+            this.صنففرعيToolStripMenuItem.Text = "صنف فرعي";
+            this.صنففرعيToolStripMenuItem.Click += new System.EventHandler(this.صنففرعيToolStripMenuItem_Click);
+            // 
             // أدارةالاصنافToolStripMenuItem
             // 
+            this.أدارةالاصنافToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.الاصنافالريئسيةToolStripMenuItem,
+            this.الاصنافالToolStripMenuItem});
             this.أدارةالاصنافToolStripMenuItem.Name = "أدارةالاصنافToolStripMenuItem";
             this.أدارةالاصنافToolStripMenuItem.Size = new System.Drawing.Size(266, 32);
             this.أدارةالاصنافToolStripMenuItem.Text = "أدارة الاصناف";
             this.أدارةالاصنافToolStripMenuItem.Click += new System.EventHandler(this.أدارةالاصنافToolStripMenuItem_Click);
+            // 
+            // الاصنافالريئسيةToolStripMenuItem
+            // 
+            this.الاصنافالريئسيةToolStripMenuItem.Name = "الاصنافالريئسيةToolStripMenuItem";
+            this.الاصنافالريئسيةToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.الاصنافالريئسيةToolStripMenuItem.Text = "الاصناف الرئيسية";
+            this.الاصنافالريئسيةToolStripMenuItem.Click += new System.EventHandler(this.الاصنافالريئسيةToolStripMenuItem_Click);
+            // 
+            // الاصنافالToolStripMenuItem
+            // 
+            this.الاصنافالToolStripMenuItem.Name = "الاصنافالToolStripMenuItem";
+            this.الاصنافالToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.الاصنافالToolStripMenuItem.Text = "الاصناف الفرعية";
+            this.الاصنافالToolStripMenuItem.Click += new System.EventHandler(this.الاصنافالToolStripMenuItem_Click);
             // 
             // المتاجرToolStripMenuItem
             // 
@@ -314,6 +352,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem الأعداداتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem صنفرئيسيToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem صنففرعيToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الاصنافالريئسيةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الاصنافالToolStripMenuItem;
     }
 }
 
