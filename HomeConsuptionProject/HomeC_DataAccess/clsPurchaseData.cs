@@ -11,7 +11,7 @@ namespace HomeC_DataAccess
    static public  class clsPurchaseData
     {
 
-        static public void InsertPurchase(ref int PurchaseID, DateTime IssueDate, float TotalBefore,float TaxAmount, float TotalAfterTax, int StoreID,int Type,float? Discount,int PCategoryID)
+        static public void InsertPurchase(ref int PurchaseID, DateTime IssueDate, float TotalBefore,float TaxAmount, float TotalAfterTax, int StoreID,int Type,float? Discount,int PCategoryID , int? PSCategoryID)
         {
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             using (SqlCommand command = new SqlCommand("SP_AddNewPurchase", connection))
@@ -25,6 +25,7 @@ namespace HomeC_DataAccess
                     command.Parameters.AddWithValue("@StoreID", StoreID);
                     command.Parameters.AddWithValue("@Type", Type);
                     command.Parameters.AddWithValue("@PCategoryID", PCategoryID);
+                    command.Parameters.AddWithValue("@PSCategoryID", PSCategoryID);
 
                 if(Discount != -1 && Discount !=null)
                     command.Parameters.AddWithValue("@Discount", Discount);
@@ -65,7 +66,7 @@ namespace HomeC_DataAccess
         }
 
 
-        static public bool UpdatePurchase(int PurchaseID, DateTime IssueDate, float TotalBeforTax, float TaxAmount, float TotalAfterTax, int StoreID,int Type, float? Discount,int PCategoryID)
+        static public bool UpdatePurchase(int PurchaseID, DateTime IssueDate, float TotalBeforTax, float TaxAmount, float TotalAfterTax, int StoreID,int Type, float? Discount,int PCategoryID,int? PSCategoryID)
         {
             int rowsAffected = 0;
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -82,11 +83,15 @@ namespace HomeC_DataAccess
                 command.Parameters.AddWithValue("@Type", Type);
                 command.Parameters.AddWithValue("@PCategoryID", PCategoryID);
 
-
                 if (Discount != -1 && Discount != null)
                     command.Parameters.AddWithValue("@Discount", Discount);
                 else
                     command.Parameters.AddWithValue("@Discount", DBNull.Value);
+
+                 if (PSCategoryID != -1 && PSCategoryID != null)
+                    command.Parameters.AddWithValue("@PSCategoryID", PSCategoryID);
+                else
+                    command.Parameters.AddWithValue("@PSCategoryID", DBNull.Value);
 
                 try
                 {
@@ -120,7 +125,7 @@ namespace HomeC_DataAccess
         }
 
         static public bool FindPurchase( int PurchaseID, ref DateTime IssueDate, ref float TotalBeforTax, ref float TaxAmount, ref float TotalAfterTax,
-            ref int StoreID, ref int Type, ref float? Discount,ref int PCategoryID)
+            ref int StoreID, ref int Type, ref float? Discount,ref int PCategoryID,ref int? PSCategoryID)
         {
             bool isFound = false;
 
@@ -155,7 +160,7 @@ namespace HomeC_DataAccess
                             else
                                 Discount = null;
 
-
+                            PSCategoryID = reader["PSCategoryID"] != DBNull.Value ?(int?) Convert.ToInt32(reader["PSCategoryID"]) : null;
 
                         }
 

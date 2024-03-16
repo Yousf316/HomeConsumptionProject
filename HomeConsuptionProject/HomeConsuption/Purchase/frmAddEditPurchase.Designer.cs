@@ -211,6 +211,7 @@
             this.cmbCategoryList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmbCategoryList.Size = new System.Drawing.Size(128, 21);
             this.cmbCategoryList.TabIndex = 281;
+            this.cmbCategoryList.SelectedIndexChanged += new System.EventHandler(this.cmbCategoryList_SelectedIndexChanged);
             // 
             // label10
             // 

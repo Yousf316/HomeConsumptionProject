@@ -136,6 +136,9 @@ namespace HomeConsuption
             if(purchase.Type ==2)
             _GetDataTablePurchase();
 
+            if (purchase.PSCategoryID != null)
+                cmbSubCategories.SelectedItem = clsPurchase_SubCategory.FindPurchase_Category(purchase.PSCategoryID??-1).SubCategoryName;
+
             this.Text = "تعديل فاتورة مشتريات";
         }
 
@@ -371,8 +374,15 @@ namespace HomeConsuption
              
             int pCategoryID = clsPurchase_Category.FindPurchase_Category(cmbCategoryList.SelectedItem.ToString()).PCategoryID;
 
+            int? psCatgegoryID;
 
-            purchase.SetValues(dtpDate.Value, TotalBeforTax, TaxAmount, TotalAfterTax, StoreID, _TypeID, pCategoryID, Discount);
+            if (cmbSubCategories.SelectedIndex == 0)
+                psCatgegoryID = null;
+            else
+                psCatgegoryID = clsPurchase_SubCategory.FindPurchase_SubCategories(cmbSubCategories.SelectedItem.ToString()).PSCategoryID;
+
+
+            purchase.SetValues(dtpDate.Value, TotalBeforTax, TaxAmount, TotalAfterTax, StoreID, _TypeID, pCategoryID, psCatgegoryID, Discount);
 
             if (purchase.SavePurchases())
             {
@@ -489,6 +499,7 @@ namespace HomeConsuption
             }
 
         }
+
          private void _GetAllSubCategories(int PCategory)
         {
             DataTable dt = clsPurchase_SubCategory.GetAllPurchase_SubCategoriesByPCategory(PCategory);
@@ -497,12 +508,19 @@ namespace HomeConsuption
             {
                 cmbSubCategories.Items.Add(dr["SubCategoryName"].ToString());
             }
-            if (cmbSubCategories.Items.Count ==0)
+
+            if (cmbSubCategories.Items.Count == 0)
+            {
                 cmbSubCategories.Enabled = false;
+                cmbSubCategories.Items.Add("لا يوجد صنف فرعي");
+            }
             else
+            {
                 cmbSubCategories.Enabled = true;
+                cmbSubCategories.Items.Insert(0,"بلا صنف");
+            }
 
-
+            cmbSubCategories.SelectedIndex = 0;
         }
 
         private void btnAddNewCategory_Click(object sender, EventArgs e)
@@ -651,6 +669,15 @@ namespace HomeConsuption
         {
             frmPurchseSubCategoriesList purchseSubCategoriesList = new frmPurchseSubCategoriesList();
             purchseSubCategoriesList.ShowDialog();
+
+        }
+
+      
+
+        private void cmbCategoryList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            _GetAllSubCategories(clsPurchase_Category.FindPurchase_Category(cmbCategoryList.SelectedItem.ToString()).PCategoryID);
 
         }
     }
