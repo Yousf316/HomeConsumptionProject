@@ -1,10 +1,10 @@
 ﻿
- CREATE PROCEDURE sp_update_Purchase_SubCategories
+ CREATE PROCEDURE [dbo].[sp_update_Purchase_SubCategories]
 @p_SubCategoryName nvarchar(50),
-@p_PCategoryID int ,
+
 @w_PSCategoryID int 
 AS
 BEGIN
-	UPDATE [dbo].Purchase_SubCategories SET SubCategoryName=@p_SubCategoryName,PCategoryID=@p_PCategoryID 
+	UPDATE [dbo].Purchase_SubCategories SET SubCategoryName=@p_SubCategoryName
 	WHERE PSCategoryID=@w_PSCategoryID
 END

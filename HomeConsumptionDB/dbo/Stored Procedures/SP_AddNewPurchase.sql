@@ -20,6 +20,7 @@ CREATE PROCEDURE [dbo].[SP_AddNewPurchase]
 	  @Discount smallmoney null,
 	  @Type int ,
 	  @PCategoryID int ,
+	  @PSCategoryID int null,
 	  @PurchaseID int out
 AS
 BEGIN
@@ -31,7 +32,8 @@ BEGIN
            ,[StoreID]
 		   ,[Discount]
 		   ,[Type]
-		   ,[PCategoryID])
+		   ,[PCategoryID]
+		   ,[PSCategoryID])
      VALUES
            ( @IssueDate ,
 	  @TotalBeforTax ,
@@ -40,7 +42,8 @@ BEGIN
       @StoreID ,
 	  @Discount,
 	  @Type,
-	  @PCategoryID);
+	  @PCategoryID,
+	  @PSCategoryID);
 
 	 set @PurchaseID = @@IDENTITY
 	 --Test  

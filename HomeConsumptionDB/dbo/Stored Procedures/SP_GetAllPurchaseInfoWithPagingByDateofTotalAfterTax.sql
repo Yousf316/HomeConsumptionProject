@@ -1,6 +1,6 @@
 ﻿
 
-Create PROCEDURE [dbo].[SP_GetAllPurchaseInfoWithPagingByDateofTotalAfterTax]
+CREATE PROCEDURE [dbo].[SP_GetAllPurchaseInfoWithPagingByDateofTotalAfterTax]
 		@PageNumber int,
 		@RowCountPerPage  int,
 		@DateFrom  date,
@@ -14,7 +14,7 @@ BEGIN
 	SELECT @RowCount=count(*)  FROM [dbo].[TV_PurchaseInfoByDate] (
    @DateFrom,
   @DateTo)
-  where TotalAfterTax = @TotalAfterTax;
+  where TotalAfterTax between @TotalAfterTax and @TotalAfterTax+1;
 
 
 	
@@ -23,7 +23,7 @@ BEGIN
    SELECT * FROM [dbo].[TV_PurchaseInfoByDate] (
    @DateFrom,
   @DateTo)
-   where TotalAfterTax =@TotalAfterTax
+   where TotalAfterTax between @TotalAfterTax and @TotalAfterTax+1
 )
 SELECT * FROM ROWCTE
 	Order By ROWCTE.PurchaseID
