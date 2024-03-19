@@ -25,12 +25,18 @@ namespace HomeC_DataAccess
                     command.Parameters.AddWithValue("@StoreID", StoreID);
                     command.Parameters.AddWithValue("@Type", Type);
                     command.Parameters.AddWithValue("@PCategoryID", PCategoryID);
-                    command.Parameters.AddWithValue("@PSCategoryID", PSCategoryID);
+                 
 
                 if(Discount != -1 && Discount !=null)
                     command.Parameters.AddWithValue("@Discount", Discount);
                 else
                     command.Parameters.AddWithValue("@Discount", DBNull.Value);
+
+
+                  if(PSCategoryID != -1 && PSCategoryID != null)
+                    command.Parameters.AddWithValue("@PSCategoryID", PSCategoryID);
+                else
+                    command.Parameters.AddWithValue("@PSCategoryID", DBNull.Value);
 
                 try
                 {

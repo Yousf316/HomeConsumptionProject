@@ -49,6 +49,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.cbIncludTax = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnChooseProduct
@@ -256,11 +257,25 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // cbIncludTax
+            // 
+            this.cbIncludTax.AutoSize = true;
+            this.cbIncludTax.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.cbIncludTax.Location = new System.Drawing.Point(174, 353);
+            this.cbIncludTax.Name = "cbIncludTax";
+            this.cbIncludTax.Size = new System.Drawing.Size(95, 18);
+            this.cbIncludTax.TabIndex = 361;
+            this.cbIncludTax.Text = "شامل الضريبة";
+            this.cbIncludTax.UseVisualStyleBackColor = true;
+            this.cbIncludTax.Visible = false;
+            this.cbIncludTax.CheckedChanged += new System.EventHandler(this.cbIncludTax_CheckedChanged);
+            // 
             // frmAddEditeSubPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 554);
+            this.Controls.Add(this.cbIncludTax);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnCancel);
@@ -314,5 +329,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox cbIncludTax;
     }
 }

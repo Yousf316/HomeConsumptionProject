@@ -541,7 +541,7 @@
             this.cbIncludTax.Text = "شامل الضريبة";
             this.cbIncludTax.UseVisualStyleBackColor = true;
             this.cbIncludTax.Visible = false;
-            this.cbIncludTax.CheckedChanged += new System.EventHandler(this.cbIncludTax_CheckedChanged);
+            this.cbIncludTax.CheckedChanged += new System.EventHandler(this.cbIncludeVAT);
             // 
             // frmAddEditPurchase
             // 

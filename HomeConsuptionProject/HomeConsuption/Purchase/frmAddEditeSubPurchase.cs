@@ -182,7 +182,7 @@ namespace HomeConsuption.Purchase
 
             float.TryParse(txtPricePerUnit.Text, out float PricePerUnit);
 
-          
+            PricePerUnit = cbIncludTax.Checked ? PricePerUnit / clsGlobal.Taxprec : PricePerUnit;
 
             lbTotal.Text = (Quantity * PricePerUnit).ToString();
 
@@ -204,6 +204,10 @@ namespace HomeConsuption.Purchase
             }
         }
 
-
+        private void cbIncludTax_CheckedChanged(object sender, EventArgs e)
+        {
+           
+                txtQuantityAndPrice_TextChanged(null, null);
+        }
     }
 }

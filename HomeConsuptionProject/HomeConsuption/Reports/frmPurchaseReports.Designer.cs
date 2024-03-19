@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbCategories = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,13 +42,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tvCategories = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbTotall = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tvCategories = new System.Windows.Forms.TreeView();
+            this.dgvList = new System.Windows.Forms.DataGridView();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categories = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbAllDays = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbCategories
@@ -91,16 +97,18 @@
             // 
             // dtpTo
             // 
-            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(102, 211);
+            this.dtpTo.CustomFormat = "MM/dd/yyyy";
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTo.Location = new System.Drawing.Point(102, 225);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(100, 20);
             this.dtpTo.TabIndex = 4;
             // 
             // dtpFrom
             // 
-            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(102, 161);
+            this.dtpFrom.CustomFormat = "MM/dd/yyyy";
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFrom.Location = new System.Drawing.Point(102, 175);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(100, 20);
             this.dtpFrom.TabIndex = 5;
@@ -109,7 +117,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label3.Location = new System.Drawing.Point(208, 166);
+            this.label3.Location = new System.Drawing.Point(208, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 14);
             this.label3.TabIndex = 6;
@@ -119,7 +127,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label4.Location = new System.Drawing.Point(138, 191);
+            this.label4.Location = new System.Drawing.Point(138, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 14);
             this.label4.TabIndex = 7;
@@ -141,7 +149,7 @@
             // 
             this.cbAllDate.AutoSize = true;
             this.cbAllDate.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.cbAllDate.Location = new System.Drawing.Point(30, 210);
+            this.cbAllDate.Location = new System.Drawing.Point(30, 224);
             this.cbAllDate.Name = "cbAllDate";
             this.cbAllDate.Size = new System.Drawing.Size(51, 21);
             this.cbAllDate.TabIndex = 9;
@@ -153,7 +161,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.label5.Location = new System.Drawing.Point(229, 161);
+            this.label5.Location = new System.Drawing.Point(229, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 29);
             this.label5.TabIndex = 10;
@@ -161,7 +169,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(102, 269);
+            this.btnOK.Location = new System.Drawing.Point(102, 309);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(100, 29);
             this.btnOK.TabIndex = 11;
@@ -171,6 +179,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbAllDays);
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.tvCategories);
             this.panel1.Controls.Add(this.label5);
@@ -183,40 +192,8 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(507, 272);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(323, 320);
+            this.panel1.Size = new System.Drawing.Size(323, 368);
             this.panel1.TabIndex = 12;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lbTotall);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.groupBox1.Location = new System.Drawing.Point(34, 265);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(447, 327);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "التقرير";
-            // 
-            // lbTotall
-            // 
-            this.lbTotall.AutoSize = true;
-            this.lbTotall.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lbTotall.Location = new System.Drawing.Point(111, 86);
-            this.lbTotall.Name = "lbTotall";
-            this.lbTotall.Size = new System.Drawing.Size(71, 24);
-            this.lbTotall.TabIndex = 18;
-            this.lbTotall.Text = "[?????]";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label8.Location = new System.Drawing.Point(254, 86);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 24);
-            this.label8.TabIndex = 17;
-            this.label8.Text = ": المجموع";
             // 
             // tvCategories
             // 
@@ -226,12 +203,88 @@
             this.tvCategories.TabIndex = 14;
             this.tvCategories.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvCategories_AfterCheck);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvList);
+            this.groupBox1.Controls.Add(this.lbTotall);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.groupBox1.Location = new System.Drawing.Point(34, 265);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(447, 375);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "التقرير";
+            // 
+            // lbTotall
+            // 
+            this.lbTotall.AutoSize = true;
+            this.lbTotall.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.lbTotall.Location = new System.Drawing.Point(19, 321);
+            this.lbTotall.Name = "lbTotall";
+            this.lbTotall.Size = new System.Drawing.Size(71, 24);
+            this.lbTotall.TabIndex = 18;
+            this.lbTotall.Text = "[?????]";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.label8.Location = new System.Drawing.Point(162, 321);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 24);
+            this.label8.TabIndex = 17;
+            this.label8.Text = ": المجموع";
+            // 
+            // dgvList
+            // 
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToDeleteRows = false;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Total,
+            this.Categories});
+            this.dgvList.Location = new System.Drawing.Point(23, 59);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.ReadOnly = true;
+            this.dgvList.RowTemplate.Height = 30;
+            this.dgvList.Size = new System.Drawing.Size(366, 226);
+            this.dgvList.TabIndex = 19;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "المجموع";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            this.Total.Width = 150;
+            // 
+            // Categories
+            // 
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Categories.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Categories.HeaderText = "المحموعات";
+            this.Categories.Name = "Categories";
+            this.Categories.ReadOnly = true;
+            this.Categories.Width = 150;
+            // 
+            // cbAllDays
+            // 
+            this.cbAllDays.AutoSize = true;
+            this.cbAllDays.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cbAllDays.Location = new System.Drawing.Point(220, 225);
+            this.cbAllDays.Name = "cbAllDays";
+            this.cbAllDays.Size = new System.Drawing.Size(76, 21);
+            this.cbAllDays.TabIndex = 15;
+            this.cbAllDays.Text = "كل الايام";
+            this.cbAllDays.UseVisualStyleBackColor = true;
+            this.cbAllDays.CheckedChanged += new System.EventHandler(this.cbAllDays_CheckedChanged);
+            // 
             // frmPurchaseReports
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 637);
+            this.ClientSize = new System.Drawing.Size(868, 685);
             this.Controls.Add(this.cmbCategories);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -246,6 +299,7 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +324,9 @@
         private System.Windows.Forms.Label lbTotall;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TreeView tvCategories;
+        private System.Windows.Forms.DataGridView dgvList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categories;
+        private System.Windows.Forms.CheckBox cbAllDays;
     }
 }

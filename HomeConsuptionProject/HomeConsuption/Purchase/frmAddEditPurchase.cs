@@ -341,6 +341,8 @@ namespace HomeConsuption
                 txtTotalAmount.Enabled = false;
 
             }
+
+            cbIncludTax.Visible = _type == enType.withItems;
         }
          
         private bool _SetPurchase()
@@ -652,12 +654,13 @@ namespace HomeConsuption
                  totalAmount = Convert.ToSingle(txtTotalAmount.Text);
                 txtTotalAmount.Text = (totalAmount / clsGlobal.Taxprec).ToString();
 
-            }else
-            {
-                totalAmount = Convert.ToSingle(txtTotalAmount.Text);
-                txtTotalAmount.Text = (totalAmount * clsGlobal.Taxprec).ToString();
-
             }
+            //else
+            //{
+            //    totalAmount = Convert.ToSingle(txtTotalAmount.Text);
+            //    txtTotalAmount.Text = (totalAmount * clsGlobal.Taxprec).ToString();
+
+            //}
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -679,6 +682,11 @@ namespace HomeConsuption
 
             _GetAllSubCategories(clsPurchase_Category.FindPurchase_Category(cmbCategoryList.SelectedItem.ToString()).PCategoryID);
 
+        }
+
+        private void cbIncludeVAT(object sender, EventArgs e)
+        {
+            _SumAllProduct();
         }
     }
 }

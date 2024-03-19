@@ -73,13 +73,14 @@ namespace HomeConsuption.Reports
         {
             if(cbAllCategories.Checked && cbAllDate.Checked)
             {
-               lbTotall.Text = clsPurchase.GetTotalAllPurchases().ToString("F2");
+
+               lbTotall.Text = _CalculateAllTreeViewNodes(false).ToString("F2");
                 return;
             }
 
             if (cbAllCategories.Checked && !cbAllDate.Checked)
             {
-                lbTotall.Text = clsPurchase.GetTotalAllPurchases(dtpFrom.Value.ToString("d"),dtpTo.Value.ToString("d")).ToString("F2");
+                lbTotall.Text = _CalculateAllTreeViewNodes(true).ToString("F2");
                 return;
             }
 
@@ -122,24 +123,89 @@ namespace HomeConsuption.Reports
             //}
         }
 
+        private float _CalculateAllTreeViewNodes(bool WithDate = false)
+        {
+          
+            float Total = 0;
+            float TotalPerItem = 0;
+            dgvList.Rows.Clear();
+
+            foreach (TreeNode item in tvCategories.Nodes)
+            {
+
+               
+
+                    if (WithDate)
+                    {
+
+                    if (cbAllDays.Checked)
+                    {
+                        int Days = (DateTime.DaysInMonth(dtpFrom.Value.Year, dtpTo.Value.Month));
+                        TotalPerItem = clsPurchase.GetTotalAllPurchases(item.Text, $"{dtpFrom.Value.Month}/{1}/{dtpFrom.Value.Year}", $"{dtpTo.Value.Month}/{Days}/{dtpTo.Value.Year}");
+
+                    }
+                    else
+                    {
+                        TotalPerItem = clsPurchase.GetTotalAllPurchases(item.Text, dtpFrom.Value.ToString("d"), dtpTo.Value.ToString("d"));
+
+                    }
+
+                }
+                    else
+                    {
+                        TotalPerItem = clsPurchase.GetTotalAllPurchases(item.Text);
+
+                    }
+                if (TotalPerItem > 0)
+                    dgvList.Rows.Add( TotalPerItem.ToString("F2"), item.Text);
+
+                Total += TotalPerItem;
+                
+
+            }
+            return Total;
+
+        }
+
+
         private float _CalculateTreeViewNodes(bool WithDate =false)
         {
             float Total = 0;
-
+            float TotalPerItem = 0;
+            dgvList.Rows.Clear();
             foreach (TreeNode item in tvCategories.Nodes)
             {
 
               if ( item.Checked)
                 {
+
                     if( WithDate )
                     {
-                        Total+= clsPurchase.GetTotalAllPurchases(item.Text, dtpFrom.Value.ToString("d"), dtpTo.Value.ToString("d"));
+                     
+                        if(cbAllDays.Checked)
+                        {
+                            int Days = (DateTime.DaysInMonth(dtpFrom.Value.Year, dtpTo.Value.Month));
+                            TotalPerItem = clsPurchase.GetTotalAllPurchases(item.Text, $"{dtpFrom.Value.Month}/{1}/{dtpFrom.Value.Year}", $"{dtpTo.Value.Month}/{Days}/{dtpTo.Value.Year}");
+
+                        }else
+                        {
+                            TotalPerItem = clsPurchase.GetTotalAllPurchases(item.Text, dtpFrom.Value.ToString("d"), dtpTo.Value.ToString("d"));
+
+                        }
+
+
+
+
 
                     }else
                     {
-                        Total +=clsPurchase.GetTotalAllPurchases(item.Text);
+                        TotalPerItem = clsPurchase.GetTotalAllPurchases(item.Text);
 
                     }
+                    if( TotalPerItem > 0 )
+                    dgvList.Rows.Add(TotalPerItem.ToString("F2"), item.Text);
+
+                    Total += TotalPerItem;
                 }
 
             }
@@ -147,6 +213,17 @@ namespace HomeConsuption.Reports
 
         }
 
-
+        private void cbAllDays_CheckedChanged(object sender, EventArgs e)
+        {
+            if( cbAllDays.Checked )
+            {
+                dtpFrom.CustomFormat = "MMMM";
+                dtpTo.CustomFormat = "MMMM";
+            }else
+            {
+                dtpFrom.CustomFormat = "MM/dd/yyyy";
+                dtpTo.CustomFormat = "MM/dd/yyyy";
+            }
+        }
     }
 }

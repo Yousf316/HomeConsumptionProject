@@ -87,7 +87,7 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Categories
         {
 
 
-            _dData.DefaultView.RowFilter = string.Format("[CategoryName] like '%{0}%'", CategoryName);
+            _dData.DefaultView.RowFilter = string.Format("[SubCategoryName] like '%{0}%'", CategoryName);
 
 
         }

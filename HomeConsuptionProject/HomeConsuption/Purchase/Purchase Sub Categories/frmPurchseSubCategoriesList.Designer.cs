@@ -42,6 +42,7 @@
             this.cmbCategories = new System.Windows.Forms.ComboBox();
             this.cbAllCategories = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.cmtList.SuspendLayout();
@@ -173,11 +174,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(51, 201);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(183, 33);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "الغاء ربط صنف فرعي بمجموعة";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // frmPurchseSubCategoriesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 599);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.cbAllCategories);
             this.Controls.Add(this.label3);
@@ -215,5 +226,6 @@
         private System.Windows.Forms.ComboBox cmbCategories;
         private System.Windows.Forms.CheckBox cbAllCategories;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
