@@ -144,5 +144,12 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Categories
             addPurchaseSubBaseCategories.ShowDialog();
             Parallel.Invoke(() => _RefreshStoresList());
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmCancelSubwithBaseCategories CancelbaseCategories = new frmCancelSubwithBaseCategories();
+            CancelbaseCategories.ShowDialog();
+            Parallel.Invoke(() => _RefreshStoresList());
+        }
     }
 }

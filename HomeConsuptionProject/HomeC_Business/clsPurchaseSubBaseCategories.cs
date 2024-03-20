@@ -1,6 +1,7 @@
 ﻿using HomeC_DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,15 +83,17 @@ namespace HomeC_Business
         }
         public static bool  DeleteSubBaseCategory(int PSCategory,int PCategory)
         {
-            
+            if(!clsPurchaseData.IsPurchseExsits(PCategory, PSCategory))
+                return false;
 
          return clsPurchaseSubBaseCategoriesData.DeletePurchaseSubBaseCategories(PSCategory, PCategory);
         }
-         public static bool  DeleteSubBaseCategory(int PCategory)
+         public static bool  DeleteSubBaseCategory(int PSCategory)
         {
-            
+            if (!clsPurchaseData.IsPurchseExsits(PSCategory))
+                return false;
 
-         return clsPurchaseSubBaseCategoriesData.DeletePurchaseSubBaseCategories( PCategory);
+         return clsPurchaseSubBaseCategoriesData.DeletePurchaseSubBaseCategories( PSCategory);
         }
 
        static public clsPurchaseSubBaseCategories FindPurchaseSubBaseCategoriesData (int PSCategory,int PCategory)
@@ -99,6 +102,16 @@ namespace HomeC_Business
                 return new clsPurchaseSubBaseCategories(PSCategory, PCategory);
             else
                 return null;
+        }
+
+
+        static public DataTable GetAllPurchase_SubBaseCategoriesByPCategory(int PCategory)
+        {
+           return clsPurchaseSubBaseCategoriesData.GetAllPurchase_SubBaseCategoriesByPCategory(PCategory);
+        }
+        static public DataTable GetAllPurchase_SubBaseCategoriesByPCategory(string CategoryName)
+        {
+           return clsPurchaseSubBaseCategoriesData.GetAllPurchase_SubBaseCategoriesByPCategory(CategoryName);
         }
 
     }

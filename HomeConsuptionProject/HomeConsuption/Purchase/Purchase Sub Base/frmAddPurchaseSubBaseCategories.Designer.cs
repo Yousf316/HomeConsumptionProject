@@ -48,6 +48,7 @@
             // 
             // cmbCategories
             // 
+            this.cmbCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategories.FormattingEnabled = true;
             this.cmbCategories.Location = new System.Drawing.Point(112, 100);
             this.cmbCategories.Name = "cmbCategories";
@@ -87,13 +88,14 @@
             // 
             // cmbSubCategories
             // 
+            this.cmbSubCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSubCategories.FormattingEnabled = true;
             this.cmbSubCategories.Location = new System.Drawing.Point(112, 180);
             this.cmbSubCategories.Name = "cmbSubCategories";
             this.cmbSubCategories.Size = new System.Drawing.Size(139, 21);
             this.cmbSubCategories.TabIndex = 38;
             // 
-            // frmPurchaseSubBaseCategories
+            // frmAddPurchaseSubBaseCategories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -105,7 +107,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmPurchaseSubBaseCategories";
+            this.Name = "frmAddPurchaseSubBaseCategories";
             this.Text = "ربط صنف فرعي بمجموعة ";
             this.Load += new System.EventHandler(this.frmPurchaseSubBaseCategories_Load);
             this.ResumeLayout(false);

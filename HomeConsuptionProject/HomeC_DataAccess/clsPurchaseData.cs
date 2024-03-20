@@ -8,32 +8,32 @@ using System.Threading.Tasks;
 
 namespace HomeC_DataAccess
 {
-   static public  class clsPurchaseData
+    static public class clsPurchaseData
     {
 
-        static public void InsertPurchase(ref int PurchaseID, DateTime IssueDate, float TotalBefore,float TaxAmount, float TotalAfterTax, int StoreID,int Type,float? Discount,int PCategoryID , int? PSCategoryID)
+        static public void InsertPurchase(ref int PurchaseID, DateTime IssueDate, float TotalBefore, float TaxAmount, float TotalAfterTax, int StoreID, int Type, float? Discount, int PCategoryID, int? PSCategoryID)
         {
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             using (SqlCommand command = new SqlCommand("SP_AddNewPurchase", connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
 
-                    command.Parameters.AddWithValue("@IssueDate", IssueDate);
-                    command.Parameters.AddWithValue("@TotalBeforTax", TotalBefore);
-                    command.Parameters.AddWithValue("@TaxAmount", TaxAmount);
-                    command.Parameters.AddWithValue("@TotalAfterTax", TotalAfterTax);
-                    command.Parameters.AddWithValue("@StoreID", StoreID);
-                    command.Parameters.AddWithValue("@Type", Type);
-                    command.Parameters.AddWithValue("@PCategoryID", PCategoryID);
-                 
+                command.Parameters.AddWithValue("@IssueDate", IssueDate);
+                command.Parameters.AddWithValue("@TotalBeforTax", TotalBefore);
+                command.Parameters.AddWithValue("@TaxAmount", TaxAmount);
+                command.Parameters.AddWithValue("@TotalAfterTax", TotalAfterTax);
+                command.Parameters.AddWithValue("@StoreID", StoreID);
+                command.Parameters.AddWithValue("@Type", Type);
+                command.Parameters.AddWithValue("@PCategoryID", PCategoryID);
 
-                if(Discount != -1 && Discount !=null)
+
+                if (Discount != -1 && Discount != null)
                     command.Parameters.AddWithValue("@Discount", Discount);
                 else
                     command.Parameters.AddWithValue("@Discount", DBNull.Value);
 
 
-                  if(PSCategoryID != -1 && PSCategoryID != null)
+                if (PSCategoryID != -1 && PSCategoryID != null)
                     command.Parameters.AddWithValue("@PSCategoryID", PSCategoryID);
                 else
                     command.Parameters.AddWithValue("@PSCategoryID", DBNull.Value);
@@ -51,28 +51,28 @@ namespace HomeC_DataAccess
                     command.ExecuteNonQuery();
 
                     // Retrieve the value of the output parameter
-                     PurchaseID = (int)outputParameter.Value;
+                    PurchaseID = (int)outputParameter.Value;
 
 
 
                 }
-                    catch
-                    {
+                catch
+                {
 
-                    }
-                    finally
-                    {
+                }
+                finally
+                {
 
-                   }
-                
+                }
 
-               
+
+
             }
 
         }
 
 
-        static public bool UpdatePurchase(int PurchaseID, DateTime IssueDate, float TotalBeforTax, float TaxAmount, float TotalAfterTax, int StoreID,int Type, float? Discount,int PCategoryID,int? PSCategoryID)
+        static public bool UpdatePurchase(int PurchaseID, DateTime IssueDate, float TotalBeforTax, float TaxAmount, float TotalAfterTax, int StoreID, int Type, float? Discount, int PCategoryID, int? PSCategoryID)
         {
             int rowsAffected = 0;
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -94,22 +94,22 @@ namespace HomeC_DataAccess
                 else
                     command.Parameters.AddWithValue("@Discount", DBNull.Value);
 
-                 if (PSCategoryID != -1 && PSCategoryID != null)
+                if (PSCategoryID != -1 && PSCategoryID != null)
                     command.Parameters.AddWithValue("@PSCategoryID", PSCategoryID);
                 else
                     command.Parameters.AddWithValue("@PSCategoryID", DBNull.Value);
 
                 try
                 {
-                   
 
-                  
+
+
 
                     connection.Open();
                     rowsAffected = command.ExecuteNonQuery();
 
                     // Retrieve the value of the output parameter
-                   
+
 
 
 
@@ -130,8 +130,8 @@ namespace HomeC_DataAccess
             return (rowsAffected > 0);
         }
 
-        static public bool FindPurchase( int PurchaseID, ref DateTime IssueDate, ref float TotalBeforTax, ref float TaxAmount, ref float TotalAfterTax,
-            ref int StoreID, ref int Type, ref float? Discount,ref int PCategoryID,ref int? PSCategoryID)
+        static public bool FindPurchase(int PurchaseID, ref DateTime IssueDate, ref float TotalBeforTax, ref float TaxAmount, ref float TotalAfterTax,
+            ref int StoreID, ref int Type, ref float? Discount, ref int PCategoryID, ref int? PSCategoryID)
         {
             bool isFound = false;
 
@@ -151,13 +151,13 @@ namespace HomeC_DataAccess
                         if (reader.Read())
                         {
                             isFound = true;
-                            IssueDate = Convert.ToDateTime( reader["IssueDate"]);
-                            TotalAfterTax = Convert.ToSingle( reader["TotalAfterTax"]);
-                            TaxAmount = Convert.ToSingle( reader["TaxAmount"]);
-                            StoreID = Convert.ToInt32( reader["StoreID"]);
-                            Type = Convert.ToInt32( reader["Type"]);
-                            TotalBeforTax = Convert.ToSingle( reader["TotalBeforTax"]);
-                            PCategoryID = Convert.ToInt32( reader["PCategoryID"]);
+                            IssueDate = Convert.ToDateTime(reader["IssueDate"]);
+                            TotalAfterTax = Convert.ToSingle(reader["TotalAfterTax"]);
+                            TaxAmount = Convert.ToSingle(reader["TaxAmount"]);
+                            StoreID = Convert.ToInt32(reader["StoreID"]);
+                            Type = Convert.ToInt32(reader["Type"]);
+                            TotalBeforTax = Convert.ToSingle(reader["TotalBeforTax"]);
+                            PCategoryID = Convert.ToInt32(reader["PCategoryID"]);
 
 
                             if (reader["Discount"] != DBNull.Value)
@@ -166,7 +166,7 @@ namespace HomeC_DataAccess
                             else
                                 Discount = null;
 
-                            PSCategoryID = reader["PSCategoryID"] != DBNull.Value ?(int?) Convert.ToInt32(reader["PSCategoryID"]) : null;
+                            PSCategoryID = reader["PSCategoryID"] != DBNull.Value ? (int?)Convert.ToInt32(reader["PSCategoryID"]) : null;
 
                         }
 
@@ -176,15 +176,15 @@ namespace HomeC_DataAccess
                 {
                     isFound = false;
                 }
-               
+
             }
-              
-        return isFound;
+
+            return isFound;
         }
-        
-           
-                   
-        
+
+
+
+
 
 
         static public bool DeletePurchase(int PurchaseID)
@@ -217,7 +217,7 @@ namespace HomeC_DataAccess
 
 
 
-        static public DataTable GetAllPurchases(int PageNumber,int RowCountPerPage,ref int RowCount)
+        static public DataTable GetAllPurchases(int PageNumber, int RowCountPerPage, ref int RowCount)
         {
             DataTable dt = new DataTable();
 
@@ -251,7 +251,7 @@ namespace HomeC_DataAccess
                         }
                     }
 
-                    RowCount =(int)outputParameter.Value;
+                    RowCount = (int)outputParameter.Value;
 
 
 
@@ -264,7 +264,7 @@ namespace HomeC_DataAccess
                 }
                 finally
                 {
-                   
+
                 }
             }
             return dt;
@@ -323,7 +323,7 @@ namespace HomeC_DataAccess
             return dt;
         }
 
-         static public DataTable GetAllPurchasesInfoWithPagesByStoreName(int PageNumber, int RowCountPerPage,string StoreName, ref int RowCount)
+        static public DataTable GetAllPurchasesInfoWithPagesByStoreName(int PageNumber, int RowCountPerPage, string StoreName, ref int RowCount)
         {
             DataTable dt = new DataTable();
 
@@ -377,7 +377,7 @@ namespace HomeC_DataAccess
             return dt;
         }
 
-         static public DataTable GetAllPurchasesInfoWithPagesByTypeName(int PageNumber, int RowCountPerPage,string TypeName, ref int RowCount)
+        static public DataTable GetAllPurchasesInfoWithPagesByTypeName(int PageNumber, int RowCountPerPage, string TypeName, ref int RowCount)
         {
             DataTable dt = new DataTable();
 
@@ -431,7 +431,7 @@ namespace HomeC_DataAccess
             return dt;
         }
 
-         static public DataTable SP_GetAllPurchaseInfoWithPagingByTotalAfterTax(int PageNumber, int RowCountPerPage,float TotalAfterTax, ref int RowCount)
+        static public DataTable SP_GetAllPurchaseInfoWithPagingByTotalAfterTax(int PageNumber, int RowCountPerPage, float TotalAfterTax, ref int RowCount)
         {
             DataTable dt = new DataTable();
 
@@ -485,7 +485,7 @@ namespace HomeC_DataAccess
             return dt;
         }
 
-        static public DataTable GetAllPurchasesInfoWithPagesByDate(int PageNumber, int RowCountPerPage,DateTime DateFrom , DateTime DateTo, ref int RowCount)
+        static public DataTable GetAllPurchasesInfoWithPagesByDate(int PageNumber, int RowCountPerPage, DateTime DateFrom, DateTime DateTo, ref int RowCount)
         {
             DataTable dt = new DataTable();
 
@@ -521,7 +521,7 @@ namespace HomeC_DataAccess
                         }
                     }
 
-                    RowCount = outputParameter.Value !=DBNull.Value? (int)outputParameter.Value:0;
+                    RowCount = outputParameter.Value != DBNull.Value ? (int)outputParameter.Value : 0;
 
 
 
@@ -540,7 +540,7 @@ namespace HomeC_DataAccess
             return dt;
         }
 
-        static public DataTable GetAllPurchasesInfoWithPagesByDateOfStoreName(int PageNumber, int RowCountPerPage, DateTime DateFrom, DateTime DateTo,string StoreName, ref int RowCount)
+        static public DataTable GetAllPurchasesInfoWithPagesByDateOfStoreName(int PageNumber, int RowCountPerPage, DateTime DateFrom, DateTime DateTo, string StoreName, ref int RowCount)
         {
             DataTable dt = new DataTable();
 
@@ -845,11 +845,11 @@ namespace HomeC_DataAccess
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                
-                    dt.Load(reader);
-                
 
-               
+                dt.Load(reader);
+
+
+
 
 
             }
@@ -878,7 +878,7 @@ namespace HomeC_DataAccess
 
                 command.CommandType = CommandType.StoredProcedure;
 
-               
+
                 try
                 {
 
@@ -892,7 +892,7 @@ namespace HomeC_DataAccess
                     connection.Open();
 
                     command.ExecuteNonQuery();
-                    
+
 
                     Total = Convert.ToSingle(outputParameter.Value);
 
@@ -926,7 +926,7 @@ namespace HomeC_DataAccess
 
                 SqlCommand command = new SqlCommand(query, connection);
 
-                
+
 
                 command.Parameters.AddWithValue("@CategoryName", CategoryName);
                 command.Parameters.AddWithValue("@DateFrom", DateFrom);
@@ -935,13 +935,13 @@ namespace HomeC_DataAccess
                 {
 
                     // Create a SqlParameter object for the output parameter
-                    
+
                     connection.Open();
 
                     object result = command.ExecuteScalar();
 
-                   
-                    if(result != null && float.TryParse(result.ToString(),out float _Total))
+
+                    if (result != null && float.TryParse(result.ToString(), out float _Total))
                     {
                         Total = _Total;
                     }
@@ -959,7 +959,7 @@ namespace HomeC_DataAccess
             }
             return Total;
         }
-          static public float GetTotalPurchasesByCategoryName(string CategoryName)
+        static public float GetTotalPurchasesByCategoryName(string CategoryName)
         {
             float Total = 0;
 
@@ -971,21 +971,21 @@ namespace HomeC_DataAccess
 
                 SqlCommand command = new SqlCommand(query, connection);
 
-                
+
 
                 command.Parameters.AddWithValue("@CategoryName", CategoryName);
-                
+
                 try
                 {
 
                     // Create a SqlParameter object for the output parameter
-                    
+
                     connection.Open();
 
                     object result = command.ExecuteScalar();
 
-                   
-                    if(result != null && float.TryParse(result.ToString(),out float _Total))
+
+                    if (result != null && float.TryParse(result.ToString(), out float _Total))
                     {
                         Total = _Total;
                     }
@@ -1016,22 +1016,22 @@ namespace HomeC_DataAccess
 
                 SqlCommand command = new SqlCommand(query, connection);
 
-                
 
-                
+
+
                 command.Parameters.AddWithValue("@DateFrom", DateFrom);
                 command.Parameters.AddWithValue("@DateTo", DateTo);
                 try
                 {
 
                     // Create a SqlParameter object for the output parameter
-                    
+
                     connection.Open();
 
                     object result = command.ExecuteScalar();
 
-                   
-                    if(result != null && float.TryParse(result.ToString(),out float _Total))
+
+                    if (result != null && float.TryParse(result.ToString(), out float _Total))
                     {
                         Total = _Total;
                     }
@@ -1050,6 +1050,125 @@ namespace HomeC_DataAccess
             return Total;
         }
 
+
+
+
+        static public bool IsPurchseExsits(int PCategoryID,int PSCategoryID)
+        {
+            bool IsFound = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"Select top(1) X =1 FROM Purchases  where PCategoryID = @PCategoryID and PSCategoryID = @PSCategoryID";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@PCategoryID", PCategoryID);
+            cmd.Parameters.AddWithValue("@PSCategoryID", PSCategoryID);
+
+            try
+            {
+                connection.Open();
+
+               object reader = cmd.ExecuteScalar();
+
+                if (reader != null)
+
+                {
+             IsFound = true;
+
+                }
+
+                
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFound;
+        }
+
+        static public bool IsPurchseExsits(int PSCategoryID)
+        {
+            bool IsFound = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"Select top(1) X =1 FROM Purchases  where PSCategoryID = @PSCategoryID";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+            
+            cmd.Parameters.AddWithValue("@PSCategoryID", PSCategoryID);
+
+            try
+            {
+                connection.Open();
+
+                object reader = cmd.ExecuteScalar();
+
+                if (reader != null)
+
+                {
+                    IsFound = true;
+
+                }
+
+
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFound;
+        }
+
+        static public bool IsPurchseExsitsByPCategory(int PCategoryID)
+        {
+            bool IsFound = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"Select top(1) X =1 FROM Purchases  where PCategoryID = @PCategoryID";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            cmd.Parameters.AddWithValue("@PCategoryID", PCategoryID);
+
+            try
+            {
+                connection.Open();
+
+                object reader = cmd.ExecuteScalar();
+
+                if (reader != null)
+
+                {
+                    IsFound = true;
+
+                }
+
+
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFound;
+        }
 
 
     }

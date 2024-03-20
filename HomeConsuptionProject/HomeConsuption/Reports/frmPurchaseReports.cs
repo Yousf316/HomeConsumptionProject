@@ -104,13 +104,25 @@ namespace HomeConsuption.Reports
 
         private void _SetTvList()
         {
-            DataTable dt = clsPurchase_Category.GetAllPurchase_Categories();
+            DataTable dtBaseCategories = clsPurchase_Category.GetAllPurchase_Categories();
+            DataTable dtSubCategories;
             tvCategories.Nodes.Clear();
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow dr in dtBaseCategories.Rows)
             {
-                tvCategories.Nodes.Add(dr["CategoryName"].ToString()) ;
-                tvCategories.CheckBoxes = true;
+                string CategoryName = dr["CategoryName"].ToString();
+                tvCategories.Nodes.Add(CategoryName, CategoryName) ;
+
+                dtSubCategories = clsPurchaseSubBaseCategories.GetAllPurchase_SubBaseCategoriesByPCategory(CategoryName);
+
+                foreach (DataRow drSub in dtSubCategories.Rows)
+                {
+                    tvCategories.Nodes[CategoryName].Nodes.Add(drSub["SubCategoryName"].ToString());
+                }
+
+              
             }
+
+            tvCategories.CheckBoxes = true;
         }
 
         private void tvCategories_AfterCheck(object sender, TreeViewEventArgs e)

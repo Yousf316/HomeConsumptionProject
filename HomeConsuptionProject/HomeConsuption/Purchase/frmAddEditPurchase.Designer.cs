@@ -175,6 +175,7 @@
             // 
             // cmbSubCategories
             // 
+            this.cmbSubCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSubCategories.FormattingEnabled = true;
             this.cmbSubCategories.Location = new System.Drawing.Point(437, 66);
             this.cmbSubCategories.Name = "cmbSubCategories";
@@ -205,6 +206,7 @@
             // 
             // cmbCategoryList
             // 
+            this.cmbCategoryList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoryList.FormattingEnabled = true;
             this.cmbCategoryList.Location = new System.Drawing.Point(437, 21);
             this.cmbCategoryList.Name = "cmbCategoryList";
@@ -235,6 +237,7 @@
             // 
             // cbTypeInvoice
             // 
+            this.cbTypeInvoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTypeInvoice.FormattingEnabled = true;
             this.cbTypeInvoice.Items.AddRange(new object[] {
             "سريعة",

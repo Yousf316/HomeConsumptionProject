@@ -131,7 +131,7 @@ namespace HomeC_DataAccess
             return rowsAffected >0;
         }
 
-        static public DataTable GetAllPurchase_SubCategoriesByPCategory( int PCategory)
+        static public DataTable GetAllPurchase_SubBaseCategoriesByPCategory( int PCategory)
         {
           DataTable dt = new DataTable();
 
@@ -170,6 +170,44 @@ namespace HomeC_DataAccess
             return dt;
         }
 
+        static public DataTable GetAllPurchase_SubBaseCategoriesByPCategory(string CategoryName)
+        {
+            DataTable dt = new DataTable();
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"SELECT * FROM [dbo].[View_SubBaseCategoriesInfo] WHERE CategoryName =@CategoryName;";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+
+            cmd.Parameters.AddWithValue("@CategoryName", CategoryName);
+
+            try
+            {
+                connection.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        dt.Load(reader);
+                    }
+                }
+
+
+
+
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+        }
 
         static public bool DeletePurchaseSubBaseCategories(int PSCategoryID,int PCategory)
         {
@@ -199,7 +237,7 @@ namespace HomeC_DataAccess
 
             return (rowsAffected > 0);
         }
-        static public bool DeletePurchaseSubBaseCategories( int PCategory)
+        static public bool DeletePurchaseSubBaseCategories( int PSCategory)
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -207,7 +245,7 @@ namespace HomeC_DataAccess
             SqlCommand cmd = new SqlCommand(query, connection);
 
             
-            cmd.Parameters.AddWithValue("@PSCategoryID", PCategory);
+            cmd.Parameters.AddWithValue("@PSCategoryID", PSCategory);
             try
             {
                 connection.Open();

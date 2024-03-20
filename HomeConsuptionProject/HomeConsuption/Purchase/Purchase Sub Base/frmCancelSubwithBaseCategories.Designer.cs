@@ -38,11 +38,14 @@
             // 
             // cmbSubCategories
             // 
+            this.cmbSubCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSubCategories.FormattingEnabled = true;
+            this.cmbSubCategories.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbSubCategories.Location = new System.Drawing.Point(103, 151);
             this.cmbSubCategories.Name = "cmbSubCategories";
             this.cmbSubCategories.Size = new System.Drawing.Size(139, 21);
             this.cmbSubCategories.TabIndex = 44;
+            this.cmbSubCategories.SelectedIndexChanged += new System.EventHandler(this.cmbSubCategories_SelectedIndexChanged);
             // 
             // lbCategory
             // 
@@ -56,11 +59,13 @@
             // 
             // cmbCategories
             // 
+            this.cmbCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategories.FormattingEnabled = true;
             this.cmbCategories.Location = new System.Drawing.Point(103, 71);
             this.cmbCategories.Name = "cmbCategories";
             this.cmbCategories.Size = new System.Drawing.Size(139, 21);
             this.cmbCategories.TabIndex = 42;
+            this.cmbCategories.SelectedIndexChanged += new System.EventHandler(this.cmbCategories_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -81,6 +86,7 @@
             this.btnCancel.Size = new System.Drawing.Size(45, 47);
             this.btnCancel.TabIndex = 41;
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -90,6 +96,7 @@
             this.btnSave.Size = new System.Drawing.Size(45, 47);
             this.btnSave.TabIndex = 40;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmCancelSubwithBaseCategories
             // 
@@ -105,6 +112,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCancelSubwithBaseCategories";
             this.Text = "الغاء ربط صنف فرعي بمجموعة";
+            this.Load += new System.EventHandler(this.frmCancelSubwithBaseCategories_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

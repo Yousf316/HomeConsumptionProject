@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbCategories = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,14 +42,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbAllDays = new System.Windows.Forms.CheckBox();
             this.tvCategories = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbTotall = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categories = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbAllDays = new System.Windows.Forms.CheckBox();
+            this.lbTotall = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -59,7 +59,7 @@
             // cmbCategories
             // 
             this.cmbCategories.FormattingEnabled = true;
-            this.cmbCategories.Location = new System.Drawing.Point(690, 245);
+            this.cmbCategories.Location = new System.Drawing.Point(708, 102);
             this.cmbCategories.Name = "cmbCategories";
             this.cmbCategories.Size = new System.Drawing.Size(136, 21);
             this.cmbCategories.TabIndex = 0;
@@ -69,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.label1.Location = new System.Drawing.Point(229, 90);
+            this.label1.Location = new System.Drawing.Point(265, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 29);
             this.label1.TabIndex = 1;
@@ -99,7 +99,7 @@
             // 
             this.dtpTo.CustomFormat = "MM/dd/yyyy";
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(102, 225);
+            this.dtpTo.Location = new System.Drawing.Point(102, 258);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(100, 20);
             this.dtpTo.TabIndex = 4;
@@ -108,7 +108,7 @@
             // 
             this.dtpFrom.CustomFormat = "MM/dd/yyyy";
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(102, 175);
+            this.dtpFrom.Location = new System.Drawing.Point(102, 208);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(100, 20);
             this.dtpFrom.TabIndex = 5;
@@ -117,7 +117,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label3.Location = new System.Drawing.Point(208, 180);
+            this.label3.Location = new System.Drawing.Point(208, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 14);
             this.label3.TabIndex = 6;
@@ -127,7 +127,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label4.Location = new System.Drawing.Point(138, 205);
+            this.label4.Location = new System.Drawing.Point(138, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 14);
             this.label4.TabIndex = 7;
@@ -149,7 +149,7 @@
             // 
             this.cbAllDate.AutoSize = true;
             this.cbAllDate.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.cbAllDate.Location = new System.Drawing.Point(30, 224);
+            this.cbAllDate.Location = new System.Drawing.Point(30, 257);
             this.cbAllDate.Name = "cbAllDate";
             this.cbAllDate.Size = new System.Drawing.Size(51, 21);
             this.cbAllDate.TabIndex = 9;
@@ -161,7 +161,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 18F);
-            this.label5.Location = new System.Drawing.Point(229, 175);
+            this.label5.Location = new System.Drawing.Point(229, 208);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 29);
             this.label5.TabIndex = 10;
@@ -192,14 +192,26 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(507, 272);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(323, 368);
+            this.panel1.Size = new System.Drawing.Size(358, 368);
             this.panel1.TabIndex = 12;
+            // 
+            // cbAllDays
+            // 
+            this.cbAllDays.AutoSize = true;
+            this.cbAllDays.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.cbAllDays.Location = new System.Drawing.Point(220, 258);
+            this.cbAllDays.Name = "cbAllDays";
+            this.cbAllDays.Size = new System.Drawing.Size(76, 21);
+            this.cbAllDays.TabIndex = 15;
+            this.cbAllDays.Text = "كل الايام";
+            this.cbAllDays.UseVisualStyleBackColor = true;
+            this.cbAllDays.CheckedChanged += new System.EventHandler(this.cbAllDays_CheckedChanged);
             // 
             // tvCategories
             // 
             this.tvCategories.Location = new System.Drawing.Point(80, 27);
             this.tvCategories.Name = "tvCategories";
-            this.tvCategories.Size = new System.Drawing.Size(143, 128);
+            this.tvCategories.Size = new System.Drawing.Size(179, 158);
             this.tvCategories.TabIndex = 14;
             this.tvCategories.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvCategories_AfterCheck);
             // 
@@ -215,26 +227,6 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "التقرير";
-            // 
-            // lbTotall
-            // 
-            this.lbTotall.AutoSize = true;
-            this.lbTotall.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lbTotall.Location = new System.Drawing.Point(19, 321);
-            this.lbTotall.Name = "lbTotall";
-            this.lbTotall.Size = new System.Drawing.Size(71, 24);
-            this.lbTotall.TabIndex = 18;
-            this.lbTotall.Text = "[?????]";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label8.Location = new System.Drawing.Point(162, 321);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 24);
-            this.label8.TabIndex = 17;
-            this.label8.Text = ": المجموع";
             // 
             // dgvList
             // 
@@ -260,31 +252,39 @@
             // 
             // Categories
             // 
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Categories.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Categories.DefaultCellStyle = dataGridViewCellStyle1;
             this.Categories.HeaderText = "المحموعات";
             this.Categories.Name = "Categories";
             this.Categories.ReadOnly = true;
             this.Categories.Width = 150;
             // 
-            // cbAllDays
+            // lbTotall
             // 
-            this.cbAllDays.AutoSize = true;
-            this.cbAllDays.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.cbAllDays.Location = new System.Drawing.Point(220, 225);
-            this.cbAllDays.Name = "cbAllDays";
-            this.cbAllDays.Size = new System.Drawing.Size(76, 21);
-            this.cbAllDays.TabIndex = 15;
-            this.cbAllDays.Text = "كل الايام";
-            this.cbAllDays.UseVisualStyleBackColor = true;
-            this.cbAllDays.CheckedChanged += new System.EventHandler(this.cbAllDays_CheckedChanged);
+            this.lbTotall.AutoSize = true;
+            this.lbTotall.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.lbTotall.Location = new System.Drawing.Point(19, 321);
+            this.lbTotall.Name = "lbTotall";
+            this.lbTotall.Size = new System.Drawing.Size(71, 24);
+            this.lbTotall.TabIndex = 18;
+            this.lbTotall.Text = "[?????]";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.label8.Location = new System.Drawing.Point(162, 321);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(93, 24);
+            this.label8.TabIndex = 17;
+            this.label8.Text = ": المجموع";
             // 
             // frmPurchaseReports
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 685);
+            this.ClientSize = new System.Drawing.Size(904, 682);
             this.Controls.Add(this.cmbCategories);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);

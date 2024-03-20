@@ -117,6 +117,7 @@
             // 
             // cmbColumns
             // 
+            this.cmbColumns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbColumns.FormattingEnabled = true;
             this.cmbColumns.Items.AddRange(new object[] {
             "الكل",
