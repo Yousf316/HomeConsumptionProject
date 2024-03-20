@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
+
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace HomeC_DataAccess
 {
@@ -974,6 +972,98 @@ namespace HomeC_DataAccess
 
 
                 command.Parameters.AddWithValue("@CategoryName", CategoryName);
+
+                try
+                {
+
+                    // Create a SqlParameter object for the output parameter
+
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+
+                    if (result != null && float.TryParse(result.ToString(), out float _Total))
+                    {
+                        Total = _Total;
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return Total;
+        }
+
+        static public float GetTotalPurchasesBySubCategoryName(string CategoryName,string SubCategoryName, string DateFrom, string DateTo)
+        {
+            float Total = 0;
+
+            string query = @"SELECT sum(TotalAfterTax) as Total
+  FROM [HomeConsumptionDB].[dbo].[View_PurchasesInfo]
+  where CategoryName = @CategoryName and SubCategoryName = @SubCategoryName and IssueDate between @DateFrom and  @DateTo ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+
+
+                command.Parameters.AddWithValue("@CategoryName", CategoryName);
+                command.Parameters.AddWithValue("@SubCategoryName", SubCategoryName);
+                command.Parameters.AddWithValue("@DateFrom", DateFrom);
+                command.Parameters.AddWithValue("@DateTo", DateTo);
+                try
+                {
+
+                    // Create a SqlParameter object for the output parameter
+
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+
+                    if (result != null && float.TryParse(result.ToString(), out float _Total))
+                    {
+                        Total = _Total;
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return Total;
+        }
+        static public float GetTotalPurchasesBySubCategoryName(string CategoryName, string SubCategoryName)
+        {
+            float Total = 0;
+
+            string query = @"SELECT sum(TotalAfterTax) as Total
+  FROM [HomeConsumptionDB].[dbo].[View_PurchasesInfo]
+  where CategoryName = @CategoryName and SubCategoryName = @SubCategoryName ";
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+
+
+                command.Parameters.AddWithValue("@CategoryName", CategoryName);
+                command.Parameters.AddWithValue("@SubCategoryName", SubCategoryName);
 
                 try
                 {

@@ -1,13 +1,8 @@
 ﻿using HomeC_Business;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+
 using System.Data;
-using System.DirectoryServices.ActiveDirectory;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms;
 
 namespace HomeConsuption.Reports
@@ -175,6 +170,7 @@ namespace HomeConsuption.Reports
                 
 
             }
+
             return Total;
 
         }
@@ -218,10 +214,60 @@ namespace HomeConsuption.Reports
                     dgvList.Rows.Add(TotalPerItem.ToString("F2"), item.Text);
 
                     Total += TotalPerItem;
+                }else
+                {
+                    Total += _CalculateTreeViewNodesChildern(item.Text, WithDate);
                 }
 
             }
             return Total;   
+
+        }
+
+        private float _CalculateTreeViewNodesChildern(string BaseCatrgotyName,bool WithDate = false)
+        {
+            float Total = 0;
+            float TotalPerItem = 0;
+            
+            foreach (TreeNode item in tvCategories.Nodes[BaseCatrgotyName].Nodes)
+            {
+
+                if (item.Checked)
+                {
+
+                    if (WithDate)
+                    {
+
+                        if (cbAllDays.Checked)
+                        {
+                            int Days = (DateTime.DaysInMonth(dtpFrom.Value.Year, dtpTo.Value.Month));
+                            TotalPerItem = clsPurchase.GetTotalAllPurchases(BaseCatrgotyName, item.Text, $"{dtpFrom.Value.Month}/{1}/{dtpFrom.Value.Year}", $"{dtpTo.Value.Month}/{Days}/{dtpTo.Value.Year}");
+
+                        }
+                        else
+                        {
+                            TotalPerItem = clsPurchase.GetTotalAllPurchases(BaseCatrgotyName, item.Text, dtpFrom.Value.ToString("d"), dtpTo.Value.ToString("d"));
+
+                        }
+
+
+
+
+
+                    }
+                    else
+                    {
+                        TotalPerItem = clsPurchase.GetTotalAllPurchasesBySubBaseCategory(BaseCatrgotyName, item.Text);
+
+                    }
+                    if (TotalPerItem > 0)
+                        dgvList.Rows.Add(TotalPerItem.ToString("F2"), item.Text);
+
+                    Total += TotalPerItem;
+                }
+
+            }
+            return Total;
 
         }
 

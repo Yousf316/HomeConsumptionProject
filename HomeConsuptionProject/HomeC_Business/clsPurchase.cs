@@ -227,6 +227,15 @@ namespace HomeC_Business
         {
             return clsPurchaseData.GetTotalPurchasesByCategoryName(CategoryName);
         }
+          public static float GetTotalAllPurchases(string CategoryName,string SubCategoryName,string DateFrom ,string DateTo)
+        {
+            return clsPurchaseData.GetTotalPurchasesBySubCategoryName(CategoryName, SubCategoryName, DateFrom,DateTo);
+        }
+
+          public static float GetTotalAllPurchasesBySubBaseCategory(string CategoryName, string SubCategoryName)
+        {
+            return clsPurchaseData.GetTotalPurchasesBySubCategoryName(CategoryName, SubCategoryName);
+        }
 
         public static float GetTotalAllPurchases(string DateFrom ,string DateTo)
         {
