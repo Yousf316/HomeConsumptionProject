@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbCategories = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -59,7 +59,7 @@
             // cmbCategories
             // 
             this.cmbCategories.FormattingEnabled = true;
-            this.cmbCategories.Location = new System.Drawing.Point(708, 102);
+            this.cmbCategories.Location = new System.Drawing.Point(630, 232);
             this.cmbCategories.Name = "cmbCategories";
             this.cmbCategories.Size = new System.Drawing.Size(136, 21);
             this.cmbCategories.TabIndex = 0;
@@ -190,9 +190,9 @@
             this.panel1.Controls.Add(this.dtpFrom);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(507, 272);
+            this.panel1.Location = new System.Drawing.Point(507, 276);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(358, 368);
+            this.panel1.Size = new System.Drawing.Size(358, 364);
             this.panel1.TabIndex = 12;
             // 
             // cbAllDays
@@ -252,8 +252,8 @@
             // 
             // Categories
             // 
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Categories.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Categories.DefaultCellStyle = dataGridViewCellStyle3;
             this.Categories.HeaderText = "المحموعات";
             this.Categories.Name = "Categories";
             this.Categories.ReadOnly = true;

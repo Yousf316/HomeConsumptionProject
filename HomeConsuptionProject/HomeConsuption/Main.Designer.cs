@@ -58,6 +58,7 @@
             this.تقريرالمتاجرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالميزانيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الأعداداتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.المستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +71,7 @@
             this.المتاجرToolStripMenuItem,
             this.المنتجاتToolStripMenuItem,
             this.التقاريرToolStripMenuItem,
+            this.المستخدمينToolStripMenuItem,
             this.الأعداداتToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -307,6 +309,15 @@
             this.الأعداداتToolStripMenuItem.Text = "الأعدادات";
             this.الأعداداتToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // المستخدمينToolStripMenuItem
+            // 
+            this.المستخدمينToolStripMenuItem.Enabled = false;
+            this.المستخدمينToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_person_96;
+            this.المستخدمينToolStripMenuItem.Name = "المستخدمينToolStripMenuItem";
+            this.المستخدمينToolStripMenuItem.Size = new System.Drawing.Size(126, 72);
+            this.المستخدمينToolStripMenuItem.Text = "المستخدمين";
+            this.المستخدمينToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,6 +367,7 @@
         private System.Windows.Forms.ToolStripMenuItem صنففرعيToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الاصنافالريئسيةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الاصنافالToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem المستخدمينToolStripMenuItem;
     }
 }
 

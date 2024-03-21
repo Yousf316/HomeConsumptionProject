@@ -74,27 +74,28 @@
             this.التعديلToolStripMenuItem,
             this.الحذفToolStripMenuItem});
             this.cmsSettingsPurchase.Name = "cmsSettingsPurchase";
-            this.cmsSettingsPurchase.Size = new System.Drawing.Size(134, 70);
+            this.cmsSettingsPurchase.Size = new System.Drawing.Size(181, 92);
             this.cmsSettingsPurchase.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // المعلموماتToolStripMenuItem
             // 
             this.المعلموماتToolStripMenuItem.Name = "المعلموماتToolStripMenuItem";
-            this.المعلموماتToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.المعلموماتToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.المعلموماتToolStripMenuItem.Text = "المعلمومات";
             // 
             // التعديلToolStripMenuItem
             // 
             this.التعديلToolStripMenuItem.Name = "التعديلToolStripMenuItem";
-            this.التعديلToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.التعديلToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.التعديلToolStripMenuItem.Text = "التعديل";
             this.التعديلToolStripMenuItem.Click += new System.EventHandler(this.التعديلToolStripMenuItem_Click);
             // 
             // الحذفToolStripMenuItem
             // 
             this.الحذفToolStripMenuItem.Name = "الحذفToolStripMenuItem";
-            this.الحذفToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.الحذفToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.الحذفToolStripMenuItem.Text = "الحذف";
+            this.الحذفToolStripMenuItem.Click += new System.EventHandler(this.الحذفToolStripMenuItem_Click);
             // 
             // label1
             // 

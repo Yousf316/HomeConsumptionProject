@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsPerson.cs" />
+    <Compile Include="clsUser.cs" />
     <Compile Include="clsPurchaseSubBaseCategories.cs" />
     <Compile Include="clsPurchase_SubCategory.cs" />
     <Compile Include="clsPurchase_Category.cs" />

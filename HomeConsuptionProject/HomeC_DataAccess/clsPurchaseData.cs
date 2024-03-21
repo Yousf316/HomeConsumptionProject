@@ -189,7 +189,7 @@ namespace HomeC_DataAccess
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"DELETE * FROM [dbo].[Purchases] WHERE PurchaseID =@PurchaseID ;";
+            string query = @"DELETE  FROM [dbo].[Purchases] WHERE PurchaseID =@PurchaseID ;";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.AddWithValue("@PurchaseID", PurchaseID);

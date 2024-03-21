@@ -313,5 +313,12 @@ namespace HomeConsuption.Purchase
 
             Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
         }
+
+        private void الحذفToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int PurchaseID = (int)dataGridView1.CurrentRow.Cells[0].Value;
+            clsPurchase.DeletePurchase(PurchaseID);
+            Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
+        }
     }
 }

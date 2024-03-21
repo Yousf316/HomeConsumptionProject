@@ -140,6 +140,7 @@ namespace HomeC_Business
  
         public static bool DeletePurchase(int PurchaseID)
         {
+            clsPurchase_sub.DeletePurchase_sub(PurchaseID);
             return clsPurchaseData.DeletePurchase(PurchaseID);
         }
           public  bool DeletePurchase()
