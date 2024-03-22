@@ -234,6 +234,44 @@ namespace HomeC_DataAccess
             return dt;
         }
 
+        static public bool IsPersonExsits(int PersonID)
+        {
+            bool IsFound = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"Select top(1) X =1 FROM People  where PersonID = @PersonID";
+            
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            cmd.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                connection.Open();
+
+                object reader = cmd.ExecuteScalar();
+
+                if (reader != null)
+
+                {
+                    IsFound = true;
+
+                }
+
+
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFound;
+        }
 
     }
 }

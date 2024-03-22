@@ -1,6 +1,7 @@
 ﻿using HomeC_DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,14 @@ namespace HomeC_Business
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode _mode = enMode.AddNew;
 
-        int PersonID { get; set; }
-        string FirstName { get; set; }
-        string SecondName { get; set; }
-        string ThirdName { get; set; }
-        string LastName { get; set; }
-        string PhoneNumber { get; set; }
-        string Email { get; set; }
-        int NationalityCountryID { get; set; }
+       public int PersonID { get; set; }
+       public string FirstName { get; set; }
+       public string SecondName { get; set; }
+       public string ThirdName { get; set; }
+       public string LastName { get; set; }
+       public string PhoneNumber { get; set; }
+       public string Email { get; set; }
+       public int NationalityCountryID { get; set; }
         public clsPerson()
         {
             this.PersonID = -1;
@@ -123,7 +124,13 @@ namespace HomeC_Business
         { 
             return clsPersonData.DeletePerson(PersonID);
         }
+        
 
+        static public bool IsPersonExsits(int PersonID)
+        {
+            return clsPersonData.IsPersonExsits(PersonID);
+        }
+        
     }
 
 }
