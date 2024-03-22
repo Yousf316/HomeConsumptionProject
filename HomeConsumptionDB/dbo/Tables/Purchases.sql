@@ -1,19 +1,25 @@
 ﻿CREATE TABLE [dbo].[Purchases] (
-    [PurchaseID]    INT        IDENTITY (1, 1) NOT NULL,
-    [IssueDate]     DATE       NOT NULL,
-    [Type]          INT        NOT NULL,
-    [TotalBeforTax] SMALLMONEY NOT NULL,
-    [Discount]      SMALLMONEY NULL,
-    [TaxAmount]     SMALLMONEY NOT NULL,
-    [TotalAfterTax] SMALLMONEY NOT NULL,
-    [StoreID]       INT        NOT NULL,
-    [PCategoryID]   INT        NOT NULL,
-    [PSCategoryID]  INT        NULL,
+    [PurchaseID]      INT        IDENTITY (1, 1) NOT NULL,
+    [IssueDate]       DATE       NOT NULL,
+    [Type]            INT        NOT NULL,
+    [TotalBeforTax]   SMALLMONEY NOT NULL,
+    [Discount]        SMALLMONEY NULL,
+    [TaxAmount]       SMALLMONEY NOT NULL,
+    [TotalAfterTax]   SMALLMONEY NOT NULL,
+    [StoreID]         INT        NOT NULL,
+    [PCategoryID]     INT        NOT NULL,
+    [PSCategoryID]    INT        NULL,
+    [CreatedByUserID] INT        NULL,
+    [UpdatedByUserID] INT        NULL,
     CONSTRAINT [PK_Purchases] PRIMARY KEY CLUSTERED ([PurchaseID] ASC),
     CONSTRAINT [FK_Purchases_Purchase_Categories] FOREIGN KEY ([PCategoryID]) REFERENCES [dbo].[Purchase_Categories] ([PCategoryID]),
     CONSTRAINT [FK_Purchases_Purchase_SubCategories] FOREIGN KEY ([PSCategoryID]) REFERENCES [dbo].[Purchase_SubCategories] ([PSCategoryID]),
-    CONSTRAINT [FK_Purchases_Stores] FOREIGN KEY ([StoreID]) REFERENCES [dbo].[Stores] ([StoreID])
+    CONSTRAINT [FK_Purchases_Stores] FOREIGN KEY ([StoreID]) REFERENCES [dbo].[Stores] ([StoreID]),
+    CONSTRAINT [FK_Purchases_Users] FOREIGN KEY ([CreatedByUserID]) REFERENCES [dbo].[Users] ([UserID]),
+    CONSTRAINT [FK_Purchases_Users1] FOREIGN KEY ([UpdatedByUserID]) REFERENCES [dbo].[Users] ([UserID])
 );
+
+
 
 
 

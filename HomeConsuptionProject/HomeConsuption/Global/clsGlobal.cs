@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using HomeConsuption.Global;
 using Microsoft.Win32;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-
+using HomeC_Business;
 namespace HomeConsuption
 {
     internal static  class clsGlobal
     {
-        //public static clsUser CurrentUser;
+        public static clsUser CurrentUser;
 
-        public static float Taxprec =1.15f;
+        public static readonly float Taxprec =1.15f;
 
         public static bool RememberUsernameAndPassword(string Username, string Password)
         {

@@ -57,8 +57,10 @@
             this.تقريرالمنتجاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالمتاجرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تقريرالميزانيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.الأعداداتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.المستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الأعداداتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.اضافةمستخدمجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.قائمةالمستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -300,6 +302,18 @@
             this.تقريرالميزانيةToolStripMenuItem.Size = new System.Drawing.Size(219, 32);
             this.تقريرالميزانيةToolStripMenuItem.Text = "تقرير الميزانية";
             // 
+            // المستخدمينToolStripMenuItem
+            // 
+            this.المستخدمينToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.اضافةمستخدمجديدToolStripMenuItem,
+            this.قائمةالمستخدمينToolStripMenuItem});
+            this.المستخدمينToolStripMenuItem.Enabled = false;
+            this.المستخدمينToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_person_96;
+            this.المستخدمينToolStripMenuItem.Name = "المستخدمينToolStripMenuItem";
+            this.المستخدمينToolStripMenuItem.Size = new System.Drawing.Size(126, 72);
+            this.المستخدمينToolStripMenuItem.Text = "المستخدمين";
+            this.المستخدمينToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // الأعداداتToolStripMenuItem
             // 
             this.الأعداداتToolStripMenuItem.Enabled = false;
@@ -309,14 +323,17 @@
             this.الأعداداتToolStripMenuItem.Text = "الأعدادات";
             this.الأعداداتToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // المستخدمينToolStripMenuItem
+            // اضافةمستخدمجديدToolStripMenuItem
             // 
-            this.المستخدمينToolStripMenuItem.Enabled = false;
-            this.المستخدمينToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_person_96;
-            this.المستخدمينToolStripMenuItem.Name = "المستخدمينToolStripMenuItem";
-            this.المستخدمينToolStripMenuItem.Size = new System.Drawing.Size(126, 72);
-            this.المستخدمينToolStripMenuItem.Text = "المستخدمين";
-            this.المستخدمينToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.اضافةمستخدمجديدToolStripMenuItem.Name = "اضافةمستخدمجديدToolStripMenuItem";
+            this.اضافةمستخدمجديدToolStripMenuItem.Size = new System.Drawing.Size(253, 32);
+            this.اضافةمستخدمجديدToolStripMenuItem.Text = "اضافة مستخدم جديد";
+            // 
+            // قائمةالمستخدمينToolStripMenuItem
+            // 
+            this.قائمةالمستخدمينToolStripMenuItem.Name = "قائمةالمستخدمينToolStripMenuItem";
+            this.قائمةالمستخدمينToolStripMenuItem.Size = new System.Drawing.Size(253, 32);
+            this.قائمةالمستخدمينToolStripMenuItem.Text = "قائمة المستخدمين";
             // 
             // Main
             // 
@@ -368,6 +385,8 @@
         private System.Windows.Forms.ToolStripMenuItem الاصنافالريئسيةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الاصنافالToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem المستخدمينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem اضافةمستخدمجديدToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem قائمةالمستخدمينToolStripMenuItem;
     }
 }
 

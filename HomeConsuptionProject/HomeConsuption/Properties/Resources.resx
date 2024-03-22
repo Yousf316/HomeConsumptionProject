@@ -178,4 +178,28 @@
   <data name="icons8-person-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-person-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="clipboardwithpencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clipboardwithpencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_database" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete-database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="email" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="person_man" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\person_man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="person_manAddPerson" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\person_manAddPerson.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="person_mansearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\person_mansearch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="phone_call" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone-call.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="task_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\task-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -56,6 +56,30 @@
     <Compile Include="Global\clsGlobal.cs" />
     <Compile Include="Global\clsValidatoin.cs" />
     <Compile Include="Global\util.cs" />
+    <Compile Include="People\Controls\ctrAddPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Controls\ctrAddPerson.Designer.cs">
+      <DependentUpon>ctrAddPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Controls\ctrManagePeople.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Controls\ctrManagePeople.Designer.cs">
+      <DependentUpon>ctrManagePeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Controls\ctrShowPeopleWithSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Controls\ctrShowPeopleWithSearch.Designer.cs">
+      <DependentUpon>ctrShowPeopleWithSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Controls\ctrShowPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Controls\ctrShowPerson.Designer.cs">
+      <DependentUpon>ctrShowPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product\frmAddEditCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +215,24 @@
     <Compile Include="Tools\frmTotalAmountwithTax.Designer.cs">
       <DependentUpon>frmTotalAmountwithTax.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\frmAddUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmAddUpdateUser.Designer.cs">
+      <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="People\Controls\ctrAddPerson.resx">
+      <DependentUpon>ctrAddPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Controls\ctrManagePeople.resx">
+      <DependentUpon>ctrManagePeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Controls\ctrShowPeopleWithSearch.resx">
+      <DependentUpon>ctrShowPeopleWithSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Controls\ctrShowPerson.resx">
+      <DependentUpon>ctrShowPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Product\frmAddEditCategory.resx">
       <DependentUpon>frmAddEditCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,7 +294,7 @@
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -342,6 +384,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8-home-64.ico" />
+    <Content Include="Resources\clipboardwithpencil.png" />
+    <Content Include="Resources\delete-database.png" />
+    <Content Include="Resources\email.png" />
+    <Content Include="Resources\person_man.png" />
+    <Content Include="Resources\person_manAddPerson.png" />
+    <Content Include="Resources\person_mansearch.png" />
+    <Content Include="Resources\phone-call.png" />
+    <Content Include="Resources\task-list.png" />
     <None Include="Resources\icons8-person-96.png" />
     <None Include="Resources\icons8-settings-641.png" />
   </ItemGroup>

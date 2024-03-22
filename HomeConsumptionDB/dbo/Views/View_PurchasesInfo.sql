@@ -1,10 +1,11 @@
 ﻿CREATE VIEW dbo.View_PurchasesInfo
 AS
 SELECT        dbo.Purchases.PurchaseID, dbo.Purchases.IssueDate, CASE WHEN dbo.Purchases.Type = 1 THEN 'سريعة' WHEN dbo.Purchases.Type = 2 THEN 'عادية' ELSE NULL END AS TypeName, dbo.Purchases.TotalAfterTax, 
-                         dbo.Stores.StoreName, dbo.Purchase_Categories.CategoryName
+                         dbo.Stores.StoreName, dbo.Purchase_Categories.CategoryName, dbo.Purchase_SubCategories.SubCategoryName
 FROM            dbo.Stores INNER JOIN
                          dbo.Purchases ON dbo.Stores.StoreID = dbo.Purchases.StoreID INNER JOIN
-                         dbo.Purchase_Categories ON dbo.Purchases.PCategoryID = dbo.Purchase_Categories.PCategoryID
+                         dbo.Purchase_Categories ON dbo.Purchases.PCategoryID = dbo.Purchase_Categories.PCategoryID LEFT OUTER JOIN
+                         dbo.Purchase_SubCategories ON dbo.Purchases.PSCategoryID = dbo.Purchase_SubCategories.PSCategoryID
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -90,13 +91,13 @@ Begin DesignProperties =
          End
          Begin Table = "Purchases"
             Begin Extent = 
-               Top = 49
-               Left = 288
-               Bottom = 255
-               Right = 458
+               Top = 23
+               Left = 325
+               Bottom = 229
+               Right = 495
             End
             DisplayFlags = 280
-            TopColumn = 0
+            TopColumn = 2
          End
          Begin Table = "Purchase_Categories"
             Begin Extent = 
@@ -104,6 +105,16 @@ Begin DesignProperties =
                Left = 38
                Bottom = 102
                Right = 208
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "Purchase_SubCategories"
+            Begin Extent = 
+               Top = 202
+               Left = 615
+               Bottom = 298
+               Right = 804
             End
             DisplayFlags = 280
             TopColumn = 0
@@ -135,6 +146,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'View_PurchasesInfo';
+
+
 
 
 
