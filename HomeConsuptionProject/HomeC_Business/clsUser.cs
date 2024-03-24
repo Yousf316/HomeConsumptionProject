@@ -11,10 +11,10 @@ namespace HomeC_Business
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode _mode = enMode.AddNew;
 
-        int UserID { get; set; }
-        int PersonID { get; set; }
-        string Password { get; set; }
-        bool IsActive { get; set; }
+       public int UserID { get; set; }
+       public int PersonID { get; set; }
+       public string Password { get; set; }
+       public bool IsActive { get; set; }
         public clsUser()
         {
             this.UserID = -1;
@@ -30,6 +30,15 @@ namespace HomeC_Business
             this.Password = Password;
             this.IsActive = IsActive;
             _mode = enMode.Update;
+        }
+
+        public void SetValues (int PersonID, string Password, bool IsActive)
+        {
+          
+            this.PersonID = PersonID;
+            this.Password = Password;
+            this.IsActive = IsActive;
+            
         }
         private bool _AddNewUsers()
         {

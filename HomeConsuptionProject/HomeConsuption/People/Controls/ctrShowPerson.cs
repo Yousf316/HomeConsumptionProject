@@ -42,19 +42,19 @@ namespace HomeConsuption
             //else
             //    pictureBox1.ImageLocation = obPerson.GetDefaultImage();
         }
-        //public void GetPersonInfo(int PersonID=-1)
-        //{
-        //    if(PersonID == -1|| !clsPerson.IsExists(PersonID))
-        //    {
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        this.obPerson= clsPerson.FindPerson(PersonID);
-        //        LoadPersonInfo();
-        //    }
-            
-        //}
+        public void GetPersonInfo(int PersonID = -1)
+        {
+            if (PersonID == -1 || !clsPerson.IsPersonExsits(PersonID))
+            {
+                return;
+            }
+            else
+            {
+                this.obPerson = clsPerson.FindPerson(PersonID);
+                LoadPersonInfo();
+            }
+
+        }
 
         public int GetPersonID()
         {
