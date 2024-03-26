@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using HomeC_DataAccess;
@@ -14,42 +16,46 @@ namespace HomeC_Business
        public int UserID { get; set; }
        public int PersonID { get; set; }
        public string Password { get; set; }
+       public string UserName { get; set; }
        public bool IsActive { get; set; }
         public clsUser()
         {
             this.UserID = -1;
             this.PersonID = -1;
             this.Password = "";
+            this.UserName = "";
             this.IsActive = false;
             _mode = enMode.AddNew;
         }
-        private clsUser(int UserID, int PersonID, string Password, bool IsActive)
+        private clsUser(int UserID,string UserName, int PersonID, string Password, bool IsActive)
         {
             this.UserID = UserID;
             this.PersonID = PersonID;
             this.Password = Password;
+            this.UserName = UserName;
             this.IsActive = IsActive;
             _mode = enMode.Update;
         }
 
-        public void SetValues (int PersonID, string Password, bool IsActive)
+        public void SetValues (int PersonID,string UserName, string Password, bool IsActive)
         {
           
             this.PersonID = PersonID;
             this.Password = Password;
+            this.UserName = UserName;
             this.IsActive = IsActive;
             
         }
         private bool _AddNewUsers()
         {
             int ID = -1;
-            clsUserData.InsertUser(ref ID, this.PersonID, this.Password, this.IsActive);
+            clsUserData.InsertUser(ref ID, UserName, this.PersonID, this.Password, this.IsActive);
             this.UserID = ID;
             return this.UserID != -1;
         }
         private bool _UpdateUsers()
         {
-            return clsUserData.UpdateUser(this.UserID, this.PersonID, this.Password, this.IsActive);
+            return clsUserData.UpdateUser(this.UserID, UserName, this.PersonID, this.Password, this.IsActive);
         }
         public bool SaveUsers()
         {
@@ -78,12 +84,13 @@ namespace HomeC_Business
         {
             int PersonID = -1;
             string Password = "";
+            string UserName = "";
             bool IsActive = false;
 
-            if (clsUserData.FindUser(UserID, ref PersonID, ref Password, ref IsActive))
+            if (clsUserData.FindUser(UserID,ref UserName, ref PersonID, ref Password, ref IsActive))
             {
 
-                return new clsUser(UserID, PersonID, Password, IsActive);
+                return new clsUser(UserID,UserName, PersonID, Password, IsActive);
             }
             else
             {
@@ -92,6 +99,41 @@ namespace HomeC_Business
         }
 
 
+        static public bool IsExist(int PersonID)
+        {
+            return clsUserData.IsExist(PersonID);
+        }
+
+        static public bool DeleteUser(int UserID)
+        {
+            return clsUserData.DeleteUser(UserID);
+        }
+         
+        static public DataTable GetAllUsers()
+        {
+            return clsUserData.GetAllUsers();
+        }
+
+        public static clsUser FindUserByUserNameAndPassword(string UserName, string Password)
+        {
+            int PersonID = -1;
+            int UserID = -1;
+
+
+            bool IsActive = false;
+
+            if (clsUserData.FindUserByUsernameAndPassword(UserName, Password, ref UserID, ref PersonID, ref IsActive))
+            {
+
+                return new clsUser(UserID,  UserName, PersonID, Password, IsActive);
+            }
+            else
+            {
+                return null;
+            }
+
+
+        }
     }
 
 }

@@ -82,13 +82,12 @@
             // 
             // ctrShowPeopleWithSearch1
             // 
-            this.ctrShowPeopleWithSearch1.Location = new System.Drawing.Point(12, 25);
-            this.ctrShowPeopleWithSearch1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ctrShowPeopleWithSearch1.Location = new System.Drawing.Point(81, 22);
+            this.ctrShowPeopleWithSearch1.Margin = new System.Windows.Forms.Padding(2);
             this.ctrShowPeopleWithSearch1.Name = "ctrShowPeopleWithSearch1";
-            this.ctrShowPeopleWithSearch1.Size = new System.Drawing.Size(753, 402);
+            this.ctrShowPeopleWithSearch1.Size = new System.Drawing.Size(556, 405);
             this.ctrShowPeopleWithSearch1.TabIndex = 2;
             this.ctrShowPeopleWithSearch1.OnButtonSetPerson += new System.Action<int>(this.ctrShowPeopleWithSearch1_OnButtonSet);
-            this.ctrShowPeopleWithSearch1.Load += new System.EventHandler(this.ctrShowPeopleWithSearch1_Load);
             // 
             // button1
             // 
@@ -302,11 +301,11 @@
         private System.Windows.Forms.Label lbUserID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private ctrShowPeopleWithSearch ctrShowPeopleWithSearch1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.CheckBox chkIsActive;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private ctrShowPeopleWithSearch ctrShowPeopleWithSearch1;
     }
 }

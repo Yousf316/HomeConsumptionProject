@@ -28,7 +28,7 @@ namespace HomeConsuption
             clsUser clsUser1 = clsUser.FindUser(UserID);
             if (clsUser1 != null)
             {
-                //_CurrentPassword = clsUser1.GetPassword();
+                _CurrentPassword = clsUser1.Password;
             }
         }
 
@@ -40,7 +40,7 @@ namespace HomeConsuption
 
                 string HashPassword = clsValidatoin.HashCodeCompute(txtNewPassword.Text);
 
-              // clsUser1.UpdatePassword(HashPassword);
+               clsUser1.Password = HashPassword;
                 return clsUser1.SaveUsers();
             }
             return false;

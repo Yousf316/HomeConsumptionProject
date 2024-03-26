@@ -1,4 +1,5 @@
-﻿using HomeConsuption.Product;
+﻿using HomeConsuption.Forms;
+using HomeConsuption.Product;
 using HomeConsuption.Product.Sizes;
 using HomeConsuption.Purchase;
 using HomeConsuption.Purchase.Purchase_Categories;
@@ -19,6 +20,11 @@ namespace HomeConsuption
     public partial class Main : Form
     {
         public Main()
+        {
+            InitializeComponent();
+        }
+
+        public Main(frmLogin login)
         {
             InitializeComponent();
         }

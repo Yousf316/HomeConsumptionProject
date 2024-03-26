@@ -26,7 +26,7 @@ namespace HomeConsuption
 
         private void RefreshUsersList()
         {
-            //dataGridView1.DataSource = clsUser.GetAllUsers();
+            dataGridView1.DataSource = clsUser.GetAllUsers();
             RefreshRecordCount();
         }
         private void RefreshRecordCount()
@@ -133,15 +133,15 @@ namespace HomeConsuption
             }
 
 
-            //if (clsUser.DeleteUser(ID))
-            //{
-            //    MessageBox.Show("Delete Succssfully");
-            //    RefreshUsersList();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("User was not Deleted becouse it hase Data Linked to it");
-            //}
+            if (clsUser.DeleteUser(ID))
+            {
+                MessageBox.Show("Delete Succssfully");
+                RefreshUsersList();
+            }
+            else
+            {
+                MessageBox.Show("User was not Deleted becouse it hase Data Linked to it");
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

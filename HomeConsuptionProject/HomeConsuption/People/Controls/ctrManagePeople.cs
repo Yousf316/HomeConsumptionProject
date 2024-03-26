@@ -31,7 +31,7 @@ namespace HomeConsuption
         }
         private void RefreshSelectAllPeople()
         {
-            //dataGridView1.DataSource = clsPerson.();
+            dataGridView1.DataSource = clsPerson.GetAllPeople();
             SetRecordCount();
         }
         private void ctrManagePeople_Load(object sender, EventArgs e)

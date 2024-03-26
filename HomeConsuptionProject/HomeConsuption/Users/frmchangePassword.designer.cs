@@ -53,9 +53,11 @@
             this.groupBox1.Controls.Add(this.txtNewPassword);
             this.groupBox1.Controls.Add(this.txtCurrentPassword);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(23, 493);
+            this.groupBox1.Location = new System.Drawing.Point(20, 401);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(394, 230);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(338, 187);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Change Password";
@@ -64,9 +66,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label3.Location = new System.Drawing.Point(23, 173);
+            this.label3.Location = new System.Drawing.Point(20, 141);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 21);
+            this.label3.Size = new System.Drawing.Size(118, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Confirm Password";
             // 
@@ -74,9 +76,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label2.Location = new System.Drawing.Point(45, 119);
+            this.label2.Location = new System.Drawing.Point(39, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 21);
+            this.label2.Size = new System.Drawing.Size(96, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "New Password";
             // 
@@ -84,35 +86,38 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label1.Location = new System.Drawing.Point(23, 66);
+            this.label1.Location = new System.Drawing.Point(20, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 21);
+            this.label1.Size = new System.Drawing.Size(117, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Current Password";
             // 
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.txtConfirmPassword.Location = new System.Drawing.Point(182, 174);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(156, 141);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(185, 24);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(159, 20);
             this.txtConfirmPassword.TabIndex = 2;
             this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
             // 
             // txtNewPassword
             // 
             this.txtNewPassword.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.txtNewPassword.Location = new System.Drawing.Point(182, 116);
+            this.txtNewPassword.Location = new System.Drawing.Point(156, 94);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(185, 24);
+            this.txtNewPassword.Size = new System.Drawing.Size(159, 20);
             this.txtNewPassword.TabIndex = 1;
             // 
             // txtCurrentPassword
             // 
             this.txtCurrentPassword.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.txtCurrentPassword.Location = new System.Drawing.Point(182, 65);
+            this.txtCurrentPassword.Location = new System.Drawing.Point(156, 53);
+            this.txtCurrentPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCurrentPassword.Name = "txtCurrentPassword";
-            this.txtCurrentPassword.Size = new System.Drawing.Size(185, 24);
+            this.txtCurrentPassword.Size = new System.Drawing.Size(159, 20);
             this.txtCurrentPassword.TabIndex = 0;
             this.txtCurrentPassword.TextChanged += new System.EventHandler(this.txtCurrentPassword_TextChanged);
             this.txtCurrentPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtCurrentPassword_Validating);
@@ -123,9 +128,10 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(703, 648);
+            this.btnSave.Location = new System.Drawing.Point(603, 526);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(117, 39);
+            this.btnSave.Size = new System.Drawing.Size(100, 32);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -133,9 +139,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(548, 648);
+            this.btnClose.Location = new System.Drawing.Point(470, 526);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(117, 39);
+            this.btnClose.Size = new System.Drawing.Size(100, 32);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -144,21 +151,22 @@
             // ctrShowUserInfo1
             // 
             this.ctrShowUserInfo1.Font = new System.Drawing.Font("Tahoma", 6.5F);
-            this.ctrShowUserInfo1.Location = new System.Drawing.Point(12, 12);
+            this.ctrShowUserInfo1.Location = new System.Drawing.Point(12, 10);
             this.ctrShowUserInfo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ctrShowUserInfo1.Name = "ctrShowUserInfo1";
-            this.ctrShowUserInfo1.Size = new System.Drawing.Size(916, 476);
+            this.ctrShowUserInfo1.Size = new System.Drawing.Size(785, 387);
             this.ctrShowUserInfo1.TabIndex = 0;
             // 
             // frmchangePassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 739);
+            this.ClientSize = new System.Drawing.Size(795, 600);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ctrShowUserInfo1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmchangePassword";
             this.Text = "frmchangePassword";
             this.Load += new System.EventHandler(this.frmchangePassword_Load);

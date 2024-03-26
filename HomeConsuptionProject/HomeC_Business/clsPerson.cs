@@ -1,6 +1,7 @@
 ﻿using HomeC_DataAccess;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -129,6 +130,11 @@ namespace HomeC_Business
         static public bool IsPersonExsits(int PersonID)
         {
             return clsPersonData.IsPersonExsits(PersonID);
+        }
+
+        static public DataTable GetAllPeople()
+        {
+            return clsPersonData.GetAllPeople();
         }
         
     }

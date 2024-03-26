@@ -10,7 +10,7 @@ namespace HomeC_DataAccess
 {
     public class clsUserData
     {
-        static public void InsertUser(ref int UserID, int PersonID, string Password, bool IsActive)
+        static public void InsertUser(ref int UserID,string UserName, int PersonID, string Password, bool IsActive)
         {
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             using (SqlCommand command = new SqlCommand("sp_insert_Users", connection))
@@ -19,6 +19,7 @@ namespace HomeC_DataAccess
 
                 command.Parameters.AddWithValue("@p_PersonID", PersonID);
                 command.Parameters.AddWithValue("@p_Password", Password);
+                command.Parameters.AddWithValue("@p_UserName", UserName);
                 command.Parameters.AddWithValue("@p_IsActive", IsActive);
 
 
@@ -51,7 +52,7 @@ namespace HomeC_DataAccess
                 }
             }
         }
-        static public bool UpdateUser(int UserID, int PersonID, string Password, bool IsActive)
+        static public bool UpdateUser(int UserID, string UserName,int PersonID, string Password, bool IsActive)
         {
             int rowsAffected = 0;
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -61,6 +62,7 @@ namespace HomeC_DataAccess
 
                 command.Parameters.AddWithValue("@p_PersonID", PersonID);
                 command.Parameters.AddWithValue("@p_Password", Password);
+                command.Parameters.AddWithValue("@p_UserName", UserName);
                 command.Parameters.AddWithValue("@p_IsActive", IsActive);
                 command.Parameters.AddWithValue("@w_UserID", UserID);
                 try
@@ -93,7 +95,7 @@ namespace HomeC_DataAccess
 
             return (rowsAffected > 0);
         }
-        static public bool FindUser(int UserID, ref int PersonID, ref string Password, ref bool IsActive)
+        static public bool FindUser(int UserID, ref string UserName,ref int PersonID, ref string Password, ref bool IsActive)
         {
             bool isFound = false;
 
@@ -113,6 +115,7 @@ namespace HomeC_DataAccess
                     isFound = true;
                     PersonID = (int)reader["PersonID"];
                     Password = (string)reader["Password"];
+                    UserName = (string)reader["UserName"];
                     IsActive = (bool)reader["IsActive"];
                 }
 
@@ -194,5 +197,87 @@ namespace HomeC_DataAccess
 
             return dt;
         }
+
+        static public bool IsExist (int PersonID)
+        {
+            bool IsFound = false;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"Select top(1) X =1 FROM [dbo].[Users] WHERE PersonID =@PersonID";
+
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            cmd.Parameters.AddWithValue("@PersonID", PersonID);
+
+            try
+            {
+                connection.Open();
+
+                object reader = cmd.ExecuteScalar();
+
+                if (reader != null)
+
+                {
+                    IsFound = true;
+
+                }
+
+
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return IsFound;
+        }
+
+        static public bool FindUserByUsernameAndPassword(string UserName, string Password, ref int UserID, ref int PersonID, ref bool IsActive)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"SELECT * FROM [dbo].[Users] WHERE UserName =@UserName and Password=@Password;";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            cmd.Parameters.AddWithValue("@UserName", UserName);
+            cmd.Parameters.AddWithValue("@Password", Password);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    PersonID = (int)reader["PersonID"];
+                    UserID = (int)reader["UserID"];
+
+                    IsActive = (bool)reader["IsActive"];
+                    isFound = true;
+                }
+
+                reader.Close();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+
+
+
     }
 }

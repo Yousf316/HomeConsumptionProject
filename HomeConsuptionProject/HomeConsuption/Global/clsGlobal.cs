@@ -83,7 +83,7 @@ namespace HomeConsuption
             //this will get the stored username and password and will return true if found and false if not found.
             try
             {
-                string filePath = @"HKEY_CURRENT_USER\SOFTWARE\DVLD";
+                string filePath = @"HKEY_CURRENT_USER\SOFTWARE\HomeCProject";
 
 
                 string ValueName = "UserName";

@@ -49,7 +49,7 @@
             this.pnlSearchPerson.Location = new System.Drawing.Point(3, 6);
             this.pnlSearchPerson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSearchPerson.Name = "pnlSearchPerson";
-            this.pnlSearchPerson.Size = new System.Drawing.Size(887, 97);
+            this.pnlSearchPerson.Size = new System.Drawing.Size(632, 97);
             this.pnlSearchPerson.TabIndex = 1;
             // 
             // button2
@@ -67,7 +67,7 @@
             // 
             // btnsearchen
             // 
-            this.btnsearchen.BackgroundImage = global::HomeConsuption.Properties.Resources.person_manAddPerson;
+            this.btnsearchen.BackgroundImage = global::HomeConsuption.Properties.Resources.person_mansearch;
             this.btnsearchen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnsearchen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnsearchen.Location = new System.Drawing.Point(483, 29);
@@ -111,23 +111,22 @@
             // 
             // ctrShowPerson1
             // 
-            this.ctrShowPerson1.Location = new System.Drawing.Point(3, 107);
+            this.ctrShowPerson1.Location = new System.Drawing.Point(3, 105);
             this.ctrShowPerson1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ctrShowPerson1.Name = "ctrShowPerson1";
             this.ctrShowPerson1.obPerson = null;
-            this.ctrShowPerson1.Size = new System.Drawing.Size(901, 362);
-            this.ctrShowPerson1.TabIndex = 0;
-            this.ctrShowPerson1.Load += new System.EventHandler(this.ctrShowPerson1_Load);
+            this.ctrShowPerson1.Size = new System.Drawing.Size(449, 358);
+            this.ctrShowPerson1.TabIndex = 2;
             // 
             // ctrShowPeopleWithSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlSearchPerson);
             this.Controls.Add(this.ctrShowPerson1);
+            this.Controls.Add(this.pnlSearchPerson);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ctrShowPeopleWithSearch";
-            this.Size = new System.Drawing.Size(901, 463);
+            this.Size = new System.Drawing.Size(643, 463);
             this.Load += new System.EventHandler(this.ctrShowPeopleWithSearch_Load);
             this.pnlSearchPerson.ResumeLayout(false);
             this.pnlSearchPerson.PerformLayout();
@@ -136,13 +135,12 @@
         }
 
         #endregion
-
-        private ctrShowPerson ctrShowPerson1;
         private System.Windows.Forms.Panel pnlSearchPerson;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox cmbFinds;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnsearchen;
         private System.Windows.Forms.Button button2;
+        private ctrShowPerson ctrShowPerson1;
     }
 }

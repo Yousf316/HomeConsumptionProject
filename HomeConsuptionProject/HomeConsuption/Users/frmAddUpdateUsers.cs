@@ -33,15 +33,15 @@ namespace HomeConsuption
 
             string HashPassword = clsValidatoin.HashCodeCompute(txtPassword.Text);
 
-           //if(user.SetValues(_PersonID, txtUserName.Text, HashPassword, chkIsActive.Checked))
-           // {
-           //     if(user.SaveUsers())
-           //     {
-           //         _UserID = user.UserID;
-           //         return true;
-           //     }
-                   
-           // }
+            user.SetValues(_PersonID, txtUserName.Text, HashPassword, chkIsActive.Checked);
+            
+                if (user.SaveUsers())
+                {
+                    _UserID = user.UserID;
+                    return true;
+                }
+
+            
 
             return false;
         }
@@ -76,7 +76,7 @@ namespace HomeConsuption
           //  this._Password = user.GetPassword();
             this._IsActive = user.IsActive;
             this._PersonID = user.PersonID;
-            //this._UserName = user.GetUserName();
+            this._UserName = user.UserName;
 
             
             txtPassword.Enabled = false;
@@ -109,15 +109,15 @@ namespace HomeConsuption
         private void ctrShowPeopleWithSearch1_OnButtonSet(int PersonID)
         {
 
-            //if(clsUser.IsExists(PersonID))
-            //{
-            //    MessageBox.Show("Person already has user");
-            //}
-            //else
-            //{
-               
-            //    _PersonID = PersonID;   
-            //}
+            if (clsUser.IsExist(PersonID))
+            {
+                MessageBox.Show("Person already has user");
+            }
+            else
+            {
+
+                _PersonID = PersonID;
+            }
         }
 
         private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
