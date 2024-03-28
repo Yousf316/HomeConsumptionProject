@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Data;
 using System.ComponentModel;
-
+using System.Linq;
 using System.Windows.Forms;
 using System.IO;
 using HomeC_Business;
@@ -64,19 +65,19 @@ namespace HomeConsuption
                 _mode = enMode.Update;
             }
         }
-
+        
         private void GetAllCountries()
         {
-            //DataTable dt = clsCountry.GetAllCountries();
-            //cmbCountry.Items.Clear();
-            //foreach (DataRow dr in dt.Rows)
-            //{
-            //    cmbCountry.Items.Add(dr[1].ToString());
-            //}
-            //cmbCountry.SelectedItem = "Yemen";
+            DataTable dtCountries = clsCountry.GetAllCountries();
+            cmbCountry.Items.Clear();
+            foreach (DataRow dr in dtCountries.Rows)
+            {
+                cmbCountry.Items.Add(dr[1].ToString());
+            }
+            cmbCountry.SelectedItem = "Yemen";
 
 
-          
+
         }
 
         private void GetPersonInfo()
@@ -96,9 +97,11 @@ namespace HomeConsuption
             txtEmail.Text = this._perons.Email;
 
 
+            cmbCountry.SelectedItem = clsCountry.FindCountry(this._perons.NationalityCountryID).CountryName;
 
-           
-           
+
+
+
 
         }
 
@@ -138,18 +141,28 @@ namespace HomeConsuption
 
            
         }
-        private void rdb_CheckedChanged(object sender, EventArgs e)
-        {
-            SetDefaultImage();
-        }
+      
 
         private void btnSave_Click(object sender, EventArgs e)
         {
 
             bool IsSucceed = false;
 
-            SetPathUserImage();
-            this._perons.SetValues(txtFirstName.Text,txtSecondName.Text,txtThirdName.Text,txtLastName.Text,txtPhone.Text,txtEmail.Text,1);
+            
+
+            DataTable dtCountries = clsCountry.GetAllCountries();
+            cmbCountry.Items.Clear();
+            foreach (DataRow dr in dtCountries.Rows)
+            {
+                if (dr[1].ToString() == cmbCountry.SelectedItem.ToString())
+                    this._NationalityCountryID = (int)dr[0];
+            }
+           
+
+           
+
+
+            this._perons.SetValues(txtFirstName.Text,txtSecondName.Text,txtThirdName.Text,txtLastName.Text,txtPhone.Text,txtEmail.Text, this._NationalityCountryID);
             
             
             
@@ -216,10 +229,7 @@ namespace HomeConsuption
             
         }
 
-        private void SetPathUserImage()
-        {
-           
-        }
+        
        
       
         private void txtEmail_Leave(object sender, EventArgs e)

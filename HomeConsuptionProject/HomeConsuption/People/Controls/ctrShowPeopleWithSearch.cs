@@ -1,4 +1,5 @@
 ﻿using HomeC_Business;
+using HomeConsuption.People;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,9 +35,9 @@ namespace HomeConsuption
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //frmAddUpdatePerson frm=new frmAddUpdatePerson(-1);
-            //frm.DataBack += Frm_DataBack;
-            //frm.ShowDialog();
+            frmAddUpdatePerson frm = new frmAddUpdatePerson(-1);
+            frm.DataBack += Frm_DataBack;
+            frm.ShowDialog();
         }
 
         private void Frm_DataBack(object sender, int PersonID)

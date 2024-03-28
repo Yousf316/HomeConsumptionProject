@@ -136,5 +136,17 @@ namespace HomeConsuption
             frmPurchseSubCategoriesList purchseSubCategoriesList = new frmPurchseSubCategoriesList();
             purchseSubCategoriesList.ShowDialog();
         }
+
+        private void اضافةمستخدمجديدToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUpdateUsers frmAddUpdateUsers = new frmAddUpdateUsers();
+            frmAddUpdateUsers.ShowDialog();
+        }
+
+        private void قائمةالمستخدمينToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageUsers frmManageUsers = new frmManageUsers();
+            frmManageUsers.ShowDialog();
+        }
     }
 }

@@ -16,6 +16,13 @@ namespace HomeConsuption.People
         {
             InitializeComponent();
         }
+
+        public frmAddUpdatePerson(int PersonID)
+        {
+            InitializeComponent();
+            this.PersonID = PersonID;   
+        }
+
         public delegate void DataBackEventHandler(object sender, int PersonID);
 
         public event DataBackEventHandler DataBack;
