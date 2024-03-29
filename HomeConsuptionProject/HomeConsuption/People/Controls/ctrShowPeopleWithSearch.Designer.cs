@@ -91,8 +91,7 @@
             // 
             this.cmbFinds.FormattingEnabled = true;
             this.cmbFinds.Items.AddRange(new object[] {
-            "PersonID",
-            "National No"});
+            "PersonID"});
             this.cmbFinds.Location = new System.Drawing.Point(115, 47);
             this.cmbFinds.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbFinds.Name = "cmbFinds";

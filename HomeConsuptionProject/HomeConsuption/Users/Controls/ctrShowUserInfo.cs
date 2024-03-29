@@ -30,7 +30,7 @@ namespace HomeConsuption
 
             ctrShowPerson1.GetPersonInfo(user.PersonID);
             lbUserID.Text = user.UserID.ToString();
-            //lbUserName.Text=user.U();
+            lbUserName.Text=user.UserName;
             
             if(user.IsActive)
             {

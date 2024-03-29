@@ -151,7 +151,7 @@ namespace HomeConsuption
             
 
             DataTable dtCountries = clsCountry.GetAllCountries();
-            cmbCountry.Items.Clear();
+            
             foreach (DataRow dr in dtCountries.Rows)
             {
                 if (dr[1].ToString() == cmbCountry.SelectedItem.ToString())

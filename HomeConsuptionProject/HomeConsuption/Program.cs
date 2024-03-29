@@ -1,4 +1,5 @@
-﻿using HomeConsuption.Product;
+﻿using HomeConsuption.Forms;
+using HomeConsuption.Product;
 using HomeConsuption.Tools;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,10 @@ namespace HomeConsuption
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new frmLogin());
+            //Application.Run(new Main());
             //Application.Run(new Tests.frmTest());
-            //Application.Run(new frmCategoryLIst());
+            
         }
     }
 }

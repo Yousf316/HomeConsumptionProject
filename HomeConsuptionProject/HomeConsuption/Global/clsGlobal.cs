@@ -20,19 +20,19 @@ namespace HomeConsuption
                 //this will get the current project directory folder.
 
 
-                string filePath = @"HKEY_CURRENT_USER\SOFTWARE\DVLD";
+                string filePath = @"HKEY_CURRENT_USER\SOFTWARE\HomeCProject";
 
                 string ValueName = "UserName";
 
                 if (Username == null)
                 {
-                    //  Registry.SetValue(filePath, ValueName, "", RegistryValueKind.String);
+                      Registry.SetValue(filePath, ValueName, "", RegistryValueKind.String);
 
                     try
                     {   // Open the registry key in read/write mode with explicit registry view
                         using (RegistryKey baseKey = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Registry64))
                         {
-                            using (RegistryKey key = baseKey.OpenSubKey(@"SOFTWARE\DVLD", true))
+                            using (RegistryKey key = baseKey.OpenSubKey(@"SOFTWARE\HomeCProject", true))
                             {
                                 if (key != null)
                                 {

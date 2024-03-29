@@ -242,7 +242,7 @@ namespace HomeC_DataAccess
             bool isFound = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"SELECT * FROM [dbo].[Users] WHERE UserName =@UserName and Password=@Password;";
+            string query = @"SELECT * FROM [dbo].[Users] WHERE UserName =@UserName and Password=@Password";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.AddWithValue("@UserName", UserName);

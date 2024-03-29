@@ -27,20 +27,16 @@ namespace HomeConsuption
 
         private void LoadPersonInfo()
         {
-            //lbName.Text = obPerson.GetFullName();
-            //lbDateOfBirth.Text = obPerson.GetBirthDate().ToString("d");
-            //lbAddress.Text = obPerson.GetAddress();
-            //lbCountry.Text = clsCountry.FindCountries(obPerson.GetNationalityCountryID());
-            //lbEmail.Text = obPerson.GetEmail(); 
-            //lbNationalNo.Text = obPerson.GetNationalNo();
-            //lbPersonID.Text=obPerson.GetPersonID().ToString();
-            //lbGender.Text = obPerson.GetGenderName();
-            //lbPhone.Text = obPerson.GetPhoneNumber();
+            lbName.Text = obPerson.FullName;
+           
+            lbCountry.Text = clsCountry.FindCountry(obPerson.NationalityCountryID).CountryName;
+            lbEmail.Text = obPerson.Email;
+          
+            lbPersonID.Text = obPerson.PersonID.ToString();
+           
+            lbPhone.Text = obPerson.PhoneNumber;
 
-            //if(obPerson.GetImagePath() !="")
-            //pictureBox1.ImageLocation = obPerson.GetImagePath();
-            //else
-            //    pictureBox1.ImageLocation = obPerson.GetDefaultImage();
+          
         }
         public void GetPersonInfo(int PersonID = -1)
         {

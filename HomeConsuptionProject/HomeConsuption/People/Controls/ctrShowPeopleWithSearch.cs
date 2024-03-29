@@ -53,59 +53,43 @@ namespace HomeConsuption
         private void SearchOperator()
         {
 
-            //if (cmbFinds.SelectedItem.ToString()=="PersonID")
-            //{
+            if (cmbFinds.SelectedItem.ToString() == "PersonID")
+            {
 
-            //    if (!int.TryParse(txtSearch.Text, out int PersonID))
-            //    {
-            //        txtSearch.Text = "";
-            //        return;
-            //    }
-            //    if (clsPerson.IsExists(PersonID))
-            //    {
-            //        ctrShowPerson1.GetPersonInfo(PersonID);
+                if (!int.TryParse(txtSearch.Text, out int PersonID))
+                {
+                    txtSearch.Text = "";
+                    return;
+                }
+                if (clsPerson.IsPersonExsits(PersonID))
+                {
+                    ctrShowPerson1.GetPersonInfo(PersonID);
 
 
-            //            if (OnButtonSetPerson != null)
-            //                _OnButtonSetPerson(PersonID);
-                   
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("ID " + PersonID + " Is not Exsits", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
+                    if (OnButtonSetPerson != null)
+                        _OnButtonSetPerson(PersonID);
 
-                
+                }
+                else
+                {
+                    MessageBox.Show("ID " + PersonID + " Is not Exsits", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-            //}
-            //else
-            //{
-            //    int PersonID =-1;
-            //    if (clsPerson.IsExists(txtSearch.Text, ref PersonID) )
-            //    {
-            //        ctrShowPerson1.GetPersonInfo(PersonID);
 
-            //        if (OnButtonSetPerson != null)
-            //                _OnButtonSetPerson(PersonID);
-                  
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("ID " + txtSearch.Text + " Is not Exsits", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
 
+            }
+           
 
         }
 
         public void SetPersonInfoLock(int PersonID)
         {
-            //if (clsPerson.IsExists(PersonID))
-            //{
-            //    txtSearch.Text=PersonID.ToString();
-            //    pnlSearchPerson.Enabled = false;
-            //}
-            //ctrShowPerson1.GetPersonInfo(PersonID);
+            if (clsPerson.IsPersonExsits(PersonID))
+            {
+                txtSearch.Text = PersonID.ToString();
+                pnlSearchPerson.Enabled = false;
+            }
+            ctrShowPerson1.GetPersonInfo(PersonID);
         }
 
         public int GetPersonID()
