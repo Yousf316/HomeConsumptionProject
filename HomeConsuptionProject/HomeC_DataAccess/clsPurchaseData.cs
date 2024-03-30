@@ -24,7 +24,6 @@ namespace HomeC_DataAccess
                 command.Parameters.AddWithValue("@StoreID", StoreID);
                 command.Parameters.AddWithValue("@Type", Type);
                 command.Parameters.AddWithValue("@PCategoryID", PCategoryID);
-                command.Parameters.AddWithValue("@PCategoryID", PCategoryID);
 
                 if (CreatedByUserID != -1 && CreatedByUserID != null)
                     command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
