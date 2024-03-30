@@ -61,7 +61,7 @@ namespace HomeConsuption.Product.Sizes
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            _objSize.SetParameters(txtCateName.Text);
+            _objSize.SetParameters(txtCateName.Text,clsGlobal.CurrentUser.UserID);
 
             if (_objSize.SaveSizes())
             {

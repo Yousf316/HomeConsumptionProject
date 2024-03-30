@@ -15,28 +15,32 @@ namespace HomeC_Business
 
        public int PCategoryID { get; set; }
        public string CategoryName { get; set; }
+        public int? CreatedByUserID { get; set; }
+        public int? UpdatedByUserID { get; set; }
         public clsPurchase_Category()
         {
             this.PCategoryID = -1;
             this.CategoryName = "";
             _mode = enMode.AddNew;
         }
-        private clsPurchase_Category(int PCategoryID, string CategoryName)
+        private clsPurchase_Category(int PCategoryID, string CategoryName, int? CreatedByUserID,int? UpdatedByUser)
         {
             this.PCategoryID = PCategoryID;
             this.CategoryName = CategoryName;
+            this.CreatedByUserID = CreatedByUserID;
+            this.UpdatedByUserID = UpdatedByUser;
             _mode = enMode.Update;
         }
         private bool _AddNewPurchase_Categories()
         {
             int ID = -1;
-            clsPurchase_CategoriesData.Insert_Purchase_Categories(ref ID, this.CategoryName);
+            clsPurchase_CategoriesData.Insert_Purchase_Categories(ref ID, this.CategoryName,this.CreatedByUserID,this.UpdatedByUserID);
             this.PCategoryID = ID;
             return this.PCategoryID != -1;
         }
         private bool _UpdatePurchase_Categories()
         {
-            return clsPurchase_CategoriesData.Update_Purchase_Categories(this.PCategoryID, this.CategoryName);
+            return clsPurchase_CategoriesData.Update_Purchase_Categories(this.PCategoryID, this.CategoryName, this.CreatedByUserID, this.UpdatedByUserID);
         }
         public bool SavePurchase_Categories()
         {
@@ -66,11 +70,13 @@ namespace HomeC_Business
         public static clsPurchase_Category FindPurchase_Category(int PCategoryID)
         {
             string CategoryName = "";
+            int? CreatedByUserID = null;
+            int? UpdatedByUserID = null;
 
-            if (clsPurchase_CategoriesData.FindPurchase_Categories(PCategoryID, ref CategoryName))
+            if (clsPurchase_CategoriesData.FindPurchase_Categories(PCategoryID, ref CategoryName,ref CreatedByUserID,ref UpdatedByUserID))
             {
 
-                return new clsPurchase_Category(PCategoryID, CategoryName);
+                return new clsPurchase_Category(PCategoryID, CategoryName,CreatedByUserID,UpdatedByUserID);
             }
             else
             {
@@ -81,10 +87,12 @@ namespace HomeC_Business
         {
           
             int PCategoryID = -1;
-            if (clsPurchase_CategoriesData.FindPurchase_Categories(ref PCategoryID,  CategoryName))
+            int? CreatedByUserID = null;
+            int? UpdatedByUserID = null;
+            if (clsPurchase_CategoriesData.FindPurchase_Categories(ref PCategoryID,  CategoryName,ref CreatedByUserID, ref UpdatedByUserID))
             {
 
-                return new clsPurchase_Category(PCategoryID, CategoryName);
+                return new clsPurchase_Category(PCategoryID, CategoryName, CreatedByUserID, UpdatedByUserID);
             }
             else
             {

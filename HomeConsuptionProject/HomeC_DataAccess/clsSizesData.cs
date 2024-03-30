@@ -11,7 +11,7 @@ namespace HomeC_DataAccess
    public class clsSizesData
     {
 
-        static public void InsertSize(ref int SizeID, string SizeName)
+        static public void InsertSize(ref int SizeID, string SizeName, int? CreatedByUserID, int? UpdatedByUserID)
         {
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             string query = @"INSERT INTO [dbo].[Sizes]
@@ -22,6 +22,18 @@ Select SCOPE_IDENTITY();";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.AddWithValue("@SizeName", SizeName);
+
+            if (CreatedByUserID != -1 && CreatedByUserID != null)
+                cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+            else
+                cmd.Parameters.AddWithValue("@CreatedByUserID", DBNull.Value);
+
+            if (UpdatedByUserID != -1 && UpdatedByUserID != null)
+                cmd.Parameters.AddWithValue("@UpdatedByUserID", UpdatedByUserID);
+            else
+                cmd.Parameters.AddWithValue("@UpdatedByUserID", DBNull.Value);
+
+
             try
             {
                 connection.Open();
@@ -44,7 +56,7 @@ Select SCOPE_IDENTITY();";
 
 
 
-        static public bool UpdateSize(int SizeID, string SizeName)
+        static public bool UpdateSize(int SizeID, string SizeName, int? CreatedByUserID, int? UpdatedByUserID)
         {
             int rowsAffected = 0;
 
@@ -56,6 +68,18 @@ WHERE SizeID =@SizeID ;";
 
             cmd.Parameters.AddWithValue("@SizeID", SizeID);
             cmd.Parameters.AddWithValue("@SizeName", SizeName);
+
+            if (CreatedByUserID != -1 && CreatedByUserID != null)
+                cmd.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+            else
+                cmd.Parameters.AddWithValue("@CreatedByUserID", DBNull.Value);
+
+            if (UpdatedByUserID != -1 && UpdatedByUserID != null)
+                cmd.Parameters.AddWithValue("@UpdatedByUserID", UpdatedByUserID);
+            else
+                cmd.Parameters.AddWithValue("@UpdatedByUserID", DBNull.Value);
+
+
             try
             {
                 connection.Open();
@@ -76,7 +100,7 @@ WHERE SizeID =@SizeID ;";
             return (rowsAffected > 0);
         }
 
-        static public bool FindSize(int SizeID, ref string SizeName)
+        static public bool FindSize(int SizeID, ref string SizeName, ref int? CreatedByUserID, ref int? UpdatedByUserID)
         {
             bool isFound = false;
 
@@ -93,6 +117,9 @@ WHERE SizeID =@SizeID ;";
                 if (reader.Read())
                 {
                     isFound = true; SizeName = (string)reader["SizeName"];
+                    CreatedByUserID = reader["CreatedByUserID"] != DBNull.Value ? (int?)Convert.ToInt32(reader["CreatedByUserID"]) : null;
+                    UpdatedByUserID = reader["UpdatedByUserID"] != DBNull.Value ? (int?)Convert.ToInt32(reader["UpdatedByUserID"]) : null;
+
                 }
 
                 reader.Close();

@@ -15,6 +15,9 @@ namespace HomeC_Business
 
         int PSCategory { get; set; }
 
+        public int? CreatedByUserID { get; set; }
+        public int? UpdatedByUserID { get; set; }
+
         public clsPurchase_SubCategory SubCategory { get => clsPurchase_SubCategory.FindPurchase_Category(PSCategory); }
 
         public clsPurchase_Category objPCategory { get => clsPurchase_Category.FindPurchase_Category(PCategory); }
@@ -43,7 +46,7 @@ namespace HomeC_Business
 
         private bool _AddNewPurchaseSubBaseCategories()
         {
-            return clsPurchaseSubBaseCategoriesData.Insert_PurchaseSubBaseCategories(this.PSCategory, this.PCategory);
+            return clsPurchaseSubBaseCategoriesData.Insert_PurchaseSubBaseCategories(this.PSCategory, this.PCategory,this.CreatedByUserID,this.UpdatedByUserID);
            
         }
 
@@ -98,7 +101,10 @@ namespace HomeC_Business
 
        static public clsPurchaseSubBaseCategories FindPurchaseSubBaseCategoriesData (int PSCategory,int PCategory)
         {
-            if (clsPurchaseSubBaseCategoriesData.FindPurchase_SubCategories(PSCategory, PCategory))
+            int? CreatedByUserID = null;
+            int? UpdatedByUserID = null;
+
+            if (clsPurchaseSubBaseCategoriesData.FindPurchase_SubCategories(PSCategory, PCategory, ref  CreatedByUserID, ref  UpdatedByUserID))
                 return new clsPurchaseSubBaseCategories(PSCategory, PCategory);
             else
                 return null;

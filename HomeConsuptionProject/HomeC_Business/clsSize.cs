@@ -15,34 +15,43 @@ namespace HomeC_Business
 
        public int SizeID { get; set; }
        public string SizeName { get; set; }
+        public int? CreatedByUserID { get; set; }
+        public int? UpdatedByUserID { get; set; }
+
         public clsSize()
         {
             this.SizeID = -1;
             this.SizeName = "";
             _mode = enMode.AddNew;
         }
-        private clsSize(int SizeID, string SizeName)
+        private clsSize(int SizeID, string SizeName, int? CreatedByUserID, int? UpdatedByUserID)
         {
             this.SizeID = SizeID;
             this.SizeName = SizeName;
+            this.CreatedByUserID = CreatedByUserID;
+            this.UpdatedByUserID = UpdatedByUserID;
             _mode = enMode.Update;
         }
 
-        public void SetParameters(string SizeName)
+        public void SetParameters(string SizeName,int UserID)
         {
             this.SizeName = SizeName;
+            if(_mode == enMode.AddNew)
+                this.CreatedByUserID = UserID;
+            else
+                this.UpdatedByUserID = UserID;
         }
 
         private bool _AddNewSizes()
         {
             int ID = -1;
-            clsSizesData.InsertSize(ref ID, this.SizeName);
+            clsSizesData.InsertSize(ref ID, this.SizeName,this.CreatedByUserID,this.UpdatedByUserID);
             this.SizeID = ID;
             return this.SizeID != -1;
         }
         private bool _UpdateSizes()
         {
-            return clsSizesData.UpdateSize(this.SizeID, this.SizeName);
+            return clsSizesData.UpdateSize(this.SizeID, this.SizeName, this.CreatedByUserID, this.UpdatedByUserID);
         }
         public bool SaveSizes()
         {
@@ -73,11 +82,13 @@ namespace HomeC_Business
         public static clsSize FindSize(int SizeID)
         {
             string SizeName = "";
+            int? CreatedByUserID = null;
+            int? UpdatedByUserID = null;
 
-            if (clsSizesData.FindSize(SizeID, ref SizeName))
+            if (clsSizesData.FindSize(SizeID, ref SizeName,ref CreatedByUserID,ref UpdatedByUserID))
             {
 
-                return new clsSize(SizeID, SizeName);
+                return new clsSize(SizeID, SizeName,CreatedByUserID,UpdatedByUserID);
             }
             else
             {

@@ -84,7 +84,7 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Categories
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            _objCategory.SetValues(txtCateName.Text.Trim());
+            _objCategory.SetValues(txtCateName.Text.Trim(),clsGlobal.CurrentUser.UserID);
 
             if (_objCategory.SavePurchase_SubCategories())
             {

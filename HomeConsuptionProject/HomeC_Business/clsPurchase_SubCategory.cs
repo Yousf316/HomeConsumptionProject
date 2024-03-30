@@ -19,7 +19,8 @@ namespace HomeC_Business
         public int PSCategoryID { get => _PSCategoryID; }
         public string SubCategoryName { get; set; }
 
-
+        public int? CreatedByUserID { get; set; }
+        public int? UpdatedByUserID { get; set; }
 
         public clsPurchase_SubCategory()
         {
@@ -27,30 +28,35 @@ namespace HomeC_Business
             this.SubCategoryName = "";
             _mode = enMode.AddNew;
         }
-        private clsPurchase_SubCategory(int PSCategoryID, string SubCategoryName)
+        private clsPurchase_SubCategory(int PSCategoryID, string SubCategoryName, int? CreatedByUserID, int? UpdatedByUserID)
         {
             this._PSCategoryID = PSCategoryID;
             this.SubCategoryName = SubCategoryName;
+            this.CreatedByUserID = CreatedByUserID;
+            this.UpdatedByUserID = UpdatedByUserID;
             _mode = enMode.Update;
         }
-        public void SetValues(string SubCategoryName)
+        public void SetValues(string SubCategoryName,int UserID)
         {
 
             this.SubCategoryName = SubCategoryName;
-
+            if(_mode == enMode.AddNew)
+                this.CreatedByUserID = UserID;
+            else
+                this.UpdatedByUserID = UserID;
         }
 
 
         private bool _AddNewPurchase_SubCategories()
         {
             int ID = -1;
-            clsPurchase_SubCategoriesData.Insert_Purchase_SubCategories(ref ID, this.SubCategoryName);
+            clsPurchase_SubCategoriesData.Insert_Purchase_SubCategories(ref ID, this.SubCategoryName,this.CreatedByUserID,this.UpdatedByUserID);
             this._PSCategoryID = ID;
             return this._PSCategoryID != -1;
         }
         private bool _UpdatePurchase_SubCategories()
         {
-            return clsPurchase_SubCategoriesData.Update_Purchase_SubCategories(this._PSCategoryID, this.SubCategoryName);
+            return clsPurchase_SubCategoriesData.Update_Purchase_SubCategories(this._PSCategoryID, this.SubCategoryName,CreatedByUserID,UpdatedByUserID);
         }
         public bool SavePurchase_SubCategories()
         {
@@ -81,12 +87,14 @@ namespace HomeC_Business
         public static clsPurchase_SubCategory FindPurchase_Category(int PSCategoryID)
         {
             string CategoryName = "";
+            int? CreatedByUserID = null;
+            int? UpdatedByUserID = null;
 
 
-            if (clsPurchase_SubCategoriesData.FindPurchase_SubCategories(PSCategoryID, ref CategoryName))
+            if (clsPurchase_SubCategoriesData.FindPurchase_SubCategories(PSCategoryID, ref CategoryName,ref CreatedByUserID,ref UpdatedByUserID))
             {
 
-                return new clsPurchase_SubCategory(PSCategoryID, CategoryName);
+                return new clsPurchase_SubCategory(PSCategoryID, CategoryName,CreatedByUserID,UpdatedByUserID);
             }
             else
             {
@@ -97,10 +105,12 @@ namespace HomeC_Business
         {
 
             int PSCategoryID = -1;
-            if (clsPurchase_SubCategoriesData.FindPurchase_SubCategories(ref PSCategoryID, CategoryName))
+            int? CreatedByUserID = null;
+            int? UpdatedByUserID = null;
+            if (clsPurchase_SubCategoriesData.FindPurchase_SubCategories(ref PSCategoryID, CategoryName,ref CreatedByUserID,ref UpdatedByUserID))
             {
 
-                return new clsPurchase_SubCategory(PSCategoryID, CategoryName);
+                return new clsPurchase_SubCategory(PSCategoryID, CategoryName, CreatedByUserID, UpdatedByUserID);
             }
             else
             {

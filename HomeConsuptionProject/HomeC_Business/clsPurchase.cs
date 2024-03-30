@@ -29,8 +29,9 @@ namespace HomeC_Business
 
        public int PCategoryID { get; set; }
        public int? PSCategoryID { get; set; }
+        public int? CreatedByUserID { get; set; }
+        public int? UpdatedByUserID { get; set; }
 
-      
         public clsPurchase()
         {
             this._PurchaseID = -1;
@@ -47,7 +48,9 @@ namespace HomeC_Business
             _mode = enMode.AddNew;
         }
 
-        private clsPurchase(int PurchaseID, DateTime IssueDate, float TotalBeforTax, float TaxAmount, float TotalAfterTax, int StoreID,int Type,float? Discount,int PCategoryID,int? PSCategoryID)
+        private clsPurchase(int PurchaseID, DateTime IssueDate, float TotalBeforTax,
+            float TaxAmount, float TotalAfterTax, int StoreID,
+            int Type,float? Discount,int PCategoryID,int? PSCategoryID,int? CreatedByUserID,int? UpdatedByUserID)
         {
             this._PurchaseID = PurchaseID;
             this.IssueDate = IssueDate;
@@ -60,9 +63,11 @@ namespace HomeC_Business
             this.PCategoryID = PCategoryID;
             this.objStoreInfo = clsStore.Findstore(StoreID);
             this.PSCategoryID = PSCategoryID;
+            this.CreatedByUserID = CreatedByUserID;
+            this.UpdatedByUserID = UpdatedByUserID;
             _mode = enMode.Update;
         }
-         public  bool SetValues( DateTime IssueDate, float TotalBeforTax, float TaxAmount, float TotalAfterTax, int StoreID,int Type, int PCategoryID,int? PSCategoryID, float? Discount =null )
+         public  bool SetValues( DateTime IssueDate, float TotalBeforTax, float TaxAmount, float TotalAfterTax, int StoreID,int Type, int PCategoryID,int? PSCategoryID ,int UserID,float? Discount =null )
         {
            
             this.IssueDate = IssueDate;
@@ -74,13 +79,19 @@ namespace HomeC_Business
             this.Type=Type;
             this.PCategoryID = PCategoryID;
             this.PSCategoryID = PSCategoryID;
+
+            if (_mode == clsPurchase.enMode.AddNew)
+               this.CreatedByUserID = UserID;
+            else
+                this.UpdatedByUserID = UserID;
+
             return true;
         }
 
         private bool _AddNewPurchases()
         {
             int ID = -1;
-            clsPurchaseData.InsertPurchase(ref ID, this.IssueDate, this.TotalBeforTax, this.TaxAmount,this.TotalAfterTax, this.StoreID,this.Type,this.Discount,this.PCategoryID,this.PSCategoryID);
+            clsPurchaseData.InsertPurchase(ref ID, this.IssueDate, this.TotalBeforTax, this.TaxAmount,this.TotalAfterTax, this.StoreID,this.Type,this.Discount,this.PCategoryID,this.PSCategoryID,this.CreatedByUserID,this.UpdatedByUserID);
             this._PurchaseID = ID;
             return this._PurchaseID != -1;
         }
@@ -88,7 +99,7 @@ namespace HomeC_Business
 
         private bool _UpdatePurchases()
         {
-            return clsPurchaseData.UpdatePurchase(this._PurchaseID, this.IssueDate, this.TotalBeforTax, this.TaxAmount, this.TotalAfterTax, this.StoreID,this.Type, this.Discount, this.PCategoryID, this.PSCategoryID);
+            return clsPurchaseData.UpdatePurchase(this._PurchaseID, this.IssueDate, this.TotalBeforTax, this.TaxAmount, this.TotalAfterTax, this.StoreID,this.Type, this.Discount, this.PCategoryID, this.PSCategoryID, this.CreatedByUserID, this.UpdatedByUserID);
         }
         public bool SavePurchases()
         {
@@ -127,10 +138,13 @@ namespace HomeC_Business
             int PCategoryID = -1;
             int? PSCategoryID =null;
 
-            if (clsPurchaseData.FindPurchase(PurchaseID, ref IssueDate, ref TotalAmountBeforeTax,ref TaxAmount,ref TotalafterTax, ref StoreID ,ref Type, ref Discount,ref PCategoryID,ref PSCategoryID))
+            int? CreatedByUserID =null;
+            int? UpdatedByUserID = null;
+
+            if (clsPurchaseData.FindPurchase(PurchaseID, ref IssueDate, ref TotalAmountBeforeTax,ref TaxAmount,ref TotalafterTax, ref StoreID ,ref Type, ref Discount,ref PCategoryID,ref PSCategoryID,ref CreatedByUserID,ref UpdatedByUserID))
             {
 
-                return new clsPurchase(PurchaseID, IssueDate, TotalAmountBeforeTax, TaxAmount, TotalafterTax, StoreID,Type, Discount, PCategoryID, PSCategoryID);
+                return new clsPurchase(PurchaseID, IssueDate, TotalAmountBeforeTax, TaxAmount, TotalafterTax, StoreID,Type, Discount, PCategoryID, PSCategoryID, CreatedByUserID,UpdatedByUserID);
             }
             else
             {

@@ -45,8 +45,6 @@ namespace HomeConsuption
         
         int _NationalityCountryID { get; set; }
 
-        string _pre_NationalNo { get; set; }
-        string _PathUserImage { get; set; }
 
         enum enMode { New,Update}
         enMode _mode = enMode.New;
@@ -162,10 +160,10 @@ namespace HomeConsuption
            
 
 
-            this._perons.SetValues(txtFirstName.Text,txtSecondName.Text,txtThirdName.Text,txtLastName.Text,txtPhone.Text,txtEmail.Text, this._NationalityCountryID);
+            this._perons.SetValues(txtFirstName.Text,txtSecondName.Text,txtThirdName.Text,txtLastName.Text,txtPhone.Text,txtEmail.Text, this._NationalityCountryID,clsGlobal.CurrentUser.UserID);
             
             
-            
+           
 
                 if (this._perons.SavePeople())
                 {

@@ -384,7 +384,9 @@ namespace HomeConsuption
                 psCatgegoryID = clsPurchase_SubCategory.FindPurchase_SubCategories(cmbSubCategories.SelectedItem.ToString()).PSCategoryID;
 
 
-            purchase.SetValues(dtpDate.Value, TotalBeforTax, TaxAmount, TotalAfterTax, StoreID, _TypeID, pCategoryID, psCatgegoryID, Discount);
+            purchase.SetValues(dtpDate.Value, TotalBeforTax, TaxAmount, TotalAfterTax, StoreID, _TypeID, pCategoryID, psCatgegoryID, clsGlobal.CurrentUser.UserID,Discount);
+
+           
 
             if (purchase.SavePurchases())
             {

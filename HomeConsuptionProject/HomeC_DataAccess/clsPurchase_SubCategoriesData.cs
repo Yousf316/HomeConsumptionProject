@@ -12,7 +12,7 @@ namespace HomeC_DataAccess
     {
 
 
-        static public void Insert_Purchase_SubCategories(ref int PSCategoryID, string CategoryName)
+        static public void Insert_Purchase_SubCategories(ref int PSCategoryID, string CategoryName, int? CreatedByUserID, int? UpdatedByUserID)
         {
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             using (SqlCommand command = new SqlCommand("sp_insert_Purchase_SubCategories", connection))
@@ -20,8 +20,16 @@ namespace HomeC_DataAccess
                 command.CommandType = CommandType.StoredProcedure;
 
                 command.Parameters.AddWithValue("@p_SubCategoryName", CategoryName);
-              
 
+                if (CreatedByUserID != -1 && CreatedByUserID != null)
+                    command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+                else
+                    command.Parameters.AddWithValue("@CreatedByUserID", DBNull.Value);
+
+                if (UpdatedByUserID != -1 && UpdatedByUserID != null)
+                    command.Parameters.AddWithValue("@UpdatedByUserID", UpdatedByUserID);
+                else
+                    command.Parameters.AddWithValue("@UpdatedByUserID", DBNull.Value);
 
                 try
                 {
@@ -56,7 +64,7 @@ namespace HomeC_DataAccess
 
         }
 
-        static public bool Update_Purchase_SubCategories(int PSCategoryID, string CategoryName)
+        static public bool Update_Purchase_SubCategories(int PSCategoryID, string CategoryName, int? CreatedByUserID, int? UpdatedByUserID)
         {
             int rowsAffected = 0;
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -68,6 +76,15 @@ namespace HomeC_DataAccess
                 
                 command.Parameters.AddWithValue("@w_PSCategoryID", PSCategoryID);
 
+                if (CreatedByUserID != -1 && CreatedByUserID != null)
+                    command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+                else
+                    command.Parameters.AddWithValue("@CreatedByUserID", DBNull.Value);
+
+                if (UpdatedByUserID != -1 && UpdatedByUserID != null)
+                    command.Parameters.AddWithValue("@UpdatedByUserID", UpdatedByUserID);
+                else
+                    command.Parameters.AddWithValue("@UpdatedByUserID", DBNull.Value);
 
                 try
                 {
@@ -100,7 +117,7 @@ namespace HomeC_DataAccess
             return (rowsAffected > 0);
         }
 
-        static public bool FindPurchase_SubCategories(int PSCategoryID, ref string SubCategoryName)
+        static public bool FindPurchase_SubCategories(int PSCategoryID, ref string SubCategoryName, ref int? CreatedByUserID, ref int? UpdatedByUserID)
         {
             bool isFound = false;
 
@@ -120,6 +137,9 @@ namespace HomeC_DataAccess
                 {
                     isFound = true; 
                     SubCategoryName = (string)reader["SubCategoryName"];
+                    CreatedByUserID = reader["CreatedByUserID"] != DBNull.Value ? (int?)Convert.ToInt32(reader["CreatedByUserID"]) : null;
+                    UpdatedByUserID = reader["UpdatedByUserID"] != DBNull.Value ? (int?)Convert.ToInt32(reader["UpdatedByUserID"]) : null;
+
                 }
 
                 reader.Close();
@@ -136,7 +156,7 @@ namespace HomeC_DataAccess
             return isFound;
         }
 
-        static public bool FindPurchase_SubCategories(ref int PSCategoryID, string SubCategoryName)
+        static public bool FindPurchase_SubCategories(ref int PSCategoryID, string SubCategoryName, ref int? CreatedByUserID, ref int? UpdatedByUserID)
         {
             bool isFound = false;
 
@@ -156,6 +176,8 @@ namespace HomeC_DataAccess
                     {
                         isFound = true;
                         PSCategoryID = Convert.ToInt32(reader["PSCategoryID"]);
+                        CreatedByUserID = reader["CreatedByUserID"] != DBNull.Value ? (int?)Convert.ToInt32(reader["CreatedByUserID"]) : null;
+                        UpdatedByUserID = reader["UpdatedByUserID"] != DBNull.Value ? (int?)Convert.ToInt32(reader["UpdatedByUserID"]) : null;
 
                     }
 

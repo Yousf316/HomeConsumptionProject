@@ -22,6 +22,8 @@ namespace HomeC_Business
        public string PhoneNumber { get; set; }
        public string Email { get; set; }
        public int NationalityCountryID { get; set; }
+        public int? CreatedByUserID { get; set; }
+       public int? UpdatedByUserID { get; set; }
 
         public string FullName
         {
@@ -42,7 +44,8 @@ namespace HomeC_Business
             this.NationalityCountryID = -1;
             _mode = enMode.AddNew;
         }
-        private clsPerson(int PersonID, string FirstName, string SecondName, string ThirdName, string LastName, string PhoneNumber, string Email, int NationalityCountryID)
+        private clsPerson(int PersonID, string FirstName, string SecondName, string ThirdName,
+            string LastName, string PhoneNumber, string Email, int NationalityCountryID,int? CreatedByUserID,int? UpdatedByUserID)
         {
             this.PersonID = PersonID;
             this.FirstName = FirstName;
@@ -52,10 +55,13 @@ namespace HomeC_Business
             this.PhoneNumber = PhoneNumber;
             this.Email = Email;
             this.NationalityCountryID = NationalityCountryID;
+            this.CreatedByUserID = CreatedByUserID;
+            this.UpdatedByUserID = UpdatedByUserID;
             _mode = enMode.Update;
         }
 
-        public void SetValues( string FirstName, string SecondName, string ThirdName, string LastName, string PhoneNumber, string Email, int NationalityCountryID)
+        public void SetValues( string FirstName, string SecondName, string ThirdName, string LastName, 
+            string PhoneNumber, string Email, int NationalityCountryID,int UserID)
         {
            
             this.FirstName = FirstName;
@@ -65,19 +71,22 @@ namespace HomeC_Business
             this.PhoneNumber = PhoneNumber;
             this.Email = Email;
             this.NationalityCountryID = NationalityCountryID;
-            
+            if (_mode == enMode.AddNew)
+                this.CreatedByUserID = UserID;
+            else
+                this.UpdatedByUserID = UserID;
         }
 
         private bool _AddNewPeople()
         {
             int ID = -1;
-            clsPersonData.Insert_Person(ref ID, this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.PhoneNumber, this.Email, this.NationalityCountryID);
+            clsPersonData.Insert_Person(ref ID, this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.PhoneNumber, this.Email, this.NationalityCountryID,this.CreatedByUserID,this.UpdatedByUserID);
             this.PersonID = ID;
             return this.PersonID != -1;
         }
         private bool _UpdatePeople()
         {
-            return clsPersonData.Update_Person(this.PersonID, this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.PhoneNumber, this.Email, this.NationalityCountryID);
+            return clsPersonData.Update_Person(this.PersonID, this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.PhoneNumber, this.Email, this.NationalityCountryID, this.CreatedByUserID, this.UpdatedByUserID);
         }
         public bool SavePeople()
         {
@@ -112,11 +121,13 @@ namespace HomeC_Business
             string PhoneNumber = "";
             string Email = "";
             int NationalityCountryID = -1;
+            int? CreatedByUserID = null;
+            int? UpdatedByUserID = null     ;
 
-            if (clsPersonData.FindPerson(PersonID, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref PhoneNumber, ref Email, ref NationalityCountryID))
+            if (clsPersonData.FindPerson(PersonID, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref PhoneNumber, ref Email, ref NationalityCountryID,ref CreatedByUserID,ref UpdatedByUserID))
             {
 
-                return new clsPerson(PersonID, FirstName, SecondName, ThirdName, LastName, PhoneNumber, Email, NationalityCountryID);
+                return new clsPerson(PersonID, FirstName, SecondName, ThirdName, LastName, PhoneNumber, Email, NationalityCountryID,CreatedByUserID, UpdatedByUserID);
             }
             else
             {

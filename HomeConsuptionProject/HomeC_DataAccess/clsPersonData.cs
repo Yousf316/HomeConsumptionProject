@@ -11,7 +11,7 @@ namespace HomeC_DataAccess
     public class clsPersonData
     {
         static public void Insert_Person(ref int PersonID, string FirstName, string SecondName, string ThirdName, 
-            string LastName, string PhoneNumber, string Email, int NationalityCountryID)
+            string LastName, string PhoneNumber, string Email, int NationalityCountryID,int? CreatedByUserID,int? UpdatedByUserID)
 
         {
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -24,10 +24,23 @@ namespace HomeC_DataAccess
                 command.Parameters.AddWithValue("@p_ThirdName", ThirdName);
                 command.Parameters.AddWithValue("@p_LastName", LastName);
                 command.Parameters.AddWithValue("@p_PhoneNumber", PhoneNumber);
-                command.Parameters.AddWithValue("@p_Email", Email);
+                
                 command.Parameters.AddWithValue("@p_NationalityCountryID", NationalityCountryID);
 
+                if (CreatedByUserID != -1 && CreatedByUserID != null)
+                    command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+                else
+                    command.Parameters.AddWithValue("@CreatedByUserID", DBNull.Value);
 
+                if (Email != "")
+                    command.Parameters.AddWithValue("@p_Email", Email);
+                else
+                    command.Parameters.AddWithValue("@p_Email", DBNull.Value);
+
+                if (UpdatedByUserID != -1 && UpdatedByUserID != null)
+                    command.Parameters.AddWithValue("@UpdatedByUserID", UpdatedByUserID);
+                else
+                    command.Parameters.AddWithValue("@UpdatedByUserID", DBNull.Value);
 
                 try
                 {
@@ -59,7 +72,7 @@ namespace HomeC_DataAccess
         }
         static public bool Update_Person(int PersonID, string FirstName, string SecondName, 
             string ThirdName, string LastName, string PhoneNumber,
-            string Email, int NationalityCountryID)
+            string Email, int NationalityCountryID, int? CreatedByUserID, int? UpdatedByUserID)
 
         {
             int rowsAffected = 0;
@@ -74,8 +87,23 @@ namespace HomeC_DataAccess
                 command.Parameters.AddWithValue("@p_ThirdName", ThirdName);
                 command.Parameters.AddWithValue("@p_LastName", LastName);
                 command.Parameters.AddWithValue("@p_PhoneNumber", PhoneNumber);
-                command.Parameters.AddWithValue("@p_Email", Email);
                 command.Parameters.AddWithValue("@p_NationalityCountryID", NationalityCountryID);
+
+                if (CreatedByUserID != -1 && CreatedByUserID != null)
+                    command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+                else
+                    command.Parameters.AddWithValue("@CreatedByUserID", DBNull.Value);
+
+                if (Email != "")
+                    command.Parameters.AddWithValue("@p_Email", Email);
+                else
+                    command.Parameters.AddWithValue("@p_Email", DBNull.Value);
+
+                if (UpdatedByUserID != -1 && UpdatedByUserID != null)
+                    command.Parameters.AddWithValue("@UpdatedByUserID", UpdatedByUserID);
+                else
+                    command.Parameters.AddWithValue("@UpdatedByUserID", DBNull.Value);
+
                 try
                 {
 
@@ -107,7 +135,9 @@ namespace HomeC_DataAccess
             return (rowsAffected > 0);
         }
 
-        static public bool FindPerson(int PersonID, ref string FirstName, ref string SecondName, ref string ThirdName, ref string LastName, ref string PhoneNumber, ref string Email, ref int NationalityCountryID)
+        static public bool FindPerson(int PersonID, ref string FirstName, ref string SecondName,
+            ref string ThirdName, ref string LastName,
+            ref string PhoneNumber, ref string Email, ref int NationalityCountryID, ref int? CreatedByUserID,ref int? UpdatedByUserID)
         {
             bool isFound = false;
 
@@ -128,6 +158,8 @@ namespace HomeC_DataAccess
                     SecondName = (string)reader["SecondName"];
                     ThirdName = (string)reader["ThirdName"];
 
+                    NationalityCountryID = (int)reader["NationalityCountryID"];
+
                     if (reader["LastName"] != DBNull.Value)
                         LastName = (string)reader["LastName"];
 
@@ -146,11 +178,15 @@ namespace HomeC_DataAccess
                     else
                         Email = "";
 
-                    if (reader["NationalityCountryID"] != DBNull.Value)
-                        NationalityCountryID = (int)reader["NationalityCountryID"];
+                    if (reader["CreatedByUserID"] != DBNull.Value)
+                        CreatedByUserID = (int)reader["CreatedByUserID"];
 
-                    else
-                        NationalityCountryID = -1;
+                   
+
+                    if (reader["UpdatedByUserID"] != DBNull.Value)
+                        UpdatedByUserID = (int)reader["UpdatedByUserID"];
+
+                   
                 }
 
                 reader.Close();

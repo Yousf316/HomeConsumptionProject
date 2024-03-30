@@ -33,6 +33,12 @@ namespace HomeConsuption
 
             string HashPassword = clsValidatoin.HashCodeCompute(txtPassword.Text);
 
+            if(HashPassword != user.Password)
+            {
+                MessageBox.Show("كلمة المرور غير مطابقة", "فشلت العملية",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return false;
+            }    
+
             user.SetValues(_PersonID, txtUserName.Text, HashPassword, chkIsActive.Checked);
             
                 if (user.SaveUsers())
@@ -79,7 +85,7 @@ namespace HomeConsuption
             this._UserName = user.UserName;
 
             
-            txtPassword.Enabled = false;
+            txtPassword.Enabled = true;
             txtConfirmPassword.Enabled=false;
             linkLabel1.Visible = true;
             SetUserInfo();
