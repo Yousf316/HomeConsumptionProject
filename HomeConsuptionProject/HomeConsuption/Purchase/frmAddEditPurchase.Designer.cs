@@ -503,7 +503,7 @@
             // 
             this.btnCancel.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_cancel_96;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancel.Location = new System.Drawing.Point(817, 606);
+            this.btnCancel.Location = new System.Drawing.Point(415, 611);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(45, 47);
             this.btnCancel.TabIndex = 6;
@@ -513,7 +513,7 @@
             // btnSave
             // 
             this.btnSave.Image = global::HomeConsuption.Properties.Resources.icons8_save_48;
-            this.btnSave.Location = new System.Drawing.Point(868, 606);
+            this.btnSave.Location = new System.Drawing.Point(848, 611);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(45, 47);
             this.btnSave.TabIndex = 5;

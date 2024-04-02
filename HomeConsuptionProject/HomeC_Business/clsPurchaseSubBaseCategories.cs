@@ -86,14 +86,14 @@ namespace HomeC_Business
         }
         public static bool  DeleteSubBaseCategory(int PSCategory,int PCategory)
         {
-            if(!clsPurchaseData.IsPurchseExsits(PCategory, PSCategory))
+            if(clsPurchaseData.IsPurchseExsits(PCategory, PSCategory))
                 return false;
 
          return clsPurchaseSubBaseCategoriesData.DeletePurchaseSubBaseCategories(PSCategory, PCategory);
         }
          public static bool  DeleteSubBaseCategory(int PSCategory)
         {
-            if (!clsPurchaseData.IsPurchseExsits(PSCategory))
+            if (clsPurchaseData.IsPurchseExsits(PSCategory))
                 return false;
 
          return clsPurchaseSubBaseCategoriesData.DeletePurchaseSubBaseCategories( PSCategory);

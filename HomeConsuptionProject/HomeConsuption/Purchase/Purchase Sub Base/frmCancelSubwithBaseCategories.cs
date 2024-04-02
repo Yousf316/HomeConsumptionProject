@@ -40,11 +40,17 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Base
                 cmbSubCategories.Items.Add(dr["SubCategoryName"].ToString());
             }
             if (cmbSubCategories.Items.Count > 0)
+            {
                 cmbSubCategories.SelectedIndex = 0;
+
+                btnSave.Enabled = true;
+
+            }
             else
             {
                 cmbSubCategories.Items.Add("لا يوجد صنف فرعي");
                 cmbSubCategories.SelectedIndex = 0;
+                btnSave.Enabled = false;
             }
         }
         public frmCancelSubwithBaseCategories()
@@ -65,7 +71,7 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Base
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-           if( clsPurchaseSubBaseCategories.DeleteSubBaseCategory(_purchase_Category.PCategoryID,_purchase_SubCategory.PSCategoryID))
+           if( clsPurchaseSubBaseCategories.DeleteSubBaseCategory(_purchase_SubCategory.PSCategoryID, _purchase_Category.PCategoryID))
             {
                 MessageBox.Show("تم الغاء الربط بنجاح","تمت العملية بنجاح",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }else
@@ -73,6 +79,10 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Base
                 MessageBox.Show("الصنف مرتبط بفواتير", "فشلت العملية", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+            cmbCategories_SelectedIndexChanged(null,null);
+
+
+
         }
 
         private void cmbSubCategories_SelectedIndexChanged(object sender, EventArgs e)

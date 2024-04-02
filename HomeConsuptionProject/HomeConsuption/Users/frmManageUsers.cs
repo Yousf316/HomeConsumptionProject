@@ -27,6 +27,9 @@ namespace HomeConsuption
         private void RefreshUsersList()
         {
             dataGridView1.DataSource = clsUser.GetAllUsers();
+
+            dataGridView1.Columns["Password"].Visible = false;
+          
             RefreshRecordCount();
         }
         private void RefreshRecordCount()

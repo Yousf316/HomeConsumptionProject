@@ -59,9 +59,9 @@
             // 
             this.lbRecordsCount.AutoSize = true;
             this.lbRecordsCount.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lbRecordsCount.Location = new System.Drawing.Point(159, 685);
+            this.lbRecordsCount.Location = new System.Drawing.Point(580, 559);
             this.lbRecordsCount.Name = "lbRecordsCount";
-            this.lbRecordsCount.Size = new System.Drawing.Size(43, 24);
+            this.lbRecordsCount.Size = new System.Drawing.Size(37, 19);
             this.lbRecordsCount.TabIndex = 15;
             this.lbRecordsCount.Text = "N/A";
             // 
@@ -69,17 +69,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label2.Location = new System.Drawing.Point(33, 685);
+            this.label2.Location = new System.Drawing.Point(623, 559);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 24);
+            this.label2.Size = new System.Drawing.Size(160, 19);
             this.label2.TabIndex = 14;
-            this.label2.Text = "# Records : ";
+            this.label2.Text = " : عدد المستخدمين# ";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(332, 261);
+            this.txtSearch.Location = new System.Drawing.Point(285, 212);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(241, 24);
+            this.txtSearch.Size = new System.Drawing.Size(207, 20);
             this.txtSearch.TabIndex = 12;
             this.txtSearch.Visible = false;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
@@ -93,21 +94,24 @@
             "UserID",
             "UserName",
             "IsActive"});
-            this.cmbFinds.Location = new System.Drawing.Point(165, 261);
+            this.cmbFinds.Location = new System.Drawing.Point(141, 212);
+            this.cmbFinds.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbFinds.Name = "cmbFinds";
-            this.cmbFinds.Size = new System.Drawing.Size(161, 24);
+            this.cmbFinds.Size = new System.Drawing.Size(139, 21);
             this.cmbFinds.TabIndex = 10;
+            this.cmbFinds.Visible = false;
             this.cmbFinds.SelectedIndexChanged += new System.EventHandler(this.cmbFinds_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 13F);
-            this.label1.Location = new System.Drawing.Point(48, 258);
+            this.label1.Location = new System.Drawing.Point(41, 210);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 27);
+            this.label1.Size = new System.Drawing.Size(80, 22);
             this.label1.TabIndex = 9;
             this.label1.Text = "Filter By:";
+            this.label1.Visible = false;
             // 
             // dataGridView1
             // 
@@ -116,12 +120,13 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 291);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 236);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 26;
-            this.dataGridView1.Size = new System.Drawing.Size(886, 379);
+            this.dataGridView1.Size = new System.Drawing.Size(759, 308);
             this.dataGridView1.TabIndex = 8;
             // 
             // contextMenuStrip1
@@ -138,26 +143,26 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(218, 338);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(193, 338);
             // 
             // showPersonInfoToolStripMenuItem
             // 
             this.showPersonInfoToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.task_list;
             this.showPersonInfoToolStripMenuItem.Name = "showPersonInfoToolStripMenuItem";
-            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(217, 46);
+            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
             this.showPersonInfoToolStripMenuItem.Text = "Show Details";
             this.showPersonInfoToolStripMenuItem.Click += new System.EventHandler(this.showPersonInfoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(214, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(189, 6);
             // 
             // addNewPersonToolStripMenuItem
             // 
             this.addNewPersonToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.person_manAddPerson;
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(217, 46);
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
             this.addNewPersonToolStripMenuItem.Text = "Add New User";
             this.addNewPersonToolStripMenuItem.Click += new System.EventHandler(this.addNewPersonToolStripMenuItem_Click);
             // 
@@ -165,7 +170,7 @@
             // 
             this.editePersonInfoToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.clipboardwithpencil;
             this.editePersonInfoToolStripMenuItem.Name = "editePersonInfoToolStripMenuItem";
-            this.editePersonInfoToolStripMenuItem.Size = new System.Drawing.Size(217, 46);
+            this.editePersonInfoToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
             this.editePersonInfoToolStripMenuItem.Text = "Edite";
             this.editePersonInfoToolStripMenuItem.Click += new System.EventHandler(this.editePersonInfoToolStripMenuItem_Click);
             // 
@@ -173,7 +178,7 @@
             // 
             this.deletePersonToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.delete_database;
             this.deletePersonToolStripMenuItem.Name = "deletePersonToolStripMenuItem";
-            this.deletePersonToolStripMenuItem.Size = new System.Drawing.Size(217, 46);
+            this.deletePersonToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
             this.deletePersonToolStripMenuItem.Text = "Delete";
             this.deletePersonToolStripMenuItem.Click += new System.EventHandler(this.deletePersonToolStripMenuItem_Click);
             // 
@@ -181,20 +186,20 @@
             // 
             this.changePasswordToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.skills;
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(217, 46);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(214, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(189, 6);
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.email;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(217, 46);
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
             this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
             // 
@@ -202,7 +207,7 @@
             // 
             this.phoneCallToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.phone_call;
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(217, 46);
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
             this.phoneCallToolStripMenuItem.Text = "Phone Call";
             // 
             // comboBox1
@@ -212,9 +217,10 @@
             "All",
             "Active",
             "UnActive"});
-            this.comboBox1.Location = new System.Drawing.Point(332, 261);
+            this.comboBox1.Location = new System.Drawing.Point(285, 212);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(104, 21);
             this.comboBox1.TabIndex = 16;
             this.comboBox1.Visible = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -224,9 +230,10 @@
             this.btnAddPerson.BackgroundImage = global::HomeConsuption.Properties.Resources.person_manAddPerson;
             this.btnAddPerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAddPerson.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddPerson.Location = new System.Drawing.Point(802, 199);
+            this.btnAddPerson.Location = new System.Drawing.Point(687, 162);
+            this.btnAddPerson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddPerson.Name = "btnAddPerson";
-            this.btnAddPerson.Size = new System.Drawing.Size(112, 86);
+            this.btnAddPerson.Size = new System.Drawing.Size(96, 70);
             this.btnAddPerson.TabIndex = 11;
             this.btnAddPerson.UseVisualStyleBackColor = true;
             this.btnAddPerson.Click += new System.EventHandler(this.btnAddPerson_Click);
@@ -236,37 +243,39 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Trebuchet MS", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(382, 185);
+            this.label3.Location = new System.Drawing.Point(327, 150);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 32);
+            this.label3.Size = new System.Drawing.Size(138, 26);
             this.label3.TabIndex = 17;
-            this.label3.Text = "Manage Users";
+            this.label3.Text = "ادارة المستخدمين";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HomeConsuption.Properties.Resources.dedicated_hosting;
-            this.pictureBox1.Location = new System.Drawing.Point(364, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(312, 20);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(209, 158);
+            this.pictureBox1.Size = new System.Drawing.Size(179, 128);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(752, 689);
+            this.btnClose.Location = new System.Drawing.Point(32, 559);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(162, 51);
+            this.btnClose.Size = new System.Drawing.Size(139, 41);
             this.btnClose.TabIndex = 19;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "اغلاق";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmManageUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 752);
+            this.ClientSize = new System.Drawing.Size(838, 611);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
@@ -278,6 +287,8 @@
             this.Controls.Add(this.cmbFinds);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmManageUsers";
             this.Text = "ManageUsers";
             this.Load += new System.EventHandler(this.frmManageUsers_Load);

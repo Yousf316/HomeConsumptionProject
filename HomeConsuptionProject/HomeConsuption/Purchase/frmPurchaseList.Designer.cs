@@ -64,7 +64,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 260);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1144, 271);
+            this.dataGridView1.Size = new System.Drawing.Size(1270, 271);
             this.dataGridView1.TabIndex = 0;
             // 
             // cmsSettingsPurchase
@@ -74,26 +74,26 @@
             this.التعديلToolStripMenuItem,
             this.الحذفToolStripMenuItem});
             this.cmsSettingsPurchase.Name = "cmsSettingsPurchase";
-            this.cmsSettingsPurchase.Size = new System.Drawing.Size(181, 92);
+            this.cmsSettingsPurchase.Size = new System.Drawing.Size(134, 70);
             this.cmsSettingsPurchase.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // المعلموماتToolStripMenuItem
             // 
             this.المعلموماتToolStripMenuItem.Name = "المعلموماتToolStripMenuItem";
-            this.المعلموماتToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.المعلموماتToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.المعلموماتToolStripMenuItem.Text = "المعلمومات";
             // 
             // التعديلToolStripMenuItem
             // 
             this.التعديلToolStripMenuItem.Name = "التعديلToolStripMenuItem";
-            this.التعديلToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.التعديلToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.التعديلToolStripMenuItem.Text = "التعديل";
             this.التعديلToolStripMenuItem.Click += new System.EventHandler(this.التعديلToolStripMenuItem_Click);
             // 
             // الحذفToolStripMenuItem
             // 
             this.الحذفToolStripMenuItem.Name = "الحذفToolStripMenuItem";
-            this.الحذفToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.الحذفToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.الحذفToolStripMenuItem.Text = "الحذف";
             this.الحذفToolStripMenuItem.Click += new System.EventHandler(this.الحذفToolStripMenuItem_Click);
             // 
@@ -188,7 +188,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Image = global::HomeConsuption.Properties.Resources.icons8_buy_for_coins_641;
-            this.button1.Location = new System.Drawing.Point(1065, 188);
+            this.button1.Location = new System.Drawing.Point(1191, 185);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 66);
             this.button1.TabIndex = 362;
@@ -199,7 +199,7 @@
             // 
             this.lbCurrentPage.AutoSize = true;
             this.lbCurrentPage.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lbCurrentPage.Location = new System.Drawing.Point(969, 558);
+            this.lbCurrentPage.Location = new System.Drawing.Point(1128, 558);
             this.lbCurrentPage.Name = "lbCurrentPage";
             this.lbCurrentPage.Size = new System.Drawing.Size(53, 19);
             this.lbCurrentPage.TabIndex = 364;
@@ -209,7 +209,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label4.Location = new System.Drawing.Point(1028, 558);
+            this.label4.Location = new System.Drawing.Point(1187, 558);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 19);
             this.label4.TabIndex = 363;
@@ -270,7 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1164, 630);
+            this.ClientSize = new System.Drawing.Size(1294, 630);
             this.Controls.Add(this.cbAll);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);

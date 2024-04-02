@@ -674,7 +674,7 @@ namespace HomeConsuption
         {
             frmPurchseSubCategoriesList purchseSubCategoriesList = new frmPurchseSubCategoriesList();
             purchseSubCategoriesList.ShowDialog();
-
+            _GetAllSubCategories(clsPurchase_Category.FindPurchase_Category(cmbCategoryList.SelectedItem.ToString()).PCategoryID);
         }
 
       

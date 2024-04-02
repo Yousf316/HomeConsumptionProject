@@ -120,11 +120,11 @@ namespace HomeC_DataAccess
             bool isFound = false;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"SELECT * FROM [dbo].[PurchaseSubBaseCategories] WHERE PSCategoryID =@PSCategoryID and PCategory =@PCategory;";
+            string query = @"SELECT * FROM [dbo].[PurchaseSubBaseCategories] WHERE PSCategoryID =@PSCategoryID and PCategoryID =@PCategoryID;";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.AddWithValue("@PSCategoryID", PSCategoryID);
-            cmd.Parameters.AddWithValue("@PCategory", PCategory);
+            cmd.Parameters.AddWithValue("@PCategoryID", PCategory);
 
             try
             {
@@ -236,11 +236,11 @@ namespace HomeC_DataAccess
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"DELETE  FROM [dbo].[PurchaseSubBaseCategories] WHERE PSCategoryID =@PSCategoryID and PCategory = @PCategory ;";
+            string query = @"DELETE  FROM [dbo].[PurchaseSubBaseCategories] WHERE PSCategoryID =@PSCategoryID and PCategoryID = @PCategoryID ;";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.AddWithValue("@PSCategoryID", PSCategoryID);
-            cmd.Parameters.AddWithValue("@PCategory", PCategory);
+            cmd.Parameters.AddWithValue("@PCategoryID", PCategory);
             try
             {
                 connection.Open();

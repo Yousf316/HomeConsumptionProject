@@ -132,8 +132,8 @@ namespace HomeC_Business
         public static bool DeletePurchase_SubCategories(int PSCategoryID)
         {
 
-           if( !clsPurchaseSubBaseCategories.DeleteSubBaseCategory(PSCategoryID))
-                return false;
+           //if( !clsPurchaseSubBaseCategories.DeleteSubBaseCategory(PSCategoryID))
+           //     return false;
 
                 return clsPurchase_SubCategoriesData.DeletePurchase_SubCategories(PSCategoryID);
             

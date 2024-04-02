@@ -42,11 +42,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(189, 141);
+            this.label1.Location = new System.Drawing.Point(176, 142);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 17);
+            this.label1.Size = new System.Drawing.Size(112, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "UserName :";
+            this.label1.Text = "اسم المسخدم :";
             // 
             // txtUserName
             // 
@@ -72,20 +72,20 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(193, 200);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 17);
+            this.label3.Size = new System.Drawing.Size(90, 17);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Password :";
+            this.label3.Text = "كلمة المرور :";
             // 
             // chkRememberMe
             // 
             this.chkRememberMe.AutoSize = true;
             this.chkRememberMe.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.chkRememberMe.Location = new System.Drawing.Point(314, 252);
+            this.chkRememberMe.Location = new System.Drawing.Point(342, 257);
             this.chkRememberMe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkRememberMe.Name = "chkRememberMe";
-            this.chkRememberMe.Size = new System.Drawing.Size(113, 18);
+            this.chkRememberMe.Size = new System.Drawing.Size(54, 18);
             this.chkRememberMe.TabIndex = 5;
-            this.chkRememberMe.Text = "Remember Me";
+            this.chkRememberMe.Text = "تذكر ";
             this.chkRememberMe.UseVisualStyleBackColor = true;
             this.chkRememberMe.CheckedChanged += new System.EventHandler(this.chkRememberMe_CheckedChanged);
             // 

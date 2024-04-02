@@ -120,7 +120,15 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Categories
 
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            clsPurchase_SubCategory.DeletePurchase_SubCategories((int)dgvList.CurrentRow.Cells[0].Value);
+           if( clsPurchase_SubCategory.DeletePurchase_SubCategories((int)dgvList.CurrentRow.Cells[0].Value))
+            {
+                MessageBox.Show("تم حذف الصنف", "تمت العملية بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }else
+            {
+                MessageBox.Show("الصنف مرتبط باصناف رئيسية", "فشلت العملية", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
             Parallel.Invoke(() => _RefreshStoresList());
         }
 

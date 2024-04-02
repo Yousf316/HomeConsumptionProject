@@ -184,9 +184,14 @@ namespace HomeConsuption.Purchase
 
             PricePerUnit = cbIncludTax.Checked ? PricePerUnit / clsGlobal.Taxprec : PricePerUnit;
 
-            lbTotal.Text = (Quantity * PricePerUnit).ToString();
+            
 
-            this.Total = Convert.ToSingle(lbTotal.Text);
+            this.Total = (Quantity * PricePerUnit);
+
+           txtTotal.Text = this.Total.ToString();
+
+            txtTax.Text = ((this.Total*clsGlobal.Taxprec)-this.Total).ToString();    
+            txtNet.Text = (this.Total * clsGlobal.Taxprec).ToString();
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

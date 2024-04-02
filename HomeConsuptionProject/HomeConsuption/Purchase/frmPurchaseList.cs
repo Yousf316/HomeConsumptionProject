@@ -88,8 +88,10 @@ namespace HomeConsuption.Purchase
                   dataGridView1.Columns["StoreName"].HeaderText = "أسـم المتجر";
                 dataGridView1.Columns["StoreName"].Width = 275;
 
-                  dataGridView1.Columns["CategoryName"].HeaderText = "أسـم الصنف";
+                  dataGridView1.Columns["CategoryName"].HeaderText = "الصنف";
                 dataGridView1.Columns["CategoryName"].Width = 130;
+                  dataGridView1.Columns["SubCategoryName"].HeaderText = " الصنف الفرعي";
+                dataGridView1.Columns["SubCategoryName"].Width = 130;
 
 
             }
