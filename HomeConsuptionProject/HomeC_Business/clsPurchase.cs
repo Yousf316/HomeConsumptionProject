@@ -15,7 +15,9 @@ namespace HomeC_Business
 
         int _PurchaseID;
 
-        public int PurchaseID { get => _PurchaseID; }
+        
+
+        public int PurchaseID { get => _PurchaseID; set => _PurchaseID = value; }
 
        public DateTime IssueDate { get; set; }
        public float TotalBeforTax { get; set; }
@@ -166,6 +168,12 @@ namespace HomeC_Business
         {
 
             return clsPurchaseData.GetAllPurchases(PageNumber,RowCountPerPage,ref RowCount);
+        }
+
+        public static DataTable GetAllPurchases()
+        {
+
+            return clsPurchaseData.GetAllPurchases();
         }
 
         public static DataTable GetAllPurchasesInfoWithPages(int PageNumber, int RowCountPerPage, ref int RowCount)

@@ -53,20 +53,30 @@ namespace HomeConsuption.Forms
         
     
 
-        private void btnOk_Click(object sender, EventArgs e)
+   
+
+      
+
+        private void chkRememberMe_CheckedChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void rjbtnOk_Click(object sender, EventArgs e)
         {
             string HashPassword = clsValidatoin.HashCodeCompute(txtPassword.Text.Trim());
             clsUser UserID = clsUser.FindUserByUserNameAndPassword(txtUserName.Text.Trim(), HashPassword);
 
-           
-            if (UserID !=null)
+
+            if (UserID != null)
             {
 
-                if(UserID.IsActive)
+                if (UserID.IsActive)
                 {
-                    if(chkRememberMe.Checked)
+                    if (chkRememberMe.Checked)
                     {
-                        clsGlobal.RememberUsernameAndPassword(txtUserName.Text,txtPassword.Text);
+                        clsGlobal.RememberUsernameAndPassword(txtUserName.Text, txtPassword.Text);
                     }
                     else
                     {
@@ -77,7 +87,7 @@ namespace HomeConsuption.Forms
 
                     clsEventLogs.IsSourceNameExists();
 
-                    clsEventLogs.WriteLog("User Login Successfuly",System.Diagnostics.EventLogEntryType.Information);
+                    clsEventLogs.WriteLog("User Login Successfuly", System.Diagnostics.EventLogEntryType.Information);
 
 
                     clsGlobal.CurrentUser = UserID;
@@ -89,7 +99,7 @@ namespace HomeConsuption.Forms
                 }
                 else
                 {
-                    MessageBox.Show("User is not Active contact with admin","error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("User is not Active contact with admin", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     clsEventLogs.WriteLog("User is Not Active try Login", System.Diagnostics.EventLogEntryType.Error);
 
                 }
@@ -101,20 +111,11 @@ namespace HomeConsuption.Forms
 
             }
 
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void rjbtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void chkRememberMe_CheckedChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
-       
     }
 }

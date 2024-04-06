@@ -201,6 +201,9 @@
     <Compile Include="Reports\frmPurchaseReports.Designer.cs">
       <DependentUpon>frmPurchaseReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="RJControls\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Stores\frmAddEditStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -455,6 +458,8 @@
     <None Include="Resources\dedicated-hosting.png" />
     <Content Include="Resources\delete-database.png" />
     <Content Include="Resources\email.png" />
+    <None Include="Resources\istockphoto-1160205303-612x612.jpg" />
+    <None Include="Resources\istockphoto-996352862-612x612.jpg" />
     <Content Include="Resources\person_man.png" />
     <Content Include="Resources\person_manAddPerson.png" />
     <Content Include="Resources\person_mansearch.png" />

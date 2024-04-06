@@ -34,11 +34,11 @@ namespace HomeConsuption
             
             if(user.IsActive)
             {
-                lbIsActive.Text = "Yes";
+                lbIsActive.Text = "مفعل";
             }
             else
             {
-                lbIsActive.Text = "No";
+                lbIsActive.Text = "غير مفعل";
             }
 
         }

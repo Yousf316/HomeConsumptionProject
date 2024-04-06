@@ -143,72 +143,72 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(193, 338);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(199, 338);
             // 
             // showPersonInfoToolStripMenuItem
             // 
             this.showPersonInfoToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.task_list;
             this.showPersonInfoToolStripMenuItem.Name = "showPersonInfoToolStripMenuItem";
-            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
-            this.showPersonInfoToolStripMenuItem.Text = "Show Details";
+            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(198, 46);
+            this.showPersonInfoToolStripMenuItem.Text = "معلومات المستخدم";
             this.showPersonInfoToolStripMenuItem.Click += new System.EventHandler(this.showPersonInfoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(189, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(195, 6);
             // 
             // addNewPersonToolStripMenuItem
             // 
             this.addNewPersonToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.person_manAddPerson;
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
-            this.addNewPersonToolStripMenuItem.Text = "Add New User";
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(198, 46);
+            this.addNewPersonToolStripMenuItem.Text = "اضافة مستخدم جديد";
             this.addNewPersonToolStripMenuItem.Click += new System.EventHandler(this.addNewPersonToolStripMenuItem_Click);
             // 
             // editePersonInfoToolStripMenuItem
             // 
             this.editePersonInfoToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.clipboardwithpencil;
             this.editePersonInfoToolStripMenuItem.Name = "editePersonInfoToolStripMenuItem";
-            this.editePersonInfoToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
-            this.editePersonInfoToolStripMenuItem.Text = "Edite";
+            this.editePersonInfoToolStripMenuItem.Size = new System.Drawing.Size(198, 46);
+            this.editePersonInfoToolStripMenuItem.Text = "تعديل";
             this.editePersonInfoToolStripMenuItem.Click += new System.EventHandler(this.editePersonInfoToolStripMenuItem_Click);
             // 
             // deletePersonToolStripMenuItem
             // 
             this.deletePersonToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.delete_database;
             this.deletePersonToolStripMenuItem.Name = "deletePersonToolStripMenuItem";
-            this.deletePersonToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
-            this.deletePersonToolStripMenuItem.Text = "Delete";
+            this.deletePersonToolStripMenuItem.Size = new System.Drawing.Size(198, 46);
+            this.deletePersonToolStripMenuItem.Text = "حذف";
             this.deletePersonToolStripMenuItem.Click += new System.EventHandler(this.deletePersonToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.skills;
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(198, 46);
+            this.changePasswordToolStripMenuItem.Text = "تحديث كلمة المرور";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(189, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(195, 6);
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.email;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
-            this.sendEmailToolStripMenuItem.Text = "Send Email";
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(198, 46);
+            this.sendEmailToolStripMenuItem.Text = "رسالة ايميل";
             this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
             // 
             // phoneCallToolStripMenuItem
             // 
             this.phoneCallToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.phone_call;
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(192, 46);
-            this.phoneCallToolStripMenuItem.Text = "Phone Call";
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(198, 46);
+            this.phoneCallToolStripMenuItem.Text = "اتصال";
             // 
             // comboBox1
             // 

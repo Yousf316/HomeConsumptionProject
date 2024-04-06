@@ -64,13 +64,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbRecordCount = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnAddRecord = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnprevious = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
-            this.cbIncludTax = new System.Windows.Forms.CheckBox();
+            this.rjbtnAddRecord = new CustomControls.RJControls.RJButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubPurchase)).BeginInit();
             this.cmsSubPurchase.SuspendLayout();
@@ -464,18 +463,6 @@
             this.label14.TabIndex = 27;
             this.label14.Text = ": عدد البنود ";
             // 
-            // btnAddRecord
-            // 
-            this.btnAddRecord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddRecord.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnAddRecord.Location = new System.Drawing.Point(884, 440);
-            this.btnAddRecord.Name = "btnAddRecord";
-            this.btnAddRecord.Size = new System.Drawing.Size(142, 36);
-            this.btnAddRecord.TabIndex = 283;
-            this.btnAddRecord.Text = "أدراج بند";
-            this.btnAddRecord.UseVisualStyleBackColor = true;
-            this.btnAddRecord.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnNext
             // 
             this.btnNext.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96__1_;
@@ -533,27 +520,33 @@
             this.btnTest.Visible = false;
             this.btnTest.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // cbIncludTax
+            // rjbtnAddRecord
             // 
-            this.cbIncludTax.AutoSize = true;
-            this.cbIncludTax.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.cbIncludTax.Location = new System.Drawing.Point(296, 446);
-            this.cbIncludTax.Name = "cbIncludTax";
-            this.cbIncludTax.Size = new System.Drawing.Size(121, 23);
-            this.cbIncludTax.TabIndex = 360;
-            this.cbIncludTax.Text = "شامل الضريبة";
-            this.cbIncludTax.UseVisualStyleBackColor = true;
-            this.cbIncludTax.Visible = false;
-            this.cbIncludTax.CheckedChanged += new System.EventHandler(this.cbIncludeVAT);
+            this.rjbtnAddRecord.BackColor = System.Drawing.SystemColors.Desktop;
+            this.rjbtnAddRecord.BackgroundColor = System.Drawing.SystemColors.Desktop;
+            this.rjbtnAddRecord.BorderColor = System.Drawing.Color.Black;
+            this.rjbtnAddRecord.BorderRadius = 5;
+            this.rjbtnAddRecord.BorderSize = 1;
+            this.rjbtnAddRecord.FlatAppearance.BorderSize = 0;
+            this.rjbtnAddRecord.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rjbtnAddRecord.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.rjbtnAddRecord.ForeColor = System.Drawing.Color.White;
+            this.rjbtnAddRecord.Location = new System.Drawing.Point(868, 440);
+            this.rjbtnAddRecord.Name = "rjbtnAddRecord";
+            this.rjbtnAddRecord.Size = new System.Drawing.Size(150, 40);
+            this.rjbtnAddRecord.TabIndex = 361;
+            this.rjbtnAddRecord.Text = "أدراج بند";
+            this.rjbtnAddRecord.TextColor = System.Drawing.Color.White;
+            this.rjbtnAddRecord.UseVisualStyleBackColor = true;
+            this.rjbtnAddRecord.Click += new System.EventHandler(this.rjbtnAddRecord_Click);
             // 
             // frmAddEditPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 665);
-            this.Controls.Add(this.cbIncludTax);
+            this.Controls.Add(this.rjbtnAddRecord);
             this.Controls.Add(this.btnTest);
-            this.Controls.Add(this.btnAddRecord);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnprevious);
             this.Controls.Add(this.btnCancel);
@@ -567,7 +560,7 @@
             this.Name = "frmAddEditPurchase";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "اصدار فاتورة مشتريات";
+            this.Text = "f";
             this.Load += new System.EventHandler(this.AddEditPurchase_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -578,7 +571,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -617,14 +609,13 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbCategoryList;
         private System.Windows.Forms.Button btnAddNewCategory;
-        private System.Windows.Forms.Button btnAddRecord;
         private System.Windows.Forms.ContextMenuStrip cmsSubPurchase;
         private System.Windows.Forms.ToolStripMenuItem dToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem;
         private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.CheckBox cbIncludTax;
         private System.Windows.Forms.Button btnPSCategoriesList;
         private System.Windows.Forms.ComboBox cmbSubCategories;
         private System.Windows.Forms.Label label11;
+        private CustomControls.RJControls.RJButton rjbtnAddRecord;
     }
 }

@@ -50,7 +50,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Name  :";
+            this.label1.Text = "الأسم  :";
             // 
             // groupBox1
             // 
@@ -72,7 +72,7 @@
             this.groupBox1.Size = new System.Drawing.Size(429, 347);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Person Information";
+            this.groupBox1.Text = "المعلمومات الشخصية";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lbEmail
@@ -91,9 +91,9 @@
             this.label18.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label18.Location = new System.Drawing.Point(85, 232);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(64, 19);
+            this.label18.Size = new System.Drawing.Size(71, 19);
             this.label18.TabIndex = 17;
-            this.label18.Text = "Email  :";
+            this.label18.Text = "الأيميل  :";
             // 
             // lbCountry
             // 
@@ -112,9 +112,9 @@
             this.label12.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label12.Location = new System.Drawing.Point(82, 193);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 19);
+            this.label12.Size = new System.Drawing.Size(59, 19);
             this.label12.TabIndex = 14;
-            this.label12.Text = "Country  :";
+            this.label12.Text = "الدولة :";
             // 
             // lbPhone
             // 
@@ -132,9 +132,9 @@
             this.label14.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label14.Location = new System.Drawing.Point(82, 147);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(69, 19);
+            this.label14.Size = new System.Drawing.Size(66, 19);
             this.label14.TabIndex = 12;
-            this.label14.Text = "Phone  :";
+            this.label14.Text = "الجوال  :";
             // 
             // lbPersonID
             // 
@@ -150,11 +150,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label10.Location = new System.Drawing.Point(82, 70);
+            this.label10.Location = new System.Drawing.Point(57, 70);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 19);
+            this.label10.Size = new System.Drawing.Size(124, 19);
             this.label10.TabIndex = 8;
-            this.label10.Text = "Person ID :";
+            this.label10.Text = "الرقم الشخصي :";
             // 
             // lbName
             // 

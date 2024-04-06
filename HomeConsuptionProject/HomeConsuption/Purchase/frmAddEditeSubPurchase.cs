@@ -36,6 +36,7 @@ namespace HomeConsuption.Purchase
            this.RowCount = RowCount;
             this.ProductSizeID = productSizeID;
             this.ProductDescription = productDescription;
+           btnSave.Enabled = true;
         }
 
 
@@ -117,12 +118,7 @@ namespace HomeConsuption.Purchase
             
         }
 
-        private void btnChooseProduct_Click(object sender, EventArgs e)
-        {
-            frmProductList productList = new frmProductList();
-            productList.OnProductInfo += ProductList_OnProductInfo;
-            productList.ShowDialog();
-        }
+      
 
         private void ProductList_OnProductInfo(object sender, frmProductList.ProductInfoArgs e)
         {
@@ -213,6 +209,18 @@ namespace HomeConsuption.Purchase
         {
            
                 txtQuantityAndPrice_TextChanged(null, null);
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjbtnChooseProduct_Click(object sender, EventArgs e)
+        {
+            frmProductList productList = new frmProductList();
+            productList.OnProductInfo += ProductList_OnProductInfo;
+            productList.ShowDialog();
         }
     }
 }

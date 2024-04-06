@@ -244,7 +244,6 @@ namespace HomeConsuption
             }
 
             txtTotalAmount.Text = SumTotal.ToString();
-            cbIncludTax_CheckedChanged(null, null);
             _RefreshRecordCount();
         }
 
@@ -328,7 +327,7 @@ namespace HomeConsuption
                 dtSubPurchase = null;
                 dgvSubPurchase.DataSource = null;
                 _TypeID = 1;
-                btnAddRecord.Enabled = false;
+                rjbtnAddRecord.Enabled = false;
                 txtTotalAmount.Enabled = true;
             }
             else
@@ -337,12 +336,11 @@ namespace HomeConsuption
                 _TypeID = 2;
                 _SubPurchaseColumns();
                 _SetDgvPurchaseColumn();
-                btnAddRecord.Enabled = true;
+                rjbtnAddRecord.Enabled = true;
                 txtTotalAmount.Enabled = false;
 
             }
 
-            cbIncludTax.Visible = _type == enType.withItems;
         }
          
         private bool _SetPurchase()
@@ -540,14 +538,7 @@ namespace HomeConsuption
             cmbCategoryList.SelectedItem = categoryInfo.CategoryName;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmAddEditeSubPurchase addEditeSubPurchase = new frmAddEditeSubPurchase();
-            addEditeSubPurchase.OnProductInfo += AddEditeSubPurchase_OnProductInfo;
-            addEditeSubPurchase.ShowDialog();
-            _SumAllProduct();
-        }
-
+       
         private void AddEditeSubPurchase_OnProductInfo(object sender, frmAddEditeSubPurchase.ProductInfoArgs e)
         {
             if(e.RowCount == null)
@@ -648,23 +639,7 @@ namespace HomeConsuption
             _SetPurchaseSub();
         }
 
-        private void cbIncludTax_CheckedChanged(object sender, EventArgs e)
-        {
-            float totalAmount = Convert.ToSingle(txtTotalAmount.Text);
-            if (cbIncludTax.Checked)
-            {
-                 totalAmount = Convert.ToSingle(txtTotalAmount.Text);
-                txtTotalAmount.Text = (totalAmount / clsGlobal.Taxprec).ToString();
-
-            }
-            //else
-            //{
-            //    totalAmount = Convert.ToSingle(txtTotalAmount.Text);
-            //    txtTotalAmount.Text = (totalAmount * clsGlobal.Taxprec).ToString();
-
-            //}
-        }
-
+       
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -686,8 +661,13 @@ namespace HomeConsuption
 
         }
 
-        private void cbIncludeVAT(object sender, EventArgs e)
+        
+
+        private void rjbtnAddRecord_Click(object sender, EventArgs e)
         {
+            frmAddEditeSubPurchase addEditeSubPurchase = new frmAddEditeSubPurchase();
+            addEditeSubPurchase.OnProductInfo += AddEditeSubPurchase_OnProductInfo;
+            addEditeSubPurchase.ShowDialog();
             _SumAllProduct();
         }
     }

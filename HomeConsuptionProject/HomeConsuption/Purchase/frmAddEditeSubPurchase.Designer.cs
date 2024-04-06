@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnChooseProduct = new System.Windows.Forms.Button();
             this.txtProdouctID = new System.Windows.Forms.TextBox();
             this.txtProdouctName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,7 +37,6 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtPricePerUnit = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbTotal = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,18 +53,8 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtTax = new System.Windows.Forms.TextBox();
             this.txtNet = new System.Windows.Forms.TextBox();
+            this.rjbtnChooseProduct = new CustomControls.RJControls.RJButton();
             this.SuspendLayout();
-            // 
-            // btnChooseProduct
-            // 
-            this.btnChooseProduct.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btnChooseProduct.Location = new System.Drawing.Point(384, 119);
-            this.btnChooseProduct.Name = "btnChooseProduct";
-            this.btnChooseProduct.Size = new System.Drawing.Size(105, 27);
-            this.btnChooseProduct.TabIndex = 0;
-            this.btnChooseProduct.Text = "المنتج";
-            this.btnChooseProduct.UseVisualStyleBackColor = true;
-            this.btnChooseProduct.Click += new System.EventHandler(this.btnChooseProduct_Click);
             // 
             // txtProdouctID
             // 
@@ -108,7 +96,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.label3.Location = new System.Drawing.Point(368, 441);
+            this.label3.Location = new System.Drawing.Point(437, 439);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 18);
             this.label3.TabIndex = 8;
@@ -152,17 +140,6 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "المجموع";
             // 
-            // lbTotal
-            // 
-            this.lbTotal.AutoSize = true;
-            this.lbTotal.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.lbTotal.Location = new System.Drawing.Point(525, 441);
-            this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(37, 18);
-            this.lbTotal.TabIndex = 11;
-            this.lbTotal.Text = "0.00";
-            this.lbTotal.Visible = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -198,7 +175,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 15F);
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(213, 45);
+            this.label10.Location = new System.Drawing.Point(258, 44);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(120, 24);
             this.label10.TabIndex = 15;
@@ -206,7 +183,7 @@
             // 
             // rtbDescription
             // 
-            this.rtbDescription.Location = new System.Drawing.Point(174, 422);
+            this.rtbDescription.Location = new System.Drawing.Point(243, 420);
             this.rtbDescription.Name = "rtbDescription";
             this.rtbDescription.Size = new System.Drawing.Size(166, 67);
             this.rtbDescription.TabIndex = 16;
@@ -246,7 +223,7 @@
             // 
             this.btnCancel.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_cancel_96;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancel.Location = new System.Drawing.Point(180, 533);
+            this.btnCancel.Location = new System.Drawing.Point(249, 531);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(45, 47);
             this.btnCancel.TabIndex = 19;
@@ -256,7 +233,7 @@
             // 
             this.btnSave.Enabled = false;
             this.btnSave.Image = global::HomeConsuption.Properties.Resources.icons8_save_48;
-            this.btnSave.Location = new System.Drawing.Point(288, 533);
+            this.btnSave.Location = new System.Drawing.Point(357, 531);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(45, 47);
             this.btnSave.TabIndex = 18;
@@ -316,11 +293,32 @@
             this.txtNet.Size = new System.Drawing.Size(102, 20);
             this.txtNet.TabIndex = 367;
             // 
+            // rjbtnChooseProduct
+            // 
+            this.rjbtnChooseProduct.BackColor = System.Drawing.Color.DarkCyan;
+            this.rjbtnChooseProduct.BackgroundColor = System.Drawing.Color.DarkCyan;
+            this.rjbtnChooseProduct.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjbtnChooseProduct.BorderRadius = 10;
+            this.rjbtnChooseProduct.BorderSize = 0;
+            this.rjbtnChooseProduct.FlatAppearance.BorderSize = 0;
+            this.rjbtnChooseProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjbtnChooseProduct.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.rjbtnChooseProduct.ForeColor = System.Drawing.Color.White;
+            this.rjbtnChooseProduct.Location = new System.Drawing.Point(354, 119);
+            this.rjbtnChooseProduct.Name = "rjbtnChooseProduct";
+            this.rjbtnChooseProduct.Size = new System.Drawing.Size(121, 29);
+            this.rjbtnChooseProduct.TabIndex = 368;
+            this.rjbtnChooseProduct.Text = "المنتج";
+            this.rjbtnChooseProduct.TextColor = System.Drawing.Color.White;
+            this.rjbtnChooseProduct.UseVisualStyleBackColor = false;
+            this.rjbtnChooseProduct.Click += new System.EventHandler(this.rjbtnChooseProduct_Click);
+            // 
             // frmAddEditeSubPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 592);
+            this.Controls.Add(this.rjbtnChooseProduct);
             this.Controls.Add(this.txtNet);
             this.Controls.Add(this.txtTax);
             this.Controls.Add(this.txtTotal);
@@ -337,7 +335,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -347,7 +344,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtProdouctName);
             this.Controls.Add(this.txtProdouctID);
-            this.Controls.Add(this.btnChooseProduct);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddEditeSubPurchase";
             this.Text = "أدراج بند";
@@ -358,8 +354,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnChooseProduct;
         private System.Windows.Forms.TextBox txtProdouctID;
         private System.Windows.Forms.TextBox txtProdouctName;
         private System.Windows.Forms.Label label1;
@@ -369,7 +363,6 @@
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtPricePerUnit;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -386,5 +379,6 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtTax;
         private System.Windows.Forms.TextBox txtNet;
+        private CustomControls.RJControls.RJButton rjbtnChooseProduct;
     }
 }

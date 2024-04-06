@@ -291,6 +291,53 @@ namespace HomeC_DataAccess
             return dt;
         }
 
+        static public DataTable GetAllPurchases()
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"select PurchaseID from Purchases";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                
+
+                
+                try
+                {
+
+                   
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+
+                  
+
+
+
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return dt;
+        }
+
         static public DataTable GetAllPurchasesInfoWithPages(int PageNumber, int RowCountPerPage, ref int RowCount)
         {
             DataTable dt = new DataTable();

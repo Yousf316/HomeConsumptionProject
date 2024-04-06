@@ -34,8 +34,8 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.chkRememberMe = new System.Windows.Forms.CheckBox();
-            this.btnOk = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.rjbtnOk = new CustomControls.RJControls.RJButton();
+            this.rjbtnClose = new CustomControls.RJControls.RJButton();
             this.SuspendLayout();
             // 
             // label1
@@ -89,36 +89,54 @@
             this.chkRememberMe.UseVisualStyleBackColor = true;
             this.chkRememberMe.CheckedChanged += new System.EventHandler(this.chkRememberMe_CheckedChanged);
             // 
-            // btnOk
+            // rjbtnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(376, 316);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(98, 27);
-            this.btnOk.TabIndex = 6;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            this.rjbtnOk.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjbtnOk.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjbtnOk.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjbtnOk.BorderRadius = 5;
+            this.rjbtnOk.BorderSize = 0;
+            this.rjbtnOk.FlatAppearance.BorderSize = 0;
+            this.rjbtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rjbtnOk.ForeColor = System.Drawing.Color.White;
+            this.rjbtnOk.Location = new System.Drawing.Point(375, 316);
+            this.rjbtnOk.Name = "rjbtnOk";
+            this.rjbtnOk.Size = new System.Drawing.Size(103, 31);
+            this.rjbtnOk.TabIndex = 8;
+            this.rjbtnOk.Text = "ارسال";
+            this.rjbtnOk.TextColor = System.Drawing.Color.White;
+            this.rjbtnOk.UseVisualStyleBackColor = false;
+            this.rjbtnOk.Click += new System.EventHandler(this.rjbtnOk_Click);
             // 
-            // button1
+            // rjbtnClose
             // 
-            this.button1.Location = new System.Drawing.Point(259, 316);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 27);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.rjbtnClose.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjbtnClose.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjbtnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjbtnClose.BorderRadius = 5;
+            this.rjbtnClose.BorderSize = 0;
+            this.rjbtnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.rjbtnClose.FlatAppearance.BorderSize = 0;
+            this.rjbtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rjbtnClose.ForeColor = System.Drawing.Color.White;
+            this.rjbtnClose.Location = new System.Drawing.Point(231, 316);
+            this.rjbtnClose.Name = "rjbtnClose";
+            this.rjbtnClose.Size = new System.Drawing.Size(103, 31);
+            this.rjbtnClose.TabIndex = 9;
+            this.rjbtnClose.Text = "خروج";
+            this.rjbtnClose.TextColor = System.Drawing.Color.White;
+            this.rjbtnClose.UseVisualStyleBackColor = false;
+            this.rjbtnClose.Click += new System.EventHandler(this.rjbtnClose_Click);
             // 
             // frmLogin
             // 
-            this.AcceptButton = this.btnOk;
+            this.AcceptButton = this.rjbtnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.rjbtnClose;
             this.ClientSize = new System.Drawing.Size(703, 466);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.rjbtnClose);
+            this.Controls.Add(this.rjbtnOk);
             this.Controls.Add(this.chkRememberMe);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
@@ -144,7 +162,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkRememberMe;
-        private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.Button button1;
+        private CustomControls.RJControls.RJButton rjbtnOk;
+        private CustomControls.RJControls.RJButton rjbtnClose;
     }
 }
