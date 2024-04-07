@@ -22,6 +22,7 @@ namespace HomeConsuption
             Application.Run(new frmLogin());
             //Application.Run(new Main());
             //Application.Run(new Tests.frmTest());
+           
             
         }
     }

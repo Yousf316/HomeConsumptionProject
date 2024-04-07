@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrShowPerson1 = new HomeConsuption.ctrShowPerson();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbIsActive = new System.Windows.Forms.Label();
             this.lbUserName = new System.Windows.Forms.Label();
@@ -36,17 +35,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lbUserID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ctrShowPerson1 = new HomeConsuption.ctrShowPerson();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ctrShowPerson1
-            // 
-            this.ctrShowPerson1.Location = new System.Drawing.Point(14, 12);
-            this.ctrShowPerson1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ctrShowPerson1.Name = "ctrShowPerson1";
-            this.ctrShowPerson1.obPerson = null;
-            this.ctrShowPerson1.Size = new System.Drawing.Size(896, 358);
-            this.ctrShowPerson1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -64,13 +55,13 @@
             this.groupBox1.Size = new System.Drawing.Size(883, 81);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "معلومات المستخم";
+            this.groupBox1.Text = "معلومات المستخدم";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lbIsActive
             // 
             this.lbIsActive.AutoSize = true;
-            this.lbIsActive.Location = new System.Drawing.Point(696, 41);
+            this.lbIsActive.Location = new System.Drawing.Point(744, 41);
             this.lbIsActive.Name = "lbIsActive";
             this.lbIsActive.Size = new System.Drawing.Size(37, 19);
             this.lbIsActive.TabIndex = 7;
@@ -79,7 +70,7 @@
             // lbUserName
             // 
             this.lbUserName.AutoSize = true;
-            this.lbUserName.Location = new System.Drawing.Point(419, 41);
+            this.lbUserName.Location = new System.Drawing.Point(484, 41);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(37, 19);
             this.lbUserName.TabIndex = 6;
@@ -88,7 +79,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(606, 41);
+            this.label4.Location = new System.Drawing.Point(654, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 19);
             this.label4.TabIndex = 5;
@@ -97,7 +88,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(286, 41);
+            this.label3.Location = new System.Drawing.Point(307, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 19);
             this.label3.TabIndex = 4;
@@ -106,7 +97,7 @@
             // lbUserID
             // 
             this.lbUserID.AutoSize = true;
-            this.lbUserID.Location = new System.Drawing.Point(171, 41);
+            this.lbUserID.Location = new System.Drawing.Point(219, 41);
             this.lbUserID.Name = "lbUserID";
             this.lbUserID.Size = new System.Drawing.Size(37, 19);
             this.lbUserID.TabIndex = 3;
@@ -115,11 +106,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 41);
+            this.label1.Location = new System.Drawing.Point(63, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "رقم المستخدم :";
+            // 
+            // ctrShowPerson1
+            // 
+            this.ctrShowPerson1.Location = new System.Drawing.Point(14, 12);
+            this.ctrShowPerson1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ctrShowPerson1.Name = "ctrShowPerson1";
+            this.ctrShowPerson1.obPerson = null;
+            this.ctrShowPerson1.Size = new System.Drawing.Size(896, 358);
+            this.ctrShowPerson1.TabIndex = 0;
             // 
             // ctrShowUserInfo
             // 

@@ -28,63 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrManagePeople1 = new HomeConsuption.ctrManagePeople();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.rjbtnClose = new CustomControls.RJControls.RJButton();
+            this.ctrManagePeople1 = new HomeConsuption.ctrManagePeople();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ctrManagePeople1
-            // 
-            this.ctrManagePeople1.Location = new System.Drawing.Point(3, 148);
-            this.ctrManagePeople1.Name = "ctrManagePeople1";
-            this.ctrManagePeople1.Size = new System.Drawing.Size(1384, 554);
-            this.ctrManagePeople1.TabIndex = 0;
-            this.ctrManagePeople1.Load += new System.EventHandler(this.ctrManagePeople1_Load);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Swis721 BlkCn BT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Swis721 BlkCn BT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(589, 172);
+            this.label1.Location = new System.Drawing.Point(526, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 36);
+            this.label1.Size = new System.Drawing.Size(117, 29);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Manage People";
+            this.label1.Text = "ادارة الافراد";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HomeConsuption.Properties.Resources.team;
-            this.pictureBox1.Location = new System.Drawing.Point(585, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(501, 17);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(209, 158);
+            this.pictureBox1.Size = new System.Drawing.Size(179, 128);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // rjbtnClose
             // 
-            this.button1.Location = new System.Drawing.Point(1211, 674);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 46);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.rjbtnClose.BackColor = System.Drawing.Color.SlateBlue;
+            this.rjbtnClose.BackgroundColor = System.Drawing.Color.SlateBlue;
+            this.rjbtnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjbtnClose.BorderRadius = 5;
+            this.rjbtnClose.BorderSize = 0;
+            this.rjbtnClose.FlatAppearance.BorderSize = 0;
+            this.rjbtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rjbtnClose.ForeColor = System.Drawing.Color.White;
+            this.rjbtnClose.Location = new System.Drawing.Point(29, 546);
+            this.rjbtnClose.Name = "rjbtnClose";
+            this.rjbtnClose.Size = new System.Drawing.Size(129, 37);
+            this.rjbtnClose.TabIndex = 4;
+            this.rjbtnClose.Text = "اغلاق";
+            this.rjbtnClose.TextColor = System.Drawing.Color.White;
+            this.rjbtnClose.UseVisualStyleBackColor = false;
+            this.rjbtnClose.Click += new System.EventHandler(this.rjbtnClose_Click);
+            // 
+            // ctrManagePeople1
+            // 
+            this.ctrManagePeople1.Location = new System.Drawing.Point(3, 120);
+            this.ctrManagePeople1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ctrManagePeople1.Name = "ctrManagePeople1";
+            this.ctrManagePeople1.Size = new System.Drawing.Size(1186, 450);
+            this.ctrManagePeople1.TabIndex = 0;
+            this.ctrManagePeople1.Load += new System.EventHandler(this.ctrManagePeople1_Load);
             // 
             // frmManagePeople
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1391, 732);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1192, 595);
+            this.Controls.Add(this.rjbtnClose);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ctrManagePeople1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmManagePeople";
-            this.Text = "frmManagePeople";
+            this.Text = "أدارة الافراد";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -96,6 +109,6 @@
         private ctrManagePeople ctrManagePeople1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private CustomControls.RJControls.RJButton rjbtnClose;
     }
 }

@@ -60,7 +60,12 @@
             this.المستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.اضافةمستخدمجديدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.قائمةالمستخدمينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.قائمةالافرادToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الأعداداتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.المستخدمالحاليToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.معلوماتالمستخدمToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.تحديثكلمةالمرورToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.تحديثنسبةالقيمةالمضافةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -307,7 +312,8 @@
             // 
             this.المستخدمينToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.اضافةمستخدمجديدToolStripMenuItem,
-            this.قائمةالمستخدمينToolStripMenuItem});
+            this.قائمةالمستخدمينToolStripMenuItem,
+            this.قائمةالافرادToolStripMenuItem});
             this.المستخدمينToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_person_96;
             this.المستخدمينToolStripMenuItem.Name = "المستخدمينToolStripMenuItem";
             this.المستخدمينToolStripMenuItem.Size = new System.Drawing.Size(126, 72);
@@ -328,14 +334,53 @@
             this.قائمةالمستخدمينToolStripMenuItem.Text = "قائمة المستخدمين";
             this.قائمةالمستخدمينToolStripMenuItem.Click += new System.EventHandler(this.قائمةالمستخدمينToolStripMenuItem_Click);
             // 
+            // قائمةالافرادToolStripMenuItem
+            // 
+            this.قائمةالافرادToolStripMenuItem.Name = "قائمةالافرادToolStripMenuItem";
+            this.قائمةالافرادToolStripMenuItem.Size = new System.Drawing.Size(253, 32);
+            this.قائمةالافرادToolStripMenuItem.Text = "قائمة الافراد";
+            this.قائمةالافرادToolStripMenuItem.Click += new System.EventHandler(this.قائمةالافرادToolStripMenuItem_Click);
+            // 
             // الأعداداتToolStripMenuItem
             // 
-            this.الأعداداتToolStripMenuItem.Enabled = false;
+            this.الأعداداتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.المستخدمالحاليToolStripMenuItem,
+            this.تحديثنسبةالقيمةالمضافةToolStripMenuItem});
             this.الأعداداتToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_settings_64;
             this.الأعداداتToolStripMenuItem.Name = "الأعداداتToolStripMenuItem";
             this.الأعداداتToolStripMenuItem.Size = new System.Drawing.Size(101, 72);
             this.الأعداداتToolStripMenuItem.Text = "الأعدادات";
             this.الأعداداتToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // المستخدمالحاليToolStripMenuItem
+            // 
+            this.المستخدمالحاليToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.معلوماتالمستخدمToolStripMenuItem,
+            this.تحديثكلمةالمرورToolStripMenuItem});
+            this.المستخدمالحاليToolStripMenuItem.Name = "المستخدمالحاليToolStripMenuItem";
+            this.المستخدمالحاليToolStripMenuItem.Size = new System.Drawing.Size(314, 32);
+            this.المستخدمالحاليToolStripMenuItem.Text = "المستخدم الحالي";
+            // 
+            // معلوماتالمستخدمToolStripMenuItem
+            // 
+            this.معلوماتالمستخدمToolStripMenuItem.Name = "معلوماتالمستخدمToolStripMenuItem";
+            this.معلوماتالمستخدمToolStripMenuItem.Size = new System.Drawing.Size(247, 32);
+            this.معلوماتالمستخدمToolStripMenuItem.Text = "معلومات المستخدم";
+            this.معلوماتالمستخدمToolStripMenuItem.Click += new System.EventHandler(this.معلوماتالمستخدمToolStripMenuItem_Click);
+            // 
+            // تحديثكلمةالمرورToolStripMenuItem
+            // 
+            this.تحديثكلمةالمرورToolStripMenuItem.Name = "تحديثكلمةالمرورToolStripMenuItem";
+            this.تحديثكلمةالمرورToolStripMenuItem.Size = new System.Drawing.Size(247, 32);
+            this.تحديثكلمةالمرورToolStripMenuItem.Text = "تحديث كلمة المرور";
+            this.تحديثكلمةالمرورToolStripMenuItem.Click += new System.EventHandler(this.تحديثكلمةالمرورToolStripMenuItem_Click);
+            // 
+            // تحديثنسبةالقيمةالمضافةToolStripMenuItem
+            // 
+            this.تحديثنسبةالقيمةالمضافةToolStripMenuItem.Name = "تحديثنسبةالقيمةالمضافةToolStripMenuItem";
+            this.تحديثنسبةالقيمةالمضافةToolStripMenuItem.Size = new System.Drawing.Size(314, 32);
+            this.تحديثنسبةالقيمةالمضافةToolStripMenuItem.Text = "تحديث نسبة القيمة المضافة";
+            this.تحديثنسبةالقيمةالمضافةToolStripMenuItem.Visible = false;
             // 
             // Main
             // 
@@ -390,6 +435,11 @@
         private System.Windows.Forms.ToolStripMenuItem المستخدمينToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem اضافةمستخدمجديدToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem قائمةالمستخدمينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem قائمةالافرادToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem المستخدمالحاليToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem معلوماتالمستخدمToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem تحديثكلمةالمرورToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem تحديثنسبةالقيمةالمضافةToolStripMenuItem;
     }
 }
 

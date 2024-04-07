@@ -99,6 +99,12 @@
     <Compile Include="People\frmManagePeople.designer.cs">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
     </Compile>
+    <Compile Include="People\frmShowPersonDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmShowPersonDetails.Designer.cs">
+      <DependentUpon>frmShowPersonDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product\frmAddEditCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,12 @@
     <Compile Include="RJControls\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RJControls\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJControls\RJTextBox.Designer.cs">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stores\frmAddEditStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +300,9 @@
     <EmbeddedResource Include="People\frmManagePeople.resx">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="People\frmShowPersonDetails.resx">
+      <DependentUpon>frmShowPersonDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Product\frmAddEditCategory.resx">
       <DependentUpon>frmAddEditCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\frmPurchaseReports.resx">
       <DependentUpon>frmPurchaseReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJControls\RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stores\frmAddEditStore.resx">
       <DependentUpon>frmAddEditStore.cs</DependentUpon>

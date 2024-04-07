@@ -105,6 +105,7 @@ namespace CustomControls.RJControls
 
             if (borderRadius > 2) //Rounded button
             {
+
                 using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
                 using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
                 using (Pen penSurface = new Pen(this.Parent.BackColor, smoothSize))

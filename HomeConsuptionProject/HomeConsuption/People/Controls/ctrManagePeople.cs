@@ -1,4 +1,5 @@
 ﻿using HomeC_Business;
+using HomeConsuption.People;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,8 +32,11 @@ namespace HomeConsuption
         }
         private void RefreshSelectAllPeople()
         {
-            dataGridView1.DataSource = clsPerson.GetAllPeople();
-            SetRecordCount();
+         Parallel.Invoke(()=> {
+             dataGridView1.DataSource = clsPerson.GetAllPeople();
+                                    SetRecordCount();
+         });
+            
         }
         private void ctrManagePeople_Load(object sender, EventArgs e)
         {
@@ -41,9 +45,9 @@ namespace HomeConsuption
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            //frmAddUpdatePerson frm = new frmAddUpdatePerson(-1);
-            //frm.ShowDialog();
-            //RefreshSelectAllPeople();
+            frmAddUpdatePerson frm = new frmAddUpdatePerson(-1);
+            frm.ShowDialog();
+            RefreshSelectAllPeople();
         }
         private void SearchOpreator()
         {
@@ -142,23 +146,23 @@ namespace HomeConsuption
 
         private void showPersonInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmShowPersonDetails frm=new frmShowPersonDetails(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-            //frm.ShowDialog();
-            //RefreshSelectAllPeople();
+            frmShowPersonDetails frm = new frmShowPersonDetails(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+            frm.ShowDialog();
+            RefreshSelectAllPeople();
         }
 
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmAddUpdatePerson frm=new frmAddUpdatePerson(-1);
-            //frm.ShowDialog();
-            //RefreshSelectAllPeople();
+            frmAddUpdatePerson frm = new frmAddUpdatePerson(-1);
+            frm.ShowDialog();
+            RefreshSelectAllPeople();
         }
 
         private void editePersonInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmAddUpdatePerson frm = new frmAddUpdatePerson(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-            //frm.ShowDialog();
-            //RefreshSelectAllPeople();
+            frmAddUpdatePerson frm = new frmAddUpdatePerson(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+            frm.ShowDialog();
+            RefreshSelectAllPeople();
         }
 
         private void deletePersonToolStripMenuItem_Click(object sender, EventArgs e)

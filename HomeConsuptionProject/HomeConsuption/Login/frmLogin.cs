@@ -31,8 +31,8 @@ namespace HomeConsuption.Forms
 
             if(clsGlobal.GetStoredCredential(ref UserName,ref Password))
             {
-                txtPassword.Text = Password;
-                txtUserName.Text = UserName;
+                rjtxtPassword.Texts = Password;
+                rjtxtUserName.Texts = UserName;
                 chkRememberMe.Checked = true;
             }
             else
@@ -43,10 +43,7 @@ namespace HomeConsuption.Forms
 
         }
 
-        private void txtUserName_Leave(object sender, EventArgs e)
-        {
-
-        }
+       
        
    
        
@@ -65,8 +62,8 @@ namespace HomeConsuption.Forms
 
         private void rjbtnOk_Click(object sender, EventArgs e)
         {
-            string HashPassword = clsValidatoin.HashCodeCompute(txtPassword.Text.Trim());
-            clsUser UserID = clsUser.FindUserByUserNameAndPassword(txtUserName.Text.Trim(), HashPassword);
+            string HashPassword = clsValidatoin.HashCodeCompute(rjtxtPassword.Texts.Trim());
+            clsUser UserID = clsUser.FindUserByUserNameAndPassword(rjtxtUserName.Texts.Trim(), HashPassword);
 
 
             if (UserID != null)
@@ -76,7 +73,7 @@ namespace HomeConsuption.Forms
                 {
                     if (chkRememberMe.Checked)
                     {
-                        clsGlobal.RememberUsernameAndPassword(txtUserName.Text, txtPassword.Text);
+                        clsGlobal.RememberUsernameAndPassword(rjtxtUserName.Texts.Trim(), rjtxtPassword.Texts);
                     }
                     else
                     {

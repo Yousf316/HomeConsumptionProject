@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.label1 = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.chkRememberMe = new System.Windows.Forms.CheckBox();
             this.rjbtnOk = new CustomControls.RJControls.RJButton();
             this.rjbtnClose = new CustomControls.RJControls.RJButton();
+            this.rjtxtUserName = new HomeConsuption.RJControls.RJTextBox();
+            this.rjtxtPassword = new HomeConsuption.RJControls.RJTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -47,24 +47,6 @@
             this.label1.Size = new System.Drawing.Size(112, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "اسم المسخدم :";
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(294, 142);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(163, 20);
-            this.txtUserName.TabIndex = 2;
-            this.txtUserName.Leave += new System.EventHandler(this.txtUserName_Leave);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(294, 200);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(163, 20);
-            this.txtPassword.TabIndex = 4;
             // 
             // label3
             // 
@@ -128,6 +110,44 @@
             this.rjbtnClose.UseVisualStyleBackColor = false;
             this.rjbtnClose.Click += new System.EventHandler(this.rjbtnClose_Click);
             // 
+            // rjtxtUserName
+            // 
+            this.rjtxtUserName.BackColor = System.Drawing.SystemColors.Window;
+            this.rjtxtUserName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjtxtUserName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rjtxtUserName.BorderSize = 2;
+            this.rjtxtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjtxtUserName.ForeColor = System.Drawing.Color.DimGray;
+            this.rjtxtUserName.Location = new System.Drawing.Point(295, 128);
+            this.rjtxtUserName.Margin = new System.Windows.Forms.Padding(4);
+            this.rjtxtUserName.Multiline = false;
+            this.rjtxtUserName.Name = "rjtxtUserName";
+            this.rjtxtUserName.Padding = new System.Windows.Forms.Padding(7);
+            this.rjtxtUserName.PasswordChar = false;
+            this.rjtxtUserName.Size = new System.Drawing.Size(163, 31);
+            this.rjtxtUserName.TabIndex = 10;
+            this.rjtxtUserName.Texts = "";
+            this.rjtxtUserName.UnderlinedStyle = true;
+            // 
+            // rjtxtPassword
+            // 
+            this.rjtxtPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.rjtxtPassword.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rjtxtPassword.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rjtxtPassword.BorderSize = 2;
+            this.rjtxtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjtxtPassword.ForeColor = System.Drawing.Color.DimGray;
+            this.rjtxtPassword.Location = new System.Drawing.Point(295, 186);
+            this.rjtxtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.rjtxtPassword.Multiline = false;
+            this.rjtxtPassword.Name = "rjtxtPassword";
+            this.rjtxtPassword.Padding = new System.Windows.Forms.Padding(7);
+            this.rjtxtPassword.PasswordChar = true;
+            this.rjtxtPassword.Size = new System.Drawing.Size(163, 31);
+            this.rjtxtPassword.TabIndex = 11;
+            this.rjtxtPassword.Texts = "";
+            this.rjtxtPassword.UnderlinedStyle = true;
+            // 
             // frmLogin
             // 
             this.AcceptButton = this.rjbtnOk;
@@ -135,12 +155,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.rjbtnClose;
             this.ClientSize = new System.Drawing.Size(703, 466);
+            this.Controls.Add(this.rjtxtPassword);
+            this.Controls.Add(this.rjtxtUserName);
             this.Controls.Add(this.rjbtnClose);
             this.Controls.Add(this.rjbtnOk);
             this.Controls.Add(this.chkRememberMe);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -158,11 +178,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkRememberMe;
         private CustomControls.RJControls.RJButton rjbtnOk;
         private CustomControls.RJControls.RJButton rjbtnClose;
+        private RJControls.RJTextBox rjtxtUserName;
+        private RJControls.RJTextBox rjtxtPassword;
     }
 }

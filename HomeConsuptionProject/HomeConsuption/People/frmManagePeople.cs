@@ -16,9 +16,11 @@ namespace HomeConsuption
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+     
+
+        private void rjbtnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();  
         }
     }
 }

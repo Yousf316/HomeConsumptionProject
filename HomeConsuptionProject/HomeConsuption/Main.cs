@@ -148,5 +148,23 @@ namespace HomeConsuption
             frmManageUsers frmManageUsers = new frmManageUsers();
             frmManageUsers.ShowDialog();
         }
+
+        private void قائمةالافرادToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManagePeople frmManagePeople = new frmManagePeople();
+            frmManagePeople.ShowDialog();
+        }
+
+        private void معلوماتالمستخدمToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShowUserInfo showUserInfo = new frmShowUserInfo(clsGlobal.CurrentUser.UserID);
+            showUserInfo.ShowDialog();
+        }
+
+        private void تحديثكلمةالمرورToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmchangePassword showUserInfo = new frmchangePassword(clsGlobal.CurrentUser.UserID);
+            showUserInfo.ShowDialog();
+        }
     }
 }
