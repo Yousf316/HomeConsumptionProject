@@ -472,17 +472,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8-home-64.ico" />
+    <None Include="Resources\account_settings 64.png" />
     <Content Include="Resources\clipboardwithpencil.png" />
     <None Include="Resources\dedicated-hosting.png" />
     <Content Include="Resources\delete-database.png" />
     <Content Include="Resources\email.png" />
     <None Include="Resources\istockphoto-1160205303-612x612.jpg" />
     <None Include="Resources\istockphoto-996352862-612x612.jpg" />
+    <None Include="Resources\Password 32.png" />
     <Content Include="Resources\person_man.png" />
     <Content Include="Resources\person_manAddPerson.png" />
     <Content Include="Resources\person_mansearch.png" />
     <Content Include="Resources\phone-call.png" />
     <None Include="Resources\skills.png" />
+    <None Include="Resources\SignOut 64.png" />
     <Content Include="Resources\task-list.png" />
     <None Include="Resources\team.png" />
     <None Include="Resources\icons8-person-96.png" />

@@ -175,6 +175,11 @@ namespace HomeC_Business
 
             return clsPurchaseData.GetAllPurchases();
         }
+        public static DataTable GetAllPurchasesByType(string type)
+        {
+
+            return clsPurchaseData.GetAllPurchasesByType(type);
+        }
 
         public static DataTable GetAllPurchasesInfoWithPages(int PageNumber, int RowCountPerPage, ref int RowCount)
         {

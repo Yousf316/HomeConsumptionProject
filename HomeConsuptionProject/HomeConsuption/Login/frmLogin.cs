@@ -80,7 +80,7 @@ namespace HomeConsuption.Forms
                         clsGlobal.RememberUsernameAndPassword(null, null);
                     }
 
-                    MessageBox.Show("Login Successfuly", "Succseded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("تم التسجيل بنجاح", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     clsEventLogs.IsSourceNameExists();
 
@@ -96,14 +96,14 @@ namespace HomeConsuption.Forms
                 }
                 else
                 {
-                    MessageBox.Show("User is not Active contact with admin", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("المستخدم غير مفعل تواصل مع المدير", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     clsEventLogs.WriteLog("User is Not Active try Login", System.Diagnostics.EventLogEntryType.Error);
 
                 }
             }
             else
             {
-                MessageBox.Show("Login filed UserName/Password is valid", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("اسم المستخدم او كملة المرور غير صحيحة", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 clsEventLogs.WriteLog("User Login Faild", System.Diagnostics.EventLogEntryType.Error);
 
             }

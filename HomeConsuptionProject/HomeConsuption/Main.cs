@@ -166,5 +166,10 @@ namespace HomeConsuption
             frmchangePassword showUserInfo = new frmchangePassword(clsGlobal.CurrentUser.UserID);
             showUserInfo.ShowDialog();
         }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

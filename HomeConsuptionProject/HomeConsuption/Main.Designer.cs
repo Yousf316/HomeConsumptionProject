@@ -66,12 +66,16 @@
             this.معلوماتالمستخدمToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تحديثكلمةالمرورToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تحديثنسبةالقيمةالمضافةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 15F);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -106,30 +110,33 @@
             // 
             // اصدارToolStripMenuItem
             // 
+            this.اصدارToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_buy_for_coins_641;
             this.اصدارToolStripMenuItem.Name = "اصدارToolStripMenuItem";
-            this.اصدارToolStripMenuItem.Size = new System.Drawing.Size(266, 32);
+            this.اصدارToolStripMenuItem.Size = new System.Drawing.Size(290, 46);
             this.اصدارToolStripMenuItem.Text = "اصدار فاتورة مشتريات";
             this.اصدارToolStripMenuItem.Click += new System.EventHandler(this.اصدارToolStripMenuItem_Click);
             // 
             // قائمةالمشترياتToolStripMenuItem
             // 
+            this.قائمةالمشترياتToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_buy_for_coins_96;
             this.قائمةالمشترياتToolStripMenuItem.Name = "قائمةالمشترياتToolStripMenuItem";
-            this.قائمةالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(266, 32);
+            this.قائمةالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(290, 46);
             this.قائمةالمشترياتToolStripMenuItem.Text = "قائمة المشتريات";
             this.قائمةالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.قائمةالمشترياتToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(263, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(287, 6);
             // 
             // أدراجصنفجديدToolStripMenuItem
             // 
             this.أدراجصنفجديدToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.صنفرئيسيToolStripMenuItem,
             this.صنففرعيToolStripMenuItem});
+            this.أدراجصنفجديدToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_paid_96;
             this.أدراجصنفجديدToolStripMenuItem.Name = "أدراجصنفجديدToolStripMenuItem";
-            this.أدراجصنفجديدToolStripMenuItem.Size = new System.Drawing.Size(266, 32);
+            this.أدراجصنفجديدToolStripMenuItem.Size = new System.Drawing.Size(290, 46);
             this.أدراجصنفجديدToolStripMenuItem.Text = "أدراج صنف جديد";
             this.أدراجصنفجديدToolStripMenuItem.Click += new System.EventHandler(this.أدراجصنفجديدToolStripMenuItem_Click);
             // 
@@ -152,8 +159,9 @@
             this.أدارةالاصنافToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.الاصنافالريئسيةToolStripMenuItem,
             this.الاصنافالToolStripMenuItem});
+            this.أدارةالاصنافToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_paid_64;
             this.أدارةالاصنافToolStripMenuItem.Name = "أدارةالاصنافToolStripMenuItem";
-            this.أدارةالاصنافToolStripMenuItem.Size = new System.Drawing.Size(266, 32);
+            this.أدارةالاصنافToolStripMenuItem.Size = new System.Drawing.Size(290, 46);
             this.أدارةالاصنافToolStripMenuItem.Text = "أدارة الاصناف";
             this.أدارةالاصنافToolStripMenuItem.Click += new System.EventHandler(this.أدارةالاصنافToolStripMenuItem_Click);
             // 
@@ -186,15 +194,17 @@
             // 
             // ادراجمتجرجديدToolStripMenuItem
             // 
+            this.ادراجمتجرجديدToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_plus_64;
             this.ادراجمتجرجديدToolStripMenuItem.Name = "ادراجمتجرجديدToolStripMenuItem";
-            this.ادراجمتجرجديدToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
+            this.ادراجمتجرجديدToolStripMenuItem.Size = new System.Drawing.Size(234, 46);
             this.ادراجمتجرجديدToolStripMenuItem.Text = "ادراج متجر جديد";
             this.ادراجمتجرجديدToolStripMenuItem.Click += new System.EventHandler(this.ادراجمتجرجديدToolStripMenuItem_Click);
             // 
             // قائمةالمتاجرToolStripMenuItem
             // 
+            this.قائمةالمتاجرToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_online_store_96;
             this.قائمةالمتاجرToolStripMenuItem.Name = "قائمةالمتاجرToolStripMenuItem";
-            this.قائمةالمتاجرToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
+            this.قائمةالمتاجرToolStripMenuItem.Size = new System.Drawing.Size(234, 46);
             this.قائمةالمتاجرToolStripMenuItem.Text = "قائمة المتاجر";
             this.قائمةالمتاجرToolStripMenuItem.Click += new System.EventHandler(this.قائمةالمتاجرToolStripMenuItem_Click);
             // 
@@ -217,54 +227,62 @@
             // 
             // اضافةمنتججديدToolStripMenuItem
             // 
+            this.اضافةمنتججديدToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_paid_96;
             this.اضافةمنتججديدToolStripMenuItem.Name = "اضافةمنتججديدToolStripMenuItem";
-            this.اضافةمنتججديدToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.اضافةمنتججديدToolStripMenuItem.Size = new System.Drawing.Size(273, 46);
             this.اضافةمنتججديدToolStripMenuItem.Text = "ادراج منتج جديد";
             this.اضافةمنتججديدToolStripMenuItem.Click += new System.EventHandler(this.اضافةمنتججديدToolStripMenuItem_Click);
             // 
             // قائمةالمنتجاتToolStripMenuItem
             // 
+            this.قائمةالمنتجاتToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_product_64;
             this.قائمةالمنتجاتToolStripMenuItem.Name = "قائمةالمنتجاتToolStripMenuItem";
-            this.قائمةالمنتجاتToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.قائمةالمنتجاتToolStripMenuItem.Size = new System.Drawing.Size(273, 46);
             this.قائمةالمنتجاتToolStripMenuItem.Text = "قائمة المنتجات";
             this.قائمةالمنتجاتToolStripMenuItem.Click += new System.EventHandler(this.قائمةالمنتجاتToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(246, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(270, 6);
             // 
             // ادراجمجموعةجديدةToolStripMenuItem
             // 
+            this.ادراجمجموعةجديدةToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_product_96;
             this.ادراجمجموعةجديدةToolStripMenuItem.Name = "ادراجمجموعةجديدةToolStripMenuItem";
-            this.ادراجمجموعةجديدةToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.ادراجمجموعةجديدةToolStripMenuItem.Size = new System.Drawing.Size(273, 46);
             this.ادراجمجموعةجديدةToolStripMenuItem.Text = "ادراج مجموعة جديدة";
             this.ادراجمجموعةجديدةToolStripMenuItem.Click += new System.EventHandler(this.ادراجمجموعةجديدةToolStripMenuItem_Click);
             // 
             // قائمةالمجموعاتToolStripMenuItem
             // 
+            this.قائمةالمجموعاتToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_purchase_96;
             this.قائمةالمجموعاتToolStripMenuItem.Name = "قائمةالمجموعاتToolStripMenuItem";
-            this.قائمةالمجموعاتToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.قائمةالمجموعاتToolStripMenuItem.Size = new System.Drawing.Size(273, 46);
             this.قائمةالمجموعاتToolStripMenuItem.Text = "قائمة المجموعات";
             this.قائمةالمجموعاتToolStripMenuItem.Click += new System.EventHandler(this.قائمةالمجموعاتToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(246, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(270, 6);
             // 
             // ادراجمقاسجديدToolStripMenuItem
             // 
+            this.ادراجمقاسجديدToolStripMenuItem.Enabled = false;
             this.ادراجمقاسجديدToolStripMenuItem.Name = "ادراجمقاسجديدToolStripMenuItem";
-            this.ادراجمقاسجديدToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.ادراجمقاسجديدToolStripMenuItem.Size = new System.Drawing.Size(273, 46);
             this.ادراجمقاسجديدToolStripMenuItem.Text = "ادراج مقاس جديد";
+            this.ادراجمقاسجديدToolStripMenuItem.Visible = false;
             this.ادراجمقاسجديدToolStripMenuItem.Click += new System.EventHandler(this.ادراجمقاسجديدToolStripMenuItem_Click);
             // 
             // قائمةالمقاساتToolStripMenuItem
             // 
+            this.قائمةالمقاساتToolStripMenuItem.Enabled = false;
             this.قائمةالمقاساتToolStripMenuItem.Name = "قائمةالمقاساتToolStripMenuItem";
-            this.قائمةالمقاساتToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.قائمةالمقاساتToolStripMenuItem.Size = new System.Drawing.Size(273, 46);
             this.قائمةالمقاساتToolStripMenuItem.Text = "قائمة المقاسات";
+            this.قائمةالمقاساتToolStripMenuItem.Visible = false;
             this.قائمةالمقاساتToolStripMenuItem.Click += new System.EventHandler(this.قائمةالمقاساتToolStripMenuItem_Click);
             // 
             // التقاريرToolStripMenuItem
@@ -276,37 +294,40 @@
             this.تقريرالميزانيةToolStripMenuItem});
             this.التقاريرToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_report_96;
             this.التقاريرToolStripMenuItem.Name = "التقاريرToolStripMenuItem";
-            this.التقاريرToolStripMenuItem.Size = new System.Drawing.Size(83, 72);
-            this.التقاريرToolStripMenuItem.Text = "التقارير";
+            this.التقاريرToolStripMenuItem.Size = new System.Drawing.Size(115, 72);
+            this.التقاريرToolStripMenuItem.Text = "المصروفات";
             this.التقاريرToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // تقريرالمشترياتToolStripMenuItem
             // 
+            this.تقريرالمشترياتToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_buy_for_coins_96;
             this.تقريرالمشترياتToolStripMenuItem.Name = "تقريرالمشترياتToolStripMenuItem";
-            this.تقريرالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(219, 32);
-            this.تقريرالمشترياتToolStripMenuItem.Text = "تقرير المشتريات";
+            this.تقريرالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.تقريرالمشترياتToolStripMenuItem.Text = "المشتريات";
             this.تقريرالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.تقريرالمشترياتToolStripMenuItem_Click);
             // 
             // تقريرالمنتجاتToolStripMenuItem
             // 
             this.تقريرالمنتجاتToolStripMenuItem.Enabled = false;
+            this.تقريرالمنتجاتToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_product_64;
             this.تقريرالمنتجاتToolStripMenuItem.Name = "تقريرالمنتجاتToolStripMenuItem";
-            this.تقريرالمنتجاتToolStripMenuItem.Size = new System.Drawing.Size(219, 32);
-            this.تقريرالمنتجاتToolStripMenuItem.Text = "تقرير المنتجات";
+            this.تقريرالمنتجاتToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.تقريرالمنتجاتToolStripMenuItem.Text = "المنتجات";
             // 
             // تقريرالمتاجرToolStripMenuItem
             // 
             this.تقريرالمتاجرToolStripMenuItem.Enabled = false;
+            this.تقريرالمتاجرToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_online_store_96;
             this.تقريرالمتاجرToolStripMenuItem.Name = "تقريرالمتاجرToolStripMenuItem";
-            this.تقريرالمتاجرToolStripMenuItem.Size = new System.Drawing.Size(219, 32);
-            this.تقريرالمتاجرToolStripMenuItem.Text = "تقرير المتاجر";
+            this.تقريرالمتاجرToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.تقريرالمتاجرToolStripMenuItem.Text = "المتاجر";
             // 
             // تقريرالميزانيةToolStripMenuItem
             // 
             this.تقريرالميزانيةToolStripMenuItem.Enabled = false;
             this.تقريرالميزانيةToolStripMenuItem.Name = "تقريرالميزانيةToolStripMenuItem";
-            this.تقريرالميزانيةToolStripMenuItem.Size = new System.Drawing.Size(219, 32);
-            this.تقريرالميزانيةToolStripMenuItem.Text = "تقرير الميزانية";
+            this.تقريرالميزانيةToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.تقريرالميزانيةToolStripMenuItem.Text = "الميزاية";
             // 
             // المستخدمينToolStripMenuItem
             // 
@@ -322,22 +343,25 @@
             // 
             // اضافةمستخدمجديدToolStripMenuItem
             // 
+            this.اضافةمستخدمجديدToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.person_manAddPerson;
             this.اضافةمستخدمجديدToolStripMenuItem.Name = "اضافةمستخدمجديدToolStripMenuItem";
-            this.اضافةمستخدمجديدToolStripMenuItem.Size = new System.Drawing.Size(253, 32);
+            this.اضافةمستخدمجديدToolStripMenuItem.Size = new System.Drawing.Size(277, 46);
             this.اضافةمستخدمجديدToolStripMenuItem.Text = "اضافة مستخدم جديد";
             this.اضافةمستخدمجديدToolStripMenuItem.Click += new System.EventHandler(this.اضافةمستخدمجديدToolStripMenuItem_Click);
             // 
             // قائمةالمستخدمينToolStripMenuItem
             // 
+            this.قائمةالمستخدمينToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.dedicated_hosting;
             this.قائمةالمستخدمينToolStripMenuItem.Name = "قائمةالمستخدمينToolStripMenuItem";
-            this.قائمةالمستخدمينToolStripMenuItem.Size = new System.Drawing.Size(253, 32);
+            this.قائمةالمستخدمينToolStripMenuItem.Size = new System.Drawing.Size(277, 46);
             this.قائمةالمستخدمينToolStripMenuItem.Text = "قائمة المستخدمين";
             this.قائمةالمستخدمينToolStripMenuItem.Click += new System.EventHandler(this.قائمةالمستخدمينToolStripMenuItem_Click);
             // 
             // قائمةالافرادToolStripMenuItem
             // 
+            this.قائمةالافرادToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.team;
             this.قائمةالافرادToolStripMenuItem.Name = "قائمةالافرادToolStripMenuItem";
-            this.قائمةالافرادToolStripMenuItem.Size = new System.Drawing.Size(253, 32);
+            this.قائمةالافرادToolStripMenuItem.Size = new System.Drawing.Size(277, 46);
             this.قائمةالافرادToolStripMenuItem.Text = "قائمة الافراد";
             this.قائمةالافرادToolStripMenuItem.Click += new System.EventHandler(this.قائمةالافرادToolStripMenuItem_Click);
             // 
@@ -357,30 +381,65 @@
             this.المستخدمالحاليToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.معلوماتالمستخدمToolStripMenuItem,
             this.تحديثكلمةالمرورToolStripMenuItem});
+            this.المستخدمالحاليToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.account_settings_64;
             this.المستخدمالحاليToolStripMenuItem.Name = "المستخدمالحاليToolStripMenuItem";
-            this.المستخدمالحاليToolStripMenuItem.Size = new System.Drawing.Size(314, 32);
+            this.المستخدمالحاليToolStripMenuItem.Size = new System.Drawing.Size(338, 46);
             this.المستخدمالحاليToolStripMenuItem.Text = "المستخدم الحالي";
             // 
             // معلوماتالمستخدمToolStripMenuItem
             // 
+            this.معلوماتالمستخدمToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.task_list;
             this.معلوماتالمستخدمToolStripMenuItem.Name = "معلوماتالمستخدمToolStripMenuItem";
-            this.معلوماتالمستخدمToolStripMenuItem.Size = new System.Drawing.Size(247, 32);
+            this.معلوماتالمستخدمToolStripMenuItem.Size = new System.Drawing.Size(271, 46);
             this.معلوماتالمستخدمToolStripMenuItem.Text = "معلومات المستخدم";
             this.معلوماتالمستخدمToolStripMenuItem.Click += new System.EventHandler(this.معلوماتالمستخدمToolStripMenuItem_Click);
             // 
             // تحديثكلمةالمرورToolStripMenuItem
             // 
+            this.تحديثكلمةالمرورToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.Password_32;
             this.تحديثكلمةالمرورToolStripMenuItem.Name = "تحديثكلمةالمرورToolStripMenuItem";
-            this.تحديثكلمةالمرورToolStripMenuItem.Size = new System.Drawing.Size(247, 32);
+            this.تحديثكلمةالمرورToolStripMenuItem.Size = new System.Drawing.Size(271, 46);
             this.تحديثكلمةالمرورToolStripMenuItem.Text = "تحديث كلمة المرور";
             this.تحديثكلمةالمرورToolStripMenuItem.Click += new System.EventHandler(this.تحديثكلمةالمرورToolStripMenuItem_Click);
             // 
             // تحديثنسبةالقيمةالمضافةToolStripMenuItem
             // 
             this.تحديثنسبةالقيمةالمضافةToolStripMenuItem.Name = "تحديثنسبةالقيمةالمضافةToolStripMenuItem";
-            this.تحديثنسبةالقيمةالمضافةToolStripMenuItem.Size = new System.Drawing.Size(314, 32);
+            this.تحديثنسبةالقيمةالمضافةToolStripMenuItem.Size = new System.Drawing.Size(338, 46);
             this.تحديثنسبةالقيمةالمضافةToolStripMenuItem.Text = "تحديث نسبة القيمة المضافة";
             this.تحديثنسبةالقيمةالمضافةToolStripMenuItem.Visible = false;
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem4});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 536);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuStrip2.Size = new System.Drawing.Size(1185, 36);
+            this.menuStrip2.TabIndex = 1;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(22, 32);
+            this.toolStripMenuItem5.Text = " ";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.AccessibleDescription = "";
+            this.toolStripMenuItem4.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.toolStripMenuItem4.Image = global::HomeConsuption.Properties.Resources.SignOut_64;
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.ShortcutKeyDisplayString = "";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(29, 32);
+            this.toolStripMenuItem4.Text = " ";
+            this.toolStripMenuItem4.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.toolStripMenuItem4.ToolTipText = "خروج";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // Main
             // 
@@ -389,6 +448,7 @@
             this.BackgroundImage = global::HomeConsuption.Properties.Resources.istockphoto_996352862_612x612;
             this.ClientSize = new System.Drawing.Size(1185, 572);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
@@ -396,6 +456,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,6 +502,9 @@
         private System.Windows.Forms.ToolStripMenuItem معلوماتالمستخدمToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تحديثكلمةالمرورToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تحديثنسبةالقيمةالمضافةToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     }
 }
 

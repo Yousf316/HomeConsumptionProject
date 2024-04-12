@@ -31,7 +31,7 @@ namespace HomeConsuption.Purchase
         int _RowsCountPerPage =10;
         int _RowCount;
         int _PageSize { get => (int)Math.Ceiling((double)_RowCount / _RowsCountPerPage); }
-       
+        string _TypeName;
 
         DataTable _dtPurchase;
 
@@ -167,7 +167,7 @@ namespace HomeConsuption.Purchase
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            cmbTypes.Visible = false;
            string Item= cmbColumns.Items[cmbColumns.SelectedIndex].ToString();
 
             switch(Item)
@@ -200,7 +200,7 @@ namespace HomeConsuption.Purchase
                case "نوع الفاتورة":
                     _ColumnName = "TypeName";
                     txtSearch.Visible = false;
-              
+                    cmbTypes.Visible = true;
                     break; 
 
             }
@@ -229,7 +229,7 @@ namespace HomeConsuption.Purchase
                     break;
 
                 case "TypeName":
-                   // _dtPurchase = clsPurchase.GetAllPurchaseInfoWithPagingByDateofType(PageNumber, RowCountPerPage, dtpFrom.Value, dtpTo.Value, txtSearch.Text, ref _RowCount);
+                    _dtPurchase = clsPurchase.GetAllPurchaseInfoWithPagingByDateofType(PageNumber, RowCountPerPage, dtpFrom.Value, dtpTo.Value, _TypeName, ref _RowCount);
 
                     break;
 
@@ -267,7 +267,7 @@ namespace HomeConsuption.Purchase
                     break;
 
                 case "TypeName":
-                    // _dtPurchase = clsPurchase.GetAllPurchaseInfoWithPagingByDateofType(PageNumber, RowCountPerPage, dtpFrom.Value, dtpTo.Value, txtSearch.Text, ref _RowCount);
+                    _dtPurchase = clsPurchase.GetAllPurchasesInfoWithPagesByTypeName(PageNumber, RowCountPerPage, _TypeName, ref _RowCount);
 
                     break;
 
@@ -320,6 +320,12 @@ namespace HomeConsuption.Purchase
         {
             int PurchaseID = (int)dataGridView1.CurrentRow.Cells[0].Value;
             clsPurchase.DeletePurchase(PurchaseID);
+            Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
+        }
+
+        private void cmbTypes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _TypeName = cmbTypes.SelectedItem.ToString();
             Parallel.Invoke(() => _RefreshTable(_PageNumber, _RowsCountPerPage));
         }
     }

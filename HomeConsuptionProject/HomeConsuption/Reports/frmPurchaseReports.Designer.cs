@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbCategories = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -89,11 +89,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 25F);
-            this.label2.Location = new System.Drawing.Point(294, 158);
+            this.label2.Location = new System.Drawing.Point(354, 159);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(253, 41);
+            this.label2.Size = new System.Drawing.Size(162, 41);
             this.label2.TabIndex = 3;
-            this.label2.Text = " تقرير المشتريات";
+            this.label2.Text = "المصروفات";
             // 
             // dtpTo
             // 
@@ -252,8 +252,8 @@
             // 
             // Categories
             // 
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Categories.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Categories.DefaultCellStyle = dataGridViewCellStyle2;
             this.Categories.HeaderText = "المحموعات";
             this.Categories.Name = "Categories";
             this.Categories.ReadOnly = true;
@@ -292,7 +292,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmPurchaseReports";
-            this.Text = "تقرير المشتريات";
+            this.Text = "المشتريات";
             this.Load += new System.EventHandler(this.frmPurchaseReports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

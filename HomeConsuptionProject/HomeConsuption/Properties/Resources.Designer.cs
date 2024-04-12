@@ -63,6 +63,16 @@ namespace HomeConsuption.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap account_settings_64 {
+            get {
+                object obj = ResourceManager.GetObject("account_settings 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap clipboardwithpencil {
             get {
                 object obj = ResourceManager.GetObject("clipboardwithpencil", resourceCulture);
@@ -313,6 +323,16 @@ namespace HomeConsuption.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Password_32 {
+            get {
+                object obj = ResourceManager.GetObject("Password 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap person_man {
             get {
                 object obj = ResourceManager.GetObject("person_man", resourceCulture);
@@ -346,6 +366,16 @@ namespace HomeConsuption.Properties {
         public static System.Drawing.Bitmap phone_call {
             get {
                 object obj = ResourceManager.GetObject("phone_call", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap SignOut_64 {
+            get {
+                object obj = ResourceManager.GetObject("SignOut 64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

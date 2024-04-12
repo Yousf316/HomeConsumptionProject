@@ -50,6 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbAll = new System.Windows.Forms.CheckBox();
+            this.cmbTypes = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.cmsSettingsPurchase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -266,11 +267,25 @@
             this.cbAll.UseVisualStyleBackColor = true;
             this.cbAll.CheckedChanged += new System.EventHandler(this.cbAll_CheckedChanged);
             // 
+            // cmbTypes
+            // 
+            this.cmbTypes.FormattingEnabled = true;
+            this.cmbTypes.Items.AddRange(new object[] {
+            "سريعة",
+            "عادية"});
+            this.cmbTypes.Location = new System.Drawing.Point(182, 234);
+            this.cmbTypes.Name = "cmbTypes";
+            this.cmbTypes.Size = new System.Drawing.Size(123, 21);
+            this.cmbTypes.TabIndex = 370;
+            this.cmbTypes.Visible = false;
+            this.cmbTypes.SelectedIndexChanged += new System.EventHandler(this.cmbTypes_SelectedIndexChanged);
+            // 
             // frmPurchaseList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1294, 630);
+            this.Controls.Add(this.cmbTypes);
             this.Controls.Add(this.cbAll);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -324,5 +339,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbAll;
+        private System.Windows.Forms.ComboBox cmbTypes;
     }
 }
