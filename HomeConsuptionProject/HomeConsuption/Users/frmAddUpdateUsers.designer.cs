@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tabctr1 = new System.Windows.Forms.TabControl();
             this.tabPerson = new System.Windows.Forms.TabPage();
+            this.rjbtnNext = new CustomControls.RJControls.RJButton();
             this.ctrShowPeopleWithSearch1 = new HomeConsuption.ctrShowPeopleWithSearch();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabUser = new System.Windows.Forms.TabPage();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.chkIsActive = new System.Windows.Forms.CheckBox();
@@ -44,10 +44,10 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.rjbtnSave = new CustomControls.RJControls.RJButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbTitle = new System.Windows.Forms.Label();
+            this.rjbtnCancel = new CustomControls.RJControls.RJButton();
             this.tabctr1.SuspendLayout();
             this.tabPerson.SuspendLayout();
             this.tabUser.SuspendLayout();
@@ -68,8 +68,8 @@
             // 
             // tabPerson
             // 
+            this.tabPerson.Controls.Add(this.rjbtnNext);
             this.tabPerson.Controls.Add(this.ctrShowPeopleWithSearch1);
-            this.tabPerson.Controls.Add(this.button1);
             this.tabPerson.Font = new System.Drawing.Font("Tahoma", 7F);
             this.tabPerson.Location = new System.Drawing.Point(4, 25);
             this.tabPerson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -77,8 +77,28 @@
             this.tabPerson.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPerson.Size = new System.Drawing.Size(771, 481);
             this.tabPerson.TabIndex = 0;
-            this.tabPerson.Text = "Person";
+            this.tabPerson.Text = "الفرد";
             this.tabPerson.UseVisualStyleBackColor = true;
+            // 
+            // rjbtnNext
+            // 
+            this.rjbtnNext.BackColor = System.Drawing.Color.DodgerBlue;
+            this.rjbtnNext.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.rjbtnNext.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjbtnNext.BorderRadius = 5;
+            this.rjbtnNext.BorderSize = 0;
+            this.rjbtnNext.FlatAppearance.BorderSize = 0;
+            this.rjbtnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rjbtnNext.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.rjbtnNext.ForeColor = System.Drawing.Color.White;
+            this.rjbtnNext.Location = new System.Drawing.Point(593, 423);
+            this.rjbtnNext.Name = "rjbtnNext";
+            this.rjbtnNext.Size = new System.Drawing.Size(161, 44);
+            this.rjbtnNext.TabIndex = 9;
+            this.rjbtnNext.Text = "التالي";
+            this.rjbtnNext.TextColor = System.Drawing.Color.White;
+            this.rjbtnNext.UseVisualStyleBackColor = false;
+            this.rjbtnNext.Click += new System.EventHandler(this.rjbtnNext_Click);
             // 
             // ctrShowPeopleWithSearch1
             // 
@@ -88,18 +108,6 @@
             this.ctrShowPeopleWithSearch1.Size = new System.Drawing.Size(556, 405);
             this.ctrShowPeopleWithSearch1.TabIndex = 2;
             this.ctrShowPeopleWithSearch1.OnButtonSetPerson += new System.Action<int>(this.ctrShowPeopleWithSearch1_OnButtonSet);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 7F);
-            this.button1.Location = new System.Drawing.Point(593, 431);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Next";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabUser
             // 
@@ -119,7 +127,7 @@
             this.tabUser.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabUser.Size = new System.Drawing.Size(771, 481);
             this.tabUser.TabIndex = 1;
-            this.tabUser.Text = "User";
+            this.tabUser.Text = "المستخدم";
             this.tabUser.UseVisualStyleBackColor = true;
             // 
             // linkLabel1
@@ -130,7 +138,7 @@
             this.linkLabel1.Size = new System.Drawing.Size(117, 17);
             this.linkLabel1.TabIndex = 12;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Change Password";
+            this.linkLabel1.Text = "تحديث كلمة المرور";
             this.linkLabel1.Visible = false;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
@@ -142,9 +150,9 @@
             this.chkIsActive.Location = new System.Drawing.Point(278, 361);
             this.chkIsActive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkIsActive.Name = "chkIsActive";
-            this.chkIsActive.Size = new System.Drawing.Size(82, 21);
+            this.chkIsActive.Size = new System.Drawing.Size(60, 21);
             this.chkIsActive.TabIndex = 11;
-            this.chkIsActive.Text = " Is Active";
+            this.chkIsActive.Text = "تفعيل";
             this.chkIsActive.UseVisualStyleBackColor = true;
             // 
             // lbUserID
@@ -161,11 +169,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label5.Location = new System.Drawing.Point(146, 124);
+            this.label5.Location = new System.Drawing.Point(131, 124);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 19);
+            this.label5.Size = new System.Drawing.Size(115, 19);
             this.label5.TabIndex = 9;
-            this.label5.Text = "User ID:";
+            this.label5.Text = "رقم المستخدم:";
             // 
             // txtConfirmPassword
             // 
@@ -181,11 +189,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label3.Location = new System.Drawing.Point(102, 295);
+            this.label3.Location = new System.Drawing.Point(117, 296);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 19);
+            this.label3.Size = new System.Drawing.Size(129, 19);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Confirm Password:";
+            this.label3.Text = "تاْكيد كلمة المرور:";
             // 
             // txtPassword
             // 
@@ -212,66 +220,85 @@
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
             this.label2.Location = new System.Drawing.Point(152, 245);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 19);
+            this.label2.Size = new System.Drawing.Size(92, 19);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Password:";
+            this.label2.Text = "كلمة المرور:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label1.Location = new System.Drawing.Point(152, 186);
+            this.label1.Location = new System.Drawing.Point(119, 184);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 19);
+            this.label1.Size = new System.Drawing.Size(127, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "UserName:";
+            this.label1.Text = "اسم المستخدم :";
+            // 
+            // rjbtnSave
+            // 
+            this.rjbtnSave.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rjbtnSave.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rjbtnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjbtnSave.BorderRadius = 5;
+            this.rjbtnSave.BorderSize = 0;
+            this.rjbtnSave.FlatAppearance.BorderSize = 0;
+            this.rjbtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rjbtnSave.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.rjbtnSave.ForeColor = System.Drawing.Color.White;
+            this.rjbtnSave.Location = new System.Drawing.Point(607, 599);
+            this.rjbtnSave.Name = "rjbtnSave";
+            this.rjbtnSave.Size = new System.Drawing.Size(161, 47);
+            this.rjbtnSave.TabIndex = 7;
+            this.rjbtnSave.Text = "حفظ";
+            this.rjbtnSave.TextColor = System.Drawing.Color.White;
+            this.rjbtnSave.UseVisualStyleBackColor = false;
+            this.rjbtnSave.Click += new System.EventHandler(this.rjbtnSave_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnSave
+            // lbTitle
             // 
-            this.btnSave.Location = new System.Drawing.Point(607, 598);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(161, 44);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.Red;
+            this.lbTitle.Location = new System.Drawing.Point(244, 53);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(236, 29);
+            this.lbTitle.TabIndex = 6;
+            this.lbTitle.Text = "اضافة مسخدم جديد";
             // 
-            // btnClose
+            // rjbtnCancel
             // 
-            this.btnClose.Location = new System.Drawing.Point(430, 598);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(161, 44);
-            this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Urdu Typesetting", 18F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(293, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 44);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Add New User";
+            this.rjbtnCancel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rjbtnCancel.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rjbtnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjbtnCancel.BorderRadius = 5;
+            this.rjbtnCancel.BorderSize = 0;
+            this.rjbtnCancel.FlatAppearance.BorderSize = 0;
+            this.rjbtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rjbtnCancel.Font = new System.Drawing.Font("Tahoma", 13F);
+            this.rjbtnCancel.ForeColor = System.Drawing.Color.White;
+            this.rjbtnCancel.Location = new System.Drawing.Point(392, 600);
+            this.rjbtnCancel.Name = "rjbtnCancel";
+            this.rjbtnCancel.Size = new System.Drawing.Size(161, 47);
+            this.rjbtnCancel.TabIndex = 8;
+            this.rjbtnCancel.Text = "الغاء";
+            this.rjbtnCancel.TextColor = System.Drawing.Color.White;
+            this.rjbtnCancel.UseVisualStyleBackColor = false;
+            this.rjbtnCancel.Click += new System.EventHandler(this.rjbtnCancel_Click);
             // 
             // frmAddUpdateUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 651);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.rjbtnCancel);
+            this.Controls.Add(this.rjbtnSave);
+            this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.tabctr1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAddUpdateUsers";
             this.Text = "frmAddUpdateUsers";
@@ -297,15 +324,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbUserID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.CheckBox chkIsActive;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private ctrShowPeopleWithSearch ctrShowPeopleWithSearch1;
+        private CustomControls.RJControls.RJButton rjbtnCancel;
+        private CustomControls.RJControls.RJButton rjbtnSave;
+        private CustomControls.RJControls.RJButton rjbtnNext;
     }
 }

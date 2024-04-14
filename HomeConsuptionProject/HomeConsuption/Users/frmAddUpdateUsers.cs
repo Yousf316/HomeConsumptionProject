@@ -91,25 +91,22 @@ namespace HomeConsuption
             SetUserInfo();
             return true;
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            tabctr1.SelectedIndex = 1;
-        }
+     
 
         private void frmAddUpdateUsers_Load(object sender, EventArgs e)
         {
            if( GetUserInfo())
             {
-                label6.Text = "Update User";
+                lbTitle.Text = "تحديث بيانات المستخدم";
             }
             else
             {
                 ctrShowPeopleWithSearch1.SetPersonInfoLock(-1);
-                label6.Text = "Add New User";
+                lbTitle.Text = "اضافة مستخدم جديد";
+            
             }
-                         
-          
+
+            this.Text = lbTitle.Text;
         }
 
         private void ctrShowPeopleWithSearch1_OnButtonSet(int PersonID)
@@ -142,32 +139,12 @@ namespace HomeConsuption
 
         }
 
-        private void ctrShowPeopleWithSearch1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-           
-                if(SaveUser())
-                {
-                    if (GetUserInfo())
-                    {
-                        MessageBox.Show("Add User Successfuly", "Success");
-                    label6.Text = "Update User";
-                }
-                }
-                   
-            
-        }
+     
 
       
+      
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -175,5 +152,30 @@ namespace HomeConsuption
             frmchangePassword.ShowDialog();
 
         }
+
+        private void rjbtnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void rjbtnSave_Click(object sender, EventArgs e)
+        {
+
+            if (SaveUser())
+            {
+                if (GetUserInfo())
+                {
+                    MessageBox.Show("Add User Successfuly", "Success");
+                    lbTitle.Text = "Update User";
+                }
+            }
+        }
+
+        private void rjbtnNext_Click(object sender, EventArgs e)
+        {
+            tabctr1.SelectedIndex = 1;
+        }
+
+      
     }
 }

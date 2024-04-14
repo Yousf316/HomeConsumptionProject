@@ -1035,7 +1035,7 @@ namespace HomeC_DataAccess
             float Total = 0;
 
             string query = @"SELECT sum(TotalAfterTax) as Total
-  FROM [HomeConsumptionDB].[dbo].[View_PurchasesInfo]
+  FROM [dbo].[View_PurchasesInfo]
   where CategoryName = @CategoryName and IssueDate between @DateFrom and  @DateTo ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
@@ -1080,7 +1080,7 @@ namespace HomeC_DataAccess
             float Total = 0;
 
             string query = @"SELECT sum(TotalAfterTax) as Total
-  FROM [HomeConsumptionDB].[dbo].[View_PurchasesInfo]
+  FROM [dbo].[View_PurchasesInfo]
   where CategoryName = @CategoryName ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
@@ -1125,7 +1125,7 @@ namespace HomeC_DataAccess
             float Total = 0;
 
             string query = @"SELECT sum(TotalAfterTax) as Total
-  FROM [HomeConsumptionDB].[dbo].[View_PurchasesInfo]
+  FROM [dbo].[View_PurchasesInfo]
   where CategoryName = @CategoryName and SubCategoryName = @SubCategoryName and IssueDate between @DateFrom and  @DateTo ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
@@ -1171,7 +1171,7 @@ namespace HomeC_DataAccess
             float Total = 0;
 
             string query = @"SELECT sum(TotalAfterTax) as Total
-  FROM [HomeConsumptionDB].[dbo].[View_PurchasesInfo]
+  FROM [dbo].[View_PurchasesInfo]
   where CategoryName = @CategoryName and SubCategoryName = @SubCategoryName ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
@@ -1217,7 +1217,7 @@ namespace HomeC_DataAccess
             float Total = 0;
 
             string query = @"SELECT sum(TotalAfterTax) as Total
-  FROM [HomeConsumptionDB].[dbo].[View_PurchasesInfo]
+  FROM [dbo].[View_PurchasesInfo]
   where  IssueDate between @DateFrom and  @DateTo ";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {

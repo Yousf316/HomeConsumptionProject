@@ -197,6 +197,7 @@ WHERE CategoryID =@CategoryID ;";
                 if (reader.HasRows)
 
                 {
+                    dt = new DataTable();
                     dt.Load(reader);
                 }
 

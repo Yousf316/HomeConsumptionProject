@@ -53,7 +53,7 @@ namespace HomeConsuption
         private void SearchOperator()
         {
 
-            if (cmbFinds.SelectedItem.ToString() == "PersonID")
+            if (cmbFinds.SelectedItem.ToString() == "الرقم الشخصي")
             {
 
                 if (!int.TryParse(txtSearch.Text, out int PersonID))

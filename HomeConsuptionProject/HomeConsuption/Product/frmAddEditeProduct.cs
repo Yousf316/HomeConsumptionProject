@@ -93,12 +93,14 @@ namespace HomeConsuption.Product
         private void _GetAllCategories()
         {
             DataTable dt = clsCategory.GetAllCatgoriesInfo();
-            cmbCategories.Items.Clear();
-            foreach (DataRow dr in dt.Rows)
+            if (dt != null)
             {
-                cmbCategories.Items.Add(dr["CategoryName"].ToString());
+                cmbCategories.Items.Clear();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    cmbCategories.Items.Add(dr["CategoryName"].ToString());
+                }
             }
-
         }
 
 
