@@ -105,8 +105,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCateName);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmAddEditCategory";
-            this.Text = "frmAddEditCategory";
+            this.Text = "أدراج مجموعة جديدة";
             this.Load += new System.EventHandler(this.frmAddEditCategory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

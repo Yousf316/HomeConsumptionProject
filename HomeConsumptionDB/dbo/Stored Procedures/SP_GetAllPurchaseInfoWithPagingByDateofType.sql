@@ -1,11 +1,11 @@
 ﻿
 
-Create PROCEDURE [dbo].[SP_GetAllPurchaseInfoWithPagingByDateofType]
+CREATE PROCEDURE [dbo].[SP_GetAllPurchaseInfoWithPagingByDateofType]
 		@PageNumber int,
 		@RowCountPerPage  int,
 		@DateFrom  date,
 		@DateTo  Date,
-		@TypeName nvarchar,
+		@TypeName nvarchar(20),
 		@RowCount int output
 	
 AS

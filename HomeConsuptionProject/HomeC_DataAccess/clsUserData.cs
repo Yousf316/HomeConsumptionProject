@@ -113,7 +113,11 @@ namespace HomeC_DataAccess
                 if (reader.Read())
                 {
                     isFound = true;
-                    PersonID = (int)reader["PersonID"];
+                    if (reader["PersonID"] != DBNull.Value)
+                        PersonID = (int)reader["PersonID"];
+                    else
+                        PersonID = -1;
+
                     Password = (string)reader["Password"];
                     UserName = (string)reader["UserName"];
                     IsActive = (bool)reader["IsActive"];
@@ -256,7 +260,13 @@ namespace HomeC_DataAccess
 
                 if (reader.Read())
                 {
-                    PersonID = (int)reader["PersonID"];
+                    if(reader["PersonID"] != DBNull.Value)
+                    {
+                        PersonID = (int)reader["PersonID"];
+                    }else
+                    {
+                        PersonID = -1;
+                    }
                     UserID = (int)reader["UserID"];
 
                     IsActive = (bool)reader["IsActive"];

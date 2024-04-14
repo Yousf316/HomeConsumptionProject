@@ -31,6 +31,7 @@ namespace HomeConsuption.Product
         private void _RefreshStoresList()
         {
             _dAllStores = clsCategory.GetAllCatgoriesInfo();
+            if(_dAllStores != null)
             _dStores = _dAllStores.DefaultView.ToTable(false, "CategoryID", "CategoryName");
 
             RefreshdgvStoresHeaders();
@@ -56,7 +57,7 @@ namespace HomeConsuption.Product
         private void _SearchStores(string CategoryName)
         {
        
-
+            if(_dStores != null) 
             _dStores.DefaultView.RowFilter = string.Format("[CategoryName] like '%{0}%'", CategoryName);
 
            

@@ -3,7 +3,7 @@
 CREATE PROCEDURE [dbo].[SP_GetAllPurchaseInfoWithPagingByTypeName]
 		@PageNumber int,
 		@RowCountPerPage  int,
-		@TypeName nvarchar,
+		@TypeName nvarchar(20),
 		@RowCount int output
 	   
 	AS

@@ -3,7 +3,7 @@
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE FUNCTION TV_PurchaseInfoByDate 
+CREATE FUNCTION [dbo].[TV_PurchaseInfoByDate] 
 (	
 	-- Add the parameters for the function here
 @DateFrom Date , @DateTo Date

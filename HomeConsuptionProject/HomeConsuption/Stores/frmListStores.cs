@@ -87,7 +87,7 @@ namespace HomeConsuption
         {
         
 
-
+            if(_dStores != null)
             _dStores.DefaultView.RowFilter = string.Format("[StoreName] like '%{0}%'", StoreName); 
 
            

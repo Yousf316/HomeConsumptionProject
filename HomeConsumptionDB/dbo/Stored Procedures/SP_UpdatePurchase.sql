@@ -11,6 +11,8 @@ CREATE PROCEDURE [dbo].[SP_UpdatePurchase]
 	  @Type int ,
 	  @PCategoryID int ,
 	  @PSCategoryID int null,
+	  @CreatedByUserID int null,
+	  @UpdatedByUserID int null,
 	  @PurchaseID int 
 AS
 BEGIN
@@ -24,7 +26,8 @@ BEGIN
 	  [Type]			=@Type,
 	  [PCategoryID]     =@PCategoryID,
 	  [PSCategoryID] = @PSCategoryID
-
+	  ,[CreatedByUserID] =@CreatedByUserID
+	  ,[UpdatedByUserID] =@UpdatedByUserID
  WHERE [dbo].[Purchases].PurchaseID = @PurchaseID
 	  return select @@ROWCOUNT
 END

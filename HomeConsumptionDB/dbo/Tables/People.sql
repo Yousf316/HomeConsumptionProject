@@ -7,6 +7,11 @@
     [PhoneNumber]          NVARCHAR (20) NULL,
     [Email]                NVARCHAR (50) NULL,
     [NationalityCountryID] INT           NULL,
-    CONSTRAINT [PK_People] PRIMARY KEY CLUSTERED ([PersonID] ASC)
+    [CreatedByUserID]      INT           NULL,
+    [UpdatedByUserID]      INT           NULL,
+    CONSTRAINT [PK_People] PRIMARY KEY CLUSTERED ([PersonID] ASC),
+    CONSTRAINT [FK_People_Countries] FOREIGN KEY ([NationalityCountryID]) REFERENCES [dbo].[Countries] ([CountryID])
 );
+
+
 

@@ -181,7 +181,7 @@ WHERE CategoryID =@CategoryID ;";
 
         static public DataTable GetAllCategories()
         {
-            DataTable dt = new DataTable();
+            DataTable dt = null;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             string query = @"Select * FROM [dbo].[Categories]";
