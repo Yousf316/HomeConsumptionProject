@@ -112,7 +112,7 @@
             // 
             this.اصدارToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_buy_for_coins_641;
             this.اصدارToolStripMenuItem.Name = "اصدارToolStripMenuItem";
-            this.اصدارToolStripMenuItem.Size = new System.Drawing.Size(290, 46);
+            this.اصدارToolStripMenuItem.Size = new System.Drawing.Size(266, 32);
             this.اصدارToolStripMenuItem.Text = "اصدار فاتورة مشتريات";
             this.اصدارToolStripMenuItem.Click += new System.EventHandler(this.اصدارToolStripMenuItem_Click);
             // 
@@ -120,14 +120,14 @@
             // 
             this.قائمةالمشترياتToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_buy_for_coins_96;
             this.قائمةالمشترياتToolStripMenuItem.Name = "قائمةالمشترياتToolStripMenuItem";
-            this.قائمةالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(290, 46);
+            this.قائمةالمشترياتToolStripMenuItem.Size = new System.Drawing.Size(266, 32);
             this.قائمةالمشترياتToolStripMenuItem.Text = "قائمة المشتريات";
             this.قائمةالمشترياتToolStripMenuItem.Click += new System.EventHandler(this.قائمةالمشترياتToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(287, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(263, 6);
             // 
             // أدراجصنفجديدToolStripMenuItem
             // 
@@ -136,7 +136,7 @@
             this.صنففرعيToolStripMenuItem});
             this.أدراجصنفجديدToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_paid_96;
             this.أدراجصنفجديدToolStripMenuItem.Name = "أدراجصنفجديدToolStripMenuItem";
-            this.أدراجصنفجديدToolStripMenuItem.Size = new System.Drawing.Size(290, 46);
+            this.أدراجصنفجديدToolStripMenuItem.Size = new System.Drawing.Size(266, 32);
             this.أدراجصنفجديدToolStripMenuItem.Text = "أدراج صنف جديد";
             this.أدراجصنفجديدToolStripMenuItem.Click += new System.EventHandler(this.أدراجصنفجديدToolStripMenuItem_Click);
             // 
@@ -161,7 +161,7 @@
             this.الاصنافالToolStripMenuItem});
             this.أدارةالاصنافToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_paid_64;
             this.أدارةالاصنافToolStripMenuItem.Name = "أدارةالاصنافToolStripMenuItem";
-            this.أدارةالاصنافToolStripMenuItem.Size = new System.Drawing.Size(290, 46);
+            this.أدارةالاصنافToolStripMenuItem.Size = new System.Drawing.Size(266, 32);
             this.أدارةالاصنافToolStripMenuItem.Text = "أدارة الاصناف";
             this.أدارةالاصنافToolStripMenuItem.Click += new System.EventHandler(this.أدارةالاصنافToolStripMenuItem_Click);
             // 
@@ -196,7 +196,7 @@
             // 
             this.ادراجمتجرجديدToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_plus_64;
             this.ادراجمتجرجديدToolStripMenuItem.Name = "ادراجمتجرجديدToolStripMenuItem";
-            this.ادراجمتجرجديدToolStripMenuItem.Size = new System.Drawing.Size(234, 46);
+            this.ادراجمتجرجديدToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
             this.ادراجمتجرجديدToolStripMenuItem.Text = "ادراج متجر جديد";
             this.ادراجمتجرجديدToolStripMenuItem.Click += new System.EventHandler(this.ادراجمتجرجديدToolStripMenuItem_Click);
             // 
@@ -204,7 +204,7 @@
             // 
             this.قائمةالمتاجرToolStripMenuItem.Image = global::HomeConsuption.Properties.Resources.icons8_online_store_96;
             this.قائمةالمتاجرToolStripMenuItem.Name = "قائمةالمتاجرToolStripMenuItem";
-            this.قائمةالمتاجرToolStripMenuItem.Size = new System.Drawing.Size(234, 46);
+            this.قائمةالمتاجرToolStripMenuItem.Size = new System.Drawing.Size(210, 32);
             this.قائمةالمتاجرToolStripMenuItem.Text = "قائمة المتاجر";
             this.قائمةالمتاجرToolStripMenuItem.Click += new System.EventHandler(this.قائمةالمتاجرToolStripMenuItem_Click);
             // 
@@ -328,6 +328,7 @@
             this.تقريرالميزانيةToolStripMenuItem.Name = "تقريرالميزانيةToolStripMenuItem";
             this.تقريرالميزانيةToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
             this.تقريرالميزانيةToolStripMenuItem.Text = "الميزاية";
+            this.تقريرالميزانيةToolStripMenuItem.Visible = false;
             // 
             // المستخدمينToolStripMenuItem
             // 
