@@ -6,6 +6,8 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using HomeC_DataAccess;
+using HomeConsuption;
+
 namespace HomeC_Business
 {
     public class clsUser
@@ -13,6 +15,7 @@ namespace HomeC_Business
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode _mode = enMode.AddNew;
 
+        private  string _Password;
        public int UserID { get; set; }
        public int PersonID { get; set; }
        public string Password { get; set; }
@@ -31,9 +34,10 @@ namespace HomeC_Business
         {
             this.UserID = UserID;
             this.PersonID = PersonID;
-            this.Password = Password;
+            this.Password = "*****";
             this.UserName = UserName;
             this.IsActive = IsActive;
+            this._Password = Password;
             _mode = enMode.Update;
         }
 
@@ -41,7 +45,8 @@ namespace HomeC_Business
         {
           
             this.PersonID = PersonID;
-            this.Password = Password;
+            //this.Password = Password;
+            this._Password = clsValidatoinBus.HashCodeCompute(Password);
             this.UserName = UserName;
             this.IsActive = IsActive;
             
@@ -49,13 +54,13 @@ namespace HomeC_Business
         private bool _AddNewUsers()
         {
             int ID = -1;
-            clsUserData.InsertUser(ref ID, UserName, this.PersonID, this.Password, this.IsActive);
+            clsUserData.InsertUser(ref ID, UserName, this.PersonID, this._Password, this.IsActive);
             this.UserID = ID;
             return this.UserID != -1;
         }
         private bool _UpdateUsers()
         {
-            return clsUserData.UpdateUser(this.UserID, UserName, this.PersonID, this.Password, this.IsActive);
+            return clsUserData.UpdateUser(this.UserID, UserName, this.PersonID, this._Password, this.IsActive);
         }
         public bool SaveUsers()
         {
@@ -89,7 +94,7 @@ namespace HomeC_Business
 
             if (clsUserData.FindUser(UserID,ref UserName, ref PersonID, ref Password, ref IsActive))
             {
-
+                
                 return new clsUser(UserID,UserName, PersonID, Password, IsActive);
             }
             else
@@ -119,7 +124,7 @@ namespace HomeC_Business
             int PersonID = -1;
             int UserID = -1;
 
-
+            Password = clsValidatoinBus.HashCodeCompute(Password);
             bool IsActive = false;
 
             if (clsUserData.FindUserByUsernameAndPassword(UserName, Password, ref UserID, ref PersonID, ref IsActive))
@@ -133,6 +138,22 @@ namespace HomeC_Business
             }
 
 
+        }
+
+        public  bool IsPasswordMatching(string Password)
+        {
+          string HashPassword =clsValidatoinBus.HashCodeCompute(Password);
+            return (HashPassword == _Password);
+        }
+
+        public string GetCurrentPassword()
+        {
+            return _Password;
+        }
+        public void setPassword(string Password)
+        {
+           string HashinPassword = clsValidatoinBus.HashCodeCompute(Password);
+             _Password = HashinPassword;
         }
     }
 

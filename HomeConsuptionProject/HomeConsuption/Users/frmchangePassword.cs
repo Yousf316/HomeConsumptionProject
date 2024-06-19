@@ -16,32 +16,31 @@ namespace HomeConsuption
     {
        
         string _CurrentPassword { get; set; }
-        int UserID;
+        clsUser objUser1;
         public frmchangePassword(int UserID)
         {
             InitializeComponent();
-           this.UserID = UserID;
+           
+            objUser1 = clsUser.FindUser(UserID);
         }
 
         private void GetUserPassword()
         {
-            clsUser clsUser1 = clsUser.FindUser(UserID);
-            if (clsUser1 != null)
+            if (objUser1 != null)
             {
-                _CurrentPassword = clsUser1.Password;
+                _CurrentPassword = objUser1.GetCurrentPassword();
             }
         }
 
         private bool SetNewPassword()
         {
-            clsUser clsUser1 = clsUser.FindUser(UserID);
-            if (clsUser1 != null)
+            
+            if (objUser1 != null)
             {
 
-                string HashPassword = clsValidatoin.HashCodeCompute(txtNewPassword.Text);
 
-               clsUser1.Password = HashPassword;
-                return clsUser1.SaveUsers();
+               objUser1.setPassword(txtNewPassword.Text.Trim());
+                return objUser1.SaveUsers();
             }
             return false;
         }
@@ -103,7 +102,7 @@ namespace HomeConsuption
         private void frmchangePassword_Load(object sender, EventArgs e)
         {
             GetUserPassword();
-            ctrShowUserInfo1.GetUserInfo(UserID);
+            ctrShowUserInfo1.GetUserInfo(objUser1.UserID);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -113,8 +112,7 @@ namespace HomeConsuption
 
         private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
         {
-            string HashPassword = clsValidatoin.HashCodeCompute(txtCurrentPassword.Text);
-            if (HashPassword != _CurrentPassword)
+            if (!objUser1.IsPasswordMatching(txtCurrentPassword.Text.Trim()) )
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtCurrentPassword, "Password is not Correct!");

@@ -31,15 +31,15 @@ namespace HomeConsuption
            if(user == null)
                 user = new clsUser();
 
-            string HashPassword = clsValidatoin.HashCodeCompute(txtPassword.Text);
+            //string HashPassword = clsValidatoin.HashCodeCompute(txtPassword.Text);
 
-            if(HashPassword != user.Password)
+            if(!user.IsPasswordMatching(txtPassword.Text.Trim()))
             {
                 MessageBox.Show("كلمة المرور غير مطابقة", "فشلت العملية",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return false;
             }    
 
-            user.SetValues(_PersonID, txtUserName.Text, HashPassword, chkIsActive.Checked);
+            user.SetValues(_PersonID, txtUserName.Text, txtPassword.Text.Trim(), chkIsActive.Checked);
             
                 if (user.SaveUsers())
                 {

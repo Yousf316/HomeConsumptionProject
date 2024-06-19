@@ -53,6 +53,7 @@
     <Compile Include="clsPurchase_sub.cs" />
     <Compile Include="clsStore.cs" />
     <Compile Include="clsPurchase.cs" />
+    <Compile Include="clsValidatoinBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

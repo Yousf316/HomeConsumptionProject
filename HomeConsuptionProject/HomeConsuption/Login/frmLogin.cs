@@ -62,8 +62,8 @@ namespace HomeConsuption.Forms
 
         private void rjbtnOk_Click(object sender, EventArgs e)
         {
-            string HashPassword = clsValidatoin.HashCodeCompute(rjtxtPassword.Texts.Trim());
-            clsUser UserID = clsUser.FindUserByUserNameAndPassword(rjtxtUserName.Texts.Trim(), HashPassword);
+            //string HashPassword = clsValidatoin.HashCodeCompute(rjtxtPassword.Texts.Trim());
+            clsUser UserID = clsUser.FindUserByUserNameAndPassword(rjtxtUserName.Texts.Trim(), rjtxtPassword.Texts.Trim());
 
 
             if (UserID != null)
