@@ -143,9 +143,9 @@ WHERE PurchaseID =@PurchaseID and P_subID = @P_subID;";
                         Description = "";
 
                     Size = reader["Size"] != DBNull.Value ? (int?)reader["Size"] : null;
-                    ItemPrice = Convert.ToSingle(reader[" ItemPrice"]);
+                    ItemPrice = Convert.ToSingle(reader["ItemPrice"]);
                     Quantity = Convert.ToSingle(reader["Quantity"]);
-                    TotalAmount = Convert.ToSingle(reader[" TotalAmount"]);
+                    TotalAmount = Convert.ToSingle(reader["TotalAmount"]);
                 }
 
                 reader.Close();

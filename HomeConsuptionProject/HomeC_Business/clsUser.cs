@@ -124,10 +124,10 @@ namespace HomeC_Business
             int PersonID = -1;
             int UserID = -1;
 
-            Password = clsValidatoinBus.HashCodeCompute(Password);
+           string  HashPassword = clsValidatoinBus.HashCodeCompute(Password);
             bool IsActive = false;
 
-            if (clsUserData.FindUserByUsernameAndPassword(UserName, Password, ref UserID, ref PersonID, ref IsActive))
+            if (clsUserData.FindUserByUsernameAndPassword(UserName, HashPassword, ref UserID, ref PersonID, ref IsActive))
             {
 
                 return new clsUser(UserID,  UserName, PersonID, Password, IsActive);

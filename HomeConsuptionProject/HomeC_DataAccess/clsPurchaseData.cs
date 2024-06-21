@@ -343,8 +343,7 @@ namespace HomeC_DataAccess
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
-                string query = @"select * from View_PurchasesInfo TypeName =@type
-";
+                string query = @"select * from View_PurchasesInfo where TypeName =@type";
                 SqlCommand command = new SqlCommand(query, connection);
 
                 command.Parameters.AddWithValue("@type", type);

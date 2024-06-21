@@ -11,7 +11,12 @@ namespace HomeC_Business
     public class clsPurchase
     {
         public enum enMode { AddNew = 0, Update = 1 };
+        public enum enType { Simple = 1, Normal = 2 };
+
+
         public enMode _mode = enMode.AddNew;
+
+        public  enType typeName { get { return (enType)this.Type; } }
 
         int _PurchaseID;
 

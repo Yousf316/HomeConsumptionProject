@@ -36,7 +36,22 @@ this.TotalAmount = -1;
 this.Size = null;
 _mode = enMode.AddNew;
  }
-private clsPurchase_sub(int PurchaseID,int P_subID, int ItemID,string ItemName,string Description,float ItemPrice,float Quantity,float TotalAmount,int? Size)
+
+        public clsPurchase_sub(int purchaseId)
+        {
+            this.PurchaseID = purchaseId;
+            this.P_subID = -1;
+            this.ItemID = -1;
+            this.ItemName = "";
+            this.Description = "";
+            this.ItemPrice = -1;
+            this.Quantity = -1;
+            this.TotalAmount = -1;
+            this.Size = null;
+            _mode = enMode.AddNew;
+        }
+
+        private clsPurchase_sub(int PurchaseID,int P_subID, int ItemID,string ItemName,string Description,float ItemPrice,float Quantity,float TotalAmount,int? Size)
 {
 this.PurchaseID = PurchaseID;
 this.ItemID = ItemID;
@@ -138,7 +153,28 @@ public static bool DeletePurchase_sub(int PurchaseID)
       return clsPurchase_subData.DeletePurchase_sub(PurchaseID);
   }
 
+public bool CheckValues()
+        {
 
+            if (this.PurchaseID ==-1||this.ItemID == -1 ||
+            this.ItemName == "" ||
+
+            this.ItemPrice <= 0 ||
+            this.Quantity == -1 || this.Quantity <= 0||
+            this.TotalAmount <= 0)
+                return false;
+
+            clsItem item= clsItem.FindItem(ItemID);
+
+            if (item == null)
+                return false;
+
+            if(clsPurchase.FindPurchase(PurchaseID) == null)
+                return false;
+
+            return true;
+
+        }
 
 }
 
