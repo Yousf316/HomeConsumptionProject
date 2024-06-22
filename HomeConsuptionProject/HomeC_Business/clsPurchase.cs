@@ -55,7 +55,7 @@ namespace HomeC_Business
             _mode = enMode.AddNew;
         }
 
-        private clsPurchase(int PurchaseID, DateTime IssueDate, float TotalBeforTax,
+        public clsPurchase(int PurchaseID, DateTime IssueDate, float TotalBeforTax,
             float TaxAmount, float TotalAfterTax, int StoreID,
             int Type,float? Discount,int PCategoryID,int? PSCategoryID,int? CreatedByUserID,int? UpdatedByUserID)
         {
@@ -175,11 +175,19 @@ namespace HomeC_Business
             return clsPurchaseData.GetAllPurchases(PageNumber,RowCountPerPage,ref RowCount);
         }
 
+        public static DataTable GetAllPurchaseID()
+        {
+
+            return clsPurchaseData.GetAllPurchaseID();
+        }
+
         public static DataTable GetAllPurchases()
         {
 
             return clsPurchaseData.GetAllPurchases();
         }
+
+
         public static DataTable GetAllPurchasesByType(string type)
         {
 

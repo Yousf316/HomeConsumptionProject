@@ -291,7 +291,7 @@ namespace HomeC_DataAccess
             return dt;
         }
 
-        static public DataTable GetAllPurchases()
+        static public DataTable GetAllPurchaseID()
         {
             DataTable dt = new DataTable();
 
@@ -337,7 +337,56 @@ namespace HomeC_DataAccess
             }
             return dt;
         }
-          static public DataTable GetAllPurchasesByType(string type)
+
+
+        static public DataTable GetAllPurchases()
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"select * from Purchases";
+                SqlCommand command = new SqlCommand(query, connection);
+
+
+
+
+                try
+                {
+
+
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+
+
+
+
+
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return dt;
+        }
+
+        static public DataTable GetAllPurchasesByType(string type)
         {
             DataTable dt = new DataTable();
 

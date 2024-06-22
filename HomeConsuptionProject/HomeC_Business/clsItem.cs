@@ -31,7 +31,7 @@ namespace HomeC_Business
             this.Price = -1;
             _mode = enMode.AddNew;
         }
-        private clsItem(int ItemID, string ItemName_AR, string ItemName_EN, int CategoryID, float Price, string imagePath)
+        public clsItem(int ItemID, string ItemName_AR, string ItemName_EN, int CategoryID, float Price, string imagePath)
         {
             this._ItemID = ItemID;
             this.ItemName_AR = ItemName_AR;
@@ -130,6 +130,10 @@ namespace HomeC_Business
             return clsItemData.GetAllItems(PageNumber,RowCountPerPage,ref RowCount);
         }
 
+        public static DataTable GetAllItems()
+        {
+            return clsItemData.GetAllItems();
+        }
 
 
 

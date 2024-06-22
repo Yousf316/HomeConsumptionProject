@@ -228,6 +228,50 @@ WHERE ItemID =@ItemID ;";
             return dt;
         }
 
+        static public DataTable GetAllItems()
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"SELECT * FROM [dbo].[Items] ";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+               
+                try
+                {
+
+                    
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+
+
+
+
+
+                }
+
+                catch (Exception ex)
+                {
+                    // Console.WriteLine("Error: " + ex.Message);
+                }
+                finally
+                {
+
+                }
+            }
+            return dt;
+        }
 
 
 
