@@ -66,7 +66,7 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Base
 
             clsPurchaseSubBaseCategories subBaseCategories = new clsPurchaseSubBaseCategories();
 
-            subBaseCategories.SetValues(_SubCategory.PSCategoryID, _Category.PCategoryID);
+            subBaseCategories.SetValues(_SubCategory.PSCategoryID, _Category.PCategoryID,clsGlobal.CurrentUser.UserID);
 
             if (subBaseCategories.SavePurchaseSubBaseCategories())
             {

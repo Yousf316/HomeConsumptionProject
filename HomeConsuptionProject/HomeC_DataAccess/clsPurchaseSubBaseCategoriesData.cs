@@ -159,7 +159,7 @@ namespace HomeC_DataAccess
           DataTable dt = new DataTable();
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"SELECT * FROM [dbo].[View_SubBaseCategoriesInfo] WHERE PCategory =@PCategory;";
+            string query = @"SELECT * FROM [dbo].[View_SubBaseCategoriesInfo] WHERE PCategoryID =@PCategory";
             SqlCommand cmd = new SqlCommand(query, connection);
 
            

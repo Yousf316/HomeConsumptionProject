@@ -71,7 +71,7 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Categories
 
             clsPurchaseSubBaseCategories subBaseCategories = new clsPurchaseSubBaseCategories();
 
-            subBaseCategories.SetValues(_objCategory.PSCategoryID, clsPurchase_Category.FindPurchase_Category(cmbCategories.SelectedItem.ToString()).PCategoryID);
+            subBaseCategories.SetValues(_objCategory.PSCategoryID, clsPurchase_Category.FindPurchase_Category(cmbCategories.SelectedItem.ToString()).PCategoryID,clsGlobal.CurrentUser.UserID);
 
             if (subBaseCategories.SavePurchaseSubBaseCategories())
             {

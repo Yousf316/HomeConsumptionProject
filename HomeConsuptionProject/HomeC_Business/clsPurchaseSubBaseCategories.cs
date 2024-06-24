@@ -37,11 +37,17 @@ namespace HomeC_Business
             this.PCategory = PCategory;
             _mode = enMode.Update;
         }
-         public void SetValues(int PSCategory, int PCategory)
+         public void SetValues(int PSCategory, int PCategory,int? UserID)
         {
             this.PSCategory = PSCategory;
             this.PCategory = PCategory;
-           
+           if(this._mode == enMode.AddNew)
+            {
+                this.CreatedByUserID = UserID;
+            }else
+            {
+                this.UpdatedByUserID = UserID;
+            }
         }
 
         private bool _AddNewPurchaseSubBaseCategories()
