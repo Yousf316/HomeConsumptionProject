@@ -60,7 +60,7 @@ namespace HomeConsuption.Purchase.Purchase_Sub_Categories
 
         private void _SetCategoryInfo()
         {
-            _objCategory = clsPurchase_SubCategory.FindPurchase_Category(_PSCategoryID);
+            _objCategory = clsPurchase_SubCategory.FindPurchase_SubCategories(_PSCategoryID);
             lbCateID.Text = _objCategory.PSCategoryID.ToString();
             txtCateName.Text = _objCategory.SubCategoryName;
             cmbCategories.Visible = false;

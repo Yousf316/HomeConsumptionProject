@@ -84,7 +84,7 @@ namespace HomeC_Business
 
 
 
-        public static clsPurchase_SubCategory FindPurchase_Category(int PSCategoryID)
+        public static clsPurchase_SubCategory FindPurchase_SubCategories(int PSCategoryID)
         {
             string CategoryName = "";
             int? CreatedByUserID = null;
@@ -137,6 +137,16 @@ namespace HomeC_Business
 
                 return clsPurchase_SubCategoriesData.DeletePurchase_SubCategories(PSCategoryID);
             
+        }
+
+        public  bool DeletePurchase_SubCategories()
+        {
+
+            //if( !clsPurchaseSubBaseCategories.DeleteSubBaseCategory(PSCategoryID))
+            //     return false;
+
+            return clsPurchase_SubCategoriesData.DeletePurchase_SubCategories(this.PSCategoryID);
+
         }
     }
 

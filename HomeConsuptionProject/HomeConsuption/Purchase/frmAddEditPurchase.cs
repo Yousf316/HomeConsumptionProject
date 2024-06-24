@@ -137,7 +137,7 @@ namespace HomeConsuption
             _GetDataTablePurchase();
 
             if (purchase.PSCategoryID != null)
-                cmbSubCategories.SelectedItem = clsPurchase_SubCategory.FindPurchase_Category(purchase.PSCategoryID??-1).SubCategoryName;
+                cmbSubCategories.SelectedItem = clsPurchase_SubCategory.FindPurchase_SubCategories(purchase.PSCategoryID??-1).SubCategoryName;
 
             this.Text = "تعديل فاتورة مشتريات";
         }

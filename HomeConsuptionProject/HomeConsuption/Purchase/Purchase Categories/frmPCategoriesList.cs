@@ -87,5 +87,18 @@ namespace HomeConsuption.Purchase.Purchase_Categories
             pCategoriesEdite.ShowDialog();
             Parallel.Invoke(() => _RefreshStoresList());
         }
+
+        private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           if( clsPurchase_Category.DeletePurchase_Categories((int)dgvList.CurrentRow.Cells[0].Value))
+            {
+                MessageBox.Show("تم حذف الصنف رئيسي", "تمت العملية بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(" الصنف مرتبط مع بيانات اخرى", "فشلت العملية ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
     }
 }

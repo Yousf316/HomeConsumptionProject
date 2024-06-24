@@ -18,7 +18,7 @@ namespace HomeC_Business
         public int? CreatedByUserID { get; set; }
         public int? UpdatedByUserID { get; set; }
 
-        public clsPurchase_SubCategory SubCategory { get => clsPurchase_SubCategory.FindPurchase_Category(PSCategory); }
+        public clsPurchase_SubCategory SubCategory { get => clsPurchase_SubCategory.FindPurchase_SubCategories(PSCategory); }
 
         public clsPurchase_Category objPCategory { get => clsPurchase_Category.FindPurchase_Category(PCategory); }
 

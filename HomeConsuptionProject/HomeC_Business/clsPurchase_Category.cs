@@ -31,6 +31,17 @@ namespace HomeC_Business
             this.UpdatedByUserID = UpdatedByUser;
             _mode = enMode.Update;
         }
+
+        public void SetValues( string CategoryName, int? CreatedByUserID, int? UpdatedByUser)
+        {
+            
+            this.CategoryName = CategoryName;
+            this.CreatedByUserID = CreatedByUserID;
+            this.UpdatedByUserID = UpdatedByUser;
+          
+        }
+
+
         private bool _AddNewPurchase_Categories()
         {
             int ID = -1;
@@ -104,6 +115,17 @@ namespace HomeC_Business
         public static DataTable GetAllPurchase_Categories()
         {
             return clsPurchase_CategoriesData.GetAllPurchase_Categories();
+        }
+
+
+        public static bool DeletePurchase_Categories(int PCategoryID)
+        {
+            return clsPurchase_CategoriesData.DeletePurchase_Categories(PCategoryID);
+        }
+
+        public  bool DeletePurchase_Categories()
+        {
+            return clsPurchase_CategoriesData.DeletePurchase_Categories(this.PCategoryID);
         }
 
     }
