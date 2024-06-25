@@ -31,6 +31,17 @@ namespace HomeC_Business
             this.Location = Location;
             _mode = enMode.Update;
         }
+
+
+        public void SetValue( string StoreName, string Location)
+        {
+          
+            this.StoreName = StoreName;
+            this.Location = Location;
+          
+        }
+
+
         private bool _AddNewStores()
         {
             int ID = -1;
