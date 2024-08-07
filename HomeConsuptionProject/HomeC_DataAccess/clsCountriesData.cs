@@ -151,7 +151,7 @@ WHERE CountryID =@CountryID ;";
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"DELETE * FROM [dbo].[Countries] WHERE CountryID =@CountryID ;";
+            string query = @"DELETE  FROM [dbo].[Countries] WHERE CountryID =@CountryID ;";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.AddWithValue("@CountryID", CountryID);

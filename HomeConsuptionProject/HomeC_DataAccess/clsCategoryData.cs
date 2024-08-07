@@ -155,7 +155,7 @@ WHERE CategoryID =@CategoryID ;";
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"DELETE * FROM [dbo].[Categories] WHERE CategoryID =@CategoryID ;";
+            string query = @"DELETE FROM [dbo].[Categories] WHERE CategoryID =@CategoryID ;";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.AddWithValue("@CategoryID", CategoryID);

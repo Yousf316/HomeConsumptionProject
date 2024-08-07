@@ -194,7 +194,7 @@ namespace HomeC_DataAccess
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"DELETE * FROM [dbo].[Purchase_Categories] WHERE PCategoryID =@PCategoryID ;";
+            string query = @"DELETE  FROM [dbo].[Purchase_Categories] WHERE PCategoryID =@PCategoryID ;";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.AddWithValue("@PCategoryID", PCategoryID);

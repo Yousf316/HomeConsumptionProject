@@ -141,7 +141,7 @@ WHERE SizeID =@SizeID ;";
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"DELETE * FROM [dbo].[Sizes] WHERE SizeID =@SizeID ;";
+            string query = @"DELETE  FROM [dbo].[Sizes] WHERE SizeID =@SizeID ;";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.AddWithValue("@SizeID", SizeID);

@@ -150,7 +150,7 @@ WHERE ItemID =@ItemID ;";
         {
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string query = @"DELETE * FROM [dbo].[Items] WHERE ItemID =@ItemID ;";
+            string query = @"DELETE FROM [dbo].[Items] WHERE ItemID =@ItemID ;";
             SqlCommand cmd = new SqlCommand(query, connection);
 
             cmd.Parameters.AddWithValue("@ItemID", ItemID);
