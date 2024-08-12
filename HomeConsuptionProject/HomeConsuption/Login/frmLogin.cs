@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.IO;
 using HomeC_Business;
 using HomeConsuption.Global;
+using System.Configuration;
+using HomeConsuption.DataBases;
 
 namespace HomeConsuption.Forms
 {
@@ -22,11 +24,21 @@ namespace HomeConsuption.Forms
         }
 
 
+        private void _GetAllDataBase()
+        {
+          
+                cmbDataBaseName.Items.Clear();
+                foreach (ConnectionStringSettings connectionString in ConfigurationManager.ConnectionStrings)
+                {
 
-        
-
+                    cmbDataBaseName.Items.Add(connectionString.Name);
+                    
+                }
+            
+        }
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            _GetAllDataBase();
             string UserName = ""; string Password = "";
 
             if(clsGlobal.GetStoredCredential(ref UserName,ref Password))
@@ -113,6 +125,18 @@ namespace HomeConsuption.Forms
         private void rjbtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbDataBaseName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            clsGlobalBusiness.SetConnectionString(cmbDataBaseName.SelectedItem.ToString());
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            frmDataBaseList frmDataBaseList = new frmDataBaseList();
+            frmDataBaseList.ShowDialog();
+            _GetAllDataBase();
         }
     }
 }

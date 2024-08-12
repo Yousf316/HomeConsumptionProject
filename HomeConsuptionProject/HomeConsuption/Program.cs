@@ -1,4 +1,5 @@
-﻿using HomeConsuption.Forms;
+﻿using HomeConsuption.DataBases;
+using HomeConsuption.Forms;
 using HomeConsuption.Product;
 using HomeConsuption.Tools;
 using System;
@@ -21,7 +22,7 @@ namespace HomeConsuption
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
             //Application.Run(new Main());
-            //Application.Run(new Tests.frmTest());
+            //Application.Run(new frmDataBaseList());
            
             
         }

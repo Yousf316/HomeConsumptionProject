@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using HomeC_DataAccess;
 using HomeConsuption;
 
+
 namespace HomeC_Business
 {
     public class clsUser
@@ -155,6 +156,8 @@ namespace HomeC_Business
            string HashinPassword = clsValidatoinBus.HashCodeCompute(Password);
              _Password = HashinPassword;
         }
+
+      
     }
 
 }

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsCountry.cs" />
+    <Compile Include="clsGlobalBusiness.cs" />
     <Compile Include="clsPerson.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="clsPurchaseSubBaseCategories.cs" />

@@ -52,6 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataBases\frmAddEditeDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataBases\frmAddEditeDataBase.Designer.cs">
+      <DependentUpon>frmAddEditeDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBases\frmDataBaseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataBases\frmDataBaseList.Designer.cs">
+      <DependentUpon>frmDataBaseList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global\clsEventLogs.cs" />
     <Compile Include="Global\clsFormat.cs" />
     <Compile Include="Global\clsGlobal.cs" />
@@ -279,6 +291,12 @@
     <Compile Include="Users\frmShowUserInfo.designer.cs">
       <DependentUpon>frmShowUserInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DataBases\frmAddEditeDataBase.resx">
+      <DependentUpon>frmAddEditeDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataBases\frmDataBaseList.resx">
+      <DependentUpon>frmDataBaseList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>

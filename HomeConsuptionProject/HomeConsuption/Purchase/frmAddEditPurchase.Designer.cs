@@ -81,9 +81,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label1.Location = new System.Drawing.Point(185, 26);
+            this.label1.Location = new System.Drawing.Point(216, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 24);
+            this.label1.Size = new System.Drawing.Size(80, 30);
             this.label1.TabIndex = 22;
             this.label1.Text = ": الرقم";
             // 
@@ -91,9 +92,10 @@
             // 
             this.lbID.AutoSize = true;
             this.lbID.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lbID.Location = new System.Drawing.Point(78, 26);
+            this.lbID.Location = new System.Drawing.Point(91, 32);
+            this.lbID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(62, 24);
+            this.lbID.Size = new System.Drawing.Size(81, 30);
             this.lbID.TabIndex = 25;
             this.lbID.Text = "[????]";
             // 
@@ -101,9 +103,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label4.Location = new System.Drawing.Point(185, 76);
+            this.label4.Location = new System.Drawing.Point(216, 94);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 24);
+            this.label4.Size = new System.Drawing.Size(158, 30);
             this.label4.TabIndex = 24;
             this.label4.Text = ": تاريخ الفاتورة";
             // 
@@ -112,18 +115,20 @@
             this.dtpDate.CustomFormat = "dd/mm/yyyy";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpDate.Location = new System.Drawing.Point(52, 80);
+            this.dtpDate.Location = new System.Drawing.Point(61, 98);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(117, 20);
+            this.dtpDate.Size = new System.Drawing.Size(136, 24);
             this.dtpDate.TabIndex = 277;
             // 
             // txtStoreName
             // 
-            this.txtStoreName.Location = new System.Drawing.Point(856, 60);
+            this.txtStoreName.Location = new System.Drawing.Point(999, 74);
+            this.txtStoreName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtStoreName.Name = "txtStoreName";
             this.txtStoreName.ReadOnly = true;
             this.txtStoreName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtStoreName.Size = new System.Drawing.Size(250, 20);
+            this.txtStoreName.Size = new System.Drawing.Size(291, 24);
             this.txtStoreName.TabIndex = 0;
             this.txtStoreName.DoubleClick += new System.EventHandler(this.txtStoreName_DoubleClick);
             // 
@@ -131,9 +136,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label3.Location = new System.Drawing.Point(1112, 54);
+            this.label3.Location = new System.Drawing.Point(1297, 66);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 24);
+            this.label3.Size = new System.Drawing.Size(166, 30);
             this.label3.TabIndex = 25;
             this.label3.Text = ": اسم المتجر  ";
             // 
@@ -155,9 +161,10 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.lbID);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(14, 15);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1247, 117);
+            this.panel1.Size = new System.Drawing.Size(1455, 144);
             this.panel1.TabIndex = 104;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -165,9 +172,10 @@
             // 
             this.btnPSCategoriesList.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
             this.btnPSCategoriesList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPSCategoriesList.Location = new System.Drawing.Point(403, 63);
+            this.btnPSCategoriesList.Location = new System.Drawing.Point(470, 78);
+            this.btnPSCategoriesList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPSCategoriesList.Name = "btnPSCategoriesList";
-            this.btnPSCategoriesList.Size = new System.Drawing.Size(28, 24);
+            this.btnPSCategoriesList.Size = new System.Drawing.Size(33, 30);
             this.btnPSCategoriesList.TabIndex = 285;
             this.btnPSCategoriesList.UseVisualStyleBackColor = true;
             this.btnPSCategoriesList.Click += new System.EventHandler(this.button1_Click_2);
@@ -176,19 +184,21 @@
             // 
             this.cmbSubCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSubCategories.FormattingEnabled = true;
-            this.cmbSubCategories.Location = new System.Drawing.Point(437, 66);
+            this.cmbSubCategories.Location = new System.Drawing.Point(510, 81);
+            this.cmbSubCategories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbSubCategories.Name = "cmbSubCategories";
             this.cmbSubCategories.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmbSubCategories.Size = new System.Drawing.Size(128, 21);
+            this.cmbSubCategories.Size = new System.Drawing.Size(149, 24);
             this.cmbSubCategories.TabIndex = 284;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label11.Location = new System.Drawing.Point(580, 63);
+            this.label11.Location = new System.Drawing.Point(677, 78);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(124, 24);
+            this.label11.Size = new System.Drawing.Size(157, 30);
             this.label11.TabIndex = 283;
             this.label11.Text = ":تصنيف فرعي";
             // 
@@ -196,9 +206,10 @@
             // 
             this.btnAddNewCategory.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
             this.btnAddNewCategory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddNewCategory.Location = new System.Drawing.Point(403, 18);
+            this.btnAddNewCategory.Location = new System.Drawing.Point(470, 22);
+            this.btnAddNewCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddNewCategory.Name = "btnAddNewCategory";
-            this.btnAddNewCategory.Size = new System.Drawing.Size(28, 24);
+            this.btnAddNewCategory.Size = new System.Drawing.Size(33, 30);
             this.btnAddNewCategory.TabIndex = 282;
             this.btnAddNewCategory.UseVisualStyleBackColor = true;
             this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
@@ -207,10 +218,11 @@
             // 
             this.cmbCategoryList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoryList.FormattingEnabled = true;
-            this.cmbCategoryList.Location = new System.Drawing.Point(437, 21);
+            this.cmbCategoryList.Location = new System.Drawing.Point(510, 26);
+            this.cmbCategoryList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbCategoryList.Name = "cmbCategoryList";
             this.cmbCategoryList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmbCategoryList.Size = new System.Drawing.Size(128, 21);
+            this.cmbCategoryList.Size = new System.Drawing.Size(149, 24);
             this.cmbCategoryList.TabIndex = 281;
             this.cmbCategoryList.SelectedIndexChanged += new System.EventHandler(this.cmbCategoryList_SelectedIndexChanged);
             // 
@@ -218,9 +230,10 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label10.Location = new System.Drawing.Point(580, 18);
+            this.label10.Location = new System.Drawing.Point(677, 22);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 24);
+            this.label10.Size = new System.Drawing.Size(169, 30);
             this.label10.TabIndex = 280;
             this.label10.Text = ":تصنيف الفاتورة";
             // 
@@ -228,9 +241,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label2.Location = new System.Drawing.Point(1112, 15);
+            this.label2.Location = new System.Drawing.Point(1297, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 24);
+            this.label2.Size = new System.Drawing.Size(151, 30);
             this.label2.TabIndex = 279;
             this.label2.Text = ": نوع الفاتورة ";
             // 
@@ -241,19 +255,21 @@
             this.cbTypeInvoice.Items.AddRange(new object[] {
             "سريعة",
             "عادية"});
-            this.cbTypeInvoice.Location = new System.Drawing.Point(969, 21);
+            this.cbTypeInvoice.Location = new System.Drawing.Point(1130, 26);
+            this.cbTypeInvoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbTypeInvoice.Name = "cbTypeInvoice";
             this.cbTypeInvoice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cbTypeInvoice.Size = new System.Drawing.Size(128, 21);
+            this.cbTypeInvoice.Size = new System.Drawing.Size(149, 24);
             this.cbTypeInvoice.TabIndex = 278;
             this.cbTypeInvoice.SelectedIndexChanged += new System.EventHandler(this.cbTypeInvoice_SelectedIndexChanged);
             // 
             // txtStoreID
             // 
             this.txtStoreID.Enabled = false;
-            this.txtStoreID.Location = new System.Drawing.Point(775, 60);
+            this.txtStoreID.Location = new System.Drawing.Point(904, 74);
+            this.txtStoreID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtStoreID.Name = "txtStoreID";
-            this.txtStoreID.Size = new System.Drawing.Size(75, 20);
+            this.txtStoreID.Size = new System.Drawing.Size(87, 24);
             this.txtStoreID.TabIndex = 100;
             this.txtStoreID.TabStop = false;
             // 
@@ -261,9 +277,10 @@
             // 
             this.btnAddNewStore.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_plus_64;
             this.btnAddNewStore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddNewStore.Location = new System.Drawing.Point(733, 54);
+            this.btnAddNewStore.Location = new System.Drawing.Point(855, 66);
+            this.btnAddNewStore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddNewStore.Name = "btnAddNewStore";
-            this.btnAddNewStore.Size = new System.Drawing.Size(36, 33);
+            this.btnAddNewStore.Size = new System.Drawing.Size(42, 41);
             this.btnAddNewStore.TabIndex = 20;
             this.btnAddNewStore.UseVisualStyleBackColor = true;
             this.btnAddNewStore.Click += new System.EventHandler(this.btnAddNewStore_Click);
@@ -274,33 +291,36 @@
             this.dgvSubPurchase.AllowUserToDeleteRows = false;
             this.dgvSubPurchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSubPurchase.ContextMenuStrip = this.cmsSubPurchase;
-            this.dgvSubPurchase.Location = new System.Drawing.Point(12, 143);
+            this.dgvSubPurchase.Location = new System.Drawing.Point(14, 176);
+            this.dgvSubPurchase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvSubPurchase.Name = "dgvSubPurchase";
             this.dgvSubPurchase.ReadOnly = true;
             this.dgvSubPurchase.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgvSubPurchase.Size = new System.Drawing.Size(1244, 280);
+            this.dgvSubPurchase.RowHeadersWidth = 51;
+            this.dgvSubPurchase.Size = new System.Drawing.Size(1451, 345);
             this.dgvSubPurchase.TabIndex = 7;
             this.dgvSubPurchase.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // cmsSubPurchase
             // 
+            this.cmsSubPurchase.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsSubPurchase.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dToolStripMenuItem,
             this.حذفToolStripMenuItem});
             this.cmsSubPurchase.Name = "cmsSubPurchase";
-            this.cmsSubPurchase.Size = new System.Drawing.Size(104, 48);
+            this.cmsSubPurchase.Size = new System.Drawing.Size(116, 52);
             // 
             // dToolStripMenuItem
             // 
             this.dToolStripMenuItem.Name = "dToolStripMenuItem";
-            this.dToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.dToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.dToolStripMenuItem.Text = "تعديل";
             this.dToolStripMenuItem.Click += new System.EventHandler(this.dToolStripMenuItem_Click);
             // 
             // حذفToolStripMenuItem
             // 
             this.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem";
-            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
             this.حذفToolStripMenuItem.Text = "حذف";
             this.حذفToolStripMenuItem.Click += new System.EventHandler(this.حذفToolStripMenuItem_Click);
             // 
@@ -316,19 +336,21 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtTotalAmount);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(18, 434);
+            this.panel2.Location = new System.Drawing.Point(21, 534);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(257, 179);
+            this.panel2.Size = new System.Drawing.Size(300, 220);
             this.panel2.TabIndex = 355;
             // 
             // txtTotalAfterTax
             // 
             this.txtTotalAfterTax.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotalAfterTax.Location = new System.Drawing.Point(13, 148);
+            this.txtTotalAfterTax.Location = new System.Drawing.Point(15, 182);
+            this.txtTotalAfterTax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotalAfterTax.Name = "txtTotalAfterTax";
             this.txtTotalAfterTax.ReadOnly = true;
             this.txtTotalAfterTax.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTotalAfterTax.Size = new System.Drawing.Size(161, 20);
+            this.txtTotalAfterTax.Size = new System.Drawing.Size(187, 24);
             this.txtTotalAfterTax.TabIndex = 16;
             this.txtTotalAfterTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTotalAfterTax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
@@ -337,20 +359,22 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label9.Location = new System.Drawing.Point(180, 149);
+            this.label9.Location = new System.Drawing.Point(210, 183);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 17);
+            this.label9.Size = new System.Drawing.Size(72, 21);
             this.label9.TabIndex = 115;
             this.label9.Text = ": الصافي";
             // 
             // txtTaxAmount
             // 
             this.txtTaxAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTaxAmount.Location = new System.Drawing.Point(13, 113);
+            this.txtTaxAmount.Location = new System.Drawing.Point(15, 139);
+            this.txtTaxAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTaxAmount.Name = "txtTaxAmount";
             this.txtTaxAmount.ReadOnly = true;
             this.txtTaxAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTaxAmount.Size = new System.Drawing.Size(161, 20);
+            this.txtTaxAmount.Size = new System.Drawing.Size(187, 24);
             this.txtTaxAmount.TabIndex = 14;
             this.txtTaxAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTaxAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
@@ -359,20 +383,22 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label8.Location = new System.Drawing.Point(180, 114);
+            this.label8.Location = new System.Drawing.Point(210, 140);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 17);
+            this.label8.Size = new System.Drawing.Size(71, 21);
             this.label8.TabIndex = 113;
             this.label8.Text = ": الضريبة";
             // 
             // txtTotalBeforeTax
             // 
             this.txtTotalBeforeTax.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotalBeforeTax.Location = new System.Drawing.Point(12, 83);
+            this.txtTotalBeforeTax.Location = new System.Drawing.Point(14, 102);
+            this.txtTotalBeforeTax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotalBeforeTax.Name = "txtTotalBeforeTax";
             this.txtTotalBeforeTax.ReadOnly = true;
             this.txtTotalBeforeTax.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTotalBeforeTax.Size = new System.Drawing.Size(161, 20);
+            this.txtTotalBeforeTax.Size = new System.Drawing.Size(187, 24);
             this.txtTotalBeforeTax.TabIndex = 12;
             this.txtTotalBeforeTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTotalBeforeTax.TextChanged += new System.EventHandler(this.txtTotalBeforeTax_TextChanged);
@@ -382,19 +408,21 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label7.Location = new System.Drawing.Point(179, 84);
+            this.label7.Location = new System.Drawing.Point(209, 103);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 17);
+            this.label7.Size = new System.Drawing.Size(93, 21);
             this.label7.TabIndex = 111;
             this.label7.Text = ": الأجمالي  ";
             // 
             // txtDiscount
             // 
             this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDiscount.Location = new System.Drawing.Point(12, 52);
+            this.txtDiscount.Location = new System.Drawing.Point(14, 64);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtDiscount.Size = new System.Drawing.Size(161, 20);
+            this.txtDiscount.Size = new System.Drawing.Size(187, 24);
             this.txtDiscount.TabIndex = 4;
             this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtTotalAmount_TextChanged);
@@ -405,19 +433,21 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 10F);
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(179, 53);
+            this.label5.Location = new System.Drawing.Point(209, 65);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 17);
+            this.label5.Size = new System.Drawing.Size(67, 21);
             this.label5.TabIndex = 39;
             this.label5.Text = ": الخصم";
             // 
             // txtTotalAmount
             // 
             this.txtTotalAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotalAmount.Location = new System.Drawing.Point(13, 16);
+            this.txtTotalAmount.Location = new System.Drawing.Point(15, 20);
+            this.txtTotalAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtTotalAmount.Size = new System.Drawing.Size(161, 20);
+            this.txtTotalAmount.Size = new System.Drawing.Size(187, 24);
             this.txtTotalAmount.TabIndex = 3;
             this.txtTotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTotalAmount.TextChanged += new System.EventHandler(this.txtTotalAmount_TextChanged);
@@ -428,9 +458,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label6.Location = new System.Drawing.Point(180, 17);
+            this.label6.Location = new System.Drawing.Point(210, 21);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 17);
+            this.label6.Size = new System.Drawing.Size(80, 21);
             this.label6.TabIndex = 37;
             this.label6.Text = ": المجموع";
             // 
@@ -438,18 +469,20 @@
             // 
             this.panel3.Controls.Add(this.lbRecordCount);
             this.panel3.Controls.Add(this.label14);
-            this.panel3.Location = new System.Drawing.Point(1045, 434);
+            this.panel3.Location = new System.Drawing.Point(1219, 534);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(211, 48);
+            this.panel3.Size = new System.Drawing.Size(246, 59);
             this.panel3.TabIndex = 171;
             // 
             // lbRecordCount
             // 
             this.lbRecordCount.AutoSize = true;
             this.lbRecordCount.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.lbRecordCount.Location = new System.Drawing.Point(52, 12);
+            this.lbRecordCount.Location = new System.Drawing.Point(61, 15);
+            this.lbRecordCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbRecordCount.Name = "lbRecordCount";
-            this.lbRecordCount.Size = new System.Drawing.Size(62, 24);
+            this.lbRecordCount.Size = new System.Drawing.Size(81, 30);
             this.lbRecordCount.TabIndex = 28;
             this.lbRecordCount.Text = "[????]";
             // 
@@ -457,9 +490,10 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.label14.Location = new System.Drawing.Point(120, 16);
+            this.label14.Location = new System.Drawing.Point(140, 20);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(78, 17);
+            this.label14.Size = new System.Drawing.Size(95, 21);
             this.label14.TabIndex = 27;
             this.label14.Text = ": عدد البنود ";
             // 
@@ -468,9 +502,10 @@
             this.btnNext.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96__1_;
             this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnNext.Enabled = false;
-            this.btnNext.Location = new System.Drawing.Point(699, 606);
+            this.btnNext.Location = new System.Drawing.Point(816, 746);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(45, 47);
+            this.btnNext.Size = new System.Drawing.Size(52, 58);
             this.btnNext.TabIndex = 357;
             this.btnNext.UseVisualStyleBackColor = true;
             // 
@@ -479,9 +514,10 @@
             this.btnprevious.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96;
             this.btnprevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnprevious.Enabled = false;
-            this.btnprevious.Location = new System.Drawing.Point(570, 606);
+            this.btnprevious.Location = new System.Drawing.Point(665, 746);
+            this.btnprevious.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnprevious.Name = "btnprevious";
-            this.btnprevious.Size = new System.Drawing.Size(45, 47);
+            this.btnprevious.Size = new System.Drawing.Size(52, 58);
             this.btnprevious.TabIndex = 356;
             this.btnprevious.UseVisualStyleBackColor = true;
             this.btnprevious.Click += new System.EventHandler(this.btnprevious_Click);
@@ -490,9 +526,10 @@
             // 
             this.btnCancel.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_cancel_96;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancel.Location = new System.Drawing.Point(415, 611);
+            this.btnCancel.Location = new System.Drawing.Point(484, 752);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(45, 47);
+            this.btnCancel.Size = new System.Drawing.Size(52, 58);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -500,9 +537,10 @@
             // btnSave
             // 
             this.btnSave.Image = global::HomeConsuption.Properties.Resources.icons8_save_48;
-            this.btnSave.Location = new System.Drawing.Point(848, 611);
+            this.btnSave.Location = new System.Drawing.Point(989, 752);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(45, 47);
+            this.btnSave.Size = new System.Drawing.Size(52, 58);
             this.btnSave.TabIndex = 5;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -511,9 +549,10 @@
             // 
             this.btnTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTest.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.btnTest.Location = new System.Drawing.Point(1101, 611);
+            this.btnTest.Location = new System.Drawing.Point(1284, 752);
+            this.btnTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(142, 36);
+            this.btnTest.Size = new System.Drawing.Size(166, 44);
             this.btnTest.TabIndex = 359;
             this.btnTest.Text = "Test";
             this.btnTest.UseVisualStyleBackColor = true;
@@ -531,9 +570,10 @@
             this.rjbtnAddRecord.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rjbtnAddRecord.Font = new System.Drawing.Font("Tahoma", 11F);
             this.rjbtnAddRecord.ForeColor = System.Drawing.Color.White;
-            this.rjbtnAddRecord.Location = new System.Drawing.Point(868, 440);
+            this.rjbtnAddRecord.Location = new System.Drawing.Point(1013, 542);
+            this.rjbtnAddRecord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjbtnAddRecord.Name = "rjbtnAddRecord";
-            this.rjbtnAddRecord.Size = new System.Drawing.Size(150, 40);
+            this.rjbtnAddRecord.Size = new System.Drawing.Size(175, 49);
             this.rjbtnAddRecord.TabIndex = 361;
             this.rjbtnAddRecord.Text = "أدراج بند";
             this.rjbtnAddRecord.TextColor = System.Drawing.Color.White;
@@ -542,9 +582,9 @@
             // 
             // frmAddEditPurchase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 665);
+            this.ClientSize = new System.Drawing.Size(1484, 818);
             this.Controls.Add(this.rjbtnAddRecord);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnNext);
@@ -556,11 +596,12 @@
             this.Controls.Add(this.dgvSubPurchase);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmAddEditPurchase";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "f";
+            this.Text = "فاتورة مشتريات";
             this.Load += new System.EventHandler(this.AddEditPurchase_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
