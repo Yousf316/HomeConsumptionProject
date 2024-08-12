@@ -31,12 +31,12 @@ namespace HomeConsuption.People
         {
             if (PersonID == -1)
             {
-                label1.Text = "Add New Person";
+                label1.Text = "أدراج شخص جديد";
 
             }
             else
             {
-                label1.Text = "Update Person";
+                label1.Text = "تعديل المعلومات الشخصية";
             }
             ctrAddPerson1.SetPersonID(PersonID);
         }

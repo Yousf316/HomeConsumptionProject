@@ -36,12 +36,24 @@ namespace HomeConsuption.Forms
                 }
             
         }
+
+        private void _SetDataBase(string DatabaseName)
+        {
+
+           if( cmbDataBaseName.Items.Contains(DatabaseName))
+            {
+                cmbDataBaseName.SelectedItem = DatabaseName;
+            }
+
+
+
+        }
         private void frmLogin_Load(object sender, EventArgs e)
         {
             _GetAllDataBase();
             string UserName = ""; string Password = "";
-
-            if(clsGlobal.GetStoredCredential(ref UserName,ref Password))
+            string Database = "";
+            if (clsGlobal.GetStoredCredential(ref UserName,ref Password))
             {
                 rjtxtPassword.Texts = Password;
                 rjtxtUserName.Texts = UserName;
@@ -53,6 +65,11 @@ namespace HomeConsuption.Forms
 
             }
 
+            if(clsGlobal.GetDataBaseName(ref Database))
+            {
+                _SetDataBase(Database);
+            }
+           
         }
 
        
@@ -74,10 +91,17 @@ namespace HomeConsuption.Forms
 
         private void rjbtnOk_Click(object sender, EventArgs e)
         {
+            if(cmbDataBaseName.SelectedItem == null)
+            {
+                MessageBox.Show("الرجاء اخنيار قاعدة بيانات", "مشكلة", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                return;
+            }
             //string HashPassword = clsValidatoin.HashCodeCompute(rjtxtPassword.Texts.Trim());
             clsUser UserID = clsUser.FindUserByUserNameAndPassword(rjtxtUserName.Texts.Trim(), rjtxtPassword.Texts.Trim());
 
-
+            string DatabaseName = cmbDataBaseName.SelectedItem.ToString();
+            clsGlobal.RememberDataBase(DatabaseName);
             if (UserID != null)
             {
 

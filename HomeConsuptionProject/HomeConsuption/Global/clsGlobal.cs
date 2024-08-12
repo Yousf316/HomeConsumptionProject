@@ -115,6 +115,107 @@ namespace HomeConsuption
 
         }
 
+        public static bool RememberDataBase(string DataBaseName)
+        {
+
+            try
+            {
+                //this will get the current project directory folder.
+
+
+                string filePath = @"HKEY_CURRENT_USER\SOFTWARE\HomeCProject";
+
+                string ValueName = "DataBaseName";
+
+                if (DataBaseName == null)
+                {
+                    Registry.SetValue(filePath, ValueName, "", RegistryValueKind.String);
+
+                    try
+                    {   // Open the registry key in read/write mode with explicit registry view
+                        using (RegistryKey baseKey = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Registry64))
+                        {
+                            using (RegistryKey key = baseKey.OpenSubKey(@"SOFTWARE\HomeCProject", true))
+                            {
+                                if (key != null)
+                                {
+                                    // Delete the specified value
+                                    key.DeleteValue(ValueName);
+
+
+                                }
+
+                            }
+                            return false;
+                        }
+                    }
+                    catch (UnauthorizedAccessException)
+                    {
+                        Console.WriteLine("UnauthorizedAccessException: Run the program with administrative privileges.");
+                        clsEventLogs.WriteLog("UnauthorizedAccessException: Run the program with administrative privileges.",
+                            System.Diagnostics.EventLogEntryType.Error);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"An error occurred: {ex.Message}");
+                        clsEventLogs.WriteLog($"An error occurred: {ex.Message}",
+                           System.Diagnostics.EventLogEntryType.Error);
+                    }
+                    return false;
+                }
+                string dataToSave = DataBaseName;
+
+                // Create a StreamWriter to write to the file
+                Registry.SetValue(filePath, ValueName, dataToSave, RegistryValueKind.String);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+                clsEventLogs.WriteLog($"An error occurred: {ex.Message}",
+                         System.Diagnostics.EventLogEntryType.Error);
+                return false;
+            }
+
+        }
+
+        public static bool GetDataBaseName(ref string DataBaseName)
+        {
+            //this will get the stored username and password and will return true if found and false if not found.
+            try
+            {
+                string filePath = @"HKEY_CURRENT_USER\SOFTWARE\HomeCProject";
+
+
+                string ValueName = "DataBaseName";
+
+
+
+                // Create a StreamReader to read from the file
+                string FullValue = Registry.GetValue(filePath, ValueName, null) as string ?? null;
+
+                if (FullValue != null && FullValue != "")
+                {
+                    DataBaseName = FullValue;
+
+                   
+                    return true;
+                }
+                else
+                    return false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+                clsEventLogs.WriteLog($"An error occurred: {ex.Message}",
+                         System.Diagnostics.EventLogEntryType.Error);
+                return false;
+            }
+
+        }
 
     }
 }
