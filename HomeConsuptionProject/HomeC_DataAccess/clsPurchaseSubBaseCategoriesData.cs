@@ -135,7 +135,7 @@ namespace HomeC_DataAccess
                     if (reader.Read())
                     {
 
-
+                        isFound = true;
                         CreatedByUserID = reader["CreatedByUserID"] != DBNull.Value ? (int?)Convert.ToInt32(reader["CreatedByUserID"]) : null;
                         UpdatedByUserID = reader["UpdatedByUserID"] != DBNull.Value ? (int?)Convert.ToInt32(reader["UpdatedByUserID"]) : null;
 
