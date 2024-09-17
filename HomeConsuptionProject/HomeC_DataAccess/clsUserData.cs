@@ -10,14 +10,22 @@ namespace HomeC_DataAccess
 {
     public class clsUserData
     {
-        static public void InsertUser(ref int UserID,string UserName, int PersonID, string Password, bool IsActive)
+        static public void InsertUser(ref int UserID, string UserName, int PersonID, string Password, bool IsActive)
         {
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             using (SqlCommand command = new SqlCommand("sp_insert_Users", connection))
             {
                 command.CommandType = CommandType.StoredProcedure;
 
-                command.Parameters.AddWithValue("@p_PersonID", PersonID);
+                if (PersonID != -1)
+                {
+                    command.Parameters.AddWithValue("@p_PersonID", PersonID);
+
+                } else
+                {
+                    command.Parameters.AddWithValue("@p_PersonID", DBNull.Value);
+
+                }
                 command.Parameters.AddWithValue("@p_Password", Password);
                 command.Parameters.AddWithValue("@p_UserName", UserName);
                 command.Parameters.AddWithValue("@p_IsActive", IsActive);
@@ -60,7 +68,16 @@ namespace HomeC_DataAccess
             {
                 command.CommandType = CommandType.StoredProcedure;
 
-                command.Parameters.AddWithValue("@p_PersonID", PersonID);
+                if (PersonID != -1)
+                {
+                    command.Parameters.AddWithValue("@p_PersonID", PersonID);
+
+                }
+                else
+                {
+                    command.Parameters.AddWithValue("@p_PersonID", DBNull.Value);
+
+                }
                 command.Parameters.AddWithValue("@p_Password", Password);
                 command.Parameters.AddWithValue("@p_UserName", UserName);
                 command.Parameters.AddWithValue("@p_IsActive", IsActive);
