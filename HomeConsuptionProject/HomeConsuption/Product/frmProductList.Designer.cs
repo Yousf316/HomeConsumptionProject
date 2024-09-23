@@ -52,9 +52,10 @@
             // 
             this.lbPageSize.AutoSize = true;
             this.lbPageSize.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lbPageSize.Location = new System.Drawing.Point(23, 600);
+            this.lbPageSize.Location = new System.Drawing.Point(27, 738);
+            this.lbPageSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPageSize.Name = "lbPageSize";
-            this.lbPageSize.Size = new System.Drawing.Size(53, 19);
+            this.lbPageSize.Size = new System.Drawing.Size(62, 24);
             this.lbPageSize.TabIndex = 371;
             this.lbPageSize.Text = "[????]";
             // 
@@ -62,34 +63,40 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label2.Location = new System.Drawing.Point(82, 600);
+            this.label2.Location = new System.Drawing.Point(96, 738);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 19);
+            this.label2.Size = new System.Drawing.Size(133, 24);
             this.label2.TabIndex = 370;
             this.label2.Text = ": عدد الصفحات";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(26, 251);
+            this.comboBox1.Location = new System.Drawing.Point(30, 309);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(131, 21);
+            this.comboBox1.Size = new System.Drawing.Size(152, 24);
             this.comboBox1.TabIndex = 367;
+            this.comboBox1.Visible = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(163, 251);
+            this.textBox1.Location = new System.Drawing.Point(190, 309);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 20);
+            this.textBox1.Size = new System.Drawing.Size(206, 24);
             this.textBox1.TabIndex = 366;
+            this.textBox1.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 25F);
-            this.label1.Location = new System.Drawing.Point(279, 147);
+            this.label1.Location = new System.Drawing.Point(326, 181);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 41);
+            this.label1.Size = new System.Drawing.Size(262, 51);
             this.label1.TabIndex = 364;
             this.label1.Text = "أدارة المنتجات";
             // 
@@ -99,48 +106,52 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 277);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 341);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(758, 297);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(884, 366);
             this.dataGridView1.TabIndex = 363;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.بطاقةمعلوماتالمنتجToolStripMenuItem,
             this.تعديلمToolStripMenuItem,
             this.حذفالمنتجToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(168, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(199, 76);
             // 
             // بطاقةمعلوماتالمنتجToolStripMenuItem
             // 
             this.بطاقةمعلوماتالمنتجToolStripMenuItem.Name = "بطاقةمعلوماتالمنتجToolStripMenuItem";
-            this.بطاقةمعلوماتالمنتجToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.بطاقةمعلوماتالمنتجToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.بطاقةمعلوماتالمنتجToolStripMenuItem.Text = "بطاقة بيانات المنتج";
             // 
             // تعديلمToolStripMenuItem
             // 
             this.تعديلمToolStripMenuItem.Name = "تعديلمToolStripMenuItem";
-            this.تعديلمToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.تعديلمToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.تعديلمToolStripMenuItem.Text = "تعديل بيانات المنتج";
             this.تعديلمToolStripMenuItem.Click += new System.EventHandler(this.تعديلمToolStripMenuItem_Click);
             // 
             // حذفالمنتجToolStripMenuItem
             // 
             this.حذفالمنتجToolStripMenuItem.Name = "حذفالمنتجToolStripMenuItem";
-            this.حذفالمنتجToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.حذفالمنتجToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
             this.حذفالمنتجToolStripMenuItem.Text = "حذف المنتج";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Image = global::HomeConsuption.Properties.Resources.icons8_product_64;
-            this.button1.Location = new System.Drawing.Point(679, 205);
+            this.button1.Location = new System.Drawing.Point(792, 252);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 66);
+            this.button1.Size = new System.Drawing.Size(106, 81);
             this.button1.TabIndex = 372;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -149,9 +160,10 @@
             // 
             this.btnNext.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96__1_;
             this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnNext.Location = new System.Drawing.Point(458, 588);
+            this.btnNext.Location = new System.Drawing.Point(534, 724);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(45, 47);
+            this.btnNext.Size = new System.Drawing.Size(52, 58);
             this.btnNext.TabIndex = 369;
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -160,9 +172,10 @@
             // 
             this.btnprevious.BackgroundImage = global::HomeConsuption.Properties.Resources.icons8_arrow_96;
             this.btnprevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnprevious.Location = new System.Drawing.Point(322, 588);
+            this.btnprevious.Location = new System.Drawing.Point(376, 724);
+            this.btnprevious.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnprevious.Name = "btnprevious";
-            this.btnprevious.Size = new System.Drawing.Size(45, 47);
+            this.btnprevious.Size = new System.Drawing.Size(52, 58);
             this.btnprevious.TabIndex = 368;
             this.btnprevious.UseVisualStyleBackColor = true;
             this.btnprevious.Click += new System.EventHandler(this.btnprevious_Click);
@@ -170,18 +183,19 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HomeConsuption.Properties.Resources.icons8_product_64;
-            this.pictureBox1.Location = new System.Drawing.Point(322, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(376, 43);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(127, 104);
+            this.pictureBox1.Size = new System.Drawing.Size(148, 128);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 365;
             this.pictureBox1.TabStop = false;
             // 
             // frmProductList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 653);
+            this.ClientSize = new System.Drawing.Size(912, 804);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lbPageSize);
             this.Controls.Add(this.label2);
@@ -193,6 +207,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmProductList";
             this.Text = "قائمة المنتجات";
             this.Load += new System.EventHandler(this.frmProductList_Load);
