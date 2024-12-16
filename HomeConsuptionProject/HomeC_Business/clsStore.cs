@@ -108,7 +108,7 @@ namespace HomeC_Business
         {
           return clsStoreData.GetAllStores();
         }
-         public static DataTable GetStoresByName(string StoreNAme)
+         public static DataTable GetStoreByName(string StoreNAme)
         {
           return clsStoreData.GetStoreByName(StoreNAme);
         }
