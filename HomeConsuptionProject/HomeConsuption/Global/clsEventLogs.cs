@@ -10,7 +10,7 @@ namespace HomeConsuption.Global
    static public class clsEventLogs
     {
 
-       private static string _SourceName = "DVLDApp";
+       private static string _SourceName = "Homeapp";
 
        public enum enModeEventLogType { Informaiton=1,Warning,Error}
 

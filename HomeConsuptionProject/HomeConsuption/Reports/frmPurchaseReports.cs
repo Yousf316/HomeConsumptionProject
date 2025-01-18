@@ -3,6 +3,7 @@ using System;
 
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HomeConsuption.Reports
@@ -57,12 +58,19 @@ namespace HomeConsuption.Reports
         }
         private void frmPurchaseReports_Load(object sender, EventArgs e)
         {
-            _GetAllCategories();
-            cmbCategories.SelectedItem = "عام";
-            _SetTvList();
-            cbAllDate.Checked = true;
-            cbAllCategories.Checked = true;
+            // Run the task asynchronously using Task.Run
+            Task.Run(() => _SetTvList()).ContinueWith(t =>
+            {
+                // Ensure UI updates happen on the UI thread after _SetTvList completes
+                this.Invoke((MethodInvoker)(() =>
+                {
+                    cbAllDate.Checked = true;
+                    cbAllCategories.Checked = true;
+                }));
+            }, TaskScheduler.FromCurrentSynchronizationContext());  // Ensures the continuation runs on the UI thread
         }
+
+
 
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -99,25 +107,44 @@ namespace HomeConsuption.Reports
 
         private void _SetTvList()
         {
+            // Fetch the data
+            _GetAllCategories();
             DataTable dtBaseCategories = clsPurchase_Category.GetAllPurchase_Categories();
             DataTable dtSubCategories;
-            tvCategories.Nodes.Clear();
+
+            // Clear existing nodes safely on the UI thread
+            this.Invoke((MethodInvoker)(() =>
+            {
+                tvCategories.Nodes.Clear();
+            }));
+
             foreach (DataRow dr in dtBaseCategories.Rows)
             {
                 string CategoryName = dr["CategoryName"].ToString();
-                tvCategories.Nodes.Add(CategoryName, CategoryName) ;
+
+                // Add Category Node safely on the UI thread
+                this.Invoke((MethodInvoker)(() =>
+                {
+                    tvCategories.Nodes.Add(CategoryName, CategoryName);
+                }));
 
                 dtSubCategories = clsPurchaseSubBaseCategories.GetAllPurchase_SubBaseCategoriesByPCategory(CategoryName);
 
                 foreach (DataRow drSub in dtSubCategories.Rows)
                 {
-                    tvCategories.Nodes[CategoryName].Nodes.Add(drSub["SubCategoryName"].ToString());
+                    // Add SubCategory Node safely on the UI thread
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        tvCategories.Nodes[CategoryName].Nodes.Add(drSub["SubCategoryName"].ToString());
+                    }));
                 }
-
-              
             }
 
-            tvCategories.CheckBoxes = true;
+            // Ensure CheckBoxes are enabled safely on the UI thread
+            this.Invoke((MethodInvoker)(() =>
+            {
+                tvCategories.CheckBoxes = true;
+            }));
         }
 
         private void tvCategories_AfterCheck(object sender, TreeViewEventArgs e)
